@@ -1,0 +1,688 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HMI.RuntimeControls.Gauges">
+    <Style TargetType="local:HMIGauge3">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:HMIGauge3">
+                    <Viewbox x:Name="ContainerViewbox">
+                        <Viewbox.Resources>
+                            <Storyboard x:Name="NeedleAnimation" x:Key="NeedleAnimation">
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
+                                        Storyboard.TargetName="NeedleGrid">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="-130"
+                                            x:Name="StartAngle" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-117"
+                                            x:Name="EndAngle">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Name="MaxArrowAnimation" x:Key="MaxArrowAnimation">
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup)[0].(RotateTransform.Angle)"
+                                        Storyboard.TargetName="MaxArrow">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="-130"
+                                            x:Name="MaxArrowStartAngle" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-117"
+                                            x:Name="MaxArrowEndAngle">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Name="MinArrowAnimation" x:Key="MinArrowAnimation">
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
+                                        Storyboard.TargetName="MinArrow">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="-130"
+                                            x:Name="MinArrowStartAngle" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-117"
+                                            x:Name="MinArrowEndAngle">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Name="StartAnimation" x:Key="StartAnimation">
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(FrameworkElement.Width)"
+                                        Storyboard.TargetName="ExternalChrome">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="200" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="500">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(FrameworkElement.Height)"
+                                        Storyboard.TargetName="ExternalChrome">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="200" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="500">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(FrameworkElement.Width)"
+                                        Storyboard.TargetName="OutherChrome">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="200" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="440">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(FrameworkElement.Height)"
+                                        Storyboard.TargetName="OutherChrome">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="200" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="440">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(FrameworkElement.Width)"
+                                        Storyboard.TargetName="Chrome">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="200" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="390">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(FrameworkElement.Height)"
+                                        Storyboard.TargetName="Chrome">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="200" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="390">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(FrameworkElement.Width)"
+                                        Storyboard.TargetName="BackgroundEllipse">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="200" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="360" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(FrameworkElement.Height)"
+                                        Storyboard.TargetName="BackgroundEllipse">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="200" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="360" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="bg_shine_bottom">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0.475" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="bg_shine_center">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="0.475" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="ScaleIntervals">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="0">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2" Value="1">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="LabelsContainer">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="0">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="1">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="UnitLabel">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.2" Value="1">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="LevelValue">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="0">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.3" Value="1">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="glossy_reflexion">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.3" Value="0">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
+                                        Storyboard.TargetName="NeedleGrid">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="-130">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(ScaleTransform.ScaleX)"
+                                        Storyboard.TargetName="NeedleGrid">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(ScaleTransform.ScaleY)"
+                                        Storyboard.TargetName="NeedleGrid">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut" />
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(ScaleTransform.ScaleX)"
+                                        Storyboard.TargetName="MinArrow">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(ScaleTransform.ScaleY)"
+                                        Storyboard.TargetName="MinArrow">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup)[1].(ScaleTransform.ScaleX)"
+                                        Storyboard.TargetName="MaxArrow">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup)[1].(ScaleTransform.ScaleY)"
+                                        Storyboard.TargetName="MaxArrow">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.65" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="MaxArrow">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="NeedleGrid">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="MinArrow">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:2.5" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                        Storyboard.TargetName="ExternalChrome">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                        Storyboard.TargetName="glossy_reflexion">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames
+                                        Storyboard.TargetProperty="(UIElement.Opacity)"
+                                        Storyboard.TargetName="BackgroundEllipse">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </Viewbox.Resources>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="VisualStateGroup">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0.5">
+                                        <VisualTransition.GeneratedEasingFunction>
+                                            <QuadraticEase EasingMode="EaseOut" />
+                                        </VisualTransition.GeneratedEasingFunction>
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="Transparent"
+                                                    Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                    Storyboard.TargetName="DisableLayer"
+                                                     />
+                                        </Storyboard>
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0" To="#7FFFFFFF"
+                                                Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                Storyboard.TargetName="DisableLayer"
+                                                 />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Enabled">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0" To="Transparent"
+                                                Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                Storyboard.TargetName="DisableLayer"
+                                                 />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="LayoutRoot" Height="500" Width="500" Background="{x:Null}">
+                            <Ellipse x:Name="ExternalChrome" Width="500" Height="500"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Ellipse.RenderTransform>
+                                    <ScaleTransform />
+                                </Ellipse.RenderTransform>
+                                <Ellipse.Fill>
+                                    <LinearGradientBrush EndPoint="0.035,0.325"
+                                            StartPoint="0.966,0.697">
+                                        <GradientStop Color="#FF929292" />
+                                        <GradientStop Color="#FFD6D6D6" Offset="1" />
+                                        <GradientStop Color="#FFB4B4B4" Offset="0.757" />
+                                        <GradientStop Color="#FFCECECE" Offset="0.716" />
+                                        <GradientStop Color="#FFE4E4E4" Offset="0.638" />
+                                        <GradientStop Color="#FFE7E7E7" Offset="0.535" />
+                                        <GradientStop Color="#FFCCCCCC" Offset="0.44" />
+                                    </LinearGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Ellipse x:Name="OutherChrome" Width="440" Height="440"
+                                    RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                                <Ellipse.Fill>
+                                    <LinearGradientBrush EndPoint="0.035,0.325"
+                                            StartPoint="0.966,0.697">
+                                        <GradientStop Color="#FFABABAB" />
+                                        <GradientStop Color="#FFE5E2E2" Offset="1" />
+                                        <GradientStop Color="#FFB3B3B3" Offset="0.782" />
+                                        <GradientStop Color="#FF6B6B6B" Offset="0.576" />
+                                        <GradientStop Color="#FFCECECE" Offset="0.728" />
+                                        <GradientStop Color="#FF4A4A4A" Offset="0.617" />
+                                        <GradientStop Color="#FF5D5D5D" Offset="0.519" />
+                                        <GradientStop Color="#FF343434" Offset="0.465" />
+                                    </LinearGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Ellipse x:Name="Chrome" Width="390" Height="390"
+                                    RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center"
+                                    HorizontalAlignment="Center">
+                                <Ellipse.Fill>
+                                    <LinearGradientBrush EndPoint="0.035,0.325"
+                                            StartPoint="0.966,0.697">
+                                        <GradientStop Color="#FFF6F6F6" />
+                                        <GradientStop Color="#FF707070" Offset="1" />
+                                        <GradientStop Color="#FF323232" Offset="0.782" />
+                                        <GradientStop Color="#FFBBBBBB" Offset="0.576" />
+                                        <GradientStop Color="#FF545454" Offset="0.728" />
+                                        <GradientStop Color="#FFABABAB" Offset="0.663" />
+                                        <GradientStop Color="#FF9B9B9B" Offset="0.547" />
+                                    </LinearGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Ellipse x:Name="BackgroundEllipse" Width="360" Height="360"
+                                    RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" Fill="{TemplateBinding Background}" />
+                            <Ellipse x:Name="bg_shine_bottom" Width="360"
+                                    RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center"
+                                    Margin="0,176,0,-36" Opacity="0.29">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush RadiusY="0.281">
+                                        <GradientStop Color="#FF8B8B8B" />
+                                        <GradientStop Color="Transparent" Offset="0.72" />
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Ellipse x:Name="bg_shine_center" Width="360"
+                                    RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center"
+                                    Margin="0,70" Opacity="0.24">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush RadiusY="0.487">
+                                        <GradientStop Color="White" />
+                                        <GradientStop Color="Transparent" Offset="0.292" />
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <Path x:Name="wf_logo" Fill="#FF8B8B8B" Stretch="Fill"
+                                    Data="F1M23.6377,48.2085L30.7467,48.2085L30.5357,51.8135L38.7737,83.6305L47.5167,48.3145L55.4457,48.2085L64.7107,83.5165L72.4367,52.5385L72.6347,48.2085L78.0957,48.2085L76.0367,53.1535L67.1847,87.8445L59.6627,87.7375L50.3027,52.3285L41.3387,88.0485L33.6177,87.7375L23.8457,51.8135L22.5077,48.3145z M80.1557,48.2085L110.6357,48.3145L110.5197,52.7435L105.6887,51.8135L87.0487,51.9235L87.0487,66.5415L104.8567,66.5415L109.3957,66.0325L109.4957,70.4575L105.8967,69.9315L87.0487,70.0315L86.9457,84.5525L110.6357,84.4445L110.4177,88.0485L80.0517,87.8445L80.4607,85.9885L80.4607,50.4685z M143.0517,48.2425C149.3017,48.5395,149.6127,53.1815,149.6987,53.8625L149.6987,64.6885C149.6987,64.6885,149.7657,67.6985,145.6787,67.8515C149.5427,68.3945,149.3877,70.6285,149.5427,71.1625C149.6987,71.7075,149.5427,82.6775,149.5427,82.6775C149.5427,82.6775,150.3937,86.9865,144.2097,87.8445L113.8697,88.0835L114.5657,85.0645L114.5657,51.2465L114.1047,48.3145z M120.8827,83.7915L141.4167,83.8615C143.8237,83.5935,143.4797,81.3255,143.4277,81.0805L143.4277,72.2105C143.4277,71.5915,143.8927,69.5225,141.6457,69.4415L120.8827,69.6005z M120.9767,66.0775L141.5157,66.1485C143.9177,65.8795,143.5707,63.6035,143.5187,63.3635L143.5187,54.4935C143.5187,53.8625,143.9857,51.8045,141.7467,51.7185L120.9767,51.8635z M179.8037,58.8695L205.8997,58.7915C206.4497,58.7915,210.8477,59.6385,210.8477,64.1135L210.7657,85.8965L211.3877,87.8985L206.2877,88.1325L205.7577,86.4195C205.0467,88.5185,203.5167,87.8985,202.8167,88.0485C202.1087,88.2075,186.0647,88.2075,185.1337,88.0485C184.2117,87.8985,179.4987,88.4435,178.9537,82.7975L178.8747,74.3805C179.3427,68.9905,182.5147,68.3755,184.7457,68.2855C186.9867,68.2145,202.7117,68.0975,203.4797,68.1915C204.3257,68.0935,205.5767,68.1785,205.3407,66.2415L205.2897,63.7275C205.1827,62.0125,204.5377,62.1395,203.6867,62.0585C202.8427,61.9915,187.6797,62.1545,179.7347,62.3415z M186.1407,71.2975C185.5897,71.3785,184.2117,71.6095,184.3627,73.2315L184.2827,83.1095C183.9737,85.2645,185.3687,85.0485,186.1407,85.0485L203.5167,84.9705C204.4357,84.8865,205.1277,85.1155,205.3667,83.1935L205.4467,71.4535C199.0107,71.3985,186.6797,71.2245,186.1407,71.2975 M221.6487,66.4545L221.5847,73.5185L221.6487,80.5885L221.6967,83.0935C221.7947,84.8065,222.4417,84.6835,223.2927,84.7615C224.1367,84.8395,236.8617,84.8695,244.8127,84.7015L244.7377,88.1655L221.0787,88.0305C220.5397,88.0305,216.1307,87.1835,216.1307,82.7105L216.1697,73.5185L216.1307,64.3305C216.1307,59.8565,220.5397,59.0035,221.0787,59.0035L244.7377,58.8695L244.8127,62.3415C236.8617,62.1545,224.1367,62.1975,223.2927,62.2655C222.4417,62.3535,221.7947,62.2215,221.6967,63.9475z M251.8417,62.0255L247.1407,61.9625L247.2167,58.8695L251.7737,58.7915L251.9177,53.2345L257.0157,51.9885L257.1697,59.0305L271.6147,58.9405L271.6957,61.7285L257.2507,61.8045L257.3547,83.0135C257.4617,85.2255,259.8277,84.9125,260.1377,84.9445L272.4587,84.8865L272.7797,88.1325L258.5077,88.1025C251.7937,88.3085,251.8417,82.2895,252.1037,82.4745z M280.9187,66.6125L280.8647,73.6625L280.9187,80.7365L280.9747,83.2475C281.0857,84.9705,281.7187,84.8355,282.5747,84.9125L300.2437,84.9125C301.0857,84.8355,301.7227,84.9705,301.8337,83.2475L301.8787,80.7365L301.9507,73.6625L301.8787,66.6125L301.8337,64.0915C301.7227,62.3625,301.0857,62.5015,300.2437,62.4075L282.5747,62.4075C281.7187,62.5015,281.0857,62.3625,280.9747,64.0915z M280.3647,88.1775C279.8227,88.1775,275.4097,87.3205,275.4097,82.8515L275.4547,73.6625L275.4097,64.4865C275.4097,59.9995,279.8227,59.1555,280.3647,59.1555L302.4477,59.1555C302.9867,59.1555,307.3987,59.9995,307.3987,64.4865L307.3567,73.6625L307.3987,82.8515C307.3987,87.3205,302.9867,88.1775,302.4477,88.1775z M311.9667,58.9265L316.6717,58.7615L316.8997,61.3145C317.1387,59.5415,318.8417,58.9265,319.8387,58.9265L332.0457,58.9265L331.9587,62.9345L318.8417,63.0135C317.9107,63.0835,317.2947,63.1575,317.2107,64.7905L317.6057,86.1055L317.9977,88.1775L311.2657,88.2575L311.9667,85.2555z M334.0517,58.8405L339.9237,58.7615L340.0017,82.7105C339.9237,85.0135,340.7687,84.9445,342.0817,85.0845C343.3997,85.2555,358.7677,84.8675,359.5317,84.9445C360.2967,85.0135,361.5417,85.0135,361.5417,82.2415L361.2317,61.5455L360.8327,58.7615L366.6337,58.6145L366.7927,93.5805C366.6337,98.6065,362.3807,99.0735,360.5387,99.0735L335.2867,98.9865L335.3597,95.9805C343.5337,95.9625,359.1537,96.0585,359.8327,95.9035C360.5387,95.7475,361.3837,95.9805,361.5417,93.8195L361.4647,87.2465C360.8327,88.0245,360.6927,87.9495,359.9167,88.0245L340.3757,88.0245C339.4507,88.0245,334.0517,87.9495,334.6737,81.2425L334.6737,62.6205z M158.0547,58.7615L158.0547,53.9825C157.8017,54.1575,157.7487,48.1395,164.4677,48.3505L391.5177,48.3525C392.3317,44.6855,395.6037,41.9445,399.5097,41.9445C404.0237,41.9445,407.6977,45.6025,407.6977,50.1315C407.6977,54.6445,404.0237,58.3065,399.5097,58.3065C395.4927,58.3065,392.1377,55.4075,391.4437,51.5865L166.0837,51.5065C165.7787,51.5355,163.4137,51.2335,163.3077,53.4425L163.4637,58.9955L177.9047,59.0875L177.8237,61.8595L163.3897,61.7815L163.2357,85.1715L164.0017,87.7935L157.4387,87.9495L158.1287,85.6325L157.9827,62.0125L153.4267,61.9255L153.3487,58.8405z M393.2687,50.1315C393.2687,53.5675,396.0707,56.3575,399.5097,56.3575C402.9497,56.3575,405.7337,53.5675,405.7337,50.1315C405.7337,46.6955,402.9497,43.9055,399.5097,43.9055C396.0707,43.9055,393.2687,46.6955,393.2687,50.1315 M396.5587,53.4645L396.5587,46.7995L399.3327,46.7995C400.0457,46.7995,400.5547,46.8445,400.8687,46.9675C401.1837,47.1025,401.4377,47.3075,401.6387,47.6085C401.8327,47.9225,401.9167,48.2745,401.9167,48.6605C401.9167,49.1605,401.7827,49.5765,401.5157,49.9075C401.2317,50.2245,400.8267,50.4345,400.2737,50.5255L400.9477,51.0825L401.6767,52.1585L402.4737,53.4645L400.9587,53.4645L400.0127,51.9635L399.2617,51.0205L398.8427,50.7545L398.1267,50.6845L397.8397,50.6845L397.8397,53.4645z M397.8397,49.5765L398.8607,49.5765L400.0877,49.4945L400.4797,49.2085L400.6297,48.7235L400.4377,48.1835L399.9137,47.9225L398.9107,47.9015L397.8397,47.9015L397.8397,49.5765"
+                                    Margin="150,176,150,0" Height="30" UseLayoutRounding="False"
+                                    VerticalAlignment="Top" Width="200" Visibility="Collapsed" />
+                            <Grid x:Name="ScaleIntervals" RenderTransformOrigin="0.5,0.5" Margin="0">
+                                <Grid.RenderTransform>
+                                    <RotateTransform Angle="-40" />
+                                </Grid.RenderTransform>
+                            </Grid>
+                            <Grid x:Name="LabelsContainer" Margin="8,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                            <Viewbox Height="121" Margin="150,0,150,109" VerticalAlignment="Bottom">
+                            	<Grid Height="81" Width="200">
+                            		<Grid.RowDefinitions>
+                            			<RowDefinition Height="0.321*"/>
+                            			<RowDefinition Height="0.679*"/>
+                            		</Grid.RowDefinitions>
+                            		<TextBlock x:Name="UnitLabel"
+                            			FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}"
+                            			RenderTransformOrigin="0.5,0.5" TextAlignment="Center"
+                            			FontWeight="{TemplateBinding FontWeight}" FontStyle="{TemplateBinding FontStyle}" Margin="0,0,0,5" HorizontalAlignment="Center" MaxWidth="200" Width="200" ToolTipService.ToolTip="{Binding Text, ElementName=UnitLabel}" TextTrimming="WordEllipsis" TextWrapping="Wrap" Text="Unit" />
+                            		<TextBlock x:Name="LevelValue" Text="---,--"
+                            			FontFamily="{TemplateBinding FontFamily}" FontSize="26.667"
+                            			FontWeight="Bold" RenderTransformOrigin="0.5,0.5"
+                            			TextAlignment="Center" Width="200" HorizontalAlignment="Center" Grid.Row="1" />
+                            	</Grid>
+                            </Viewbox>
+                            <Grid x:Name="MinArrow" RenderTransformOrigin="0.5,1"
+                                    Margin="240,130,240,0" HorizontalAlignment="Center" Height="120"
+                                    VerticalAlignment="Top" >
+                                <Grid.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-130" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup>
+                                </Grid.RenderTransform>
+                                <Path x:Name="MinArrowPath"
+                                        Data="M9.5309134,103.01946 L17.418861,119.19814 L9.5309134,113.80524 L1.642965,119.19814 z"
+                                        RenderTransformOrigin="0.5,1" Stretch="Fill"
+                                        UseLayoutRounding="False" StrokeStartLineCap="Round"
+                                        StrokeEndLineCap="Round" StrokeDashCap="Round"
+                                        StrokeLineJoin="Round" HorizontalAlignment="Left"
+                                        Height="16" VerticalAlignment="Top" Width="15">
+                                    <Path.Stroke>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF707070" Offset="1" />
+                                            <GradientStop Color="#FFFFF500" />
+                                        </LinearGradientBrush>
+                                    </Path.Stroke>
+                                    <Path.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF707070" Offset="1" />
+                                            <GradientStop Color="#FFFFF500" />
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                            </Grid>
+                            <Grid x:Name="MaxArrow" RenderTransformOrigin="0.5,1"
+                                    Margin="240,130,240,0" HorizontalAlignment="Center" Height="120"
+                                    VerticalAlignment="Top" Background="#00FFA6A6">
+                                <Grid.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-130" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup>
+                                </Grid.RenderTransform>
+                                <Path x:Name="MaxArrowPath"
+                                        Data="M9.5309134,103.01946 L17.418861,119.19814 L9.5309134,113.80524 L1.642965,119.19814 z"
+                                        RenderTransformOrigin="0.5,1" Stretch="Fill"
+                                        UseLayoutRounding="False" StrokeStartLineCap="Round"
+                                        StrokeEndLineCap="Round" StrokeDashCap="Round"
+                                        StrokeLineJoin="Round" HorizontalAlignment="Left"
+                                        Height="16" VerticalAlignment="Top" Width="15">
+                                    <Path.Stroke>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF810000" Offset="1" />
+                                            <GradientStop Color="Red" />
+                                        </LinearGradientBrush>
+                                    </Path.Stroke>
+                                    <Path.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF810000" Offset="0.996" />
+                                            <GradientStop Color="Red" />
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                            </Grid>
+                            <Grid x:Name="NeedleGrid" RenderTransformOrigin="0.5,0.5"
+                                    UseLayoutRounding="False">
+                                <Grid.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="-130" />
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </TransformGroup>
+                                </Grid.RenderTransform>
+                                <Path x:Name="NeedleLine"
+                                        Data="M5.3140054,115.09898 L1.6915081,118.31449 C2.4215274,126.37861 3.2229285,139.8 3.222928,139.8 C3.2229285,139.8 5.0008683,138.82376 8.3797874,138.90524 C11.798162,138.98767 13.076221,139.76981 13.076221,139.76981 C13.076221,139.76981 14.407777,126.03484 15.13853,117.70974 L11.736522,115.15807 z M8.3445625,0 L11.987963,112.94292 L16.691,116.40409 L13.344673,155 L3.3444512,155 L0,117.14556 L4.7016492,112.92776 z"
+                                        HorizontalAlignment="Center" Height="155"
+                                        RenderTransformOrigin="0.5,1" Stretch="Fill"
+                                        StrokeThickness="0" UseLayoutRounding="False"
+                                        VerticalAlignment="Center" Width="16.69">
+                                    <Path.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <LinearGradientBrush.RelativeTransform>
+                                                <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5" />
+                                            </LinearGradientBrush.RelativeTransform>
+                                            <GradientStop Color="White" />
+                                            <GradientStop Color="#FF767676" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                    <Path.RenderTransform>
+                                        <TranslateTransform Y="-78" />
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Ellipse x:Name="NeedleOuterCenterEllipse"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                                        Width="30" Height="30" StrokeThickness="0.5">
+                                    <Ellipse.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black" Offset="0" />
+                                            <GradientStop Color="#FFDAF921" Offset="1" />
+                                            <GradientStop Color="#FF1AC544" />
+                                        </LinearGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <Ellipse x:Name="NeedleCenterEllipse" HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" Width="30" Height="30"
+                                        RenderTransformOrigin="0.5,0.5" StrokeThickness="0.3">
+                                    <Ellipse.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black" Offset="0" />
+                                            <GradientStop Color="White" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Ellipse.Fill>
+                                    <Ellipse.RenderTransform>
+                                        <ScaleTransform ScaleX="0.8" ScaleY="0.8" />
+                                    </Ellipse.RenderTransform>
+                                </Ellipse>
+                            </Grid>
+                            <Path x:Name="glossy_reflexion" Stretch="Fill"
+                                    Data="F1M29.313,69.456C29.313,71.552,30.359,73.4,31.955,74.519L31.955,74.519C31.157,72.7,32.068,69.845,34.32,67.591L34.32,67.591C36.005,65.905,38.03,64.972,39.707,64.942L39.707,64.942C38.602,63.911,37.124,63.275,35.493,63.275L35.493,63.275C32.08,63.275,29.313,66.042,29.313,69.456"
+                                    RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False"
+                                    Margin="60,72.995,140,102.012">
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0.048,0.132"
+                                            StartPoint="0.559,0.522">
+                                        <GradientStop Color="#15E0E0E0" Offset="0" />
+                                        <GradientStop Color="#67FFFFFF" Offset="0.963" />
+                                        <GradientStop Color="#89FFFFFF" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        <SkewTransform AngleY="-0.257" />
+                                        <TranslateTransform X="11.51" Y="-4.34543" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Ellipse x:Name="DisableLayer" RenderTransformOrigin="0.5,0.5"
+                                    Fill="Transparent" />
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--Setters for default values-->
+        <Setter Property="ChromeBackground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.035,0.325" StartPoint="0.966,0.697">
+                    <GradientStop Color="#FFABABAB" />
+                    <GradientStop Color="#FFE5E2E2" Offset="1" />
+                    <GradientStop Color="#FFB3B3B3" Offset="0.782" />
+                    <GradientStop Color="#FF6B6B6B" Offset="0.576" />
+                    <GradientStop Color="#FFCECECE" Offset="0.728" />
+                    <GradientStop Color="#FF4A4A4A" Offset="0.617" />
+                    <GradientStop Color="#FF5D5D5D" Offset="0.519" />
+                    <GradientStop Color="#FF343434" Offset="0.465" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="InnerChromeBackground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.035,0.325" StartPoint="0.966,0.697">
+                    <GradientStop Color="#FFF6F6F6" />
+                    <GradientStop Color="#FF707070" Offset="1" />
+                    <GradientStop Color="#FF323232" Offset="0.782" />
+                    <GradientStop Color="#FFBBBBBB" Offset="0.576" />
+                    <GradientStop Color="#FF545454" Offset="0.728" />
+                    <GradientStop Color="#FFABABAB" Offset="0.663" />
+                    <GradientStop Color="#FF9B9B9B" Offset="0.547" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="NeedleLineBackground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="90"  CenterY="0.5" CenterX="0.5"/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="White" />
+                    <GradientStop Color="#FF767676" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="NeedleCenterBackground">
+            <Setter.Value>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF373737" Offset="1" />
+                    <GradientStop Color="#FF8D8D8D" />
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="MaximumValue" Value="100" />
+        <Setter Property="IntervalRadius" Value="2" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="EnableArrows" Value="True" />
+        <Setter Property="MaximiumArrowBackground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF707070" Offset="1" />
+                    <GradientStop Color="Red" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ExternalChromeBackground">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.035,0.325" StartPoint="0.966,0.697">
+                    <GradientStop Color="#FF929292" />
+                    <GradientStop Color="#FFD6D6D6" Offset="1" />
+                    <GradientStop Color="#FFB4B4B4" Offset="0.757" />
+                    <GradientStop Color="#FFCECECE" Offset="0.716" />
+                    <GradientStop Color="#FFE4E4E4" Offset="0.638" />
+                    <GradientStop Color="#FFE7E7E7" Offset="0.535" />
+                    <GradientStop Color="#FFCCCCCC" Offset="0.44" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontFamily" Value="Verdana" />
+        <Setter Property="SmallIntervalRadius" Value="2" />
+        <Setter Property="BigIntervalBackground" Value="Red" />
+        <Setter Property="SmallIntervalBackground" Value="White" />
+        <Setter Property="NeedleOuterCenterEllipseBackground">
+            <Setter.Value>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0.591" />
+                    <GradientStop Color="White" Offset="1" />
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+ 

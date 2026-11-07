@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISARegulatorSelf1}" TargetType="{x:Type local:HMIISARegulatorSelf1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISARegulatorSelf1}">
+                    <Grid Name="LayoutRoot" IsHitTestVisible="False" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center">
+                        <Viewbox Margin="0,0,0,0">
+                            <Path Fill="{TemplateBinding Control.Background}" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" Margin="8,0,11.5,0.468" Data="M1,67.814995L1,98.531998 32.104,83.1735z M63.208015,67.815002L63.208015,98.531998 32.104012,83.173508z M4.9500208,36.516994C4.9500208,22.049345 17.107281,10.320995 32.104019,10.320995 47.100761,10.320995 59.258018,22.049345 59.258018,36.516994z M32.104012,36.755005L32.104012,83.152 M32.104012,1L32.104012,10.238 M32.104012,1L79.500015,1.016 M79.500008,48.018002L79.500008,1 M79.500015,48.018005L32.104012,83.219002" StrokeThickness="{Binding LineThickness, FallbackValue=1}" />
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

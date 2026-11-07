@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="HMI.Editor.DesignerDocument" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:Common="clr-namespace:HMI.Editor.Common" 
+             xmlns:cb="clr-namespace:HMI.Infrastructure.Presentation.Views;assembly=HMI.Infrastructure.Presentation" 
+             xmlns:r="clr-namespace:HMI.Editor.Surface"
+             xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Designer.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <ContextMenu x:Key="DesignerCanvasContextMenu">
+                <MenuItem Command="{x:Static ApplicationCommands.Paste}" CommandTarget="{Binding}" Header="{localize:Resx ResxName=HMI.Editor.Resources.DesignerDocumentTexts, Key=Paste}">
+                    <MenuItem.Icon>
+                        <Image Width="16" Source="Resources/Images/Paste.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Command="{x:Static ApplicationCommands.SelectAll}" Header="{localize:Resx ResxName=HMI.Editor.Resources.DesignerDocumentTexts, Key=SelectAll}" />
+            </ContextMenu>
+            <x:ArrayExtension x:Key="ZoomTickValues" Type="{x:Type Common:ZoomTickValue}" >
+                <Common:ZoomTickValue Tick="0.0" Value="0.0" />
+                <Common:ZoomTickValue Tick="0.5" Value="1.0" />
+                <Common:ZoomTickValue Tick="1.0" Value="5.0" />
+            </x:ArrayExtension>
+            <cb:ControlBuilder x:Key="ControlBuilder" />
+        </ResourceDictionary>
+        
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF808080">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--滚动可视区域-->
+        <ScrollViewer Name="uxDesignerScroll" Grid.Row="0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" PreviewMouseWheel="uxSurface_PreviewMouseWheel">
+            <Grid Name="uxDesignerWithRulers" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF808080" Width="{Binding ScaledWidthInclRulers}" Height="{Binding ScaledHeightInclRulers}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="{Binding ScaledHeight}" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="{Binding ScaledWidth}" />
+                </Grid.ColumnDefinitions>
+                <!--水平标尺-->
+                <r:Ruler x:Name="uxHorizontalRuler" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Width="{Binding Width}" GridSize="{Binding RulerSize}" ZoomFactor="{Binding Scale}" />
+                <!--垂直标尺-->
+                <r:Ruler x:Name="uxVerticalRuler" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Marks="Up" RenderTransformOrigin="0,0" Width="{Binding Height}" GridSize="{Binding RulerSize}" ZoomFactor="{Binding Scale}">
+                    <r:Ruler.LayoutTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="90" />
+                        </TransformGroup>
+                    </r:Ruler.LayoutTransform>
+                </r:Ruler>
+                <!--画面容器-->
+                <ItemsControl Name="uxSurface" Grid.Row="1" Grid.Column="1" 
+                              Background="{StaticResource WindowBackgroundBrush}" 
+                              Width="{Binding ScaledWidth}"
+                              Height="{Binding ScaledHeight}" 
+                              ItemsSource="{Binding LayoutChildren}" 
+                              RequestBringIntoView="designer_RequestBringIntoView">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <!--主画布-->
+                            <r:DesignerCanvas x:Name="uxDesigner" 
+                                              Drop="uxDesigner_Drop" 
+                                              Loaded="uxDesigner_Loaded" 
+                                              MouseMove="uxDesigner_MouseMove" 
+                                              RequestBringIntoView="designer_RequestBringIntoView" 
+                                              ZoomFactorChanged="uxDesigner_ZoomFactorChanged" 
+                                              HorizontalAlignment="Left" 
+                                              VerticalAlignment="Top" 
+                                              ContextMenu="{StaticResource DesignerCanvasContextMenu}" 
+                                              Focusable="True" 
+                                              Width="{Binding Width}" 
+                                              Height="{Binding Height}" 
+                                              Background="{Binding Background}" 
+                                              FocusVisualStyle="{x:Null}" 
+                                              GridSize="{Binding GridSize}" 
+                                              Page="{Binding}" 
+                                              RulerSize="{Binding RulerSize}" 
+                                              ShowGridLines="{Binding GuideSettings.ShowGridLines}" 
+                                              ShowRulerGuides="{Binding GuideSettings.ShowRulerGuides}" 
+                                              SnapToGrid="{Binding GuideSettings.SnapToGridLines}" 
+                                              SnapToRulerGuides="{Binding GuideSettings.SnapToGuideLines}" 
+                                              ZoomFactor="{Binding Scale}">
+                                <r:DesignerCanvas.LayoutTransform>
+                                    <ScaleTransform 
+                                        ScaleX="{Binding Value, ElementName=uxScale}" 
+                                        ScaleY="{Binding Value, ElementName=uxScale}" />
+                                </r:DesignerCanvas.LayoutTransform>
+                            </r:DesignerCanvas>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <!--内容模板-->
+                            <cb:ControlContainer Loaded="ControlContainer_Loaded" 
+                                                 Width="{Binding Width, Converter={StaticResource DoubleToIntConverter}}" 
+                                                 Height="{Binding Height, Converter={StaticResource DoubleToIntConverter}}" 
+                                                 Content="{Binding Converter={StaticResource ControlBuilder}, ConverterParameter=true}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="Canvas.Left" Value="{Binding XTranslation}" />
+                            <Setter Property="Canvas.Top" Value="{Binding YTranslation}" />
+                            <Setter Property="Panel.ZIndex" Value="{Binding ZIndex}" />
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </ItemsControl>
+            </Grid>
+        </ScrollViewer>
+        <!--画面状态工具栏-->
+        <Grid Name="uxStatusBar" Grid.Row="1" Background="#FFFFFFFF">
+            <!--坐标-->
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Visibility="Hidden">
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.Editor.Resources.DesignerDocumentTexts, Key=X}" />
+                <TextBox Name="uxXCoord" VerticalAlignment="Center" IsReadOnly="True" />
+                <TextBlock VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.Editor.Resources.DesignerDocumentTexts, Key=Y}" />
+                <TextBox Name="uxYCoord" VerticalAlignment="Center" IsReadOnly="True" />
+            </StackPanel>
+            <!--画面背景网格，缩放，填充-->
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.Editor.Resources.DesignerDocumentTexts, Key=GridSize}" />
+                <ComboBox Width="45" VerticalAlignment="Center" IsEditable="False" ItemsSource="{Binding GridSizes}" SelectedItem="{Binding GridSize, Mode=TwoWay}" />
+                <TextBlock Margin="0,0,10,0" VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.Editor.Resources.DesignerDocumentTexts, Key=PX}" />
+                <TextBlock VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.Editor.Resources.DesignerDocumentTexts, Key=RulerSize}" />
+                <ComboBox Width="45" VerticalAlignment="Center" IsEditable="False" ItemsSource="{Binding GridSizes}" SelectedItem="{Binding RulerSize, Mode=TwoWay}" />
+                <TextBlock VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.Editor.Resources.DesignerDocumentTexts, Key=PX}" />
+                <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.Editor.Resources.DesignerDocumentTexts, Key=Zoom}" />
+                <Common:ZoomSelector x:Name="uxScale" Width="150" FocusManager.IsFocusScope="True" MaxValue="50" MinValue="0" TickValues="{StaticResource ZoomTickValues}" Value="{Binding Scale, Mode=TwoWay}" />
+                <TextBlock Margin="3,0,0,0" VerticalAlignment="Center" Text="{Binding Path=Scale, StringFormat={}{0:P1}}" />
+                <Button Name="uxResetZoom" Margin="3,0,0,0" VerticalAlignment="Center" Content="100%" Click="uxResetZoom_Click" />
+                <Button Name="uxAutoFit" Margin="3,0,0,0" VerticalAlignment="Center" ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.DesignerDocumentTexts, Key=FitWindow}" Click="uxAutoFit_Click">
+                    <Image Width="16" Height="16" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Resources/Images/Designer/zoom_fit_best.png" />
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

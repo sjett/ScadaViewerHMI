@@ -1,0 +1,21 @@
+﻿<my:SelectorBrowserWindow x:Class="HMI.Modules.Design.Views.Browsers.AudioBrowser" 
+                           Width="700" Height="500" 
+                          FontFamily="NSimSun"  TextOptions.TextFormattingMode="Display"
+                           ResizeMode="NoResize" 
+                           Header="{localize:Resx ResxName=HMI.Modules.Design.Resources.BrowserTexts, Key=AudioBrowserTitle}"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                           xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                           xmlns:my="clr-namespace:HMI.Common.Browsers.Views;assembly=HMI.Common.Browsers" 
+                           xmlns:asv="clr-namespace:HMI.Modules.Design.Views.Browsers">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <asv:AudioSourceView Grid.Row="0" DataContext="{Binding ActivePage}" />
+        <my:GenericBrowserStatusBarView Grid.Row="1" />
+        <my:OKCancelPanelView Grid.Row="2" />
+    </Grid>
+</my:SelectorBrowserWindow>

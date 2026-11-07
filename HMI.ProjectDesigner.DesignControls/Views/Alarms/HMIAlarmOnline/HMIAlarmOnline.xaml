@@ -1,0 +1,266 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Alarms">
+
+    <BooleanToVisibilityConverter x:Key="booleanVisibilityConverter" />
+    
+    <Style x:Key="wfCellStyle" TargetType="DataGridCell">
+        <!-- TODO: Remove this workaround to force MouseLeftButtonDown event to be raised when root element is clicked. -->
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Cursor" Value="Arrow" />
+        <Setter Property="IsTabStop" Value="False" />
+    </Style>
+
+    <Style x:Key="wfRowStyle" TargetType="DataGridRow">
+        <Setter Property="IsTabStop" Value="False" />
+    </Style>
+
+    <Style x:Key="wfPriorityColorHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+
+    <Style x:Key="wfDateOnHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+
+    <Style x:Key="wfSystemTimeHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+
+    <Style x:Key="wfDateOffHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+
+    <Style x:Key="wfDateAcknowledgedHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+
+    <Style x:Key="wfAcknowledgedWithCommentHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+    <Style x:Key="wfTextHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+    <Style x:Key="wfSignalNameHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+
+    <Style x:Key="wfPriorityHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+
+    <Style x:Key="wfGroupHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+
+    <Style x:Key="wfTypeHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+
+    <Style x:Key="wfOpcItemHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="#FF444444" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="10.5" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Padding" Value="4,4,5,4" />
+    </Style>
+
+    <Style TargetType="local:HMIAlarmOnline">
+        <!--<Setter Property="AcknowledgedAlarmBackground" Value="#FFFFFF99" />-->
+        <!--<Setter Property="ActiveAlarmBackground" Value="#FFFF6347" />-->
+        <!--<Setter Property="InactiveAlarmBackground" Value="#FF00CC66" />-->
+        <!--<Setter Property="AcknowledgedAndGoneAlarmBackground" Value="#FF9ACD32" />-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:HMIAlarmOnline">
+                    <Grid x:Name="uxLayoutRoot">
+                        <MediaElement x:Name="uxHornMediaElement"/>
+                        <DataGrid 
+                        x:Name="uxAlarmGrid"
+                        AutoGenerateColumns="False" ItemsSource="{Binding Alarms}" 
+                        IsReadOnly="True" SelectionMode="Single" 
+                        CellStyle="{StaticResource wfCellStyle}"
+                        RowStyle="{StaticResource wfRowStyle}">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn 
+                                    Header="报警级别颜色" 
+                                    CanUserReorder="True" CanUserSort="False"
+                                    HeaderStyle="{StaticResource wfPriorityColorHeaderStyle}"
+                                    Width="0" 
+                                    >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid >
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                
+                                <DataGridTextColumn
+                                Header="激活时间" CanUserReorder="True" 
+                                CanUserSort="True" SortMemberPath="DateOn" 
+                                HeaderStyle="{StaticResource wfDateOnHeaderStyle}"
+                                Binding="{Binding DateOnString}" />
+                                
+                                <DataGridTextColumn
+                                Header="系统时间" CanUserReorder="True" 
+                                CanUserSort="False" SortMemberPath="SystemTime" 
+                                HeaderStyle="{StaticResource wfSystemTimeHeaderStyle}"
+                                Binding="{Binding SystemTimeString}" Width="0"/>
+                                
+                                <DataGridTextColumn
+                                Header="结束时间" CanUserReorder="True" CanUserSort="False"
+                                HeaderStyle="{StaticResource wfDateOffHeaderStyle}"
+                                Binding="{Binding DateOffString}" />
+                                
+                                <DataGridTextColumn
+                                Header="确认时间" CanUserReorder="True" CanUserSort="False"
+                                HeaderStyle="{StaticResource wfDateAcknowledgedHeaderStyle}"
+                                Binding="{Binding DateAcknowledgedString}" />
+                                
+                                <DataGridTemplateColumn 
+                                    Header="确认信息" 
+                                    CanUserReorder="True" CanUserSort="False"
+                                    HeaderStyle="{StaticResource wfAcknowledgedWithCommentHeaderStyle}"
+                                    Width="0" 
+                                    >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid >
+                                                <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ToolTipService.ToolTip="{Binding AcknowledgeComment}" />
+                                                <Path Data="M0.5,2.8249958 L11.625,2.8249958 L8.7657204,5.1369963 M8.7657204,0.5 L11.625,2.812 L0.5,2.812" 
+                                                      StrokeStartLineCap="Round" Stretch="Fill" 
+                                                      StrokeEndLineCap="Round" StrokeDashCap="Round" 
+                                                      Stroke="Black" StrokeThickness="1" 
+                                                      StrokeMiterLimit="10" StrokeLineJoin="Round" 
+                                                      UseLayoutRounding="False" HorizontalAlignment="Center" 
+                                                      Width="15" Height="7" Margin="2"
+                                                      Visibility="{Binding IsAcknowledgedWithComment, Converter={StaticResource booleanVisibilityConverter}}"
+                                                      />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                
+                                <DataGridTextColumn
+                                Header="报警描述" CanUserReorder="True" CanUserSort="False"
+                                HeaderStyle="{StaticResource wfTextHeaderStyle}"
+                                Binding="{Binding Text}" />
+                                
+                                <DataGridTextColumn
+                                Header="报警组" CanUserReorder="True" CanUserSort="False"
+                                HeaderStyle="{StaticResource wfGroupHeaderStyle}"
+                                Binding="{Binding Group}" />
+                                
+                                <DataGridTextColumn
+                                Header="报警类型" CanUserReorder="True" CanUserSort="False"
+                                HeaderStyle="{StaticResource wfTypeHeaderStyle}"
+                                Binding="{Binding Type}" />
+                                
+                                <DataGridTextColumn
+                                Header="点位名称" CanUserReorder="True" CanUserSort="False"
+                                HeaderStyle="{StaticResource wfSignalNameHeaderStyle}"
+                                Binding="{Binding AliasName}" />
+                                
+                                <DataGridTextColumn
+                                Header="OPC点名称" CanUserReorder="True" CanUserSort="False"
+                                HeaderStyle="{StaticResource wfOpcItemHeaderStyle}"
+                                Binding="{Binding SignalName}" />
+                                
+                                <DataGridTextColumn
+                                Header="报警级别" CanUserReorder="True" CanUserSort="True"
+                                HeaderStyle="{StaticResource wfPriorityHeaderStyle}"
+                                Binding="{Binding Priority}" />
+                                
+                            </DataGrid.Columns>
+                            
+                        </DataGrid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

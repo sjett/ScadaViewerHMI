@@ -1,0 +1,106 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Views.DataTable">
+    <Style x:Key="ToolbarSeparator" TargetType="{x:Type Border}">
+        <Setter Property="FrameworkElement.Width" Value="1" />
+        <Setter Property="Border.BorderThickness" Value="1" />
+        <Setter Property="Border.BorderBrush" Value="#FFD3D3D3" />
+        <Setter Property="FrameworkElement.Margin" Value="5,1,5,1" />
+    </Style>
+    <Style x:Key="ToolbarButton" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.Margin" Value="1 1 1 1" />
+        <Setter Property="FrameworkElement.Height" Value="30" />
+        <Setter Property="FrameworkElement.Width" Value="30" />
+    </Style>
+    <Style x:Key="FooterStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Panel.Background" Value="#FFFFFFFF" />
+        <Setter Property="FrameworkElement.Margin" Value="1" />
+    </Style>
+    <Style x:Key="HeaderRowStyle" TargetType="{x:Type rad:GridViewHeaderRow}">
+        <Setter Property="FrameworkElement.Height" Value="28" />
+        <Setter Property="FrameworkElement.MinHeight" Value="28" />
+    </Style>
+    <Style x:Key="{x:Type local:HMIDataTable}" TargetType="{x:Type local:HMIDataTable}">
+        <Setter Property="local:HMIDataTable.DesignerTemplateKey" Value="HMIDataTableDesigner" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIDataTable}">
+                    <Image Source="Images/HMIDataTable.png" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HMIDataTableDesigner" TargetType="{x:Type local:HMIDataTable}">
+        <Setter Property="UIElement.Opacity" Value="{Binding Opacity}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIDataTable}">
+                    <Grid Name="LayoutRoot" Height="Auto" IsHitTestVisible="False" Background="{x:Null}">
+                        <Border BorderBrush="#FFA9A9A9" BorderThickness="1, 1, 2, 3">
+                            <Grid Name="uxLayoutHolder">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <StackPanel Grid.Row="0" Margin="3" Orientation="Horizontal">
+                                    <Button Name="uxCopyRows" Style="{StaticResource ToolbarButton}">
+                                        <Image Source="Images/Copy.png" />
+                                    </Button>
+                                    <Button Name="uxSettingsButton" Style="{StaticResource ToolbarButton}">
+                                        <Image Source="Images/Config-Tools.png" />
+                                    </Button>
+                                    <Button Name="uxTimeSelectionButton" Style="{StaticResource ToolbarButton}">
+                                        <Image Source="Images/Alarm.png" />
+                                    </Button>
+                                    <Border Style="{StaticResource ToolbarSeparator}" />
+                                    <Button Name="uxPrintButton" Style="{StaticResource ToolbarButton}">
+                                        <Image Source="Images/HP-Printer.png" />
+                                    </Button>
+                                    <Button Name="uxExportButton" Style="{StaticResource ToolbarButton}">
+                                        <Image Source="Images/table-export.png" />
+                                    </Button>
+                                    <Border Style="{StaticResource ToolbarSeparator}" />
+                                    <Button Name="uxLoadConfigurationButton" Style="{StaticResource ToolbarButton}">
+                                        <Image Source="Images/Load.png" />
+                                    </Button>
+                                    <Button Name="uxSaveConfigurationButton" Style="{StaticResource ToolbarButton}">
+                                        <Image Source="Images/Save.png" />
+                                    </Button>
+                                </StackPanel>
+                                <rad:RadGridView Name="uxSignalsGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserDeleteRows="False" 
+                                                 CanUserFreezeColumns="False" CanUserInsertRows="False" HeaderRowStyle="{StaticResource HeaderRowStyle}" 
+                                                 RowIndicatorVisibility="Collapsed" SelectionMode="Extended" 
+                                                 SelectionUnit="FullRow" IsFilteringAllowed="False" ShowGroupPanel="False" 
+                                                 ItemsSource="{Binding Path=TableLines}">
+                                    <rad:GridViewDataControl.Columns>
+                                        <rad:GridViewDataColumn Width="30" TextAlignment="Left" UniqueName="Index" Header="" DataMemberBinding="{Binding Index}" />
+                                        <rad:GridViewDataColumn Width="100" DataFormatString="{}{0:dd.MM.yyyy HH:mm:ss.fff}" Header="Time" UniqueName="DisplayName" DataMemberBinding="{Binding Time}" />
+                                        <rad:GridViewDataColumn Width="100" Header="Signal 1" TextAlignment="Right" UniqueName="Signal1" DataMemberBinding="{Binding Signal1}" />
+                                        <rad:GridViewDataColumn Width="100" Header="Signal 2" TextAlignment="Right" UniqueName="Signal2" DataMemberBinding="{Binding Signal2}" />
+                                        <rad:GridViewDataColumn Width="100" Header="Signal 3" TextAlignment="Left" UniqueName="Signal3" DataMemberBinding="{Binding Signal3}" />
+                                    </rad:GridViewDataControl.Columns>
+                                </rad:RadGridView>
+                                <Grid Grid.Row="2" Style="{StaticResource FooterStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Text="Status: " />
+                                    <TextBlock Name="uxStatus" Grid.Row="0" Grid.Column="1" Text="Idle" />
+                                    <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Text="Number of Lines: " />
+                                    <TextBlock Grid.Row="0" Grid.Column="3" Text="{Binding Path=TableLines.Count}" />
+                                </Grid>
+                                <rad:RadDataPager Name="uxDataPager" Grid.Row="3" AutoEllipsisMode="Both" DisplayMode="All" IsTotalItemCountFixed="False" NumericButtonCount="5" PageSize="30" Source="{Binding Items, ElementName=uxSignalsGrid}" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

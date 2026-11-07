@@ -1,0 +1,225 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    >
+    <rad:Theme x:Key="TelerikGlobalTheme">Metro</rad:Theme>
+    <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type Expander}" TargetType="{x:Type Expander}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type GroupBox}" TargetType="{x:Type GroupBox}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type Label}" TargetType="{x:Type Label}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type ListBox}" TargetType="{x:Type ListBox}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type ListBoxItem}" TargetType="{x:Type ListBoxItem}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type ListView}" TargetType="{x:Type ListView}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type Menu}" TargetType="{x:Type Menu}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type PasswordBox}" TargetType="{x:Type PasswordBox}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type ProgressBar}" TargetType="{x:Type ProgressBar}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type RichTextBox}" TargetType="{x:Type RichTextBox}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type ScrollViewer}" TargetType="{x:Type ScrollViewer}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type Separator}" TargetType="{x:Type Separator}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type ToolBar}" TargetType="{x:Type ToolBar}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type ToolBarPanel}" TargetType="{x:Type ToolBarPanel}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type ToolBarTray}" TargetType="{x:Type ToolBarTray}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type TreeView}" TargetType="{x:Type TreeView}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadDocking}" TargetType="{x:Type rad:RadDocking}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadSplitContainer}" TargetType="{x:Type rad:RadSplitContainer}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadPane}" TargetType="{x:Type rad:RadPane}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadDocumentPane}" TargetType="{x:Type rad:RadDocumentPane}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadPaneGroup}" TargetType="{x:Type rad:RadPaneGroup}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadContextMenu}" TargetType="{x:Type rad:RadContextMenu}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadMenu}" TargetType="{x:Type rad:RadMenu}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadMenuItem}" TargetType="{x:Type rad:RadMenuItem}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadTileView}" TargetType="{x:Type rad:RadTileView}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadTileViewItem}" TargetType="{x:Type rad:RadTileViewItem}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadTabControl}" TargetType="{x:Type rad:RadTabControl}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadOutlookBar}" TargetType="{x:Type rad:RadOutlookBar}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadTabItem}" TargetType="{x:Type rad:RadTabItem}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadOutlookBarItem}" TargetType="{x:Type rad:RadOutlookBarItem}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadPanelBar}" TargetType="{x:Type rad:RadPanelBar}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadPanelBarItem}" TargetType="{x:Type rad:RadPanelBarItem}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadToolBar}" TargetType="{x:Type rad:RadToolBar}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadToolBarSeparator}" TargetType="{x:Type rad:RadToolBarSeparator}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadToolBarTray}" TargetType="{x:Type rad:RadToolBarTray}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadTreeView}" TargetType="{x:Type rad:RadTreeView}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadTreeViewItem}" TargetType="{x:Type rad:RadTreeViewItem}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:CarouselItem}" TargetType="{x:Type rad:CarouselItem}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadCarousel}" TargetType="{x:Type rad:RadCarousel}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadCarouselPanel}" TargetType="{x:Type rad:RadCarouselPanel}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadWindow}" TargetType="{x:Type rad:RadWindow}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadRadialGauge}" TargetType="{x:Type rad:RadRadialGauge}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadGridView}" TargetType="{x:Type rad:RadGridView}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadButton}" TargetType="{x:Type rad:RadButton}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadDropDownButton}" TargetType="{x:Type rad:RadDropDownButton}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadRadioButton}" TargetType="{x:Type rad:RadRadioButton}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadSplitButton}" TargetType="{x:Type rad:RadSplitButton}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadToggleButton}" TargetType="{x:Type rad:RadToggleButton}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadExpander}" TargetType="{x:Type rad:RadExpander}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadWrapPanel}" TargetType="{x:Type rad:RadWrapPanel}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadProgressBar}" TargetType="{x:Type rad:RadProgressBar}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadSlider}" TargetType="{x:Type rad:RadSlider}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadCalendar}" TargetType="{x:Type rad:RadCalendar}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadColorPaletteView}" TargetType="{x:Type rad:RadColorPaletteView}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadColorPaletteViewItem}" TargetType="{x:Type rad:RadColorPaletteViewItem}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadColorPicker}" TargetType="{x:Type rad:RadColorPicker}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadColorSelector}" TargetType="{x:Type rad:RadColorSelector}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadComboBox}" TargetType="{x:Type rad:RadComboBox}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadComboBoxItem}" TargetType="{x:Type rad:RadComboBoxItem}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadDatePicker}" TargetType="{x:Type rad:RadDatePicker}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadMaskedTextInput}" TargetType="{x:Type rad:RadMaskedTextInput}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadNumericUpDown}" TargetType="{x:Type rad:RadNumericUpDown}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadClock}" TargetType="{x:Type rad:RadClock}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadTimePicker}" TargetType="{x:Type rad:RadTimePicker}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadRibbonView}" TargetType="{x:Type rad:RadRibbonView}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadRibbonButton}" TargetType="{x:Type rad:RadRibbonButton}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadRibbonGroup}" TargetType="{x:Type rad:RadRibbonGroup}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+    <Style x:Key="{x:Type rad:RadRibbonWindow}" TargetType="{x:Type rad:RadRibbonWindow}" BasedOn="{x:Null}">
+        <Setter Property="rad:StyleManager.Theme" Value="{DynamicResource TelerikGlobalTheme}" />
+    </Style>
+</ResourceDictionary>

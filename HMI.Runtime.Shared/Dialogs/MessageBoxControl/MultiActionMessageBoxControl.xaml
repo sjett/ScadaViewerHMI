@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:HMI.Runtime.Shared">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/HMI.Runtime.Shared;component/Dialogs/MessageBoxControl/MessageBoxBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="local:MultiActionMessageBoxControl" BasedOn="{StaticResource MessageBoxStyle}" >
+        <Setter Property="MessageBoxType" Value="PendingRequest" />
+    </Style>
+
+</ResourceDictionary>

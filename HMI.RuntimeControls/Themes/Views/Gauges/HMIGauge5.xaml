@@ -1,0 +1,254 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HMI.RuntimeControls.Gauges">
+    <Style TargetType="local:HMIGauge5">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:HMIGauge5">
+                    <Grid Height="Auto">
+                        <Viewbox x:Name="ContainerViewbox"  
+                                Width="Auto" Height="Auto" RenderTransformOrigin="0.5,0.5"
+                                 >
+                            <Viewbox.Resources>
+                                <Storyboard x:Name="BackgroundFillAnimation" x:Key="BackgroundFillAnimation">
+                                    <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
+                                            Storyboard.TargetName="ShapeFill">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="0.49" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.448" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Offset)"
+                                            Storyboard.TargetName="ShapeFill">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="0.506" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.465" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)"
+                                            Storyboard.TargetName="ShapeFill">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="0" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Offset)"
+                                            Storyboard.TargetName="ShapeFill">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="1" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                                <Storyboard x:Name="StartAnimation">
+                                    <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                            Storyboard.TargetName="ContainerViewbox">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="0.142" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.993" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                            Storyboard.TargetName="ContainerViewbox">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="227.367" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.624" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                            Storyboard.TargetName="ContainerViewbox">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="0.317" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.019" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+                                            Storyboard.TargetName="ContainerViewbox">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="-37.071" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="2.29" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Offset)"
+                                            Storyboard.TargetName="ShapeFill">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="0.948" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.948" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.948" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                    <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Offset)"
+                                            Storyboard.TargetName="ShapeFill">
+                                        <EasingDoubleKeyFrame KeyTime="0" Value="0.934" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.934" />
+                                        <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.934" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </Viewbox.Resources>
+                            <Viewbox.RenderTransform>
+                                <TransformGroup >
+                                    <ScaleTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Viewbox.RenderTransform>
+                            <Grid x:Name="LayoutRoot" Height="500" Width="120">
+                                <Path x:Name="Bar"
+                                        Data="M38.688644,0.57194287 L38.674099,154.53502 C38.674099,154.53502 12.267866,154.5612 12.267866,154.5612 C12.267866,103.20651 12.248538,51.926636 12.248538,0.57194287 C12.248538,0.57194287 38.688644,0.57194287 38.688644,0.57194287 z"
+                                        Margin="30.38,24.999,32.667,128" Stretch="Fill"
+                                        Stroke="White" UseLayoutRounding="False" StrokeThickness="0"
+                                        RenderTransformOrigin="0.5,0">
+                                    <Path.Fill>
+                                        <LinearGradientBrush EndPoint="0.53,0.001"
+                                                StartPoint="0.531,1">
+                                            <GradientStop Color="#FFC00C12" />
+                                            <GradientStop Color="#00C00C12" />
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                                <Path x:Name="ShapeBackground"
+                                        Data="M25.500002,0 C32.679703,-1.4210855E-14 38.5,5.8202982 38.5,12.999999 L38.5,161.19949 L39.481949,161.76411 C46.986816,166.32417 52,174.57664 52,184 C52,198.35941 40.359406,210 26.000002,210 C11.640597,210 9.5367432E-07,198.35941 0,184 C9.5367432E-07,175.02538 4.5471091,167.11278 11.463152,162.44038 L12.500002,161.77568 L12.500002,12.999999 C12.500002,5.8202982 18.320301,-1.4210855E-14 25.500002,0 z"
+                                        Margin="0.713,0,-0.713,5" Stretch="Fill" Stroke="White"
+                                        UseLayoutRounding="False" VerticalAlignment="Bottom"
+                                        StrokeThickness="2" Height="495"
+                                        Fill="{TemplateBinding Background}" />
+                                <Rectangle x:Name="ShapeFill" Margin="31,24,32,126"
+                                        StrokeThickness="{Binding StrokeThickness, ElementName=ShapeBackground}"
+                                        Height="350">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop
+                                                    Color="{Binding Background, ElementName=LayoutRoot, Mode=TwoWay}" />
+                                            <GradientStop
+                                                    Color="{Binding Background, ElementName=LayoutRoot, Mode=TwoWay}"
+                                                    Offset="0.49" />
+                                            <GradientStop
+                                                    Color="{Binding FillColor, RelativeSource={RelativeSource TemplatedParent}}"
+                                                    Offset="0.506" />
+                                            <GradientStop
+                                                    Color="{Binding FillColor, RelativeSource={RelativeSource TemplatedParent}}"
+                                                    Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Path x:Name="Vessel"
+                                        Data="M25.500002,0 C32.679703,-1.4210855E-14 38.5,5.8202982 38.5,12.999999 L38.5,161.19949 L39.481949,161.76411 C46.986816,166.32417 52,174.57664 52,184 C52,198.35941 40.359406,210 26.000002,210 C11.640597,210 9.5367432E-07,198.35941 0,184 C9.5367432E-07,175.02538 4.5471091,167.11278 11.463152,162.44038 L12.500002,161.77568 L12.500002,12.999999 C12.500002,5.8202982 18.320301,-1.4210855E-14 25.500002,0 z"
+                                        Margin="0.713,0,-0.713,5" Stretch="Fill"
+                                        UseLayoutRounding="False" VerticalAlignment="Bottom"
+                                        StrokeThickness="{Binding StrokeThickness, ElementName=ShapeBackground, FallbackValue=1}"
+                                        Height="495"
+                                        Stroke="{Binding Stroke, ElementName=ShapeBackground}">
+                                    <Path.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop
+                                                    Color="{Binding FillColor, RelativeSource={RelativeSource TemplatedParent}}"
+                                                    Offset="1" />
+                                            <GradientStop Color="#00C10C12" Offset="0.75" />
+                                            <GradientStop
+                                                    Color="{Binding FillColor, RelativeSource={RelativeSource TemplatedParent}}"
+                                                    Offset="0.754" />
+                                            <GradientStop Color="#00FF0000" />
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                                <Grid x:Name="ScaleGrid" Margin="32,25,32,128" />
+                                <Grid>
+                                	<TextBlock x:Name="UnitLabel" TextWrapping="Wrap" Text="°C"
+                                		VerticalAlignment="Top"
+                                		FontWeight="{TemplateBinding FontWeight}"
+                                		FontFamily="{TemplateBinding FontFamily}"
+                                		FontSize="{TemplateBinding FontSize}"
+                                		TextAlignment="Center"
+                                		Foreground="{TemplateBinding UnitBackground}"
+                                		Margin="0,426,0,0" />
+                                	<TextBlock x:Name="LevelValue" Text="----"
+                                		FontFamily="{TemplateBinding FontFamily}"
+                                		FontSize="{TemplateBinding FontSize}"
+                                		FontWeight="{TemplateBinding FontWeight}"
+                                		Foreground="{TemplateBinding ValueBackground}"
+                                		RenderTransformOrigin="0.5,0.5" TextAlignment="Center"
+                                		VerticalAlignment="Bottom" Margin="0,0,0,73"
+                                		HorizontalAlignment="Center" />
+                                	<TextBlock x:Name="MinLabel" Text="0"
+                                		FontFamily="{TemplateBinding FontFamily}"
+                                		FontSize="{TemplateBinding FontSize}"
+                                		Foreground="{TemplateBinding Foreground}"
+                                		RenderTransformOrigin="0.5,0.5"
+                                		VerticalAlignment="Bottom" TextAlignment="Center"
+                                		Margin="0,0,0,132" HorizontalAlignment="Center" />
+                                	<TextBlock x:Name="MaxLabel" Text="100"
+                                		FontFamily="{TemplateBinding FontFamily}"
+                                		FontSize="{TemplateBinding FontSize}"
+                                		Foreground="{TemplateBinding Foreground}"
+                                		RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top"
+                                		TextAlignment="Center" Margin="0,27,0,0"
+                                		HorizontalAlignment="Center" />
+                                </Grid>
+                                <Path x:Name="glossy_shadow_vert"
+                                	Data="M25.500002,0.29918724 C32.679703,0.29918724 38.5,5.8202982 38.5,12.999999 L38.5,160.29396 C38.5,160.29396 32.962914,157.33723 25.178923,157.33723 C17.234127,157.33723 11.496916,160.87489 11.496916,160.87489 L11.496916,13.299187 C11.496916,6.1194854 18.320301,0.29918724 25.500002,0.29918724 z"
+                                	Stretch="Fill" Stroke="White" UseLayoutRounding="False"
+                                	StrokeThickness="0" RenderTransformOrigin="0.5,0"
+                                	Margin="-3.1,0,-4.5,4.757">
+                                	<Path.Fill>
+                                		<LinearGradientBrush EndPoint="1.001,0.42"
+                                			StartPoint="0.009,0.419">
+                                			<GradientStop Color="#6C000000" Offset="1" />
+                                			<GradientStop Color="#ACFFFFFF" Offset="0.012" />
+                                			<GradientStop Color="#007E7E7E" Offset="0.387" />
+                                		</LinearGradientBrush>
+                                	</Path.Fill>
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="0.45" ScaleY="0.765" />
+                                            <TranslateTransform Y="2" X="-1.2729757286846635" />
+                                        </TransformGroup>
+                                	</Path.RenderTransform>
+                                </Path>
+                                <Ellipse x:Name="glossy_shadow_round" Margin="0"
+                                	RenderTransformOrigin="0.5,1">
+                                    <Ellipse.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.195" ScaleX="0.88" />
+                                            <TranslateTransform X="-28" />
+                                        </TransformGroup>
+                                    </Ellipse.RenderTransform>
+                                	<Ellipse.Stroke>
+                                		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                			<GradientStop Color="#CCFFFFFF" Offset="0" />
+                                			<GradientStop Color="Transparent" Offset="0.498" />
+                                		</LinearGradientBrush>
+                                	</Ellipse.Stroke>
+                                	<Ellipse.Fill>
+                                		<LinearGradientBrush EndPoint="0.5,1"
+                                			MappingMode="RelativeToBoundingBox"
+                                			StartPoint="0.5,0">
+                                			<GradientStop Color="#B8FFFFFF" Offset="0" />
+                                			<GradientStop Color="Transparent" Offset="0.856" />
+                                		</LinearGradientBrush>
+                                	</Ellipse.Fill>
+                                </Ellipse>
+                                <Path x:Name="glossy_shadow_bottom"
+                                	Data="M45.843685,0 L45.839985,0.29880905 C45.525112,12.997175 35.351566,23.192263 22.847498,23.192263 C11.137335,23.192263 1.4711535,14.250692 0.032285616,2.6853027 L0,2.3967228 L0.022339836,2.4399376 C4.7329612,11.312502 12.971601,17.192263 22.347498,17.192263 C32.409435,17.192263 41.161598,10.420568 45.64909,0.445364 z"
+                                	Stretch="Fill" UseLayoutRounding="False"
+                                	RenderTransformOrigin="0.5,1">
+                                	<Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.11" ScaleX="0.94" />
+                                            <TranslateTransform Y="-7" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                	<Path.Stroke>
+                                		<LinearGradientBrush EndPoint="0.5,1"
+                                			StartPoint="0.499,0.728">
+                                			<GradientStop Offset="0" Color="#00FBFBFB" />
+                                			<GradientStop Color="#87FFFFFF" Offset="1" />
+                                		</LinearGradientBrush>
+                                	</Path.Stroke>
+                                	<Path.Fill>
+                                		<RadialGradientBrush Center="0.495,-0.173"
+                                			GradientOrigin="0.498,0.408" RadiusY="1.201"
+                                			RadiusX="0.712">
+                                			<GradientStop Color="#07E0E0E0" Offset="0.453" />
+                                			<GradientStop Color="#72373737" Offset="0.831" />
+                                		</RadialGradientBrush>
+                                	</Path.Fill>
+                                </Path>
+                            </Grid>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

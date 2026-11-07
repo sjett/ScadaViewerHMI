@@ -1,0 +1,283 @@
+﻿<UserControl x:Class="HMI.Editor.RibbonBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:hmi="clr-namespace:HMI.Infrastructure;assembly=HMI.Infrastructure"
+             xmlns:infra="clr-namespace:HMI.Infrastructure;assembly=HMI.Infrastructure"
+             xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+             xmlns:local="clr-namespace:HMI.Editor"  >
+    <Grid>
+        <rad:RadRibbonView Name="uxRibbonBar" 
+                           Title="{Binding CommandSink.Project.ID}" 
+                           ApplicationButtonContent="文件"
+                           ApplicationName="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ApplicationTitle}" 
+                           FontSize="12">
+            <rad:RadRibbonView.ApplicationMenu>
+                <rad:ApplicationMenu>
+                    <rad:ApplicationMenu.Content>
+                        <StackPanel>
+                            <rad:RadGroupHeader ContentControl.Content="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ProjectsRecent}" />
+                            <ItemsControl ItemsSource="{Binding CommandSink.MruItems}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Width="350" Orientation="Vertical" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <rad:RadMenuItem FrameworkElement.Margin="0 -1.5 0 -1.5" Command="{x:Static infra:EditorCommands.OpenMruItem}" CommandParameter="{Binding}" HeaderedItemsControl.Header="{Binding Name}" FrameworkElement.ToolTip="{Binding Path, StringFormat=打开项目 {0}}">
+                                            <rad:RadMenuItem.Icon>
+                                                <Image Width="16" Height="16" Source="Resources/Images/Document_Blank16.png" Stretch="UniformToFill" />
+                                            </rad:RadMenuItem.Icon>
+                                        </rad:RadMenuItem>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </rad:ApplicationMenu.Content>
+                    <rad:RadRibbonSplitButton Command="{x:Static ApplicationCommands.New}" LargeImage="Resources/Images/GenericDocument.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=New}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=NewTooltip}">
+                        <rad:RadSplitButton.DropDownContent>
+                            <StackPanel HorizontalAlignment="Stretch">
+                                <rad:RadGroupHeader ContentControl.Content="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=CreateNew}" />
+                                <rad:RadRibbonButton FrameworkElement.Width="345" FrameworkElement.Height="55" FrameworkElement.Margin="1 0 2 0" ButtonBase.Command="{x:Static ApplicationCommands.New}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="48" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Center" Source="Resources/Images/GenericDocument.png" Stretch="None" />
+                                        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" TextBlock.FontWeight="Bold" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Project}" />
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Width="280" VerticalAlignment="Top" TextWrapping="Wrap" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ProjectNew}" />
+                                    </Grid>
+                                </rad:RadRibbonButton>
+                                <rad:RadRibbonButton FrameworkElement.Width="345" FrameworkElement.Height="55" FrameworkElement.Margin="1 0 2 0" ButtonBase.Command="{x:Static infra:EditorCommands.AddTemplatePage}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="48" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Center" Source="Resources/Images/GenericDocument132.png" Stretch="None" />
+                                        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" TextBlock.FontWeight="Bold" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Page}" />
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Width="280" VerticalAlignment="Top" TextWrapping="Wrap" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=PageNew}" />
+                                    </Grid>
+                                </rad:RadRibbonButton>
+                                <rad:RadRibbonButton FrameworkElement.Width="345" FrameworkElement.Height="55" FrameworkElement.Margin="1 0 2 0" ButtonBase.Command="{x:Static infra:EditorCommands.AddNavigationPage}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="48" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Center" Source="Resources/Images/GenericDocument232.png" Stretch="None" />
+                                        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" TextBlock.FontWeight="Bold" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=PageContent}" />
+                                        <TextBlock Grid.Row="1" Grid.Column="1" Width="280" VerticalAlignment="Top" TextWrapping="Wrap" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=PageContentNew}" />
+                                    </Grid>
+                                </rad:RadRibbonButton>
+                            </StackPanel>
+                        </rad:RadSplitButton.DropDownContent>
+                    </rad:RadRibbonSplitButton>
+                    <rad:RadRibbonButton ButtonBase.Command="{x:Static ApplicationCommands.Open}" LargeImage="Resources/Images/Open32.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=Open}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=OpenTooltip}" />
+                    <rad:RadRibbonButton ButtonBase.Command="{x:Static ApplicationCommands.Save}" LargeImage="Resources/Images/Save.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=Save}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=SaveTooltip}" />
+                    <rad:RadRibbonButton ButtonBase.Command="{x:Static ApplicationCommands.SaveAs}" LargeImage="Resources/Images/SaveAs.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=SaveAs}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=SaveAsTooltip}" />
+                    <rad:Separator />
+                    <rad:RadRibbonButton ButtonBase.Command="{x:Static ApplicationCommands.Close}" LargeImage="Resources/Images/Exit.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=Exit}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=ExitTooltip}" />
+                </rad:ApplicationMenu>
+            </rad:RadRibbonView.ApplicationMenu>
+            <rad:RadRibbonView.QuickAccessToolBar>
+                <rad:QuickAccessToolBar CustomizationMenuVisibility="Hidden">
+                    <rad:RadRibbonButton ButtonBase.Command="{x:Static ApplicationCommands.Save}" Size="Small" SmallImage="Resources/Images/SaveHS.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=Save}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=SaveTooltip}" />
+                    <rad:RadRibbonButton ButtonBase.Command="{x:Static ApplicationCommands.Undo}" Size="Small" SmallImage="Resources/Images/undo.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=Undo}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=UndoTooltip}" />
+                    <rad:RadRibbonButton ButtonBase.Command="{x:Static ApplicationCommands.Redo}" Size="Small" SmallImage="Resources/Images/redo.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=Redo}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=RedoTooltip}" />
+                </rad:QuickAccessToolBar>
+            </rad:RadRibbonView.QuickAccessToolBar>
+            <rad:RadRibbonTab HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=Home}">
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=File}">
+                    <rad:RadRibbonButton CollapseToMedium="Never" CollapseToSmall="Never" ButtonBase.Command="{x:Static ApplicationCommands.New}" IsAutoSize="True" LargeImage="Resources/Images/GenericDocument.png" Size="Large" SmallImage="Resources/Images/GenericDocument.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=New}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=NewTooltip}" />
+                    <rad:RadCollapsiblePanel>
+                        <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static ApplicationCommands.Open}" LargeImage="Resources/Images/Open32.png" Size="Medium" SmallImage="Resources/Images/OpenFolder.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=Open}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=OpenTooltip}" />
+                        <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static ApplicationCommands.Save}" LargeImage="Resources/Images/Save.png" Size="Medium" SmallImage="Resources/Images/SaveHS.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=Save}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=SaveTooltip}" />
+                        <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static ApplicationCommands.SaveAs}" LargeImage="Resources/Images/SaveAs.png" Size="Medium" SmallImage="Resources/Images/SaveAsHS.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=SaveAs}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.ApplicationActionTexts, Key=SaveAsTooltip}" />
+                    </rad:RadCollapsiblePanel>
+                </rad:RadRibbonGroup>
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Clipboard}">
+                    <rad:RadRibbonButton CollapseToMedium="Never" CollapseToSmall="Never" ButtonBase.Command="{x:Static ApplicationCommands.Paste}" IsAutoSize="True" LargeImage="Resources/Images/PasteBig.png" Size="Large" Text="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Paste}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=PasteTooltip}" />
+                    <rad:RadCollapsiblePanel>
+                        <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static ApplicationCommands.Cut}" IsAutoSize="True" Size="Medium" SmallImage="Resources/Images/Cut.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Cut}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=CutTooltip}" />
+                        <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static ApplicationCommands.Copy}" IsAutoSize="True" Size="Medium" SmallImage="Resources/Images/Copy.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Copy}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=CopyTooltip}" />
+                        <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static ApplicationCommands.Delete}" IsAutoSize="True" Size="Medium" SmallImage="Resources/Images/Delete.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Delete}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=DeleteTooltip}" />
+                    </rad:RadCollapsiblePanel>
+                </rad:RadRibbonGroup>
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Project}">
+                    <rad:RadCollapsiblePanel>
+                        <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:EditorCommands.AddTemplatePage}" IsAutoSize="True" Size="Medium" SmallImage="Resources/Images/GenericDocument1.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AddTemplatePage}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AddTemplatePageTooltip}" />
+                        <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:EditorCommands.AddNavigationPage}" IsAutoSize="True" Size="Medium" SmallImage="Resources/Images/GenericDocument2.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AddNavigationPage}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AddNavigationPageTooltip}" />
+                        <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:EditorCommands.RemovePage}" IsAutoSize="True" Size="Medium" SmallImage="Resources/Images/Delete.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=RemovePage}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=RemovePageTooltip}" />
+                    </rad:RadCollapsiblePanel>
+                </rad:RadRibbonGroup>
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Arrange}">
+                    <rad:RadCollapsiblePanel>
+                        <rad:RadButtonGroup>
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.AlignLeft}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/AlignObjectsLeft.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignLeft}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignLeftTooltip}" />
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.AlignCenter}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/AlignObjectsCenteredHorizontal.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignCenter}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignCenterTooltip}" />
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.AlignRight}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/AlignObjectsRight.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignRight}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignRightTooltip}" />
+                        </rad:RadButtonGroup>
+                        <rad:RadButtonGroup>
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.AlignTop}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/AlignObjectsTop.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignTop}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignTopTooltip}" />
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.AlignMiddle}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/AlignObjectsCenteredVertical.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignMiddle}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignMiddleTooltip}" />
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.AlignBottom}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/AlignObjectsBottom.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignBottom}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AlignBottomTooltip}" />
+                        </rad:RadButtonGroup>
+                        <rad:RadButtonGroup>
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.DistributeHorizontal}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/DistributeObjectsHorizontal.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=DistributeHorizontally}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=DistributeHorizontallyTooltip}" />
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.DistributeVertical}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/DistributeObjectsVertical.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=DistributeVertically}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=DistributeVerticallyTooltip}" />
+                        </rad:RadButtonGroup>
+                        <rad:RadButtonGroup>
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.BringToFront}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/BringToFront.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=BringToFront}" />
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.BringForward}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/BringForward.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=BringForward}" />
+                        </rad:RadButtonGroup>
+                        <rad:RadButtonGroup>
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.SendToBack}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/SendToBack.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=SendToBack}" />
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.SendBackward}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/SendBackward.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=SendBackward}" />
+                        </rad:RadButtonGroup>
+                        <rad:RadButtonGroup>
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.MakeSameWidth}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/layer-resize-replicate.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=SameWidth}" />
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.MakeSameHeight}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/layer-resize-replicate-vertical.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=SameHeight}" />
+                        </rad:RadButtonGroup>
+                        <rad:RadButtonGroup>
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.Group}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/Group.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ControlsGroup}" />
+                        </rad:RadButtonGroup>
+                        <rad:RadButtonGroup>
+                            <rad:RadRibbonButton CollapseToSmall="WhenGroupIsMedium" ButtonBase.Command="{x:Static infra:DesignerCanvasCommands.Ungroup}" IsAutoSize="True" Size="Small" SmallImage="Resources/Images/Ungroup.png" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ControlsUngroup}" />
+                        </rad:RadButtonGroup>
+                    </rad:RadCollapsiblePanel>
+                </rad:RadRibbonGroup>
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Shapes}">
+                    <ItemsControl hmi:RegionManager.RegionName="{x:Static local:RegionNames.Primitives}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </rad:RadRibbonGroup>
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AdvancedObject}">
+                    <ItemsControl hmi:RegionManager.RegionName="{x:Static local:RegionNames.AdvancedObject}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </rad:RadRibbonGroup>
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AIAgent}">
+                    <ItemsControl hmi:RegionManager.RegionName="{x:Static local:RegionNames.AIAgent}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </rad:RadRibbonGroup>
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Run}">
+                    <rad:RadRibbonButton CollapseToSmall="Never" ButtonBase.Command="{x:Static infra:EditorCommands.Build}" IsAutoSize="True" LargeImage="Resources/Images/start48.png" Size="Large" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Run}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=RunTooltip}" />
+                </rad:RadRibbonGroup>
+            </rad:RadRibbonTab>
+            <rad:RadRibbonTab HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ToolSetting}">
+                
+            </rad:RadRibbonTab>
+            <rad:RadRibbonTab HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=MachineLearning}">
+
+            </rad:RadRibbonTab>
+            <rad:RadRibbonTab HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Simulation}">
+
+            </rad:RadRibbonTab>
+            <rad:RadRibbonTab HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=View}">
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Tools}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="0.5*" />
+                        </Grid.ColumnDefinitions>
+                        <rad:RadRibbonToggleButton Grid.Row="0" Grid.Column="0" FrameworkElement.Height="22" FrameworkElement.HorizontalAlignment="Stretch" Size="Medium" ToggleButton.IsChecked="{Binding IsProjectEnginingVisible, Mode=TwoWay}" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ProjectTitle}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ShowHideProject}">
+                            <!--<rad:RadRibbonToggleButton.SmallImage>
+                                <BitmapImage DecodePixelHeight="16" DecodePixelWidth="16" UriSource="Resources/Images/Tools.png" />
+                                </rad:RadRibbonToggleButton.SmallImage> -->
+                        </rad:RadRibbonToggleButton>
+                        <rad:RadRibbonToggleButton Grid.Row="0" Grid.Column="1" FrameworkElement.Height="22" FrameworkElement.HorizontalAlignment="Stretch" Size="Medium" ToggleButton.IsChecked="{Binding IsControlToolboxVisible, Mode=TwoWay}" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ToolboxTitle}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ShowHideToolbox}">
+                            <!--<rad:RadRibbonToggleButton.SmallImage>
+                                <BitmapImage DecodePixelHeight="16" DecodePixelWidth="16" UriSource="Resources/Images/Tools.png" />
+                            </rad:RadRibbonToggleButton.SmallImage>-->
+                        </rad:RadRibbonToggleButton>
+                        <rad:RadRibbonToggleButton Grid.Row="1" Grid.Column="0" FrameworkElement.Height="22" FrameworkElement.HorizontalAlignment="Stretch" Size="Medium" ToggleButton.IsChecked="{Binding IsProjectExplorerVisible, Mode=TwoWay}" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ExplorerTitle}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ShowHideExplorer}">
+                            <!--<rad:RadRibbonToggleButton.SmallImage>
+                                <BitmapImage DecodePixelHeight="16" DecodePixelWidth="16" UriSource="Resources/Images/Explore.png" />
+                            </rad:RadRibbonToggleButton.SmallImage>-->
+                        </rad:RadRibbonToggleButton>
+                        <rad:RadRibbonToggleButton Grid.Row="1" Grid.Column="1" FrameworkElement.Height="22" FrameworkElement.HorizontalAlignment="Stretch" Size="Medium" ToggleButton.IsChecked="{Binding IsPropertyEditorVisible, Mode=TwoWay}" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=PropertyInspectorTitle}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ShowHidePropertyInspector}">
+                            <!--<rad:RadRibbonToggleButton.SmallImage>
+                                <BitmapImage DecodePixelHeight="16" DecodePixelWidth="16" UriSource="Resources/Images/Properties.png" />
+                            </rad:RadRibbonToggleButton.SmallImage>-->
+                        </rad:RadRibbonToggleButton>
+                        <rad:RadRibbonToggleButton Grid.Row="2" Grid.Column="0" FrameworkElement.Height="22" FrameworkElement.HorizontalAlignment="Stretch" Size="Medium" ToggleButton.IsChecked="{Binding IsActionEffectEditorVisible, Mode=TwoWay}" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=AcionEffectTitle}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ShowHideAcionEffect}">
+                            <!--<rad:RadRibbonToggleButton.SmallImage>
+                                <BitmapImage DecodePixelHeight="16" DecodePixelWidth="16" UriSource="Resources/Images/Tools.png" />
+                            </rad:RadRibbonToggleButton.SmallImage> -->
+                        </rad:RadRibbonToggleButton>
+                        <rad:RadRibbonToggleButton Grid.Row="2" Grid.Column="1" FrameworkElement.Height="22" FrameworkElement.HorizontalAlignment="Stretch" Size="Medium" ToggleButton.IsChecked="{Binding IsLogVisible, Mode=TwoWay}" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=LogTitle}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ShowHideLog}">
+                            <!--<rad:RadRibbonToggleButton.SmallImage>
+                                <BitmapImage DecodePixelHeight="16" DecodePixelWidth="16" UriSource="Resources/Images/Task.png" />
+                            </rad:RadRibbonToggleButton.SmallImage>-->
+                        </rad:RadRibbonToggleButton>
+                    </Grid>
+                </rad:RadRibbonGroup>
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=SnapAndGroup}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="0.5*" />
+                        </Grid.ColumnDefinitions>
+                        <rad:RadRibbonToggleButton Grid.Row="0" Grid.Column="0" FrameworkElement.HorizontalAlignment="Stretch" IsAutoSize="False" Size="Medium" ToggleButton.IsChecked="{Binding GuideSettings.ShowGridLines, Mode=TwoWay}" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ToggleGridLines}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ShowHideGridLines}" />
+                        <rad:RadRibbonToggleButton Grid.Row="0" Grid.Column="1" FrameworkElement.HorizontalAlignment="Stretch" IsAutoSize="False" Size="Medium" ToggleButton.IsChecked="{Binding GuideSettings.SnapToGridLines, Mode=TwoWay}" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ToggleSnapToGridLines}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=SnapToGridLines}" />
+                        <rad:RadRibbonToggleButton Grid.Row="1" Grid.Column="0" FrameworkElement.HorizontalAlignment="Stretch" IsAutoSize="False" Size="Medium" ToggleButton.IsChecked="{Binding GuideSettings.ShowRulerGuides, Mode=TwoWay}" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ToggleGuideLines}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ShowHideGuideLines}" />
+                        <rad:RadRibbonToggleButton Grid.Row="1" Grid.Column="1" FrameworkElement.HorizontalAlignment="Stretch" IsAutoSize="False" Size="Medium" ToggleButton.IsChecked="{Binding GuideSettings.SnapToGuideLines, Mode=TwoWay}" Text="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=ToggleSnapToGuideLines}" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=SnapToGuideLines}" />
+                    </Grid>
+                </rad:RadRibbonGroup>
+                <rad:RadRibbonGroup HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Language}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <rad:RadRibbonButton Grid.Row="0" Grid.Column="0" CollapseToSmall="Never" ButtonBase.Command="{x:Static infra:EditorCommands.SelectLanguage}" IsAutoSize="True" LargeImage="Resources/Images/Alpha.png" Size="Large" FrameworkElement.ToolTip="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=LanguageSelectTooltip}" />
+                    </Grid>
+                </rad:RadRibbonGroup>
+            </rad:RadRibbonTab>
+            <rad:RadRibbonTab HeaderedItemsControl.Header="{localize:Resx ResxName=HMI.Editor.Resources.RibbonBarTexts, Key=Help}">
+
+            </rad:RadRibbonTab>
+        </rad:RadRibbonView>
+    </Grid>
+</UserControl>

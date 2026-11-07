@@ -1,0 +1,53 @@
+// SPDX-License-Identifier: GPL-3.0-only
+using System;
+namespace HMI.ProjectDesigner.DesignControls.Labels.ViewModels
+{
+	public enum SignalInformationField
+	{
+		SignalID,
+		Name,
+		ConnectorAddress,
+		Active,
+		Description,
+		DescriptionSymbolicText,
+		LogUserActivity,
+		FactorX1,
+		FactorX2,
+		FactorY1,
+		FactorY2,
+		Hysterese,
+		HystereseLog,
+		HystereseAlarm,
+		Hysterese_2,
+		HystereseLog_2,
+		HystereseAlarm_2,
+		Maximum,
+		Minimum,
+		Unit,
+		VChannel,
+		VChannelTypeID,
+		VChannelInitValue,
+		AltValue,
+		AltValue_1,
+		AltValue_2,
+		AltValue_3,
+		AltValue_4,
+		DataTypeID,
+		Status,
+		OfflineValue,
+		OPCEnabled,
+		OPCQuality,
+		GroupId,
+		GroupName,
+		GroupDescription,
+		WriteGroupId,
+		WriteGroupName,
+		WriteGroupDescription,
+		ServerId,
+		ServerName,
+		ServerDescription,
+		ConnectorId,
+		ConnectorName,
+		ConnectorDescription
+	}
+}

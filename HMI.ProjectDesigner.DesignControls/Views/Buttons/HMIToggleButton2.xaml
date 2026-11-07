@@ -1,0 +1,163 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Buttons">
+    <Style x:Key="{x:Type local:HMIToggleButton2}" TargetType="{x:Type local:HMIToggleButton2}">
+        <Setter Property="local:HMIToggleButton2.DesignerTemplateKey" Value="HMIToggleButton2Designer" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIToggleButton2}">
+                    <Image Source="Images/HMIToggleButton2.png" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HMIToggleButton2Designer" TargetType="{x:Type local:HMIToggleButton2}">
+        <Setter Property="Control.Background" Value="#FF1F3B53" />
+        <Setter Property="Control.Foreground" Value="#FF000000" />
+        <Setter Property="Control.Padding" Value="3" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0" />
+                    <GradientStop Color="#FF8399A9" Offset="0.375" />
+                    <GradientStop Color="#FF718597" Offset="0.375" />
+                    <GradientStop Color="#FF617584" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIToggleButton2}">
+                    <Grid Name="LayoutRoot" IsHitTestVisible="False">
+                        <Ellipse Margin="0,0,0,0" Stroke="{x:Null}">
+                            <Ellipse.Fill>
+                                <LinearGradientBrush EndPoint="0.048,0.713" StartPoint="0.952,0.287">
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.307" />
+                                    <GradientStop Color="#FFBFBFBF" Offset="0" />
+                                    <GradientStop Color="#FF3F3F3F" Offset="0.764" />
+                                </LinearGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Ellipse Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Stroke="{x:Null}">
+                            <Ellipse.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF000000" Offset="1" />
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.25299999117851257" />
+                                </LinearGradientBrush>
+                            </Ellipse.Fill>
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.9" ScaleY="0.9" />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Ellipse Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Stroke="{x:Null}">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FF6C6C6C" Offset="1" />
+                                    <GradientStop Color="#FFC8C8C8" Offset="0.893" />
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.017999999225139618" />
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.422" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.86" ScaleY="0.86" />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Path Name="path" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Data="M35.501476,0.5C44.821659,0.49999809,53.921268,1.4443951,62.709812,3.2427225L69.502899,4.9893246 69.502899,266.01068 62.709812,267.75726C53.921268,269.5556 44.821659,270.5 35.501476,270.5 26.181276,270.5 17.081667,269.5556 8.2931223,267.75726L0.5000031,265.75354 0.5000031,5.2464504 8.2931223,3.2427225C17.081667,1.444396,26.181276,0.49999809,35.501476,0.5z" Stroke="{x:Null}">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.24" ScaleY="0.84" />
+                                    <SkewTransform />
+                                    <RotateTransform Angle="-180" />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.543,1" StartPoint="0.457,0">
+                                    <GradientStop Color="#FF000000" Offset="1" />
+                                    <GradientStop Color="#FF535353" Offset="0.25299999117851257" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path Name="path1" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Data="M35.501476,0.5C44.821659,0.49999809,53.921268,1.4443951,62.709812,3.2427225L69.502899,4.9893246 69.502899,266.01068 62.709812,267.75726C53.921268,269.5556 44.821659,270.5 35.501476,270.5 26.181276,270.5 17.081667,269.5556 8.2931223,267.75726L0.5000031,265.75354 0.5000031,5.2464504 8.2931223,3.2427225C17.081667,1.444396,26.181276,0.49999809,35.501476,0.5z" Stroke="{x:Null}">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.2" ScaleY="0.8" />
+                                    <SkewTransform />
+                                    <RotateTransform Angle="-180" />
+                                    <TranslateTransform X="1" Y="1" />
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.418000012636185,0" StartPoint="0.582000017166138,1">
+                                    <GradientStop Color="#FF000000" Offset="1" />
+                                    <GradientStop Color="#FF535353" Offset="0.25299999117851257" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Rectangle Name="rectangle_Copy" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" StrokeThickness="1" Stroke="{x:Null}">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.12" ScaleY="0.72" />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                                    <GradientStop Color="#FF000000" Offset="1" />
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.25299999117851257" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Rectangle Name="rectangle" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" StrokeThickness="3" Stroke="{x:Null}">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.1" ScaleY="0.7" />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FFA10010" Offset="0.9779999852180481" />
+                                    <GradientStop Color="#FFFF0000" Offset="0.25299999117851257" />
+                                </RadialGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Rectangle Name="rectangle1" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Stroke="{x:Null}">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.539,0.102" StartPoint="1.024,0.102">
+                                    <GradientStop Color="#FFFFF9EF" Offset="0" />
+                                    <GradientStop Color="#00FFFFFF" Offset="1" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.08" ScaleY="0.68" />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Ellipse Name="DisabledVisualElement" Margin="0,0,0,0" Opacity="0" Fill="#FFFFFFFF" Stroke="{x:Null}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=Opacity}" />
+    </Style>
+</ResourceDictionary>

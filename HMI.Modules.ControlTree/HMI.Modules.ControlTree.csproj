@@ -1,0 +1,182 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\animatedellipse_16x16.png" />
+    <None Remove="Resources\Images\animatedellipse_25x25.png" />
+    <None Remove="Resources\Images\animatedellipse_50x50.png" />
+    <None Remove="Resources\Images\animatedrectangle_16x16.png" />
+    <None Remove="Resources\Images\animatedrectangle_25x25.png" />
+    <None Remove="Resources\Images\animatedrectangle_50x50.png" />
+    <None Remove="Resources\Images\animatedtrapeze_16x16.png" />
+    <None Remove="Resources\Images\animatedtrapeze_25x25.png" />
+    <None Remove="Resources\Images\animatedtrapeze_50x50.png" />
+    <None Remove="Resources\Images\animatedtriangle_16x16.png" />
+    <None Remove="Resources\Images\animatedtriangle_25x25.png" />
+    <None Remove="Resources\Images\animatedtriangle_50x50.png" />
+    <None Remove="Resources\Images\animated_ellipse.png" />
+    <None Remove="Resources\Images\animated_rectangle.png" />
+    <None Remove="Resources\Images\animated_trapezoid.png" />
+    <None Remove="Resources\Images\animated_triangle.png" />
+    <None Remove="Resources\Images\ellipse.png" />
+    <None Remove="Resources\Images\ellipse_16x16.png" />
+    <None Remove="Resources\Images\ellipse_25x25.png" />
+    <None Remove="Resources\Images\ellipse_50x50.png" />
+    <None Remove="Resources\Images\folderclosed.png" />
+    <None Remove="Resources\Images\folderopen.png" />
+    <None Remove="Resources\Images\rectangle.png" />
+    <None Remove="Resources\Images\rectangle_16x16.png" />
+    <None Remove="Resources\Images\rectangle_25x25.png" />
+    <None Remove="Resources\Images\rectangle_50x50.png" />
+    <None Remove="Resources\Images\trapeze_16x16.png" />
+    <None Remove="Resources\Images\trapeze_25x25.png" />
+    <None Remove="Resources\Images\trapeze_50x50.png" />
+    <None Remove="Resources\Images\trapezoid.png" />
+    <None Remove="Resources\Images\triangle.png" />
+    <None Remove="Resources\Images\triangle_16x16.png" />
+    <None Remove="Resources\Images\triangle_25x25.png" />
+    <None Remove="Resources\Images\triangle_50x50.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMI.Common.Presentation\HMI.Common.Presentation.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Presentation\HMI.Infrastructure.Presentation.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure\HMI.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\animatedellipse_16x16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedellipse_25x25.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedellipse_50x50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedrectangle_16x16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedrectangle_25x25.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedrectangle_50x50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedtrapeze_16x16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedtrapeze_25x25.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedtrapeze_50x50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedtriangle_16x16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedtriangle_25x25.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animatedtriangle_50x50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animated_ellipse.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animated_rectangle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animated_trapezoid.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\animated_triangle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ellipse.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ellipse_16x16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ellipse_25x25.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ellipse_50x50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\folderclosed.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\folderopen.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\rectangle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\rectangle_16x16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\rectangle_25x25.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\rectangle_50x50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\trapeze_16x16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\trapeze_25x25.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\trapeze_50x50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\trapezoid.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\triangle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\triangle_16x16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\triangle_25x25.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\triangle_50x50.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\CategoryResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CategoryResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Texts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Texts.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\CategoryResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CategoryResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Texts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Texts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

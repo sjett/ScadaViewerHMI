@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Views="clr-namespace:HMI.Common.Browsers.Views"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/Common.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type Views:SymbolicTextsView}" TargetType="{x:Type Views:SymbolicTextsView}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Views:SymbolicTextsView}">
+                    <rad:RadBusyIndicator Name="uxBusyIndicator">
+                        <rad:RadGridView Name="uxSymbolicTexts" CanUserFreezeColumns="False" FrozenColumnCount="1" RowIndicatorVisibility="Collapsed" Style="{StaticResource BrowserGridStyle}" ItemsSource="{Binding Values}" SelectedItem="{Binding SelectedItem}">
+                            <rad:RadGridView.Columns>
+                                <rad:GridViewDataColumn Width="200" Style="{StaticResource BrowserGridColumnStyle}" DataMemberBinding="{Binding SymbolicTextName}" Header="{localize:Resx ResxName=HMI.Common.Browsers.Resources.BrowserTexts, Key=SymbolicTextNameColumnHeader}" />
+                            </rad:RadGridView.Columns>
+                        </rad:RadGridView>
+                    </rad:RadBusyIndicator>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

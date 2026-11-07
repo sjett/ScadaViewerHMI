@@ -1,0 +1,249 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:HMIShared="clr-namespace:HMI.Runtime.Shared.KeyboardControl;assembly=HMI.Runtime.Shared"
+    xmlns:local="clr-namespace:HMI.RuntimeControls.General"
+    xmlns:userLoginDialogs="clr-namespace:HMI.RuntimeControls.General.UserLoginDialogs"
+    >
+
+    <Style TargetType="userLoginDialogs:HMIUserLogin1DialogContent" x:Key="userLogin1DialogContent">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="userLoginDialogs:HMIUserLogin1DialogContent">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock  Grid.Column="0" Grid.Row="0" x:Name="UserNameTextBlockElement" Text="User Name:" VerticalAlignment="Center"/>
+                        <TextBox    Grid.Column="1" Grid.Row="0" x:Name="UserNameTextBoxElement" 
+                                                HMIShared:KeyboardService.VirtualKeyboardType="Alphanumeric" Margin="2,0,0,0" MinWidth="150" Text="" TextWrapping="NoWrap"/>
+
+                        <TextBlock      Grid.Column="0" Grid.Row="1" x:Name="UserPasswordTextBlockElement" Text="User Password:" VerticalAlignment="Center" Margin="0,5,0,0"/>
+                        <PasswordBox    Grid.Column="1" Grid.Row="1" x:Name="UserPasswordPasswordBoxElement" 
+                                                    HMIShared:KeyboardService.VirtualKeyboardType="Alphanumeric" Margin="2,5,0,0" MinWidth="150"/>
+
+                        <CheckBox   Grid.Column="1" Grid.Row="2" x:Name="uxIsDomainUserLogin" Content="Is domain user" Margin="0,5,0,5" VerticalAlignment="Center" IsThreeState="False"/>
+
+                        <StackPanel Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+                            <Button x:Name="LoginButtonElement" Content="Login" Width="80"/>
+                            <Button x:Name="LogoutButtonElement" Content="Logout" Width="80" Margin="10,0,0,0"/>
+                            <Button x:Name="ChangePasswordButtonElement" Content="Change Password..." Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="userLoginDialogs:HMIUserLoginPasswordChangeContent" x:Key="userLoginPasswordChangeContent">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="userLoginDialogs:HMIUserLoginPasswordChangeContent">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="CPUserTextBlockElement" Grid.Column="0" Grid.Row="0" Text="User:" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="CPUserNameTextBlockElement" Grid.Column="1" Grid.Row="0" Margin="2,0,0,0" Text="[User name]" VerticalAlignment="Center"/>
+
+                        <TextBlock x:Name="CPCurrentPasswordTextBlockElement" Grid.Column="0" Grid.Row="1" Text="Current Password:" VerticalAlignment="Center" Margin="0,5,0,0"/>
+                        <PasswordBox x:Name="CPCurrentPasswordPasswordBoxElement" 
+                                            HMIShared:KeyboardService.VirtualKeyboardType="Alphanumeric"
+                                            Grid.Column="1" Grid.Row="1" Margin="2,5,0,0" Width="150"/>
+
+                        <TextBlock x:Name="CPNewPasswordTextBlockElement" Grid.Column="0" Grid.Row="2" Text="New Password:" VerticalAlignment="Center" Margin="0,5,0,0"/>
+                        <PasswordBox x:Name="CPNewPasswordPasswordBoxElement" 
+                                            HMIShared:KeyboardService.VirtualKeyboardType="Alphanumeric"
+                                            Grid.Column="1" Grid.Row="2" Margin="2,5,0,0" Width="150"/>
+
+                        <TextBlock x:Name="CPConfirmPasswordTextBlockElement" Grid.Column="0" Grid.Row="3" Text="Confirm new Password:" VerticalAlignment="Center" Margin="0,5,0,0"/>
+                        <PasswordBox x:Name="CPConfirmPasswordPasswordBoxElement" 
+                                            HMIShared:KeyboardService.VirtualKeyboardType="Alphanumeric"
+                                            Grid.Column="1" Grid.Row="3" Margin="2,5,0,0" Width="150"/>
+
+                        <StackPanel Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Right">
+                            <Button x:Name="CPOKButtonElement" Content="OK" Width="80"/>
+                            <Button x:Name="CPCancelButtonElement" Content="Cancel" Width="80" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:HMIUserLogin1">
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="Foreground" Value="#FF000000"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="UserLoginDialogStyle" Value="{StaticResource userLogin1DialogContent}"/>
+        <Setter Property="UserPasswordChangeStyle" Value="{StaticResource userLoginPasswordChangeContent}"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:HMIUserLogin1">
+                    <Grid x:Name="LayoutRoot">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="BackgroundAnimation" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                            <SplineColorKeyFrame KeyTime="0" Value="#F2FFFFFF"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                            <SplineColorKeyFrame KeyTime="0" Value="#CCFFFFFF"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                            <SplineColorKeyFrame KeyTime="0" Value="#7FFFFFFF"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
+                                            <SplineColorKeyFrame KeyTime="0" Value="#FF6DBDD1"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="BackgroundAnimation" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                            <SplineColorKeyFrame KeyTime="0" Value="#D8FFFFFF"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                            <SplineColorKeyFrame KeyTime="0" Value="#C6FFFFFF"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)">
+                                            <SplineColorKeyFrame KeyTime="0" Value="#8CFFFFFF"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)">
+                                            <SplineColorKeyFrame KeyTime="0" Value="#3FFFFFFF"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value=".55"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="White" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                            <Grid Margin="1" Background="{TemplateBinding Background}">
+                                <Border x:Name="BackgroundAnimation" Opacity="0" Background="#FF448DCA"/>
+                                <Rectangle x:Name="BackgroundGradient">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                            <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                            <GradientStop Color="#F9FFFFFF" Offset="0.375"/>
+                                            <GradientStop Color="#E5FFFFFF" Offset="0.625"/>
+                                            <GradientStop Color="#C6FFFFFF" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Path Margin="0,0,0,0" RenderTransformOrigin="0.54,0.62" Data="M155.11115,27.333372 C148.97473,27.333372 144.00003,31.064203 144.00003,35.666706 C144.00003,40.269135 148.97473,44.000038 155.11115,44.000038 C161.24767,44.000038 166.22226,40.269077 166.22226,35.666706 C166.22226,31.06426 161.24767,27.333372 155.11115,27.333372 z M162.26328,0.0072377194 C185.86937,-0.36759704 208.10983,13.849539 207.99899,35.03968 C208.04221,40.820576 206.67485,45.982353 204.23224,50.467155 C203.01089,52.709568 201.52074,54.782745 199.8036,56.679447 C192.93515,64.266273 182.43559,69.029678 170.98636,70.507004 C168.12405,70.876335 165.20239,71.040291 162.26328,70.991638 C132.33322,70.496155 123.44445,54.413914 123.44445,54.413914 C88.095787,54.413914 26.198082,54.191319 19.83334,54.413914 C16.208752,54.540668 11.88799,51.966835 7.6111155,50.039135 C5.6396093,49.187511 0.63660747,47.730328 0.093194261,44.075741 C-0.45022631,40.421169 1.449747,38.163734 4.0512772,36.381756 L18.83917,26.550812 C22.099606,24.65053 23.458181,22.961403 29.171734,23.172523 C30.498728,23.221565 34.917408,23.2269 35.666046,23.217745 C36.597515,23.206354 39.492283,22.961481 39.000008,27.606579 C38.948936,30.984894 39.000027,30.844107 40.666672,30.844107 C42.611122,30.844107 43.308987,30.76931 43.444454,28.873442 C43.490093,27.043495 44.345608,24.086138 49.416668,24.311293 C50.503349,24.360575 51.285992,24.554117 51.849312,24.838703 C52.975948,25.407877 53.225281,26.341227 53.274933,27.21302 C53.299759,27.64892 53.274662,28.069429 53.284351,28.421335 L53.444447,30.003912 C53.420185,30.216045 52.611073,32.749779 55.111118,32.644199 C56.118061,32.644199 56.843494,32.437122 57.36182,32.124844 C58.398491,31.500299 58.606758,30.454983 58.581978,29.803995 C58.569592,29.478504 58.498943,29.251593 58.44445,29.225149 C58.662422,29.11978 58.545193,26.783199 63.027786,26.762005 C67.374451,26.783184 68.230789,29.436485 68.166672,29.330915 C68.230789,29.225348 67.611099,32.262737 70.388893,32.227551 C71.373627,32.215076 72.024185,31.967791 72.449989,31.607176 C73.301552,30.885946 73.254005,29.711414 73.182503,29.055443 C73.146751,28.727457 73.105019,28.529119 73.166679,28.581907 C73.191673,28.687473 74.082451,26.583076 77.750008,26.49868 C81.417496,26.414284 82.461159,28.686071 82.611122,28.686064 C83.783638,31.747623 82.749939,31.602583 85.805565,31.602583 C87.163887,31.602583 88.412056,32.525414 90.465752,28.873384 C92.72168,24.861763 94.254776,23.130289 103.23419,23.045832 C112.21361,22.961374 110.00863,23.045832 118.16667,23.045832 C118.16667,23.045832 127.61529,0.55155098 162.26328,0.0072377194 z" Stretch="Fill" Stroke="{x:Null}" Fill="#FFB3B2B2">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="0.45" ScaleY="0.6"/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="-180"/>
+                                            <TranslateTransform X="-3.5132002778053284" Y="-10.744427020549775"/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path Margin="0,0,0,0" RenderTransformOrigin="0.54,0.5" Data="M155.11115,27.333372 C148.97473,27.333372 144.00003,31.064203 144.00003,35.666706 C144.00003,40.269135 148.97473,44.000038 155.11115,44.000038 C161.24767,44.000038 166.22226,40.269077 166.22226,35.666706 C166.22226,31.06426 161.24767,27.333372 155.11115,27.333372 z M162.26328,0.0072377194 C185.86937,-0.36759704 208.10983,13.849539 207.99899,35.03968 C208.04221,40.820576 206.67485,45.982353 204.23224,50.467155 C203.01089,52.709568 201.52074,54.782745 199.8036,56.679447 C192.93515,64.266273 182.43559,69.029678 170.98636,70.507004 C168.12405,70.876335 165.20239,71.040291 162.26328,70.991638 C132.33322,70.496155 123.44445,54.413914 123.44445,54.413914 C88.095787,54.413914 26.198082,54.191319 19.83334,54.413914 C16.208752,54.540668 11.88799,51.966835 7.6111155,50.039135 C5.6396093,49.187511 0.63660747,47.730328 0.093194261,44.075741 C-0.45022631,40.421169 1.449747,38.163734 4.0512772,36.381756 L18.83917,26.550812 C22.099606,24.65053 23.458181,22.961403 29.171734,23.172523 C30.498728,23.221565 34.917408,23.2269 35.666046,23.217745 C36.597515,23.206354 39.492283,22.961481 39.000008,27.606579 C38.948936,30.984894 39.000027,30.844107 40.666672,30.844107 C42.611122,30.844107 43.308987,30.76931 43.444454,28.873442 C43.490093,27.043495 44.345608,24.086138 49.416668,24.311293 C50.503349,24.360575 51.285992,24.554117 51.849312,24.838703 C52.975948,25.407877 53.225281,26.341227 53.274933,27.21302 C53.299759,27.64892 53.274662,28.069429 53.284351,28.421335 L53.444447,30.003912 C53.420185,30.216045 52.611073,32.749779 55.111118,32.644199 C56.118061,32.644199 56.843494,32.437122 57.36182,32.124844 C58.398491,31.500299 58.606758,30.454983 58.581978,29.803995 C58.569592,29.478504 58.498943,29.251593 58.44445,29.225149 C58.662422,29.11978 58.545193,26.783199 63.027786,26.762005 C67.374451,26.783184 68.230789,29.436485 68.166672,29.330915 C68.230789,29.225348 67.611099,32.262737 70.388893,32.227551 C71.373627,32.215076 72.024185,31.967791 72.449989,31.607176 C73.301552,30.885946 73.254005,29.711414 73.182503,29.055443 C73.146751,28.727457 73.105019,28.529119 73.166679,28.581907 C73.191673,28.687473 74.082451,26.583076 77.750008,26.49868 C81.417496,26.414284 82.461159,28.686071 82.611122,28.686064 C83.783638,31.747623 82.749939,31.602583 85.805565,31.602583 C87.163887,31.602583 88.412056,32.525414 90.465752,28.873384 C92.72168,24.861763 94.254776,23.130289 103.23419,23.045832 C112.21361,22.961374 110.00863,23.045832 118.16667,23.045832 C118.16667,23.045832 127.61529,0.55155098 162.26328,0.0072377194 z" Stretch="Fill" Stroke="{x:Null}">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="0.47" ScaleY="0.66"/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="-180"/>
+                                            <TranslateTransform X="-7.632799980640411" Y="0.535920021295547"/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                    <Path.Fill>
+                                        <LinearGradientBrush EndPoint="0.609,0.69" StartPoint="0.609,0.602">
+                                            <GradientStop Color="#FF6A3102"/>
+                                            <GradientStop Color="#FFFFC600" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                </Path>
+                                <Path RenderTransformOrigin="0.499999995769601,0.500000002842948" Data="M151.5836,22.666668 C143.47014,22.666668 136.8932,27.740864 136.8932,34 C136.8932,40.259148 143.47014,45.333332 151.5836,45.333332 C159.69699,45.333332 166.274,40.25922 166.274,34 C166.274,27.740749 159.69685,22.666668 151.5836,22.666668 z M158.9288,0 C183.26866,5.1196917E-06 203,15.222369 203,34 C203,38.69442 201.76677,43.16663 199.53667,47.234329 C195.0764,55.36974 186.62852,61.887131 176.0833,65.32811 C170.81068,67.048599 165.01376,68 158.9288,68 C146.75893,68 135.74107,64.194427 127.76575,58.041618 L121.61187,51 C87.038895,51 24.118311,50.792603 17.893202,51 C16.120684,51.059052 14.238022,50.449116 12.275619,49.653065 C11.294415,49.255043 10.293274,48.810493 9.2759962,48.379776 L6.5537658,47.333344 L112.24003,47.333344 C114.28593,47.333344 115.94447,46.21405 115.94447,44.833344 C115.94447,43.452618 114.28592,42.333344 112.24003,42.333344 L0.12111209,42.333344 L0.091148727,42.263943 C-0.44034517,38.85833 1.4179327,36.754681 3.9623663,35.094101 L18.42572,25.932877 C21.614597,24.16205 22.94331,22.587969 28.531523,22.784731 C29.829395,22.830427 30.702471,22.835403 31.434685,22.82687 C32.345688,22.81625 34.541897,22.588015 34.060421,26.916723 C34.010479,30.064877 34.896175,29.933691 37.73037,29.933699 C42.513081,29.933683 41.146648,29.409027 41.279144,28.097277 C41.323792,26.392035 40.261021,23.768578 45.220818,23.978397 C46.283649,24.024323 47.025414,24.198135 47.54081,24.45352 C48.571602,24.964287 48.696945,25.801334 48.674393,26.59412 C48.663116,26.990507 48.614868,27.375828 48.624344,27.70376 L48.780926,29.178526 C48.757195,29.376215 47.428703,31.73732 52.609943,31.638947 C56.064144,31.638947 56.329845,28.523594 56.116653,28.42503 C56.329849,28.326832 55.488426,26.149416 59.872597,26.129686 C60.935425,26.134619 61.693798,26.29285 62.232533,26.525894 C63.310009,26.991972 63.508945,27.757273 63.507915,28.193821 C63.507401,28.412098 63.456894,28.548187 63.441216,28.523592 C63.503929,28.425211 63.238346,31.409389 67.090965,31.376598 C68.054146,31.368401 68.74485,31.134747 69.242897,30.791958 C70.238953,30.106377 70.464348,28.984232 70.557549,28.356037 C70.604141,28.041939 70.617691,27.85133 70.678009,27.900517 C70.702454,27.998907 71.056717,26.142756 74.643768,26.064096 C78.230721,25.985455 77.876534,27.998894 78.023209,27.998901 C79.169998,30.851892 77.55397,30.589561 81.571983,30.589561 C82.900505,30.589561 86.471825,31.500362 88.480362,28.097231 C90.686783,24.358849 92.18631,22.745373 100.96859,22.666668 C109.75092,22.587963 109.84447,22.666668 117.82346,22.666668 L118.32095,20.765665 C122.78119,12.630231 131.2291,6.1128669 141.77431,2.6718888 C147.04692,0.95139456 152.84384,1.2799214E-06 158.9288,0 z" Stretch="Fill" Stroke="{x:Null}" Margin="0,0,0,0">
+                                    <Path.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,0.368" StartPoint="0.5,1">
+                                            <GradientStop Color="#FF6A3102"/>
+                                            <GradientStop Color="#FFFFC600" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Path.Fill>
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="0.45" ScaleY="0.6"/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="-180"/>
+                                            <TranslateTransform X="4.6075004607439034" Y="0.53637957095881572"/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Grid>
+                        </Border>
+                        <!--ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" x:Name="contentPresenter" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/-->
+                        <Rectangle x:Name="DisabledVisualElement" IsHitTestVisible="false" Opacity="0" Fill="#FFFFFFFF" RadiusX="3" RadiusY="3"/>
+                        <Rectangle Margin="1" x:Name="FocusVisualElement" IsHitTestVisible="false" Opacity="0" Stroke="#FF6DBDD1" StrokeThickness="1" RadiusX="2" RadiusY="2"/>
+                        <!--<HMIShared:DialogControl x:Name="LoginDialogElement" IsTabStop="False">
+                            <HMIShared:DialogControl.Content>-->
+                            <!--</HMIShared:DialogControl.Content>
+                        </HMIShared:DialogControl>-->
+                        <!--<HMIShared:DialogControl x:Name="ChangePasswordDialogElement" IsTabStop="False">
+                            <HMIShared:DialogControl.Content>-->
+                                
+                            <!--</HMIShared:DialogControl.Content>
+                        </HMIShared:DialogControl>-->
+                        
+                        <!--<HMIShared:MessageBoxControl x:Name="LoginMessageBoxElement" IsTabStop="False"/>-->
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

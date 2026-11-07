@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:telerikControlsCharting="http://schemas.telerik.com/2008/xaml/presentation">
+    <Style x:Key="BarSeriesItemLabelStyle_OfficeBlackTheme" TargetType="{x:Type telerikControlsCharting:SeriesItemLabel}">
+        <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+        <Setter Property="telerikControlsCharting:SeriesItemLabel.Fill" Value="#FF000000" />
+        <Setter Property="Control.BorderBrush" Value="#FF000000" />
+    </Style>
+    <Style x:Key="BarSeriesItemLabelStyle_OfficeBlueTheme" TargetType="{x:Type telerikControlsCharting:SeriesItemLabel}">
+        <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+        <Setter Property="telerikControlsCharting:SeriesItemLabel.Fill" Value="#FF000000" />
+        <Setter Property="Control.BorderBrush" Value="#FF000000" />
+    </Style>
+    <Style x:Key="BarSeriesItemLabelStyle_OfficeSilverTheme" TargetType="{x:Type telerikControlsCharting:SeriesItemLabel}">
+        <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+        <Setter Property="telerikControlsCharting:SeriesItemLabel.Fill" Value="#FF000000" />
+        <Setter Property="Control.BorderBrush" Value="#FF000000" />
+    </Style>
+    <Style x:Key="BarSeriesItemLabelStyle_SummerTheme" TargetType="{x:Type telerikControlsCharting:SeriesItemLabel}">
+        <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+        <Setter Property="telerikControlsCharting:SeriesItemLabel.Fill" Value="#FF000000" />
+        <Setter Property="Control.BorderBrush" Value="#FF000000" />
+    </Style>
+    <Style x:Key="BarSeriesItemLabelStyle_VistaTheme" TargetType="{x:Type telerikControlsCharting:SeriesItemLabel}">
+        <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+        <Setter Property="telerikControlsCharting:SeriesItemLabel.Fill" Value="#FF000000" />
+        <Setter Property="Control.BorderBrush" Value="#FF000000" />
+    </Style>
+    <Style x:Key="BarSeriesItemLabelStyle_Windows7Theme" TargetType="{x:Type telerikControlsCharting:SeriesItemLabel}">
+        <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+        <Setter Property="telerikControlsCharting:SeriesItemLabel.Fill" Value="#FF000000" />
+        <Setter Property="Control.BorderBrush" Value="#FF000000" />
+    </Style>
+</ResourceDictionary>

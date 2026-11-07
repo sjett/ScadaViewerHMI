@@ -1,0 +1,83 @@
+<ResourceDictionary xmlns:local="clr-namespace:HMI.RuntimeControls.Pipes" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="{x:Type local:HMICornerPipe3}" TargetType="{x:Type local:HMICornerPipe3}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMICornerPipe3}">
+                    <Grid Name="LayoutRoot" IsHitTestVisible="False" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Background="{x:Null}">
+                        <Path Name="path" Height="50" HorizontalAlignment="Right" VerticalAlignment="Top" Width="50" Data="M0,0L5.6609268,0C11.82815,5.5404792E-07 17.703455,1.3105774 23.047363,3.6806085 25.719324,4.8656363 28.258419,6.3155193 30.634705,7.9988642 40.140026,14.732355 47.040516,25.201368 49.420517,37.396976 50.015533,40.445896 50.327995,43.602745 50.327995,46.836082L50.327995,50 2.9969311,50C2.9567697,47.8125,1.8153132,46.8125,0,47z" Stretch="Fill" StrokeThickness="6" OpacityMask="{x:Null}" Stroke="{x:Null}">
+                            <Path.Fill>
+                                <RadialGradientBrush>
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.796" ScaleY="1.796" />
+                                            <SkewTransform CenterX="0.5" CenterY="0.5" />
+                                            <RotateTransform CenterX="0.5" CenterY="0.5" />
+                                            <TranslateTransform X="-0.485" Y="0.485" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FF000000" Offset="0.196" />
+                                    <GradientStop Color="#FF0C0C0C" Offset="0.949999988079071" />
+                                    <GradientStop Color="#FF646464" Offset="0.564" />
+                                </RadialGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path Name="rectangle1" Height="Auto" HorizontalAlignment="Right" Margin="0,50.002,0,0" VerticalAlignment="Top" Width="46.667" Stretch="Fill" StrokeThickness="0" Data="M0,0L47,0 47,50 0,50z" Stroke="{x:Null}">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.1,0.5" StartPoint="0.9,0.5">
+                                    <GradientStop Color="#FF4F4F4F" Offset="0.050" />
+                                    <GradientStop Color="#FF727272" Offset="0" />
+                                    <GradientStop Color="#FF4F4F4F" Offset="0.950" />
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.500" />
+                                    <GradientStop Color="#FF727272" Offset="1" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Path Name="rectangle" Height="46.667" Margin="0,0,50,0" VerticalAlignment="Top" Stretch="Fill" StrokeThickness="6" Data="M0,0L47,0 47,47 0,47z" Stroke="{x:Null}">
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="0.5,0.1" StartPoint="0.5,0.9">
+                                    <GradientStop Color="#FF4F4F4F" Offset="0.05000000074505806" />
+                                    <GradientStop Color="#FF727272" />
+                                    <GradientStop Color="#FF4F4F4F" Offset="0.949999988079071" />
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.5" />
+                                    <GradientStop Color="#FF727272" Offset="1" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Rectangle Height="10" HorizontalAlignment="Right" Margin="0,50.002,-3,0" VerticalAlignment="Top" Width="53" StrokeThickness="6" RadiusX="3" RadiusY="3" Stroke="{x:Null}">
+                            <Rectangle.Fill>
+                                <RadialGradientBrush>
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.415" ScaleY="1.307" />
+                                            <SkewTransform CenterX="0.5" CenterY="0.5" />
+                                            <RotateTransform CenterX="0.5" CenterY="0.5" />
+                                            <TranslateTransform X="-0.008" Y="0.019" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FF8F8F8F" Offset="0" />
+                                    <GradientStop Color="#FF000000" Offset="0.99099999666213989" />
+                                </RadialGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Rectangle Height="53" HorizontalAlignment="Right" Margin="0,-3,50,0" VerticalAlignment="Top" Width="10" StrokeThickness="6" RadiusX="3" RadiusY="3" Stroke="{x:Null}">
+                            <Rectangle.Fill>
+                                <RadialGradientBrush>
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.415" ScaleY="1.307" />
+                                            <SkewTransform CenterX="0.5" CenterY="0.5" />
+                                            <RotateTransform CenterX="0.5" CenterY="0.5" />
+                                            <TranslateTransform X="-0.008" Y="0.019" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FF8F8F8F" Offset="0" />
+                                    <GradientStop Color="#FF000000" Offset="0.99099999666213989" />
+                                </RadialGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

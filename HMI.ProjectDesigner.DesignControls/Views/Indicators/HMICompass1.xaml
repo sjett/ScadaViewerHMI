@@ -1,0 +1,92 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Indicators">
+    <gh:BooleanInvertedSignumConverter x:Key="BooleanInvertedSignumConverter" />
+    <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter" />
+    <gh:TernarySelector x:Key="TernarySelector" />
+    <Style x:Key="{x:Type local:HMICompass1}" TargetType="{x:Type local:HMICompass1}">
+        <Setter Property="Control.Background">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource TernarySelector}">
+                    <Binding Path="UseLocalColors" />
+                    <Binding FallbackValue="#FFE8E8E8" Path="Null" />
+                    <Binding Path="Background" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.BorderBrush" Value="{Binding Path=BorderBrush}" />
+        <Setter Property="Control.FontFamily" Value="{Binding Path=FontFamily}" />
+        <Setter Property="Control.FontSize" Value="{Binding Path=FontSize}" />
+        <Setter Property="Control.FontStretch" Value="{Binding Path=FontStretch}" />
+        <Setter Property="Control.FontStyle" Value="{Binding Path=FontStyle}" />
+        <Setter Property="Control.FontWeight" Value="{Binding Path=FontWeight}" />
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=Opacity}" />
+        <Setter Property="Control.Padding" Value="{Binding Path=Padding}" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMICompass1}">
+                    <Viewbox>
+                        <Grid Name="LayoutRoot" Width="450" Height="450" Background="{x:Null}">
+                            <Ellipse Name="Background" Fill="{TemplateBinding Control.Background}" Stroke="{TemplateBinding Control.BorderBrush}" StrokeThickness="20" />
+                            <Ellipse Name="ScaleLabels" RenderTransformOrigin="0.5,0.5" Margin="{Binding StrokeThickness, ElementName=Background}" Stroke="{x:Null}">
+                                <Ellipse.RenderTransform>
+                                    <ScaleTransform ScaleX="0.725" ScaleY="0.725" />
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                            <Ellipse Name="ScaleEllipse" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Stroke="{x:Null}">
+                                <Ellipse.RenderTransform>
+                                    <ScaleTransform ScaleX="0.85" ScaleY="0.85" />
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                            <Grid Name="UxPointer" RenderTransformOrigin="0.5,0.5">
+                                <Grid.RenderTransform>
+                                    <TransformGroup>
+                                        <RotateTransform Angle="{Binding CompassAngle}" />
+                                        <ScaleTransform ScaleY="{Binding PointerIsInverted, Converter={StaticResource BooleanInvertedSignumConverter}, ConverterParameter=HMICompass1}" />
+                                    </TransformGroup>
+                                </Grid.RenderTransform>
+                                <Path HorizontalAlignment="Center" VerticalAlignment="Center" Data="M0,0L85.436668,59.915546 171,0 85.489723,314.67453z" RenderTransformOrigin="0.5,0.5" Stretch="Uniform" StrokeMiterLimit="3" StrokeThickness="3" UseLayoutRounding="False" Fill="{Binding PointerFillBrush}" Stroke="{Binding PointerStrokeBrush}">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="-180" />
+                                            <ScaleTransform ScaleX="0.55" ScaleY="0.6" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Path Width="56" Height="112" Margin="0,140,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Data="M125.36237,169.62305L85.604073,314.67499 46.078152,169.57292 85.720612,199.07298z" RenderTransformOrigin="0.5,0.5" Stretch="Fill" UseLayoutRounding="False" Fill="{Binding PointerHeadFillBrush}" Stroke="{Binding PointerStrokeBrush}">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="-1" />
+                                            <TranslateTransform Y="-52.038009643554688" />
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Grid>
+                            <Path Name="MajorScale" Width="400" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M200.24998,382.5C205.22054,382.5 209.24997,386.52945 209.24998,391.5 209.24997,396.47055 205.22054,400.5 200.24998,400.5 195.27942,400.5 191.24997,396.47055 191.24998,391.5 191.24997,386.52945 195.27942,382.5 200.24998,382.5z M391.50003,191.25002C396.47058,191.25002 400.50003,195.27945 400.50003,200.25002 400.50003,205.22058 396.47058,209.25002 391.50003,209.25002 386.52948,209.25002 382.50003,205.22058 382.50003,200.25002 382.50003,195.27945 386.52948,191.25002 391.50003,191.25002z M9,191.24998C13.970566,191.24998 18,195.27942 18,200.24998 18,205.22055 13.970566,209.24998 9,209.24998 4.0294342,209.24998 0,205.22055 0,200.24998 0,195.27942 4.0294342,191.24998 9,191.24998z M200.25005,4.5474735E-12C205.22061,-4.9245955E-06 209.25005,4.0294323 209.25006,8.999999 209.25005,13.970558 205.22061,17.999994 200.25005,17.99999 195.27948,17.999994 191.25005,13.970558 191.25005,8.999999 191.25005,4.0294323 195.27948,-4.9245955E-06 200.25005,4.5474735E-12z" Stretch="Fill" UseLayoutRounding="False" Fill="{Binding MajorScaleFillBrush}" />
+                            <Path Name="MinorScale" Width="368.078" Height="368.079" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M128.15825,369.36063C128.28815,369.35968,128.42038,369.38416,128.54793,369.43701L131.31944,370.58536C131.82967,370.79675,132.0719,371.38177,131.8605,371.89197L126.88432,383.90189C126.67291,384.41211,126.08791,384.65433,125.5777,384.44293L122.80618,383.29459C122.29596,383.08316,122.05372,382.49817,122.26513,381.98795L127.24131,369.97806C127.39986,369.5954,127.76856,369.36346,128.15825,369.36063z M272.34177,369.3606C272.73145,369.36346,273.10016,369.5954,273.2587,369.97803L278.23489,381.98795C278.44629,382.49817,278.20404,383.08316,277.69385,383.29456L274.9223,384.4429C274.41211,384.65433,273.82709,384.41208,273.61569,383.90186L268.63953,371.89197C268.4281,371.38174,268.67035,370.79675,269.18057,370.58533L271.95209,369.43698C272.07965,369.38412,272.21185,369.35965,272.34177,369.3606z M331.94751,328.82578C332.20343,328.82578,332.45935,328.9234,332.6546,329.11868L341.84662,338.31146C342.23712,338.702,342.23712,339.33514,341.84656,339.72568L339.72516,341.84689C339.33463,342.2374,338.70148,342.23737,338.31097,341.84683L329.11896,332.65408C328.72845,332.26355,328.72845,331.63037,329.11902,331.23987L331.24042,329.11862C331.43567,328.92337,331.69159,328.82574,331.94751,328.82578z M68.552452,328.82578C68.80838,328.82578,69.064301,328.9234,69.259575,329.11865L71.380974,331.2399C71.771515,331.6304,71.771545,332.26355,71.381035,332.65408L62.189011,341.84686C61.798508,342.2374,61.165344,342.23743,60.774796,341.84689L58.653397,339.72568C58.262848,339.33517,58.262833,338.702,58.653336,338.31146L67.84536,329.11871C68.040619,328.92343,68.296532,328.82581,68.552452,328.82578z M371.50223,268.56268C371.63214,268.56174,371.76434,268.58624,371.89191,268.6391L383.90155,273.61588C384.41174,273.82733,384.65396,274.41232,384.44254,274.92255L383.29404,277.694C383.08261,278.20419,382.49762,278.44641,381.9874,278.23499L369.97775,273.25818C369.46753,273.04675,369.22534,272.46176,369.43677,271.95154L370.58527,269.18008C370.74384,268.79742,371.11255,268.56552,371.50223,268.56268z M28.997696,268.56268C29.387375,268.56552,29.756088,268.79742,29.914658,269.18008L31.063156,271.95154C31.274582,272.46176,31.032379,273.04675,30.522171,273.25818L18.512527,278.23499C18.002319,278.44644,17.417313,278.20422,17.205887,277.694L16.057388,274.92255C15.845963,274.41235,16.088165,273.82733,16.598373,273.61591L28.608017,268.6391C28.735565,268.58624,28.867798,268.56174,28.997696,268.56268z M382.37714,122.18858C382.76685,122.19143,383.13556,122.42333,383.29413,122.80599L384.44263,125.57745C384.65405,126.08766,384.4118,126.67266,383.90161,126.88409L371.89197,131.86089C371.38177,132.07233,370.79675,131.83011,370.58533,131.3199L369.43683,128.54845C369.2254,128.03824,369.46759,127.45322,369.97784,127.24179L381.98749,122.265C382.11502,122.21214,382.24725,122.18764,382.37714,122.18858z M18.122864,122.18858C18.252762,122.18764,18.384995,122.21214,18.512543,122.265L30.522186,127.24181C31.032394,127.45323,31.274612,128.03825,31.063171,128.54846L29.914673,131.31992C29.703247,131.83012,29.11824,132.07233,28.608032,131.8609L16.598389,126.88409C16.088181,126.67266,15.845978,126.08765,16.057404,125.57744L17.205902,122.80598C17.364471,122.42333,17.733185,122.19142,18.122864,122.18858z M339.01804,58.360233C339.27396,58.360222,339.52991,58.457844,339.72516,58.653091L341.84656,60.774342C342.23712,61.164841,342.23712,61.798004,341.84662,62.188545L332.6546,71.381294C332.2641,71.771835,331.63092,71.771858,331.24039,71.381355L329.11896,69.260117C328.72845,68.869606,328.72839,68.236443,329.11893,67.845901L338.31094,58.653152C338.5062,58.457882,338.76212,58.360241,339.01804,58.360233z M61.481949,58.360222C61.737869,58.360233,61.99379,58.457874,62.189041,58.653145L71.381065,67.845886C71.771576,68.236427,71.771553,68.869591,71.381012,69.260101L69.259613,71.38134C68.869072,71.771851,68.235909,71.77182,67.845398,71.381287L58.653366,62.188538C58.262863,61.798,58.262878,61.164837,58.653427,60.77433L60.774826,58.653091C60.970093,58.457836,61.226028,58.360214,61.481949,58.360222z M274.53262,15.980681C274.66251,15.979726,274.79474,16.004225,274.9223,16.057076L277.69382,17.205427C278.20404,17.41683,278.44629,18.001825,278.23486,18.512049L273.25867,30.521948C273.04727,31.032162,272.46228,31.274401,271.95206,31.062994L269.18054,29.914654C268.67032,29.703239,268.4281,29.118244,268.6395,28.608027L273.61566,16.598133C273.77423,16.215464,274.14294,15.983539,274.53262,15.980681z M125.96735,15.980676C126.35705,15.983533,126.72574,16.215458,126.8843,16.598122L131.86047,28.608019C132.07188,29.11824,131.82965,29.703236,131.31943,29.91464L128.54791,31.062988C128.03769,31.274395,127.4527,31.032158,127.24129,30.521936L122.26511,18.512037C122.0537,18.001818,122.29594,17.416824,122.80616,17.205416L125.57767,16.05707C125.70523,16.004217,125.83746,15.979719,125.96735,15.980676z" Stretch="Fill" UseLayoutRounding="False" Fill="{Binding MinorScaleFillBrush}" />
+                            <Canvas Width="400" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Name="UxNorth" Canvas.Left="187" Canvas.Top="16" TextBlock.TextAlignment="Center" TextWrapping="Wrap" TextBlock.FontFamily="{Binding FontFamily}" TextBlock.FontSize="{Binding MajorLabelsFontSize}" TextBlock.FontStretch="{Binding FontStretch}" TextBlock.FontStyle="{Binding FontStyle}" TextBlock.FontWeight="{Binding FontWeight}" TextBlock.Foreground="{Binding MajorLabelsForeground}" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMICompass1Texts, Key=North}" Visibility="{Binding MajorLabelsVisible, Converter={StaticResource BoolVisibilityConverter}, ConverterParameter=HMICompass1}" />
+                                <TextBlock Name="UxNorthEast" Canvas.Left="302" Canvas.Top="75" TextBlock.TextAlignment="Center" TextWrapping="Wrap" TextBlock.FontFamily="{Binding FontFamily}" TextBlock.FontSize="{Binding MinorLabelsFontSize}" TextBlock.FontStretch="{Binding FontStretch}" TextBlock.FontStyle="{Binding FontStyle}" TextBlock.FontWeight="{Binding FontWeight}" TextBlock.Foreground="{Binding MinorLabelsForeground}" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMICompass1Texts, Key=NorthEast}" Visibility="{Binding MinorLabelsVisible, Converter={StaticResource BoolVisibilityConverter}, ConverterParameter=HMICompass1}" />
+                                <TextBlock Name="UxEast" Canvas.Left="349" Canvas.Top="179" TextBlock.TextAlignment="Center" TextWrapping="Wrap" TextBlock.FontFamily="{Binding FontFamily}" TextBlock.FontSize="{Binding MajorLabelsFontSize}" TextBlock.FontStretch="{Binding FontStretch}" TextBlock.FontStyle="{Binding FontStyle}" TextBlock.FontWeight="{Binding FontWeight}" TextBlock.Foreground="{Binding MajorLabelsForeground}" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMICompass1Texts, Key=East}" Visibility="{Binding MajorLabelsVisible, Converter={StaticResource BoolVisibilityConverter}, ConverterParameter=HMICompass1}" />
+                                <TextBlock Name="UxSouthEast" Canvas.Left="302" Canvas.Top="305" TextBlock.TextAlignment="Center" TextWrapping="Wrap" TextBlock.FontFamily="{Binding FontFamily}" TextBlock.FontSize="{Binding MinorLabelsFontSize}" TextBlock.FontStretch="{Binding FontStretch}" TextBlock.FontStyle="{Binding FontStyle}" TextBlock.FontWeight="{Binding FontWeight}" TextBlock.Foreground="{Binding MinorLabelsForeground}" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMICompass1Texts, Key=SouthEast}" Visibility="{Binding MinorLabelsVisible, Converter={StaticResource BoolVisibilityConverter}, ConverterParameter=HMICompass1}" />
+                                <TextBlock Name="UxSouth" Canvas.Left="188" Canvas.Top="343" TextBlock.TextAlignment="Center" TextWrapping="Wrap" TextBlock.FontFamily="{Binding FontFamily}" TextBlock.FontSize="{Binding MajorLabelsFontSize}" TextBlock.FontStretch="{Binding FontStretch}" TextBlock.FontStyle="{Binding FontStyle}" TextBlock.FontWeight="{Binding FontWeight}" TextBlock.Foreground="{Binding MajorLabelsForeground}" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMICompass1Texts, Key=South}" Visibility="{Binding MajorLabelsVisible, Converter={StaticResource BoolVisibilityConverter}, ConverterParameter=HMICompass1}" />
+                                <TextBlock Name="UxSouthWest" Canvas.Left="70" Canvas.Top="305" TextBlock.TextAlignment="Center" TextWrapping="Wrap" TextBlock.FontFamily="{Binding FontFamily}" TextBlock.FontSize="{Binding MinorLabelsFontSize}" TextBlock.FontStretch="{Binding FontStretch}" TextBlock.FontStyle="{Binding FontStyle}" TextBlock.FontWeight="{Binding FontWeight}" TextBlock.Foreground="{Binding MinorLabelsForeground}" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMICompass1Texts, Key=SouthWest}" Visibility="{Binding MinorLabelsVisible, Converter={StaticResource BoolVisibilityConverter}, ConverterParameter=HMICompass1}" />
+                                <TextBlock Name="UxWest" Canvas.Left="20" Canvas.Top="179" TextBlock.TextAlignment="Center" TextWrapping="Wrap" TextBlock.FontFamily="{Binding FontFamily}" TextBlock.FontSize="{Binding MajorLabelsFontSize}" TextBlock.FontStretch="{Binding FontStretch}" TextBlock.FontStyle="{Binding FontStyle}" TextBlock.FontWeight="{Binding FontWeight}" TextBlock.Foreground="{Binding MajorLabelsForeground}" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMICompass1Texts, Key=West}" Visibility="{Binding MajorLabelsVisible, Converter={StaticResource BoolVisibilityConverter}, ConverterParameter=HMICompass1}" />
+                                <TextBlock Name="UxNorthWest" Canvas.Left="70" Canvas.Top="74" TextBlock.TextAlignment="Center" TextWrapping="Wrap" TextBlock.FontFamily="{Binding FontFamily}" TextBlock.FontSize="{Binding MinorLabelsFontSize}" TextBlock.FontStretch="{Binding FontStretch}" TextBlock.FontStyle="{Binding FontStyle}" TextBlock.FontWeight="{Binding FontWeight}" TextBlock.Foreground="{Binding MinorLabelsForeground}" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMICompass1Texts, Key=NorthWest}" Visibility="{Binding MinorLabelsVisible, Converter={StaticResource BoolVisibilityConverter}, ConverterParameter=HMICompass1}" />
+                            </Canvas>
+                            <Ellipse Name="ChromeBrushElement" Margin="0" RenderTransformOrigin="0.5,0.5" Fill="{Binding ChromeFrontBrush}" Stroke="{x:Null}">
+                                <Ellipse.RenderTransform>
+                                    <ScaleTransform ScaleX="0.88" ScaleY="0.88" />
+                                </Ellipse.RenderTransform>
+                            </Ellipse>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

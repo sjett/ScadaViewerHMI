@@ -1,0 +1,208 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Html\Serializers\UpgradeTemplates.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Html\Serializers\UpgradeTemplates.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Html\Serializers\htmlbaseupdate-v1_0__to__v3_3_11_5.xslt" />
+    <None Remove="Isa\rename.bat" />
+    <None Remove="Views\Alarms\HMIAlarmViewer\Images\attention.png" />
+    <None Remove="Views\Alarms\HMIAlarmViewer\Images\more.png" />
+    <None Remove="Views\Alarms\Images\activatealarm.png" />
+    <None Remove="Views\Alarms\Images\deactivatealarm.png" />
+    <None Remove="Views\Alarms\Images\group.png" />
+    <None Remove="Views\Alarms\Images\server.png" />
+    <None Remove="Views\Alarms\Images\timerange.png" />
+    <None Remove="Views\Charts\Images\trendingconfig.png" />
+    <None Remove="Views\Charts\Images\trendingconfigload.png" />
+    <None Remove="Views\Charts\Images\trendingconfigsave.png" />
+    <None Remove="Views\Charts\Images\trendingrange.png" />
+    <None Remove="Views\Charts\Images\trendingstartpaused.png" />
+    <None Remove="Views\DataTable\Images\alarm.png" />
+    <None Remove="Views\DataTable\Images\arrow-down.png" />
+    <None Remove="Views\DataTable\Images\arrow-up.png" />
+    <None Remove="Views\DataTable\Images\config-tools.png" />
+    <None Remove="Views\DataTable\Images\copy.png" />
+    <None Remove="Views\DataTable\Images\edit-number.png" />
+    <None Remove="Views\DataTable\Images\edit.png" />
+    <None Remove="Views\DataTable\Images\hp-printer.png" />
+    <None Remove="Views\DataTable\Images\insertdate.png" />
+    <None Remove="Views\DataTable\Images\insertpicture.png" />
+    <None Remove="Views\DataTable\Images\inserttime.png" />
+    <None Remove="Views\DataTable\Images\load.png" />
+    <None Remove="Views\DataTable\Images\pagenumber.png" />
+    <None Remove="Views\DataTable\Images\pause.png" />
+    <None Remove="Views\DataTable\Images\save.png" />
+    <None Remove="Views\DataTable\Images\symbol-add.png" />
+    <None Remove="Views\DataTable\Images\symbol-delete.png" />
+    <None Remove="Views\DataTable\Images\symbol-help.png" />
+    <None Remove="Views\DataTable\Images\table-export.png" />
+    <None Remove="Views\General\Images\image.png" />
+    <None Remove="Views\Html\Images\messengerproscreenshot.png" />
+    <None Remove="Views\Html\Images\scenariomanagerproscreenshot.png" />
+    <None Remove="Views\Html\Images\schedulerproscreenshot.png" />
+    <None Remove="Views\Indicators\Images\HMIindicator1.png" />
+    <None Remove="Views\Indicators\Images\HMIindicator2.png" />
+    <None Remove="Views\Indicators\Images\HMIindicator3.png" />
+    <None Remove="Views\Isa\rename.bat" />
+    <None Remove="Views\OperationDiary\Images\operationdiaryserverstopped.png" />
+    <None Remove="Views\OperationDiary\Images\operationdiaryuserloggedin.png" />
+    <None Remove="Views\OperationDiary\Images\operationdiaryuserwrotesignal.png" />
+    <None Remove="Views\Pipes\Images\HMIcornerpipe1.png" />
+    <None Remove="Views\Pipes\Images\HMIlinepipe1.png" />
+    <None Remove="Views\Pipes\Images\HMItpipe1.png" />
+    <None Remove="Views\Primitives\Images\border.png" />
+    <None Remove="Views\Primitives\Images\rectangle.png" />
+    <None Remove="Views\Reporting\Images\blue-document-excel.png" />
+    <None Remove="Views\Reporting\Images\blue-document-pdf.png" />
+    <None Remove="Views\UserManagement\Images\usermanager.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3856.49" />
+    <PackageReference Include="Telerik.ReportViewer.Wpf" Version="19.1.25.521" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Alarms\HMIAlarmViewer\Images\Attention.png" />
+    <Resource Include="Views\Alarms\HMIAlarmViewer\Images\More.png" />
+    <Resource Include="Views\Alarms\Images\DeactivateAlarm.png" />
+    <Resource Include="Views\Alarms\Images\Group.png" />
+    <Resource Include="Views\Alarms\Images\Server.png" />
+    <Resource Include="Views\Alarms\Images\TimeRange.png" />
+    <Resource Include="Views\Buttons\Images\HMIToggleButton2.png" />
+    <Resource Include="Views\Buttons\Images\HMIToggleButton3.png" />
+    <Resource Include="Views\Buttons\Images\HMIToggleButton4.png" />
+    <Resource Include="Views\Charts\Images\TrendingConfig.png" />
+    <Resource Include="Views\Charts\Images\TrendingConfigLoad.png" />
+    <Resource Include="Views\Charts\Images\TrendingConfigSave.png" />
+    <Resource Include="Views\Charts\Images\TrendingRange.png" />
+    <Resource Include="Views\Charts\Images\TrendingStartPaused.png" />
+    <Resource Include="Views\Charts\Images\HMITrending2.png" />
+    <Resource Include="Views\DataTable\Images\alarm.png" />
+    <Resource Include="Views\DataTable\Images\arrow-down.png" />
+    <Resource Include="Views\DataTable\Images\arrow-up.png" />
+    <Resource Include="Views\DataTable\Images\config-tools.png" />
+    <Resource Include="Views\DataTable\Images\copy.png" />
+    <Resource Include="Views\DataTable\Images\edit-number.png" />
+    <Resource Include="Views\DataTable\Images\edit.png" />
+    <Resource Include="Views\DataTable\Images\hp-printer.png" />
+    <Resource Include="Views\DataTable\Images\insertdate.png" />
+    <Resource Include="Views\DataTable\Images\insertpicture.png" />
+    <Resource Include="Views\DataTable\Images\inserttime.png" />
+    <Resource Include="Views\DataTable\Images\load.png" />
+    <Resource Include="Views\DataTable\Images\pagenumber.png" />
+    <Resource Include="Views\DataTable\Images\pause.png" />
+    <Resource Include="Views\DataTable\Images\save.png" />
+    <Resource Include="Views\DataTable\Images\symbol-add.png" />
+    <Resource Include="Views\DataTable\Images\symbol-delete.png" />
+    <Resource Include="Views\DataTable\Images\symbol-help.png" />
+    <Resource Include="Views\DataTable\Images\table-export.png" />
+    <Resource Include="Views\DataTable\Images\HMIdatatable.png" />
+    <Resource Include="Views\Gauges\Images\HMIbargraph1.png" />
+    <Resource Include="Views\Gauges\Images\HMIbargraph2.png" />
+    <Resource Include="Views\Gauges\Images\HMIbargraph3.png" />
+    <Resource Include="Views\Gauges\Images\HMIbargraph4.png" />
+    <Resource Include="Views\Gauges\Images\HMIgauge1.png" />
+    <Resource Include="Views\Gauges\Images\HMIgauge2.png" />
+    <Resource Include="Views\General\Images\image.png" />
+    <Resource Include="Views\Html\Images\messengerproscreenshot.png" />
+    <Resource Include="Views\Html\Images\scenariomanagerproscreenshot.png" />
+    <Resource Include="Views\Html\Images\schedulerproscreenshot.png" />
+    <Resource Include="Views\Indicators\Images\HMIindicator1.png" />
+    <Resource Include="Views\Indicators\Images\HMIindicator2.png" />
+    <Resource Include="Views\Indicators\Images\HMIindicator3.png" />
+    <Resource Include="Views\OperationDiary\Images\operationdiaryserverstopped.png" />
+    <Resource Include="Views\OperationDiary\Images\operationdiaryuserloggedin.png" />
+    <Resource Include="Views\OperationDiary\Images\operationdiaryuserwrotesignal.png" />
+    <Resource Include="Views\Pipes\Images\HMIcornerpipe1.png" />
+    <Resource Include="Views\Pipes\Images\HMIlinepipe1.png" />
+    <Resource Include="Views\Pipes\Images\HMItpipe1.png" />
+    <Resource Include="Views\Primitives\Images\Border.png" />
+    <Resource Include="Views\Primitives\Images\Rectangle.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMI.Common.Browsers\HMI.Common.Browsers.csproj" />
+    <ProjectReference Include="..\HMI.Common.Presentation\HMI.Common.Presentation.csproj" />
+    <ProjectReference Include="..\HMI.Common.Resources\HMI.Common.Resources.csproj" />
+    <ProjectReference Include="..\HMI.Common\HMI.Common.csproj" />
+    <ProjectReference Include="..\HMI.Domain\HMI.Domain.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Converters\HMI.Infrastructure.Converters.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Interfaces\HMI.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Presentation\HMI.Infrastructure.Presentation.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure\HMI.Infrastructure.csproj" />
+    <ProjectReference Include="..\HMI.Modules.Design\HMI.Modules.Design.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Alarms\Images\ActivateAlarm.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Reporting\Images\blue-document-excel.png" />
+    <Resource Include="Views\Reporting\Images\blue-document-pdf.png" />
+    <Resource Include="Views\UserManagement\Images\usermanager.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\ErrorTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\HMIAlarmViewerTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HMIAlarmViewerTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\HMICompass1Texts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HMICompass1Texts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\HMISqlReportViewerTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HMISqlReportViewerTexts.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\ErrorTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\HMIAlarmViewerTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HMIAlarmViewerTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\HMICompass1Texts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HMICompass1Texts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\HMISqlReportViewerTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HMISqlReportViewerTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>

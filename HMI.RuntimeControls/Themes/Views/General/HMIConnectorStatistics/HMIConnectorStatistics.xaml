@@ -1,0 +1,15 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:HMI.RuntimeControls.General" >
+
+    <Style TargetType="local:HMIConnectorStatistics">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:HMIConnectorStatistics">
+                    <DataGrid x:Name="uxStatisticsGrid" ItemsSource="{Binding GetUpdatesPerSecond}" AutoGenerateColumns="True"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

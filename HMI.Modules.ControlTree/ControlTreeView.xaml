@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="HMI.Modules.ControlTree.ControlTreeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:local="clr-namespace:HMI.Modules.ControlTree"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FFF" />
+        <SolidColorBrush  x:Key="SolidBorderBrush" Color="#888" />
+        <Style x:Key="treeViewItem" TargetType="{x:Type rad:RadTreeViewItem}">
+            <Setter Property="FrameworkElement.MinHeight" Value="18" />
+        </Style>
+    </UserControl.Resources>
+
+    <rad:RadTreeView Name="uxControlTree" 
+                                   rad:AnimationManager.IsAnimationEnabled="False" 
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch" 
+                                   SelectionMode="Single" 
+                                   IsEditable="False" 
+                                   Background="{StaticResource WindowBackgroundBrush}"
+                                   BorderBrush="{StaticResource SolidBorderBrush}" 
+                                   IsExpandOnDblClickEnabled="True" 
+                                   IsRootLinesEnabled="True" 
+                                   IsDragDropEnabled="False" 
+                                   ItemContainerStyle="{StaticResource treeViewItem}" 
+                                   FocusManager.IsFocusScope="True" 
+                                  ItemsSource="{Binding Root.Children}" 
+                                   PreviewMouseLeftButtonDown="TreeView_PreviewMouseLeftButtonDown"
+                                   MouseLeave="uxControlTree_MouseLeave">
+        <rad:RadTreeView.Resources>
+            
+            <!--<ResourceDictionary>-->
+                <HierarchicalDataTemplate  DataType="{x:Type local:ControlTreeItem}" ItemsSource="{Binding Children}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="20" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image Name="uxFolderClosedIcon" Visibility="Hidden" Source="/HMI.Modules.ControlTree;component/Resources/Images/FolderClosed.png" Grid.Column="0" Width="16" Height="16" />
+                        <Image Name="uxFolderOpenIcon" Visibility="Collapsed" Source="/HMI.Modules.ControlTree;component/Resources/Images/FolderOpen.png" Grid.Column="0" Width="16" Height="16" />
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0" Text="{Binding DisplayName}" />
+                    </Grid>
+                    <DataTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsExpanded,RelativeSource={RelativeSource AncestorType={x:Type rad:RadTreeViewItem}}}" Value="True" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="uxFolderClosedIcon" Property="UIElement.Visibility" Value="Collapsed" />
+                            <Setter TargetName="uxFolderOpenIcon" Property="UIElement.Visibility" Value="Visible" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsExpanded,RelativeSource={RelativeSource AncestorType={x:Type rad:RadTreeViewItem}}}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="uxFolderClosedIcon" Property="UIElement.Visibility" Value="Visible" />
+                            <Setter TargetName="uxFolderOpenIcon" Property="UIElement.Visibility" Value="Collapsed" />
+                        </MultiDataTrigger>
+                    </DataTemplate.Triggers>
+                </HierarchicalDataTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type local:ControlTreeControlItem}" ItemsSource="{Binding Children}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Viewbox IsHitTestVisible="False" Stretch="Fill" Grid.Column="0" Width="16" Height="16" VerticalAlignment="Center">
+                            <ContentControl VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MinWidth="50" MinHeight="50" SnapsToDevicePixels="True" Content="{Binding ControlInstance}" />
+                        </Viewbox>
+                        <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="5,0,0,0" Text="{Binding DisplayName}" />
+                    </Grid>
+                </HierarchicalDataTemplate>
+
+
+            <!--</ResourceDictionary>-->
+
+        </rad:RadTreeView.Resources>
+
+    </rad:RadTreeView>
+
+</UserControl>

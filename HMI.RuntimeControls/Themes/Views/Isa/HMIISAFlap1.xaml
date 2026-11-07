@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns:local="clr-namespace:HMI.RuntimeControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISAFlap1}" TargetType="{x:Type local:HMIISAFlap1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISAFlap1}">
+                    <Grid Name="LayoutRoot" Margin="0,0,0,0">
+                        <Viewbox>
+                            <Canvas Name="Layer_1" Width="100" Height="100">
+                                <Path Name="Line" Width="101" Height="101" Canvas.Left="-0.500034" Canvas.Top="-0.500023" Stretch="Fill" StrokeLineJoin="Round" Stroke="{TemplateBinding Control.Foreground}" Data="M100,100L-3.40144E-05,-2.28882E-05" StrokeDashCap="Round" StrokeEndLineCap="Round" StrokeStartLineCap="Round" StrokeThickness="{TemplateBinding LineThickness}" />
+                                <Ellipse Name="Ellipse" Width="33.0417" Height="33.0417" Canvas.Left="33.4792" Canvas.Top="33.4791" Stretch="Fill" StrokeLineJoin="Round" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Foreground}" StrokeThickness="{TemplateBinding LineThickness}" />
+                            </Canvas>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

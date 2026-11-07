@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add-Ons" xml:space="preserve">
+    <value>Web 组件</value>
+  </data>
+  <data name="Alarm Online-View" xml:space="preserve">
+    <value>报警在线视图</value>
+  </data>
+  <data name="Alarm State Manager" xml:space="preserve">
+    <value>报警状态管理</value>
+  </data>
+  <data name="Alarm Viewer" xml:space="preserve">
+    <value>报警视图</value>
+  </data>
+  <data name="Alarmduration Statistic" xml:space="preserve">
+    <value>报警时间统计</value>
+  </data>
+  <data name="Alarmfrequency Statistic" xml:space="preserve">
+    <value>报警频率统计</value>
+  </data>
+  <data name="Alarming" xml:space="preserve">
+    <value>报警表</value>
+  </data>
+  <data name="Bargraph -3 Color-" xml:space="preserve">
+    <value>柱状图 -3色-</value>
+  </data>
+  <data name="Bargraph -Rectangle LED-" xml:space="preserve">
+    <value>柱状图 -矩形 LED-</value>
+  </data>
+  <data name="Bargraph -Rectangle-" xml:space="preserve">
+    <value>柱状图 -矩形-</value>
+  </data>
+  <data name="Bargraph -Round-" xml:space="preserve">
+    <value>柱状图 -圆角-</value>
+  </data>
+  <data name="Button -Windows Style-" xml:space="preserve">
+    <value>按钮 -Windows 样式-</value>
+  </data>
+  <data name="Buttons" xml:space="preserve">
+    <value>按钮</value>
+  </data>
+  <data name="Charts" xml:space="preserve">
+    <value>趋势图表</value>
+  </data>
+  <data name="Data Table" xml:space="preserve">
+    <value>数据表格</value>
+  </data>
+  <data name="Date Time" xml:space="preserve">
+    <value>日期时间</value>
+  </data>
+  <data name="Gauges" xml:space="preserve">
+    <value>仪表</value>
+  </data>
+  <data name="HMIComboBoxButton1" xml:space="preserve">
+    <value>ComboBox按钮1</value>
+  </data>
+  <data name="HMILinkButton1" xml:space="preserve">
+    <value>Link按钮1</value>
+  </data>
+  <data name="HMIStatesButton1" xml:space="preserve">
+    <value>状态按钮1</value>
+  </data>
+  <data name="HMIStatesToggleButton1" xml:space="preserve">
+    <value>状态切换按钮1</value>
+  </data>
+  <data name="HMIToggle Button -Round-" xml:space="preserve">
+    <value>切换按钮 -圆形-</value>
+  </data>
+  <data name="Indicators" xml:space="preserve">
+    <value>指示器</value>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>输入控件</value>
+  </data>
+  <data name="Input/Output Controls" xml:space="preserve">
+    <value>输入/输出控件</value>
+  </data>
+  <data name="ISA Lines" xml:space="preserve">
+    <value>ISA 线路</value>
+  </data>
+  <data name="ISA Symbols" xml:space="preserve">
+    <value>ISA 图符</value>
+  </data>
+  <data name="Labels" xml:space="preserve">
+    <value>文本标签</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>多语言</value>
+  </data>
+  <data name="Level Gauge" xml:space="preserve">
+    <value>液位计</value>
+  </data>
+  <data name="Linetrend" xml:space="preserve">
+    <value>线性趋势图</value>
+  </data>
+  <data name="Linetrend2" xml:space="preserve">
+    <value>线性趋势图2</value>
+  </data>
+  <data name="Log Viewer" xml:space="preserve">
+    <value>日志查看器</value>
+  </data>
+  <data name="Logbook" xml:space="preserve">
+    <value>日志记录本</value>
+  </data>
+  <data name="Machineavailability Statistic" xml:space="preserve">
+    <value>设备运转率统计</value>
+  </data>
+  <data name="Motors" xml:space="preserve">
+    <value>马达</value>
+  </data>
+  <data name="Navigation" xml:space="preserve">
+    <value>导航</value>
+  </data>
+  <data name="Operation Diary" xml:space="preserve">
+    <value>操作日志</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>输出控件</value>
+  </data>
+  <data name="Pipes" xml:space="preserve">
+    <value>管道</value>
+  </data>
+  <data name="Pumps" xml:space="preserve">
+    <value>泵</value>
+  </data>
+  <data name="Reporting" xml:space="preserve">
+    <value>报表</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="Sliders" xml:space="preserve">
+    <value>滑块</value>
+  </data>
+  <data name="Speedometer" xml:space="preserve">
+    <value>车速表</value>
+  </data>
+  <data name="Static Symbols" xml:space="preserve">
+    <value>静态图符</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>统计分析</value>
+  </data>
+  <data name="System Monitoring" xml:space="preserve">
+    <value>系统监控</value>
+  </data>
+  <data name="Toggle Button -Rocker-" xml:space="preserve">
+    <value>切换按钮 -摇杆-</value>
+  </data>
+  <data name="Toggle Button -Round LED-" xml:space="preserve">
+    <value>切换按钮 -圆形 LED-</value>
+  </data>
+  <data name="Toggle Button -Windows Style-" xml:space="preserve">
+    <value>切换按钮 -Windows 样式-</value>
+  </data>
+  <data name="User Management" xml:space="preserve">
+    <value>用户管理</value>
+  </data>
+  <data name="Valves" xml:space="preserve">
+    <value>阀门</value>
+  </data>
+</root>

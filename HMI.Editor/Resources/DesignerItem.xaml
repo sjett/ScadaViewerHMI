@@ -1,0 +1,95 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure;assembly=HMI.Infrastructure">
+    <ContextMenu x:Key="DesignerItemContextMenu">
+        <MenuItem Command="{x:Static ApplicationCommands.Cut}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Cut}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Cut.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Copy}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Copy}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Copy.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Paste}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Paste}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Paste.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Delete}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Delete}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Delete.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <Separator />
+        <MenuItem Header="Order">
+            <MenuItem Command="{x:Static gh:DesignerCanvasCommands.BringForward}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=BringForward}">
+                <MenuItem.Icon>
+                    <Image Width="16" Source="Images/BringForward.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="{x:Static gh:DesignerCanvasCommands.BringToFront}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=BringToFront}">
+                <MenuItem.Icon>
+                    <Image Width="16" Source="Images/BringToFront.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="{x:Static gh:DesignerCanvasCommands.SendBackward}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=SendBackward}">
+                <MenuItem.Icon>
+                    <Image Width="16" Source="Images/SendBackward.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="{x:Static gh:DesignerCanvasCommands.SendToBack}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=SendToBack}">
+                <MenuItem.Icon>
+                    <Image Width="16" Source="Images/SendToBack.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+    </ContextMenu>
+    <ContextMenu x:Key="PrimitiveDesignerItemContextMenu">
+        <MenuItem Command="{x:Static ApplicationCommands.Cut}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Cut}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Cut.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Copy}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Copy}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Copy.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Paste}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Paste}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Paste.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Delete}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Delete}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Delete.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <Separator />
+        <MenuItem Header="Order">
+            <MenuItem Command="{x:Static gh:DesignerCanvasCommands.BringForward}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=BringForward}">
+                <MenuItem.Icon>
+                    <Image Width="16" Source="Images/BringForward.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="{x:Static gh:DesignerCanvasCommands.BringToFront}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=BringToFront}">
+                <MenuItem.Icon>
+                    <Image Width="16" Source="Images/BringToFront.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="{x:Static gh:DesignerCanvasCommands.SendBackward}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=SendBackward}">
+                <MenuItem.Icon>
+                    <Image Width="16" Source="Images/SendBackward.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Command="{x:Static gh:DesignerCanvasCommands.SendToBack}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=SendToBack}">
+                <MenuItem.Icon>
+                    <Image Width="16" Source="Images/SendToBack.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>
+    </ContextMenu>
+</ResourceDictionary>

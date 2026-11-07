@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="HMI.Modules.ControlTree.PrimitivesView" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+             xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <rad:RadGalleryItem Name="uxEllipsePrimitive" Grid.Row="0" Grid.Column="0" Image="/HMI.Modules.ControlTree;component/Resources/Images/Ellipse_16x16.png" FrameworkElement.Tag="{Binding Content, ElementName=uxEllipseContainer}" ToolTipService.ToolTip="{localize:Resx ResxName=HMI.Modules.ControlTree.Resources.Texts, Key=EllipseTooltip}" PreviewMouseLeftButtonDown="PrimitivesView_PreviewMouseLeftButtonDown" PreviewMouseMove="PrimitivesView_PreviewMouseMove" />
+        <rad:RadGalleryItem Name="uxRectanglePrimitive" Grid.Row="0" Grid.Column="1" Image="/HMI.Modules.ControlTree;component/Resources/Images/Rectangle_16x16.png" FrameworkElement.Tag="{Binding Content, ElementName=uxRectangleContainer}" ToolTipService.ToolTip="{localize:Resx ResxName=HMI.Modules.ControlTree.Resources.Texts, Key=RectangleTooltip}" PreviewMouseLeftButtonDown="PrimitivesView_PreviewMouseLeftButtonDown" PreviewMouseMove="PrimitivesView_PreviewMouseMove" />
+        <rad:RadGalleryItem Name="uxTrapezePrimitive" Grid.Row="0" Grid.Column="2" Image="/HMI.Modules.ControlTree;component/Resources/Images/Trapeze_16x16.png" FrameworkElement.Tag="{Binding Content, ElementName=uxTrapezeContainer}" ToolTipService.ToolTip="{localize:Resx ResxName=HMI.Modules.ControlTree.Resources.Texts, Key=TrapezeTooltip}" PreviewMouseLeftButtonDown="PrimitivesView_PreviewMouseLeftButtonDown" PreviewMouseMove="PrimitivesView_PreviewMouseMove" />
+        <rad:RadGalleryItem Name="uxTrianglePrimitive" Grid.Row="0" Grid.Column="3" Image="/HMI.Modules.ControlTree;component/Resources/Images/Triangle_16x16.png" FrameworkElement.Tag="{Binding Content, ElementName=uxTriangleContainer}" ToolTipService.ToolTip="{localize:Resx ResxName=HMI.Modules.ControlTree.Resources.Texts, Key=TriangleTooltip}" PreviewMouseLeftButtonDown="PrimitivesView_PreviewMouseLeftButtonDown" PreviewMouseMove="PrimitivesView_PreviewMouseMove" />
+        <rad:RadGalleryItem Name="uxAnimatedEllipsePrimitive" Grid.Row="1" Grid.Column="0" Image="/HMI.Modules.ControlTree;component/Resources/Images/AnimatedEllipse_16x16.png" FrameworkElement.Tag="{Binding Content, ElementName=uxAnimatedEllipseContainer}" ToolTipService.ToolTip="{localize:Resx ResxName=HMI.Modules.ControlTree.Resources.Texts, Key=AnimatedEllipseTooltip}" PreviewMouseLeftButtonDown="PrimitivesView_PreviewMouseLeftButtonDown" PreviewMouseMove="PrimitivesView_PreviewMouseMove" />
+        <rad:RadGalleryItem Name="uxAnimatedRectanglePrimitive" Grid.Row="1" Grid.Column="1" Image="/HMI.Modules.ControlTree;component/Resources/Images/AnimatedRectangle_16x16.png" FrameworkElement.Tag="{Binding Content, ElementName=uxAnimatedRectangleContainer}" ToolTipService.ToolTip="{localize:Resx ResxName=HMI.Modules.ControlTree.Resources.Texts, Key=AnimatedRectangleTooltip}" PreviewMouseLeftButtonDown="PrimitivesView_PreviewMouseLeftButtonDown" PreviewMouseMove="PrimitivesView_PreviewMouseMove" />
+        <rad:RadGalleryItem Name="uxAnimatedTrapezePrimitive" Grid.Row="1" Grid.Column="2" Image="/HMI.Modules.ControlTree;component/Resources/Images/AnimatedTrapeze_16x16.png" FrameworkElement.Tag="{Binding Content, ElementName=uxAnimatedTrapezeContainer}" ToolTipService.ToolTip="{localize:Resx ResxName=HMI.Modules.ControlTree.Resources.Texts, Key=AnimatedTrapezeTooltip}" PreviewMouseLeftButtonDown="PrimitivesView_PreviewMouseLeftButtonDown" PreviewMouseMove="PrimitivesView_PreviewMouseMove" />
+        <rad:RadGalleryItem Name="uxAnimatedTrianglePrimitive" Grid.Row="1" Grid.Column="3" Image="/HMI.Modules.ControlTree;component/Resources/Images/AnimatedTriangle_16x16.png" FrameworkElement.Tag="{Binding Content, ElementName=uxAnimatedTriangleContainer}" ToolTipService.ToolTip="{localize:Resx ResxName=HMI.Modules.ControlTree.Resources.Texts, Key=AnimatedTriangleTooltip}" PreviewMouseLeftButtonDown="PrimitivesView_PreviewMouseLeftButtonDown" PreviewMouseMove="PrimitivesView_PreviewMouseMove" />
+        <ContentControl Name="uxEllipseContainer" Visibility="Collapsed" DataContext="{x:Null}" />
+        <ContentControl Name="uxRectangleContainer" Visibility="Collapsed" DataContext="{x:Null}" />
+        <ContentControl Name="uxTrapezeContainer" Visibility="Collapsed" DataContext="{x:Null}" />
+        <ContentControl Name="uxTriangleContainer" Visibility="Collapsed" DataContext="{x:Null}" />
+        <ContentControl Name="uxAnimatedEllipseContainer" Visibility="Collapsed" DataContext="{x:Null}" />
+        <ContentControl Name="uxAnimatedRectangleContainer" Visibility="Collapsed" DataContext="{x:Null}" />
+        <ContentControl Name="uxAnimatedTrapezeContainer" Visibility="Collapsed" DataContext="{x:Null}" />
+        <ContentControl Name="uxAnimatedTriangleContainer" Visibility="Collapsed" DataContext="{x:Null}" />
+    </Grid>
+</UserControl>

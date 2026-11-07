@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISAViewingGlass1}" BasedOn="{StaticResource HMIISAStyle}" TargetType="{x:Type local:HMIISAViewingGlass1}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISAViewingGlass1}">
+                    <Grid Name="LayoutRoot" IsHitTestVisible="False">
+                        <Viewbox>
+                            <Grid>
+                                <Rectangle Canvas.Left="-0.5" Canvas.Top="19.5" Width="101" Height="61" Fill="{TemplateBinding Control.Background}" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" StrokeLineJoin="Round" StrokeThickness="{Binding LineThickness, FallbackValue=1}" />
+                                <Ellipse Canvas.Left="19.5" Canvas.Top="19.5" Width="61" Height="61" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" StrokeLineJoin="Round" StrokeThickness="{Binding LineThickness, FallbackValue=1}" />
+                            </Grid>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

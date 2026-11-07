@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:ViewModels="clr-namespace:HMI.Common.Browsers.ViewModels"
+                    xmlns:aftbtv="clr-namespace:HMI.Common.Browsers.Views">
+    <DataTemplate x:Key="{DataTemplateKey {x:Type ViewModels:ServerAlarmGroupTreeBrowserViewModel}}" 
+                  DataType="{x:Type ViewModels:ServerAlarmGroupTreeBrowserViewModel}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <aftbtv:AlarmFilterTreeBrowserToolbarView />
+            <aftbtv:AlarmGroupTreeView Grid.Row="1" />
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns:local="clr-namespace:HMI.RuntimeControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISAMotor1}" TargetType="{x:Type local:HMIISAMotor1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISAMotor1}">
+                    <Grid Name="LayoutRoot" IsHitTestVisible="False" Margin="0,0,0,0">
+                        <Viewbox Margin="0,0,0,0">
+                            <Path Fill="{TemplateBinding Control.Background}" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" Margin="0" Data="M73.5,37C73.5,57.158398 57.158394,73.5 37,73.5 16.841606,73.5 0.5,57.158398 0.5,37 0.5,16.841606 16.841606,0.5 37,0.5 57.158394,0.5 73.5,16.841606 73.5,37z M54.896004,58.132996L54.896004,17.244997 36.849045,40.009369 18.583008,17.244997 18.583008,58.132996 19,58.09375 18.8125,17.937502 36.84375,40.1875 54.71875,17.812502 54.53125,58.0625z" Width="100" Height="100" StrokeThickness="{TemplateBinding LineThickness}" />
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

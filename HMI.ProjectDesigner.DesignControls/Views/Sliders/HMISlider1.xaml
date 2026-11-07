@@ -1,0 +1,126 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Sliders">
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <gh:InvertedBoolVisibilityConverter x:Key="InvertedBoolVisibilityConverter" />
+    <gh:StringNullOrEmptyFallbackConverter x:Key="StringNullOrEmptyFallbackConverter" />
+    <gh:OrientationToVisibilityConverter x:Key="OrientationToVisibilityConverter" />
+    <gh:OrientationToVisibilityInvertedConverter x:Key="OrientationToVisibilityInvertedConverter" />
+    <gh:TernarySelector x:Key="TernarySelector" />
+    <Style x:Key="{x:Type local:HMISlider1}" TargetType="{x:Type local:HMISlider1}">
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=Opacity}" />
+        <Setter Property="Control.Background">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource TernarySelector}">
+                    <Binding Path="UseLocalColors" />
+                    <Binding Path="Project.StateDefaultBackground" FallbackValue="White" />
+                    <Binding Path="Background" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Foreground">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource TernarySelector}">
+                    <Binding Path="UseLocalColors" />
+                    <Binding Path="Project.StateDefaultForeground" FallbackValue="White" />
+                    <Binding Path="Foreground" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.BorderBrush" Value="{Binding Path=BorderBrush}" />
+        <Setter Property="Control.BorderThickness" Value="{Binding Path=BorderThickness}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMISlider1}">
+                    <Grid Name="Root">
+                        <Grid.Resources>
+                            <ControlTemplate x:Key="RepeatButtonTemplate">
+                                <Grid Name="Root" Opacity="0" Background="#00FFFFFF" />
+                            </ControlTemplate>
+                        </Grid.Resources>
+                        <Grid Name="HorizontalTemplate" Background="{TemplateBinding Control.Background}" Visibility="{Binding Orientation, Converter={StaticResource OrientationToVisibilityConverter}}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Rectangle Name="TrackRectangle" Height="3" Margin="5,0,5,0" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Fill="#FFE6EFF7" Stroke="#FFA3AEB9" StrokeThickness="{TemplateBinding Control.BorderThickness}" RadiusX="1" RadiusY="1" />
+                            <Rectangle Name="HorizontalTrackRectangleDisabledOverlay" Height="3" Margin="5,0,5,0" Opacity=".55" Visibility="Collapsed" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" Fill="#FFFFFFFF" RadiusX="1" RadiusY="1" />
+                            <RepeatButton Name="HorizontalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Column="0" Grid.Row="1" />
+                            <Thumb Name="HorizontalThumb" Grid.Column="1" Grid.Row="1" Height="18" Width="11" IsTabStop="True" Visibility="{Binding IsDirectionReversed, Converter={StaticResource InvertedBoolVisibilityConverter}}" />
+                            <Thumb Name="HorizontalInvertedThumb" Grid.Column="3" Grid.Row="1" Height="18" Width="11" IsTabStop="True" Visibility="{Binding IsDirectionReversed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            <Rectangle Name="ThumbDisabledOverlay" Width="11" Opacity=".55" Visibility="Collapsed" Grid.Column="1" Grid.Row="1" Fill="#FFFFFFFF" RadiusX="2" RadiusY="2" />
+                            <RepeatButton Name="HorizontalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Column="2" Grid.Row="1" />
+                            <Grid Name="HorizontalScaleGridElement" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="2" Visibility="{Binding SliderScale, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Rectangle Grid.Column="0" Grid.Row="0" Fill="#FFA3AEB9" Margin="4,0,0,0" Width="3" Height="10" HorizontalAlignment="Left" RadiusX="2" RadiusY="2" />
+                                <Rectangle Grid.Column="1" Grid.Row="0" Fill="#FFA3AEB9" Margin="0,0,0,0" Width="3" Height="10" HorizontalAlignment="Center" RadiusX="2" RadiusY="2" />
+                                <Rectangle Grid.Column="2" Grid.Row="0" Fill="#FFA3AEB9" Margin="0,0,4,0" Width="3" Height="10" HorizontalAlignment="Right" RadiusX="2" RadiusY="2" />
+                                <TextBlock Name="HorizontalScale0TextBlockElement" Grid.Column="0" Grid.Row="1" Margin="2,0,0,0" HorizontalAlignment="Left" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding Minimum}" Visibility="{Binding IsDirectionReversed, Converter={StaticResource InvertedBoolVisibilityConverter}}" />
+                                <TextBlock Name="HorizontalScale0ReversedTextBlockElement" Grid.Column="0" Grid.Row="1" Margin="2,0,0,0" HorizontalAlignment="Left" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding Maximum}" Visibility="{Binding IsDirectionReversed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                <TextBlock Name="HorizontalScale50TextBlockElement" Grid.Column="1" Grid.Row="1" Margin="0,0,0,0" HorizontalAlignment="Center" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding Medium}" />
+                                <TextBlock Name="HorizontalScale100TextBlockElement" Grid.Column="2" Grid.Row="1" Margin="0,0,2,0" HorizontalAlignment="Right" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding Maximum}" Visibility="{Binding IsDirectionReversed, Converter={StaticResource InvertedBoolVisibilityConverter}}" />
+                                <TextBlock Name="HorizontalScale100ReversedTextBlockElement" Grid.Column="2" Grid.Row="1" Margin="0,0,2,0" HorizontalAlignment="Right" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding Minimum}" Visibility="{Binding IsDirectionReversed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            </Grid>
+                        </Grid>
+                        <Grid Name="VerticalTemplate" Background="{TemplateBinding Control.Background}" Visibility="{Binding Orientation, Converter={StaticResource OrientationToVisibilityInvertedConverter}}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Rectangle Margin="0,5,0,5" Width="3" Grid.Column="1" Grid.Row="0" Grid.RowSpan="4" Fill="#FFE6EFF7" Stroke="#FFA3AEB9" StrokeThickness="{TemplateBinding Control.BorderThickness}" RadiusX="1" RadiusY="1" />
+                            <Rectangle Name="VerticalTrackRectangleDisabledOverlay" Margin="0,5,0,5" Width="3" Opacity=".55" Visibility="Collapsed" Grid.Column="1" Grid.Row="0" Grid.RowSpan="4" Fill="#FFFFFFFF" RadiusX="1" RadiusY="1" />
+                            <RepeatButton Name="VerticalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Column="1" Grid.Row="2" />
+                            <Thumb Name="VerticalThumb" Grid.Column="1" Grid.Row="3" Height="11" Width="18" IsTabStop="True" Visibility="{Binding IsDirectionReversed, Converter={StaticResource InvertedBoolVisibilityConverter}}" />
+                            <Thumb Name="VerticalInvertedThumb" Grid.Column="1" Grid.Row="0" Height="11" Width="18" IsTabStop="True" Visibility="{Binding IsDirectionReversed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            <RepeatButton Name="VerticalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Column="1" Grid.Row="0" />
+                            <Grid Name="VerticalScaleGridElement" Grid.Column="2" Grid.Row="0" Grid.RowSpan="4" Visibility="{Binding SliderScale, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+                                <Rectangle Grid.Column="0" Grid.Row="0" Fill="#FFA3AEB9" Margin="0,4,0,0" Width="10" Height="3" VerticalAlignment="Top" RadiusX="2" RadiusY="2" />
+                                <Rectangle Grid.Column="0" Grid.Row="1" Fill="#FFA3AEB9" Margin="0,0,0,0" Width="10" Height="3" VerticalAlignment="Center" RadiusX="2" RadiusY="2" />
+                                <Rectangle Grid.Column="0" Grid.Row="2" Fill="#FFA3AEB9" Margin="0,0,0,4" Width="10" Height="3" VerticalAlignment="Bottom" RadiusX="2" RadiusY="2" />
+                                <TextBlock Name="VerticalScale100TextBlockElement" Grid.Column="1" Grid.Row="0" Margin="2,0,0,0" VerticalAlignment="Top" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding Maximum}" Visibility="{Binding IsDirectionReversed, Converter={StaticResource InvertedBoolVisibilityConverter}}" />
+                                <TextBlock Name="VerticalScale100ReversedTextBlockElement" Grid.Column="1" Grid.Row="0" Margin="2,0,0,0" VerticalAlignment="Top" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding Minimum}" Visibility="{Binding IsDirectionReversed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                <TextBlock Name="VerticalScale50TextBlockElement" Grid.Column="1" Grid.Row="1" Margin="2,0,0,0" VerticalAlignment="Center" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding Medium}" />
+                                <TextBlock Name="VerticalScale0TextBlockElement" Grid.Column="1" Grid.Row="2" Margin="2,0,0,0" VerticalAlignment="Bottom" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding Minimum}" Visibility="{Binding IsDirectionReversed, Converter={StaticResource InvertedBoolVisibilityConverter}}" />
+                                <TextBlock Name="VerticalScale0ReversedTextBlockElement" Grid.Column="1" Grid.Row="2" Margin="2,0,0,0" VerticalAlignment="Bottom" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding Maximum}" Visibility="{Binding IsDirectionReversed, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISAPipe1}" TargetType="{x:Type local:HMIISAPipe1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISAPipe1}">
+                    <Grid Name="LayoutRoot">
+                        <Grid Background="{TemplateBinding Control.Background}">
+                            <Path Data="M101,11L1,11 1,1 101,1" UseLayoutRounding="False" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" StrokeDashCap="Square" StrokeStartLineCap="Square" StrokeEndLineCap="Square" StrokeThickness="{Binding LineThickness, FallbackValue=1}" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

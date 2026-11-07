@@ -1,0 +1,404 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:HMI.RuntimeControls.Indicators"
+	xmlns:HMIShared="clr-namespace:HMI.Runtime.Shared.Common.Converters;assembly=HMI.Runtime.Shared"
+	xmlns:Converters="clr-namespace:HMI.RuntimeControls.Indicators.Converters">
+
+	<HMIShared:BooleanVisibilityConverter x:Key="BooleanVisibilityConverter"/>
+	<Converters:BooleanInvertedSignumConverter x:Key="BooleanInvertedSignumConverter"/>
+	
+	<Style TargetType="local:HMICompass1">
+
+		<Setter Property="Background">
+			<Setter.Value>
+				<RadialGradientBrush>
+					<GradientStop Color="White" Offset="0.3"/>
+					<GradientStop Color="#FFD2D2D2" Offset="1"/>
+				</RadialGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="BorderBrush">
+			<Setter.Value>
+				<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+					<GradientStop Color="#FFD8D8D8" Offset="0"/>
+					<GradientStop Color="#FF979797" Offset="1"/>
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="ChromeFrontBrush">
+			<Setter.Value>
+				<RadialGradientBrush Center="0.501,0.323" GradientOrigin="0.501,0.323" RadiusY="0.603" RadiusX="0.783">
+					<GradientStop Color="#44FFFFFF" Offset="0.55"/>
+					<GradientStop Color="Transparent" Offset="0.55"/>
+					<GradientStop Color="Transparent"/>
+				</RadialGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="FontWeight" Value="Bold"/>
+		<Setter Property="MajorLabelsForeground" Value="#FF3F3F3F"/>
+		<Setter Property="MajorScaleFillBrush" Value="#FF787878"/>
+		<Setter Property="MinorLabelsForeground" Value="#FF2B2B2B"/>
+		<Setter Property="MinorScaleFillBrush" Value="#FF6C6C6C"/>
+		<Setter Property="PointerFillBrush">
+			<Setter.Value>
+				<LinearGradientBrush MappingMode="RelativeToBoundingBox" StartPoint="1,0.5" EndPoint="0,0.5">
+					<GradientStop Color="#FFC9C9C9" Offset="0.5"/>
+					<GradientStop Color="#FFEDEDED" Offset="0.5001"/>
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="PointerHeadFillBrush">
+			<Setter.Value>
+				<LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+					<GradientStop Color="#FF0074B1" Offset="0.5"/>
+					<GradientStop Color="#FF0081C4" Offset="0.5"/>
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="PointerStrokeBrush" Value="#FF626262"/>
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="local:HMICompass1">
+
+					<Viewbox>
+
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal"/>
+								<VisualState x:Name="State1">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FF2E9900"/>
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FFA4FF4E"/>
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="State2">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FF9B0000"/>
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFF0000"/>
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="State3">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FFAD7700"/>
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFDFF2A"/>
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="State4">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FF0047AF"/>
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FF00DAFB"/>
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="State5">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" RepeatBehavior="Forever">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FF2E9900"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF2E9900"/>
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" RepeatBehavior="Forever">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FFA3FF4E"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFA3FF4E"/>
+										</ColorAnimationUsingKeyFrames>
+										<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever">
+											<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+											<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+											<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1"/>
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="State6">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" RepeatBehavior="Forever">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FF9B0000"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF9B0000"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.4000000" Value="#FF9B0000"/>
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" RepeatBehavior="Forever">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFF0000"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFF0000"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.4000000" Value="#FFFF0000"/>
+										</ColorAnimationUsingKeyFrames>
+										<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever">
+											<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+											<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+											<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1"/>
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="State7">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" RepeatBehavior="Forever">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FFAD7700"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFAD7700"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.4000000" Value="#FFAD7700"/>
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" RepeatBehavior="Forever">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FFFDFF2A"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FFFDFF2A"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.4000000" Value="#FFFDFF2A"/>
+										</ColorAnimationUsingKeyFrames>
+										<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever">
+											<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+											<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+											<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1"/>
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="State8">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" RepeatBehavior="Forever">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FF0047AF"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF0047AF"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.4000000" Value="#FF0047AF"/>
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" RepeatBehavior="Forever">
+											<SplineColorKeyFrame KeyTime="00:00:00" Value="#FF00DAFB"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.2000000" Value="#FF00DAFB"/>
+											<SplineColorKeyFrame KeyTime="00:00:00.4000000" Value="#FF00DAFB"/>
+										</ColorAnimationUsingKeyFrames>
+										<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="uxBackground" Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever">
+											<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+											<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+											<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1"/>
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+
+						<Grid x:Name="LayoutRoot" Height="450" Width="450">
+							
+							<Grid.Resources>
+								<Storyboard x:Name="UxRotatePointer">
+									<DoubleAnimation Storyboard.TargetName="UxPointer" 
+													 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(RotateTransform.Angle)" 
+													 To="{Binding CompassAngle, RelativeSource={RelativeSource TemplatedParent}}"
+													 Duration="0:0:1" 
+													 >
+										<DoubleAnimation.EasingFunction>
+											<BackEase Amplitude="0.5" EasingMode="EaseOut"/>
+										</DoubleAnimation.EasingFunction>
+									</DoubleAnimation>
+								</Storyboard>
+							</Grid.Resources>
+							
+							<Ellipse x:Name="uxBackground" Fill="{TemplateBinding Background}" StrokeThickness="20" Stroke="{TemplateBinding BorderBrush}"/>
+							<Ellipse x:Name="ScaleLabels" Margin="{Binding StrokeThickness, ElementName=uxBackground}" RenderTransformOrigin="0.5,0.5" Stroke="{x:Null}">
+								<Ellipse.RenderTransform>
+                                    <ScaleTransform ScaleY="0.725" ScaleX="0.725"/>
+								</Ellipse.RenderTransform>
+							</Ellipse>
+							<Ellipse x:Name="ScaleEllipse" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" Stroke="{x:Null}">
+								<Ellipse.RenderTransform>
+                                    <ScaleTransform ScaleY="0.85" ScaleX="0.85"/>
+								</Ellipse.RenderTransform>
+							</Ellipse>
+							
+							<Grid x:Name="UxPointer" RenderTransformOrigin="0.5,0.5">
+								<Grid.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="{Binding Path=PointerIsInverted, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanInvertedSignumConverter}}" />
+                                        <RotateTransform Angle="{Binding CompassAngle, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    </TransformGroup>
+								</Grid.RenderTransform>
+								<Path Data="M0,0 L85.436668,59.915546 L171,0 L85.489723,314.67453 z" 
+									  Fill="{TemplateBinding PointerFillBrush}" 
+									  Stretch="Uniform" 
+									  Stroke="{TemplateBinding PointerStrokeBrush}" 
+									  StrokeMiterLimit="3" 
+									  StrokeThickness="3"
+									  RenderTransformOrigin="0.5,0.5" 
+									  UseLayoutRounding="False" 
+									  HorizontalAlignment="Center" 
+									  VerticalAlignment="Center" >
+									<Path.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="-180"/>
+                                            <ScaleTransform ScaleY="0.6" ScaleX="0.55"/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+								</Path>
+								<Path Data="M125.36237,169.62305 L85.604073,314.67499 L46.078152,169.57292 L85.720612,199.07298 z" 
+									  Height="112" 
+									  Width="56" 
+									  Margin="0,140,0,0" 
+									  Fill="{TemplateBinding PointerHeadFillBrush}" 
+									  Stretch="Fill" 
+									  Stroke="{TemplateBinding PointerStrokeBrush}" 
+									  RenderTransformOrigin="0.5,0.5" 
+									  UseLayoutRounding="False" 
+									  HorizontalAlignment="Center" 
+									  VerticalAlignment="Top">
+									<Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="-1"/>
+                                            <TranslateTransform Y="-52.038009643554688"/>
+                                        </TransformGroup>
+									</Path.RenderTransform>
+								</Path>
+                                <local:ArcShape 
+										StartAngle="-22.5"
+										EndAngle="22.5"
+										Radius="50"
+										ArcThickness="{Binding StrokeThickness, ElementName=uxBackground}"
+										Fill="{TemplateBinding PointerHeadFillBrush}"
+										Stroke="{x:Null}"
+										StrokeThickness="31"/>
+
+                                <!--<local:ArcShape 
+										ArcThickness="{Binding StrokeThickness, ElementName=uxBackground}" 
+										ArcThicknessUnit="Pixel" 
+										EndAngle="22.5" 
+										Fill="{TemplateBinding PointerHeadFillBrush}"
+										StartAngle="-22.5" 
+										Stretch="None" 
+										Stroke="{x:Null}" 
+										StrokeThickness="31" 
+										UseLayoutRounding="False"/>-->
+							</Grid>
+
+                            <!-- PathListBox 绑定到椭圆 -->
+                            <local:PathListBox x:Name="Scale"
+								  Width="300" Height="300"
+								  SourceElement="{Binding ElementName=ScaleEllipse}"
+								  PathSourceType="ActualShape"
+								  Distribution="Even"
+								  Orientation="OrientToPath"
+								  HorizontalAlignment="Center" 
+								  VerticalAlignment="Center">	
+
+                                <!-- 子元素 -->
+                                <Ellipse Height="18" Width="18" Fill="{TemplateBinding MajorScaleFillBrush}"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Ellipse Height="18" Width="18" Fill="{TemplateBinding MajorScaleFillBrush}"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Ellipse Height="18" Width="18" Fill="{TemplateBinding MajorScaleFillBrush}"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Ellipse Height="18" Width="18" Fill="{TemplateBinding MajorScaleFillBrush}"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                                <Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+                            </local:PathListBox>
+                            
+                            <!--<local:PathListBox x:Name="Scale"
+                                               Width="300" Height="300"
+											  Distribution="Even"
+											  Orientation="OrientToPath">
+								<local:PathListBox.LayoutPath>
+									<LayoutPath SourceElement="{Binding ElementName=ScaleEllipse}" Distribution="Even" Orientation="OrientToPath"/>
+								</local:PathListBox.LayoutPath>
+                                
+								<Ellipse Height="18" Width="18" Fill="{TemplateBinding MajorScaleFillBrush}"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Ellipse Height="18" Width="18" Fill="{TemplateBinding MajorScaleFillBrush}"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Ellipse Height="18" Width="18" Fill="{TemplateBinding MajorScaleFillBrush}"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Ellipse Height="18" Width="18" Fill="{TemplateBinding MajorScaleFillBrush}"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+								<Rectangle Height="15" Width="5" Fill="{TemplateBinding MinorScaleFillBrush}" RadiusY="1" RadiusX="1"/>
+							</local:PathListBox>-->
+
+                            <local:PathListBox x:Name="Labels" 
+                                               SourceElement="{Binding ElementName=ScaleLabels}" 
+                                               Distribution="Even">
+
+								<!--Text="{Binding Path=Translator.North, RelativeSource={RelativeSource TemplatedParent}}"-->
+								<TextBlock x:Name="UxNorth" 
+									   FontSize="{Binding Path=MajorLabelsFontSize, RelativeSource={RelativeSource TemplatedParent}}" 
+									   Foreground="{TemplateBinding MajorLabelsForeground}" 
+									   TextAlignment="Center" 
+									   TextWrapping="Wrap" 
+									   Visibility="{Binding Path=MajorLabelsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanVisibilityConverter}}"/>
+								<TextBlock x:Name="UxNorthEast" 
+									   FontSize="{Binding Path=MinorLabelsFontSize, RelativeSource={RelativeSource TemplatedParent}}" 
+									   Foreground="{TemplateBinding MinorLabelsForeground}" 
+									   TextAlignment="Center" 
+									   TextWrapping="Wrap" 
+									   Visibility="{Binding Path=MinorLabelsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanVisibilityConverter}}"/>
+								<TextBlock x:Name="UxEast" 
+									   FontSize="{Binding Path=MajorLabelsFontSize, RelativeSource={RelativeSource TemplatedParent}}" 
+									   Foreground="{TemplateBinding MajorLabelsForeground}" 
+									   TextAlignment="Center" 
+									   TextWrapping="Wrap" 
+									   Visibility="{Binding Path=MajorLabelsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanVisibilityConverter}}"/>
+								<TextBlock x:Name="UxSouthEast" 
+									   FontSize="{Binding Path=MinorLabelsFontSize, RelativeSource={RelativeSource TemplatedParent}}" 
+									   Foreground="{TemplateBinding MinorLabelsForeground}" 
+									   TextAlignment="Center" 
+									   TextWrapping="Wrap" 
+									   Visibility="{Binding Path=MinorLabelsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanVisibilityConverter}}"/>
+								<TextBlock x:Name="UxSouth" 
+									   FontSize="{Binding Path=MajorLabelsFontSize, RelativeSource={RelativeSource TemplatedParent}}" 
+									   Foreground="{TemplateBinding MajorLabelsForeground}" 
+									   TextAlignment="Center" 
+									   TextWrapping="Wrap" 
+									   Visibility="{Binding Path=MajorLabelsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanVisibilityConverter}}"/>
+								<TextBlock x:Name="UxSouthWest" 
+									   FontSize="{Binding Path=MinorLabelsFontSize, RelativeSource={RelativeSource TemplatedParent}}" 
+									   Foreground="{TemplateBinding MinorLabelsForeground}" 
+									   TextAlignment="Center" 
+									   TextWrapping="Wrap" 
+									   Visibility="{Binding Path=MinorLabelsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanVisibilityConverter}}"/>
+								<TextBlock x:Name="UxWest" 
+									   FontSize="{Binding Path=MajorLabelsFontSize, RelativeSource={RelativeSource TemplatedParent}}" 
+									   Foreground="{TemplateBinding MajorLabelsForeground}" 
+									   TextAlignment="Center" 
+									   TextWrapping="Wrap" 
+									   Visibility="{Binding Path=MajorLabelsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanVisibilityConverter}}"/>
+								<TextBlock x:Name="UxNorthWest" 
+									   FontSize="{Binding Path=MinorLabelsFontSize, RelativeSource={RelativeSource TemplatedParent}}" 
+									   Foreground="{TemplateBinding MinorLabelsForeground}" 
+									   TextAlignment="Center" 
+									   TextWrapping="Wrap" 
+									   Visibility="{Binding Path=MinorLabelsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanVisibilityConverter}}"/>
+							</local:PathListBox>
+							
+							<Ellipse x:Name="ChromeBrushElement" Margin="0" RenderTransformOrigin="0.5,0.5" Stroke="{x:Null}" Fill="{TemplateBinding ChromeFrontBrush}">
+								<Ellipse.RenderTransform>
+                                    <ScaleTransform ScaleY="0.88" ScaleX="0.88"/>
+								</Ellipse.RenderTransform>
+							</Ellipse>
+							
+						</Grid>
+						
+					</Viewbox>
+
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+
+	</Style>
+
+</ResourceDictionary>

@@ -1,0 +1,147 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Converters="clr-namespace:HMI.RuntimeControls.General.Converters"
+                    xmlns:local="clr-namespace:HMI.RuntimeControls.General.Views"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <Converters:BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+    <Converters:InvertedBooleanToVisibilityConverter x:Key="invertedBooleanToVisibilityConverter" />
+
+    <Style x:Name="documentTemplateEditor_Button_Style" TargetType="Button">
+        <Setter Property="MinWidth" Value="80" />
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="Margin" Value="5,10,5,10" />
+        <Setter Property="Padding" Value="10" />
+    </Style>
+
+    <Style TargetType="local:DocumentTemplateEditor">
+        <Setter Property="MinWidth" Value="400" />
+        <Setter Property="MinHeight" Value="300" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:DocumentTemplateEditor">
+                    <Border x:Name="uxOuterBorder"
+                            Background="{Binding DialogsBackground}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentControl>
+                            <Border x:Name="uxInnerBorder">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <local:DocumentEditor x:Name="uxDocumentEditor" />
+                                    <telerik:RadExpander Grid.Column="1"
+                                                         ExpandDirection="Left"
+                                                         IsExpanded="True">
+                                        <telerik:RadTabControl>
+                                            <telerik:RadTabItem Header="{Binding Translations.TemplateEditorDataExplorerHeader, FallbackValue='#Data Explorer'}">
+                                                <telerik:RadTreeView x:Name="uxDocumentModelTreeView" ItemsSource="{Binding Path=DocumentModel.Children}">
+                                                    <telerik:RadTreeView.ItemTemplate>
+                                                        <telerik:HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                                                            <TextBlock Text="{Binding Name}" />
+                                                        </telerik:HierarchicalDataTemplate>
+                                                    </telerik:RadTreeView.ItemTemplate>
+                                                </telerik:RadTreeView>
+                                            </telerik:RadTabItem>
+                                        </telerik:RadTabControl>
+                                    </telerik:RadExpander>
+                                    <Rectangle Grid.Row="1"
+                                               Grid.ColumnSpan="2"
+                                               Height="3"
+                                               HorizontalAlignment="Stretch"
+                                               Fill="Black"
+                                               Opacity="0.25" />
+                                    <Grid x:Name="uxButtonsPanel"
+                                          Grid.Row="2"
+                                          Grid.ColumnSpan="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0">
+                                            <TextBlock Text="{Binding Translations.TemplateEditorTemplate, FallbackValue=#Template}" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding TemplateName}" VerticalAlignment="Center" Margin="10" FontWeight="Bold" MinWidth="100" MaxWidth="200"/>
+                                        </StackPanel>
+
+                                        <Button x:Name="uxResetButton"
+                                                Grid.Column="1"
+                                                Background="{Binding ButtonBackground}"
+                                                Content="{Binding Translations.TemplateEditorReset,
+                                                                  FallbackValue=#Reset}"
+                                                Foreground="{Binding ButtonForeground}"
+                                                Style="{StaticResource documentTemplateEditor_Button_Style}"
+                                                ToolTipService.ToolTip="{Binding Translations.TemplateEditorResetTooltip,
+                                                                                 FallbackValue='#Reset the Document Template'}" />
+
+                                        <Button x:Name="uxCheckButton"
+                                                Grid.Column="3"
+                                                Background="{Binding ButtonBackground}"
+                                                Content="{Binding Translations.TemplateEditorCheck,
+                                                                  FallbackValue=#Check}"
+                                                Foreground="{Binding ButtonForeground}"
+                                                Style="{StaticResource documentTemplateEditor_Button_Style}"
+                                                ToolTipService.ToolTip="{Binding Translations.TemplateEditorCheckToolTip,
+                                                                                 FallbackValue='#Check the Document Template'}" />
+                                        <Button x:Name="uxLoadButton"
+                                                Grid.Column="4"
+                                                Background="{Binding ButtonBackground}"
+                                                Content="{Binding Translations.TemplateEditorLoad,
+                                                                  FallbackValue=#Load}"
+                                                Foreground="{Binding ButtonForeground}"
+                                                Style="{StaticResource documentTemplateEditor_Button_Style}"
+                                                ToolTipService.ToolTip="{Binding Translations.TemplateEditorLoadToolTip,
+                                                                                 FallbackValue='#Load Document Template from Server'}" />
+                                        <Button x:Name="uxSaveButton"
+                                                Grid.Column="5"
+                                                Background="{Binding ButtonBackground}"
+                                                Content="{Binding Translations.TemplateEditorSave,
+                                                                  FallbackValue=#Save}"
+                                                Foreground="{Binding ButtonForeground}"
+                                                Style="{StaticResource documentTemplateEditor_Button_Style}"
+                                                ToolTipService.ToolTip="{Binding Translations.TemplateEditorSaveToolTip,
+                                                                                 FallbackValue=#Save Document Template to Server}" />
+
+                                        <Button x:Name="uxApplyButton"
+                                                Grid.Column="6"
+                                                Background="{Binding ButtonBackground}"
+                                                Content="{Binding Translations.TemplateEditorApply,
+                                                                  FallbackValue=#Apply}"
+                                                Foreground="{Binding ButtonForeground}"
+                                                Style="{StaticResource documentTemplateEditor_Button_Style}"
+                                                ToolTipService.ToolTip="{Binding Translations.TemplateEditorApplyToolTip,
+                                                                                 FallbackValue='#Apply Docment Template and close'}" />
+                                        <Button x:Name="uxCloseButton"
+                                                Grid.Column="7"
+                                                Background="{Binding ButtonBackground}"
+                                                Content="{Binding Translations.TemplateEditorCancel,
+                                                                  FallbackValue=#Cancel}"
+                                                Foreground="{Binding ButtonForeground}"
+                                                Style="{StaticResource documentTemplateEditor_Button_Style}"
+                                                ToolTipService.ToolTip="{Binding Translations.TemplateEditorCancelToolTip,
+                                                                                 FallbackValue=#Cancel and close}" />
+                                    </Grid>
+                                </Grid>
+
+                            </Border>
+                        </ContentControl>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

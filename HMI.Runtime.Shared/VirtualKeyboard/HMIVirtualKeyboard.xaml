@@ -1,0 +1,734 @@
+﻿<UserControl x:Name="userControl" 
+             x:Class="HMI.Runtime.Shared.VirtualKeyboard.HMIVirtualKeyboard" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:local="clr-namespace:HMI.Runtime.Shared.VirtualKeyboard"
+             xmlns:ei="http://schemas.microsoft.com/xaml/behaviors"
+            >
+    <UserControl.Resources>
+        <Style x:Key="ResizeButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF1F3B53" />
+            <Setter Property="Foreground" Value="#FF000000" />
+            <Setter Property="Padding" Value="3" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0" />
+                        <GradientStop Color="#FF8399A9" Offset="0.375" />
+                        <GradientStop Color="#FF718597" Offset="0.375" />
+                        <GradientStop Color="#FF617584" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup >
+                                    <ScaleTransform />
+                                </TransformGroup>
+                                <!--<CompositeTransform />-->
+                            </Grid.RenderTransform>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates"
+                                        ei:ExtendedVisualStateManager.UseFluidLayout="True">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0:0:0.2">
+                                            <VisualTransition.GeneratedEasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </VisualTransition.GeneratedEasingFunction>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1"
+                                                    Storyboard.TargetProperty="Opacity"
+                                                    Storyboard.TargetName="BackgroundAnimation" />
+                                            <ColorAnimation Duration="0" To="#F2FFFFFF"
+                                                    Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <ColorAnimation Duration="0" To="#CCFFFFFF"
+                                                    Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <ColorAnimation Duration="0" To="#7FFFFFFF"
+                                                    Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#FF6DBDD1"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    Storyboard.TargetName="Background" />
+                                            <DoubleAnimation Duration="0" To="1"
+                                                    Storyboard.TargetProperty="Opacity"
+                                                    Storyboard.TargetName="BackgroundAnimation" />
+                                            <ColorAnimation Duration="0" To="#D8FFFFFF"
+                                                    Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <ColorAnimation Duration="0" To="#C6FFFFFF"
+                                                    Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <ColorAnimation Duration="0" To="#8CFFFFFF"
+                                                    Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <ColorAnimation Duration="0" To="#3FFFFFFF"
+                                                    Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <DoubleAnimation Duration="0" To="1.15"
+                                                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                                    Storyboard.TargetName="grid"
+                                                   />
+                                            <DoubleAnimation Duration="0" To="1.15"
+                                                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                                    Storyboard.TargetName="grid"
+                                                    />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To=".55"
+                                                    Storyboard.TargetProperty="Opacity"
+                                                    Storyboard.TargetName="DisabledVisualElement" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0:0:0.2">
+                                            <VisualTransition.GeneratedEasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </VisualTransition.GeneratedEasingFunction>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1"
+                                                    Storyboard.TargetProperty="Opacity"
+                                                    Storyboard.TargetName="FocusVisualElement" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unfocused" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <VisualStateManager.CustomVisualStateManager>
+                                <ei:ExtendedVisualStateManager />
+                            </VisualStateManager.CustomVisualStateManager>
+                            <Border x:Name="Background" BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Background="White" CornerRadius="3">
+                                <Grid Background="{TemplateBinding Background}" Margin="1">
+                                    <Border x:Name="BackgroundAnimation" Background="#FF448DCA"
+                                            Opacity="0" />
+                                    <Rectangle x:Name="BackgroundGradient">
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                <GradientStop Color="#FFFFFFFF" Offset="0" />
+                                                <GradientStop Color="#F9FFFFFF" Offset="0.375" />
+                                                <GradientStop Color="#E5FFFFFF" Offset="0.625" />
+                                                <GradientStop Color="#C6FFFFFF" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="contentPresenter"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    Margin="{TemplateBinding Padding}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            <Rectangle x:Name="DisabledVisualElement" Fill="#FFFFFFFF"
+                                    IsHitTestVisible="false" Opacity="0" RadiusY="3" RadiusX="3" />
+                            <Rectangle x:Name="FocusVisualElement" IsHitTestVisible="false"
+                                    Margin="1" Opacity="0" RadiusY="2" RadiusX="2"
+                                    Stroke="#FF6DBDD1" StrokeThickness="1" />
+                            <Path
+                                    Data="M9.9161768,36.455429 L10.758772,37.33522 L7.4764886,38.984001 z M9.0689754,35.570835 L9.8817177,36.419453 L7.4184823,38.969383 z M17.94503,28.072325 L17.981369,28.096399 L9.9161768,36.455429 L9.8817177,36.419453 z M3.8873858,25.970263 L4.1886296,27.164721 L0.54311752,26.907686 z M3.5844963,24.769278 L3.875066,25.921413 L0.5,26.865252 z M14.600321,22.922092 L14.608122,22.965157 L3.8873858,25.970263 L3.875066,25.921413 z M48.937443,13.319702 L48.943199,13.340767 L37.297295,16.605204 L37.293766,16.575861 z M51.377644,12.658373 L49.230133,14.390706 L48.943199,13.340767 z M51.396336,12.643296 L51.417999,12.647061 L51.377644,12.658373 z M51.417633,12.626116 L51.396336,12.643296 L51.371582,12.638993 z M48.620758,12.160903 L51.371582,12.638993 L48.937443,13.319702 z M42.769733,2.3738375 L42.784977,2.3891253 L34.273636,11.210558 L34.250343,11.193094 z M44.560936,0.54846132 L43.5448,3.1511054 L42.784977,2.3891253 z M44.546249,0.53479195 L42.769733,2.3738375 L41.931129,1.5328555 z M44.590374,0.51795173 L44.560936,0.54846132 L44.569778,0.52581143 z M44.579857,0.5 L44.569778,0.52581143 L44.546249,0.53479195 z"
+                                    Margin="5,-9,5.082,-8.484"
+                                    RenderTransformOrigin="0.500000009184429,0.497995905168416"
+                                    StrokeStartLineCap="Round" Stretch="Fill"
+                                    StrokeEndLineCap="Round" StrokeDashCap="Round" Stroke="Black"
+                                    StrokeLineJoin="Round" UseLayoutRounding="False">
+                                <Path.RenderTransform>
+                                    <!--<CompositeTransform Rotation="30" />-->
+                                    <TransformGroup>
+                                        <RotateTransform Angle="30" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ThumbStyle1" TargetType="Thumb">
+            <Setter Property="Background" Value="#FF1F3B53" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="IsTabStop" Value="False" />
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0" />
+                        <GradientStop Color="#FF8399A9" Offset="0.375" />
+                        <GradientStop Color="#FF718597" Offset="0.375" />
+                        <GradientStop Color="#FF617584" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid>
+                            <VisualStateManager.CustomVisualStateManager>
+                                <ei:ExtendedVisualStateManager />
+                            </VisualStateManager.CustomVisualStateManager>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates"
+                                        ei:ExtendedVisualStateManager.UseFluidLayout="True">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0:0:0.2">
+                                            <VisualTransition.GeneratedEasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </VisualTransition.GeneratedEasingFunction>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1"
+                                                    Storyboard.TargetProperty="Opacity"
+                                                    Storyboard.TargetName="BackgroundAnimation" />
+                                            <ColorAnimation Duration="0" To="#F2FFFFFF"
+                                                    Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <ColorAnimation Duration="0" To="#CCFFFFFF"
+                                                    Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <ColorAnimation Duration="0" To="#7FFFFFFF"
+                                                    Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#FFB1B1B1"
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    Storyboard.TargetName="Background" />
+                                            <DoubleAnimation Duration="0" To="0.76"
+                                                    Storyboard.TargetProperty="Opacity"
+                                                    Storyboard.TargetName="BackgroundAnimation" />
+                                            <ColorAnimation Duration="0" To="#D8FFFFFF"
+                                                    Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <ColorAnimation Duration="0" To="#C6FFFFFF"
+                                                    Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <ColorAnimation Duration="0" To="#8CFFFFFF"
+                                                    Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <ColorAnimation Duration="0" To="#3FFFFFFF"
+                                                    Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)"
+                                                    Storyboard.TargetName="BackgroundGradient" />
+                                            <DoubleAnimation Duration="0" To="0"
+                                                    Storyboard.TargetProperty="(Shape.Fill).(Brush.Opacity)"
+                                                    Storyboard.TargetName="BackgroundGradient"
+                                                     />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To=".55"
+                                                    Storyboard.TargetProperty="Opacity"
+                                                    Storyboard.TargetName="DisabledVisualElement" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates"
+                                        ei:ExtendedVisualStateManager.UseFluidLayout="True">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0:0:0.2">
+                                            <VisualTransition.GeneratedEasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </VisualTransition.GeneratedEasingFunction>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1"
+                                                    Storyboard.TargetProperty="Opacity"
+                                                    Storyboard.TargetName="FocusVisualElement" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unfocused" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="Background" BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Background="White" CornerRadius="3">
+                                <Grid Background="{TemplateBinding Background}" Margin="1">
+                                    <Border x:Name="BackgroundAnimation" Background="#FFCECECE"
+                                            Opacity="0" />
+                                    <Rectangle x:Name="BackgroundGradient">
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                <GradientStop Color="#FFFFFFFF" Offset="0" />
+                                                <GradientStop Color="#F9FFFFFF" Offset="0.375" />
+                                                <GradientStop Color="#E5FFFFFF" Offset="0.625" />
+                                                <GradientStop Color="#C6FFFFFF" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
+                            </Border>
+                            <Rectangle x:Name="DisabledVisualElement" Fill="#FFFFFFFF"
+                                    IsHitTestVisible="false" Opacity="0" RadiusY="2" RadiusX="2" />
+                            <Rectangle x:Name="FocusVisualElement" IsHitTestVisible="false"
+                                    Margin="1" Opacity="0" RadiusY="1" RadiusX="1"
+                                    Stroke="#FFD8D8D8" StrokeThickness="1" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="SliderStyle1" TargetType="Slider">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Maximum" Value="10" />
+            <Setter Property="Minimum" Value="0" />
+            <Setter Property="Value" Value="0" />
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0" />
+                        <GradientStop Color="#FF8399A9" Offset="0.375" />
+                        <GradientStop Color="#FF718597" Offset="0.375" />
+                        <GradientStop Color="#FF617584" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="IsTabStop" Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid x:Name="Root">
+                            <Grid.Resources>
+                                <ControlTemplate x:Key="RepeatButtonTemplate">
+                                    <Grid x:Name="Root" Background="Transparent" Opacity="0" />
+                                </ControlTemplate>
+                            </Grid.Resources>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver" />
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Duration="0"
+                                                    Storyboard.TargetProperty="Visibility"
+                                                    Storyboard.TargetName="HorizontalTrackRectangleDisabledOverlay">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Duration="0"
+                                                    Storyboard.TargetProperty="Visibility"
+                                                    Storyboard.TargetName="ThumbDisabledOverlay">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Duration="0"
+                                                    Storyboard.TargetProperty="Visibility"
+                                                    Storyboard.TargetName="VerticalTrackRectangleDisabledOverlay">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid x:Name="HorizontalTemplate"
+                                    Background="{TemplateBinding Background}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Rectangle x:Name="TrackRectangle" Grid.ColumnSpan="3"
+                                        Grid.Column="0" Fill="#FFE6EFF7" Height="3" Margin="5,0,5,0"
+                                        RadiusY="1" RadiusX="1" Stroke="#FFA3AEB9"
+                                        StrokeThickness="{TemplateBinding BorderThickness}" />
+                                <Rectangle x:Name="HorizontalTrackRectangleDisabledOverlay"
+                                        Grid.ColumnSpan="3" Grid.Column="0" Fill="White" Height="3"
+                                        Margin="5,0,5,0" Opacity=".55" RadiusY="1" RadiusX="1"
+                                        Visibility="Collapsed" />
+                                <RepeatButton
+                                        x:Name="HorizontalTrackLargeChangeDecreaseRepeatButton"
+                                        Grid.Column="0" Height="18" IsTabStop="False"
+                                        Template="{StaticResource RepeatButtonTemplate}" />
+                                <Thumb x:Name="HorizontalThumb" Grid.Column="1" Height="18"
+                                        IsTabStop="True" Width="11" />
+                                <Rectangle x:Name="ThumbDisabledOverlay" Grid.Column="1"
+                                        Fill="White" Opacity=".55" RadiusY="2" RadiusX="2"
+                                        Visibility="Collapsed" Width="11" />
+                                <RepeatButton
+                                        x:Name="HorizontalTrackLargeChangeIncreaseRepeatButton"
+                                        Grid.Column="2" Height="18" IsTabStop="False"
+                                        Template="{StaticResource RepeatButtonTemplate}" />
+                            </Grid>
+                            <Grid x:Name="VerticalTemplate"
+                                    Background="{TemplateBinding Background}" Visibility="Collapsed">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition Height="Auto" MinHeight="19" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Rectangle Fill="#FFCCCCCC" Margin="7,5" RadiusY="1" Grid.Row="0"
+                                        RadiusX="1" Grid.RowSpan="2" Stroke="DarkGray"
+                                        StrokeThickness="{TemplateBinding BorderThickness}"
+                                        Width="5" />
+                                <Rectangle x:Name="VerticalTrackRectangleDisabledOverlay"
+                                        Fill="White" Margin="9,5,8,5" Opacity=".55" RadiusY="1"
+                                        Grid.Row="0" RadiusX="1" Grid.RowSpan="2"
+                                        Visibility="Collapsed" Width="3" />
+                                <RepeatButton x:Name="VerticalTrackLargeChangeDecreaseRepeatButton"
+                                        IsTabStop="False" Grid.Row="2"
+                                        Template="{StaticResource RepeatButtonTemplate}" Width="18"
+                                        Background="#FF4E4E4E" Margin="1,0"
+                                        >
+                                    <RepeatButton.BorderBrush>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFC6C6C6" Offset="0" />
+                                            <GradientStop Color="#FFABABAB" Offset="0.375" />
+                                            <GradientStop Color="#FF9D9D9D" Offset="0.378" />
+                                            <GradientStop Color="#FF818283" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </RepeatButton.BorderBrush>
+                                </RepeatButton>
+                                <Thumb x:Name="VerticalThumb" IsTabStop="True" Grid.Row="1"
+                                        Background="#FF525252" Margin="1,4,1,0"
+                                        Height="15"
+                                        Style="{StaticResource ThumbStyle1}">
+                                    <Thumb.BorderBrush>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Silver" Offset="0" />
+                                            <GradientStop Color="#FFAFAFAF" Offset="0.369" />
+                                            <GradientStop Color="#FF9D9D9D" Offset="0.369" />
+                                            <GradientStop Color="#FF838383" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Thumb.BorderBrush>
+                                </Thumb>
+                                <RepeatButton x:Name="VerticalTrackLargeChangeIncreaseRepeatButton"
+                                        IsTabStop="False" Grid.Row="0"
+                                        Template="{StaticResource RepeatButtonTemplate}" Width="18"
+                                        Background="#FF494949" Margin="1,0,1,-4">
+                                    <RepeatButton.BorderBrush>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFC6C6C6" Offset="0" />
+                                            <GradientStop Color="#FFABABAB" Offset="0.363" />
+                                            <GradientStop Color="#FF979797" Offset="0.366" />
+                                            <GradientStop Color="#FF858585" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </RepeatButton.BorderBrush>
+                                </RepeatButton>
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Storyboard x:Key="WarningAnimation" x:Name="WarningAnimation" RepeatBehavior="Forever" AutoReverse="True">
+            <DoubleAnimationUsingKeyFrames
+                    Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[3].(GradientStop.Offset)"
+                    Storyboard.TargetName="border">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.481" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.462" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                    Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[2].(GradientStop.Offset)"
+                    Storyboard.TargetName="border">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.481" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.454" />
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames
+                    Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[3].(GradientStop.Color)"
+                    Storyboard.TargetName="border">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF818181" />
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FFFD0000" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames
+                    Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                    Storyboard.TargetName="border">
+                <EasingColorKeyFrame KeyTime="0" Value="#FFA1A1A1" />
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FFFF6262" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames
+                    Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                    Storyboard.TargetName="border">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF747474" />
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF992828" />
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames
+                    Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                    Storyboard.TargetName="border">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF686868" />
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF914141" />
+            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames
+                    Storyboard.TargetProperty="(Border.BorderBrush).(GradientBrush.GradientStops)[0].(GradientStop.Offset)"
+                    Storyboard.TargetName="border">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.004" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="0:0:0.3" To="0"
+                    Storyboard.TargetProperty="(Control.BorderBrush).(GradientBrush.GradientStops)[0].(GradientStop.Offset)"
+                    Storyboard.TargetName="ResizeButton" />
+            <ColorAnimation Duration="0:0:0.3" To="#FDF50000"
+                    Storyboard.TargetProperty="(Control.BorderBrush).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                    Storyboard.TargetName="ResizeButton"  />
+            <DoubleAnimation Duration="0:0:0.3" To="0.988"
+                    Storyboard.TargetProperty="(Control.BorderBrush).(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
+                    Storyboard.TargetName="ResizeButton"  />
+            <ColorAnimation Duration="0:0:0.3" To="#FFFF7272"
+                    Storyboard.TargetProperty="(Control.BorderBrush).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                    Storyboard.TargetName="ResizeButton" />
+        </Storyboard>
+    </UserControl.Resources>
+    <Popup x:Name="uxPopupElement">
+        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="VisualStateGroup" ei:ExtendedVisualStateManager.UseFluidLayout="True">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0.2">
+                                        <VisualTransition.GeneratedEasingFunction>
+                                            <ElasticEase EasingMode="EaseOut" Oscillations="1" Springiness="1"/>
+                                        </VisualTransition.GeneratedEasingFunction>
+                                    </VisualTransition>
+                                    <VisualTransition GeneratedDuration="0:0:0.2" To="Open">
+                                        <VisualTransition.GeneratedEasingFunction>
+                                            <ElasticEase EasingMode="EaseOut" Oscillations="1" Springiness="6"/>
+                                        </VisualTransition.GeneratedEasingFunction>
+                                    </VisualTransition>
+                                    <VisualTransition From="Open" GeneratedDuration="0:0:0.2" To="Closed">
+                                        <VisualTransition.GeneratedEasingFunction>
+                                            <CubicEase EasingMode="EaseIn"/>
+                                        </VisualTransition.GeneratedEasingFunction>
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Open">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="uxGridElement" />
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="uxGridElement" />
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="uxGridElement" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Closed">
+                                    <Storyboard>
+                        <DoubleAnimation Duration="0" To="0.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="uxGridElement" />
+                        <DoubleAnimation Duration="0" To="0.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="uxGridElement" />
+                                        <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="uxGridElement" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+        <Canvas x:Name="uxCanvasElement" Background="Transparent">
+            <local:HMIKeyboardSizeControl x:Name="uxKeyboardSizeControl" Visibility="Collapsed"/>
+            <Grid x:Name="uxGridElement">
+                <Grid.RenderTransform>
+                    <!--<CompositeTransform />-->
+                    <TransformGroup>
+                        <ScaleTransform  />
+                    </TransformGroup>
+                </Grid.RenderTransform>
+
+                <Viewbox x:Name="KeyboardViewBox"
+                         Width="{Binding KeyboardSize, ElementName=userControl, FallbackValue=600, Mode=TwoWay}" 
+                         MinWidth="500" MaxWidth="900" MinHeight="191.6">
+                       <Border x:Name="border" BorderThickness="1" CornerRadius="2" Height="230" Width="600" MinHeight="200">
+			<Border.Background>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FFCCCCCC" Offset="1" />
+					<GradientStop Color="White" />
+				</LinearGradientBrush>
+			</Border.Background>
+			<Border.BorderBrush>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="#FF747474" Offset="0.004" />
+					<GradientStop Color="#FF686868" Offset="1" />
+					<GradientStop Color="#FFA1A1A1" Offset="0.481" />
+					<GradientStop Color="#FF818181" Offset="0.481" />
+				</LinearGradientBrush>
+			</Border.BorderBrush>
+			<VisualStateManager.CustomVisualStateManager>
+				<ei:ExtendedVisualStateManager />
+			</VisualStateManager.CustomVisualStateManager>
+			<Canvas x:Name="LayoutRoot" Background="#FFCCCCCC" Width="598" Height="228"
+				HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="Q_Key" Width="35"
+					Text="q" KeyNum="14"
+					IsTabStop="True" Canvas.ZIndex="5" Height="35" Canvas.Left="53" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="W_Key" Width="35"
+					Text="w" KeyNum="15" Height="35" Canvas.Left="92" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="E_Key" Width="35"
+					Text="e" KeyNum="16" Height="35" Canvas.Left="131" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="R_Key" Width="35"
+					Text="r" KeyNum="17" Height="35" Canvas.Left="170" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="T_Key" Width="35"
+					Text="t" KeyNum="18" Height="35" Canvas.Left="209" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="Z_Key" Width="35"
+					Text="z" KeyNum="19" Height="35" Canvas.Left="248" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="U_Key" Width="35"
+					Text="u" KeyNum="20" Height="35" Canvas.Left="287" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="I_Key" Width="35"
+					Text="i" KeyNum="21" Height="35" Canvas.Left="326" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="O_Key" Width="35"
+					Text="o" KeyNum="22" Height="35" Canvas.Left="365" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="P_Key" Width="35"
+					Text="p" KeyNum="23" Height="35" Canvas.Left="404" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="Ü_Key" Width="35"
+					Text="ü" KeyNum="24" Height="35" Canvas.Left="443" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="Plus_Key" Width="35"
+					Text="+" KeyNum="25" Height="35" Canvas.Left="482" Canvas.Top="66" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="accent1_Key" Width="35"
+					Text="^" KeyNum="1" Height="35" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_1_Key" Width="35"
+					Text="1" KeyNum="2" Height="35" Canvas.Left="39" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_2_Key" Width="35"
+					Text="2" KeyNum="3" Height="35" Canvas.Left="78" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_3_Key" Width="35"
+					Text="3" KeyNum="4" Height="35" Canvas.Left="117" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_4_Key" Width="35"
+					Text="4" KeyNum="5" Height="35" Canvas.Left="156" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_5_Key_" Width="35"
+					Text="5" KeyNum="6" Height="35" Canvas.Left="195" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_6_Key"
+					Text="6" KeyNum="7" Height="35" Canvas.Left="233" Canvas.Top="27" Width="35" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_7_Key" Width="35"
+					Text="7" KeyNum="8" Height="35" Canvas.Left="271" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_8_Key" Width="35"
+					Text="8" KeyNum="9" Height="35" Canvas.Left="310" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_9_Key" Width="35"
+					Text="9" KeyNum="10" Height="35" Canvas.Left="349" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_0_Key" Width="35"
+					Text="0" KeyNum="11" Height="35" Canvas.Left="388" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="_ss_Key" Width="35"
+					Text="ß" KeyNum="12" Height="35" Canvas.Left="426" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="accent2_Key" Width="35"
+					Text="'" KeyNum="13" Height="35" Canvas.Left="464" Canvas.Top="27" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="A_Key" Width="35"
+					Text="a" KeyNum="26" Height="35" Canvas.Left="75" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="S_Key" Width="35"
+					Text="s" KeyNum="27" Height="35" Canvas.Left="114" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="D_Key" Width="35"
+					Text="d" KeyNum="28" Height="35" Canvas.Left="153" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="F_Key" Width="35"
+					Text="f" KeyNum="29" Height="35" Canvas.Left="192" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="G_Key" Width="35"
+					Text="g" KeyNum="30" Height="35" Canvas.Left="231" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="H_Key" Width="35"
+					Text="h" KeyNum="31" Height="35" Canvas.Left="270" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="J_Key" Width="35"
+					Text="j" KeyNum="32" Height="35" Canvas.Left="309" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="K_Key" Width="35"
+					Text="k" KeyNum="33" Height="35" Canvas.Left="348" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="L_Key" Width="35"
+					Text="l" KeyNum="34" Height="35" Canvas.Left="387" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="Ö_Key" Width="35"
+					Text="ö" KeyNum="35" Height="35" Canvas.Left="426" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="Ä_Key" Width="35"
+					Text="ä" KeyNum="36" Height="35" Canvas.Left="465" Canvas.Top="105" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="rout_Key" Width="35"
+					Text="#" KeyNum="37"
+					Canvas.ZIndex="1" Height="35" Canvas.Left="505" Canvas.Top="105" />
+                            <local:VirtualEnterKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" Height="Auto" Width="66"
+					Canvas.Left="527" Canvas.Top="66" x:Name="Enter" Canvas.ZIndex="-1"
+					Text="Enter" />
+                            <local:VirtualBackSpaceKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" Canvas.Left="503" x:Name="Back"
+					Text="Backspace" Canvas.Top="27" Width="90" Height="35" Foreground="{x:Null}" />
+				<Grid x:Name="DoubleKeyContainer" Width="95" Height="35" Canvas.Left="38" Canvas.Top="146">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition Width="Auto"/>
+					</Grid.ColumnDefinitions>
+                                <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="smaler_Key"
+						Text="&lt;" KeyNum="38" Grid.Column="1" Width="35" Visibility="Collapsed" />
+                                <local:VirtualShiftKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" Height="Auto" Width="Auto"
+						x:Name="SHIFT_LEFT" Text="Shift" Margin="0,0,3,0" />
+				</Grid>
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="Y_Key" Width="35"
+					Text="y" KeyNum="39" Height="35" Canvas.Left="137" Canvas.Top="146" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="X_Key" Width="35"
+					Text="x" KeyNum="40" Height="35" Canvas.Left="176" Canvas.Top="146" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="C_Key" Width="35"
+					Text="c" KeyNum="41" Height="35" Canvas.Left="215" Canvas.Top="146" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="V_Key" Width="35"
+					Text="v" KeyNum="42" Height="35" Canvas.Left="254" Canvas.Top="146" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="B_Key"
+					Text="b" KeyNum="43" Height="35" Canvas.Left="293" Canvas.Top="146" Width="35" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="N_Key" Width="35"
+					Text="n" KeyNum="44" Height="35" Canvas.Left="332" Canvas.Top="146" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="M_Key" Width="35"
+					Text="m" KeyNum="45" Height="35" Canvas.Left="371" Canvas.Top="146" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="comma_Key" Width="35"
+					Text="," KeyNum="46" Height="35" Canvas.Left="410" Canvas.Top="146" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="Dot_Key" Width="35"
+					Text="." KeyNum="47" Height="35" Canvas.Left="449" Canvas.Top="146" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="minus_Key" Width="35"
+					Text="-" KeyNum="48" Height="35" Canvas.Left="488" Canvas.Top="146" />
+                            <local:VirtualShiftKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" Height="35" Width="65" x:Name="SHIFT_RIGHT" Text="Shift"
+					HorizontalAlignment="Left" Canvas.Left="528" Canvas.Top="146" />
+				<Border BorderBrush="#FFFFFFFF" x:Name="Header" Height="25" Width="598"
+					HorizontalAlignment="Left" VerticalAlignment="Top">
+					<Border.Background>
+						<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+							<GradientStop Color="#FFE0E0E0" Offset="0.417" />
+							<GradientStop Color="White" Offset="1" />
+							<GradientStop Color="#FFAAAAAA" Offset="0.424" />
+							<GradientStop Color="White" />
+						</LinearGradientBrush>
+					</Border.Background>
+				</Border>
+				<Rectangle Canvas.Top="25" Fill="{x:Null}" Stroke="#FFFFFFFF" Height="204"
+					Width="595" Visibility="Collapsed" />
+                            <local:HMIResizeButton x:Name="ResizeButton" Width="62"
+					Height="22" Canvas.Top="2" HorizontalAlignment="Left" Canvas.Left="3">
+                                <local:HMIResizeButton.Background>
+						<SolidColorBrush Color="White" Opacity="0" />
+                                </local:HMIResizeButton.Background>
+                                <local:HMIResizeButton.BorderBrush>
+						<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+							<GradientStop Color="Black" Offset="0" />
+							<GradientStop Color="White" Offset="1" />
+						</LinearGradientBrush>
+                                </local:HMIResizeButton.BorderBrush>
+                            </local:HMIResizeButton>
+                            <local:CloseButton Height="Auto" Width="50"
+					Canvas.Left="545" x:Name="Keyboard_Close"
+					MouseLeftButtonDown="KeyboardClose" VerticalAlignment="Center"
+					HorizontalAlignment="Right" Canvas.Top="2" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" Width="55"
+					Text="Alt" x:Name="ALT_RIGHT" Height="35" Canvas.Left="414" Canvas.Top="186" />
+                            <local:VirtualSpaceKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed"
+					x:Name="SPACE" Text="Space" Height="35" Canvas.Left="176" Canvas.Top="186" Width="233" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" Width="55" x:Name="ALT_LEFT"
+					Text="Alt" Height="35" Canvas.Left="117" Canvas.Top="186" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="EN_Key" Text="EN" Width="35" Height="35" Canvas.Left="510" Canvas.Top="186" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="DE_Key" Text="DE" Width="35" Height="35" Canvas.Left="550" Canvas.Top="186" />
+                            <local:VirtualKey VirtualKeyPressed="Key_VirtualKeyboardKeyPressed" x:Name="AR_Key" Canvas.Left="471"
+					Canvas.Top="186" Text="AR" Width="35" Height="35" Visibility="Collapsed" />
+			</Canvas>
+		</Border>
+	</Viewbox>
+            </Grid>
+        </Canvas>
+    </Popup>
+</UserControl>

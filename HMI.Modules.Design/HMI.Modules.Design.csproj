@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\copyhs.png" />
+    <None Remove="Resources\Images\delete.png" />
+    <None Remove="Resources\Images\pausehs.png" />
+    <None Remove="Resources\Images\playhs.png" />
+    <None Remove="Resources\Images\stophs.png" />
+    <None Remove="Resources\Images\volume.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\copyhs.png" />
+    <Resource Include="Resources\Images\delete.png" />
+    <Resource Include="Resources\Images\pausehs.png" />
+    <Resource Include="Resources\Images\playhs.png" />
+    <Resource Include="Resources\Images\stophs.png" />
+    <Resource Include="Resources\Images\volume.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
+    <PackageReference Include="NLog" Version="6.0.7" />
+    <PackageReference Include="Telerik.UI.for.Wpf.80.Xaml" Version="2025.2.521" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMI.Common.Browsers\HMI.Common.Browsers.csproj" />
+    <ProjectReference Include="..\HMI.Domain\HMI.Domain.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Converters\HMI.Infrastructure.Converters.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Interfaces\HMI.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure\HMI.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\BrowserTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BrowserTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\ControlTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ControlTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\DateRangeTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DateRangeTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\EditorsTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EditorsTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\ErrorTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\ValidationErrorTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ValidationErrorTexts.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\BrowserTexts.resx">
+      <CustomToolNamespace></CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BrowserTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ControlTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ControlTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\DateRangeTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DateRangeTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\EditorsTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EditorsTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ErrorTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ValidationErrorTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationErrorTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

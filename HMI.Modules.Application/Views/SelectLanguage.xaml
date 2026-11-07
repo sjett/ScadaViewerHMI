@@ -1,0 +1,22 @@
+﻿<rad:RadWindow x:Class="HMI.Modules.Application.Views.SelectLanguage" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+           xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+           Height="180" Width="270" 
+               FontFamily="NSimSun"  TextOptions.TextFormattingMode="Display"
+           rad:RadWindow.WindowStartupLocation="CenterOwner" >
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.Modules.Application.Resources.ApplicationTexts, Key=SelectLanguage}" />
+        <rad:RadComboBox Name="uxRadComboBox" DisplayMemberPath="Name" SelectedValuePath="Culture" Grid.Row="1" VerticalAlignment="Top" ItemsSource="{Binding Languages}" SelectedValue="{Binding SelectedLanguage, Mode=TwoWay}" />
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <rad:RadButton Name="uxOkButton" Margin="2" Width="70" Content="{localize:Resx ResxName=HMI.Modules.Application.Resources.ApplicationTexts, Key=OK}" Click="radButton_0_Click" />
+            <rad:RadButton Name="uxCancelButton" Margin="2" Width="70" Content="{localize:Resx ResxName=HMI.Modules.Application.Resources.ApplicationTexts, Key=Cancel}" Click="radButton_1_Click" />
+        </StackPanel>
+    </Grid>
+</rad:RadWindow>

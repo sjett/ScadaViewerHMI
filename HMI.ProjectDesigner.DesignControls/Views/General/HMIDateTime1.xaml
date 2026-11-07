@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.General">
+    <gh:StringNullOrEmptyFallbackConverter x:Key="StringNullOrEmptyFallbackConverter" />
+    <gh:TernarySelector x:Key="TernarySelector" />
+    <Style x:Key="{x:Type local:HMIDateTime1}" TargetType="{x:Type local:HMIDateTime1}">
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=Opacity}" />
+        <Setter Property="Control.Padding" Value="3" />
+        <Setter Property="Control.FontFamily" Value="{Binding Path=FontFamily}" />
+        <Setter Property="Control.FontSize" Value="{Binding Path=FontSize}" />
+        <Setter Property="Control.FontStretch" Value="{Binding Path=FontStretch}" />
+        <Setter Property="Control.FontStyle" Value="{Binding Path=FontStyle}" />
+        <Setter Property="Control.FontWeight" Value="{Binding Path=FontWeight}" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIDateTime1}">
+                    <Grid Name="LayoutRoot">
+                        <Grid.Background>
+                            <MultiBinding Converter="{StaticResource TernarySelector}">
+                                <Binding Path="UseLocalColors" />
+                                <Binding Path="Project.StateDefaultBackground" FallbackValue="White" />
+                                <Binding Path="Background" />
+                            </MultiBinding>
+                        </Grid.Background>
+                        <TextBlock Name="OutputElement" TextBlock.FontFamily="{TemplateBinding Control.FontFamily}" TextBlock.FontSize="{TemplateBinding Control.FontSize}" TextBlock.FontStretch="{TemplateBinding Control.FontStretch}" TextBlock.FontStyle="{TemplateBinding Control.FontStyle}" TextBlock.FontWeight="{TemplateBinding Control.FontWeight}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Padding="{TemplateBinding Control.Padding}" Text="HMIDateTime1" TextBlock.TextAlignment="Center" TextWrapping="NoWrap">
+              <TextBlock.Foreground>
+                <MultiBinding Converter="{StaticResource TernarySelector}">
+                  <Binding Path="UseLocalColors" />
+                  <Binding Path="Project.StateDefaultForeground" FallbackValue="Black" />
+                  <Binding Path="Foreground" />
+                </MultiBinding>
+              </TextBlock.Foreground>
+                        </TextBlock>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

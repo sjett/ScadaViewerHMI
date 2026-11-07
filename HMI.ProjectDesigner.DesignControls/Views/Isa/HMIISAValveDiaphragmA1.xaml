@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISAValveDiaphragmA1}" TargetType="{x:Type local:HMIISAValveDiaphragmA1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISAValveDiaphragmA1}">
+                    <Grid Name="LayoutRoot" IsHitTestVisible="False" Margin="0,0,0,0">
+                        <Viewbox Margin="0,0,0,0">
+                            <Path Fill="{TemplateBinding Control.Background}" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeStartLineCap="Round" Margin="14.402,0,15,0.082" Data="M59.5,15.000001C59.5,23.008131 46.2924,29.500002 29.999998,29.500002 13.707599,29.500002 0.5,23.008131 0.5,15.000001 0.5,6.9918718 13.707599,0.5 29.999998,0.5 46.2924,0.5 59.5,6.9918718 59.5,15.000001z M0.7539978,55.641998L0.7539978,84.417999 30,70.029999z M59.246002,55.641998L59.246002,84.417 30,70.029495z M30,29.666992L30,69.968994 M0.5,15L59.500004,15" StrokeThickness="{Binding LineThickness, FallbackValue=1}" />
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

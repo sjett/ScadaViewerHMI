@@ -1,0 +1,122 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Buttons">
+    <Style x:Key="{x:Type local:HMIToggleButton4}" TargetType="{x:Type local:HMIToggleButton4}">
+        <Setter Property="local:HMIToggleButton4.DesignerTemplateKey" Value="HMIToggleButton4Designer" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIToggleButton4}">
+                    <Image Source="Images/HMIToggleButton4.png" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HMIToggleButton4Designer" TargetType="{x:Type local:HMIToggleButton4}">
+        <Setter Property="Control.Background" Value="#FF1F3B53" />
+        <Setter Property="Control.Foreground" Value="#FF000000" />
+        <Setter Property="Control.Padding" Value="3" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0" />
+                    <GradientStop Color="#FF8399A9" Offset="0.375" />
+                    <GradientStop Color="#FF718597" Offset="0.375" />
+                    <GradientStop Color="#FF617584" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIToggleButton4}">
+                    <Grid Name="LayoutRoot" IsHitTestVisible="False">
+                        <Rectangle Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Stroke="#FF000000" StrokeThickness="0" RadiusX="0" RadiusY="0">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.077,0.232" StartPoint="0.923,0.768">
+                                    <GradientStop Color="#FF5B5B5B" Offset="1" />
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.018" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Rectangle Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5" Stroke="#FF000000" StrokeThickness="0" RadiusX="0" RadiusY="0">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.94" ScaleY="0.94" />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.181999996304512,0.887000024318695" StartPoint="0.818000018596649,0.112999998033047">
+                                    <GradientStop Color="#FF5B5B5B" Offset="1" />
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.017999999225139618" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Ellipse Name="ellipse2" Height="Auto" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5" Stroke="#FF000000" StrokeThickness="0">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FF707070" Offset="1" />
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.907" />
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.027000000700354576" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.8" ScaleY="0.8" />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Ellipse Name="ellipse" Height="Auto" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5" Stroke="#FF000000" StrokeThickness="0">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FF000000" Offset="1" />
+                                    <GradientStop Color="#FFE00808" Offset="0.884" />
+                                    <GradientStop Color="#FF950000" Offset="0.902" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Ellipse Name="ellipse1" Height="Auto" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5" StrokeThickness="0" Stroke="{x:Null}">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.411" ScaleY="1.411" />
+                                            <SkewTransform CenterX="0.5" CenterY="0.5" />
+                                            <RotateTransform CenterX="0.5" CenterY="0.5" />
+                                            <TranslateTransform X="-0.0060000000521540642" Y="0.093999996781349182" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFFFFFFF" Offset="0.836" />
+                                    <GradientStop Color="#00FFFFFF" Offset="0.707" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                            <Ellipse.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.6" ScaleY="0.6" />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <Rectangle Name="DisabledVisualElement" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Opacity="0" Fill="#FFFFFFFF" Stroke="#FF000000" StrokeThickness="0" RadiusX="0" RadiusY="0" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=Opacity}" />
+    </Style>
+</ResourceDictionary>

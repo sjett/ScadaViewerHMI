@@ -1,0 +1,27 @@
+﻿<sbw:SelectorBrowserWindow x:Class="HMI.Common.Browsers.Views.ProjectAuthorizationBrowser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:sbw="clr-namespace:HMI.Common.Browsers.Views"
+        xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                           
+                           FontFamily="NSimSun"  TextOptions.TextFormattingMode="Display"
+        Width="400" Height="300" Header="{localize:Resx ResxName=HMI.Common.Browsers.Resources.BrowserTexts, Key=ProjectAuthorizationBrowserTitle}">
+    <sbw:SelectorBrowserWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/Common.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </sbw:SelectorBrowserWindow.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <rad:RadTabControl Grid.Row="0" Margin="0" ItemContainerStyle="{StaticResource BrowserTabHeaderStyle}" ItemsSource="{Binding Pages}" sbw:TabHeader.Visibility="{Binding AreMultiplePagesVisible, Converter={StaticResource BooleanToVisibilityConverter}}" SelectedItem="{Binding ActivePage, Mode=TwoWay}" />
+        <sbw:GenericBrowserStatusBarView Grid.Row="1" />
+        <sbw:OKCancelRefreshPanelView Grid.Row="2" />
+    </Grid>
+</sbw:SelectorBrowserWindow>

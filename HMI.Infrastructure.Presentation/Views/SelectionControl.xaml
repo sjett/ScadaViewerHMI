@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Views="clr-namespace:HMI.Infrastructure.Presentation.Views">
+    <Style x:Key="{x:Type Views:SelectionControl}" TargetType="{x:Type Views:SelectionControl}">
+        <Setter Property="UIElement.Opacity" Value="0.7" />
+        <Setter Property="Control.Background" Value="#00FFFFFF" />
+    </Style>
+</ResourceDictionary>

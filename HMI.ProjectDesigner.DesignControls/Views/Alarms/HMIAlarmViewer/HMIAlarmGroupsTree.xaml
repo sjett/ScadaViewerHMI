@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Views.Alarms.HMIAlarmViewer">
+    <Style x:Key="TreeViewItemStyle" TargetType="{x:Type TreeViewItem}">
+        <Setter Property="Control.Padding" Value="3" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Top" />
+        <Setter Property="Control.Background" Value="#00FFFFFF" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="FrameworkElement.Cursor" Value="Arrow" />
+        <Setter Property="Control.IsTabStop" Value="True" />
+        <Setter Property="FrameworkElement.Margin" Value="0 1 0 0" />
+        <Setter Property="TreeViewItem.IsExpanded" Value="True" />
+    </Style>
+    <HierarchicalDataTemplate x:Key="AlarmGroupTemplate" ItemsSource="{Binding Children}">
+        <Grid>
+            <CheckBox VerticalAlignment="Center" IsChecked="True">
+                <TextBlock VerticalAlignment="Center" Margin="3,-2,0,0" Text="{Binding TranslatedShortName}" />
+            </CheckBox>
+        </Grid>
+    </HierarchicalDataTemplate>
+    <Style x:Key="{x:Type local:HMIAlarmGroupsTree}" TargetType="{x:Type local:HMIAlarmGroupsTree}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIAlarmGroupsTree}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Name="uxSelectAll" Grid.Row="0" Grid.Column="0" IsEnabled="False" Width="115" HorizontalAlignment="Left" Content="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMIAlarmViewerTexts, Key=SelectAll}" />
+                        <Button Name="uxUnselectAll" Grid.Row="0" Grid.Column="1" Margin="5,0,0,0" Width="115" HorizontalAlignment="Right" Content="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMIAlarmViewerTexts, Key=UnselectAll}" />
+                        <TreeView Name="uxTree" Margin="0,3,0,0" Grid.Row="1" Grid.ColumnSpan="2" ItemContainerStyle="{StaticResource TreeViewItemStyle}" ItemTemplate="{StaticResource AlarmGroupTemplate}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding AlarmGroupItems}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,96 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                    
+                    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+                    
+                    xmlns:Browsers="clr-namespace:HMI.Modules.Design.Views.Browsers"
+                    xmlns:adc="clr-namespace:HMI.Common.Presentation.Views;assembly=HMI.Common.Presentation">
+    
+    <gh:FriendlyTypeNameConverter x:Key="FriendlyTypeNameConverter" />
+    <gh:DynamicFriendlyTypeNameConverter x:Key="DynamicFriendlyTypeNameConverter" />
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <DrawingBrush x:Key="ArrowRight" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1M358.447,332.449L358.447,319.664 380.875,319.664 380.798,309.408 407.698,326.505 381.068,343.628 380.982,332.45 358.447,332.449z" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <Style x:Key="{x:Type Browsers:CollectionBrowserButtonsView}" TargetType="{x:Type Browsers:CollectionBrowserButtonsView}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Browsers:CollectionBrowserButtonsView}">
+                    <StackPanel Margin="0 10 0 0" Orientation="Horizontal">
+                        <rad:RadSplitButton Name="uxAddItem" AutoOpenDelay="0:0:0.0" Command="{Binding AddNewItemCommand}" CommandParameter="{Binding DefaultItemType}" DropDownIndicatorVisibility="{Binding AllowDrop, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                            <i:Interaction.Triggers>
+                                <i:PropertyChangedTrigger Binding="{Binding SelectedItem}">
+                                    <i:TriggerBase.Actions>
+                                        <i:ChangePropertyAction 
+                                            PropertyName="IsOpen" 
+                                            Value="False" 
+                                            i:TargetedTriggerAction.TargetObject="{Binding ElementName=uxAddItem}" />
+                                    </i:TriggerBase.Actions>
+                                </i:PropertyChangedTrigger>
+                            </i:Interaction.Triggers>
+
+                            <rad:RadSplitButton.Resources>
+                                <adc:AttachedDataContext x:Key="ViewModel" />
+                            </rad:RadSplitButton.Resources>
+                            <rad:RadSplitButton.Content>
+                                <MultiBinding Converter="{StaticResource DynamicFriendlyTypeNameConverter}">
+                                    <Binding Path="DefaultItemType" />
+                                    <Binding Source="{localize:Resx ResxName=HMI.Modules.Design.Resources.BrowserTexts, Key=AddNewItemFormat}" />
+                                </MultiBinding>
+                            </rad:RadSplitButton.Content>
+                            <rad:RadSplitButton.DropDownContent>
+                                <ListBox ItemsSource="{Binding AvailableItemTypes}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <MenuItem Command="{Binding DataContext.AddNewItemCommand, Source={StaticResource ViewModel}}" CommandParameter="{Binding}" Header="{Binding Converter={StaticResource FriendlyTypeNameConverter}, StringFormat={localize:Resx ResxName=HMI.Modules.Design.Resources.BrowserTexts, Key=AddNewItemFormat}}" />
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </rad:RadSplitButton.DropDownContent>
+                        </rad:RadSplitButton>
+                        <rad:RadButton Name="uxDuplicateItem" Margin="3,0,0,0" Command="{Binding DuplicateItemCommand}" ToolTip="{localize:Resx ResxName=HMI.Modules.Design.Resources.BrowserTexts, Key=DuplicateItemTooltip}">
+                            <Image Width="16" Height="16" Source="/HMI.Modules.Design;component/Resources/Images/CopyHS.png" />
+                        </rad:RadButton>
+                        <rad:RadButton Name="uxUpItem" Margin="7,0,0,0" Command="{Binding MoveItemUpCommand}" ToolTip="{localize:Resx ResxName=HMI.Modules.Design.Resources.BrowserTexts, Key=MoveUpTooltip}" Visibility="{Binding CanMoveItems, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <Rectangle Width="16" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="{StaticResource ArrowRight}" RenderTransformOrigin="0.5,0.5">
+                                <Rectangle.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        <SkewTransform AngleX="0" AngleY="0" />
+                                        <RotateTransform Angle="-90" />
+                                        <TranslateTransform X="0" Y="0" />
+                                    </TransformGroup>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                        </rad:RadButton>
+                        <rad:RadButton Name="uxDownItem" Margin="3,0,0,0" Command="{Binding MoveItemDownCommand}" ToolTip="{localize:Resx ResxName=HMI.Modules.Design.Resources.BrowserTexts, Key=MoveDownTooltip}" Visibility="{Binding CanMoveItems, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <Rectangle Width="16" Height="16" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="{StaticResource ArrowRight}" RenderTransformOrigin="0.5,0.5">
+                                <Rectangle.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        <SkewTransform AngleX="0" AngleY="0" />
+                                        <RotateTransform Angle="90" />
+                                        <TranslateTransform X="0" Y="0" />
+                                    </TransformGroup>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                        </rad:RadButton>
+                        <rad:RadButton Name="uxDeleteItem" Margin="7,0,0,0" Command="{Binding DeleteItemCommand}" ToolTip="{localize:Resx ResxName=HMI.Modules.Design.Resources.BrowserTexts, Key=DeleteTooltip}">
+                            <Image Width="16" Height="16" Source="/HMI.Modules.Design;component/Resources/Images/Delete.png" />
+                        </rad:RadButton>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

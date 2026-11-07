@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Isa">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISADoublePipeHeatExchanger1}" TargetType="{x:Type local:HMIISADoublePipeHeatExchanger1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISADoublePipeHeatExchanger1}">
+                    <Grid Name="LayoutRoot" Margin="0,0,0,0">
+                        <Viewbox>
+                            <Grid>
+                                <Path Width="92" Height="82" Canvas.Left="249" Canvas.Top="149" Stretch="Fill" StrokeLineJoin="Round" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" Data="M250,150L340,150 340,170 250,170 250,150z M250,210L340,210 340,230 250,230 250,210z" HorizontalAlignment="Left" Margin="10,0,0,0" StrokeThickness="{Binding LineThickness, FallbackValue=1}" />
+                                <Path Width="135.182" Height="102" Canvas.Left="239" Canvas.Top="139" Stretch="Fill" StrokeLineJoin="Round" Stroke="{TemplateBinding Control.Foreground}" Data="M240,160L340,160C340,160 373.036,160 373.182,190 373.328,220 340,220 340,220L240,220 M255.584,240L264.675,240 M260,230L260,240 M240,215.736L240,224.827 M240,155.041L240,165.375 M255,140L259.6,140 265.661,140 M260,150L260,140 M330,210L330,170" StrokeThickness="{Binding LineThickness, FallbackValue=1}" />
+                            </Grid>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,36 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Controls/SliderBox.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Controls/AudioPlayer.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/TextEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/BooleanEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/NumberEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/OptionListEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/OpacityEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/FontFamilyEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/FontStretchEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/FontStyleEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/FontWeightEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/EnumEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/DateTimeEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/BrowserEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/ColorEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/CollectionEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/HorizontalAlignmentEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/VerticalAlignmentEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/TextAlignmentEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/ThicknessEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/CornerRadiusEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/DateRangePickerEditorView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/ImageSourceView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/AudioSourceView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/XamlSourceView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/VerticalCollectionBrowserView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/HorizontalCollectionBrowserView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/CollectionBrowserButtons.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/ParameterDefinitionsView.xaml" />
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/TemplateBrowserPageViewModel.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

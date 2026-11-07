@@ -1,0 +1,16 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:Views="clr-namespace:HMI.Modules.Design.Views"
+                    >
+    <Style x:Key="{x:Type Views:NumberEditorView}" TargetType="{x:Type Views:NumberEditorView}">
+        <Setter Property="Views:NumberEditorView.IsInteger" Value="False" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Views:NumberEditorView}">
+                    <rad:RadNumericUpDown Name="uxEditor" IsInteger="{TemplateBinding Views:NumberEditorView.IsInteger}" rad:RadNumericUpDown.NumberDecimalDigits="{TemplateBinding Views:NumberEditorView.Precision}" Validation.ErrorTemplate="{TemplateBinding Validation.ErrorTemplate}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

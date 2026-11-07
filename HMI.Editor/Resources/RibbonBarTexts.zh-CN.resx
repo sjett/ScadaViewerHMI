@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcionEffectTitle" xml:space="preserve">
+    <value>动作效果</value>
+  </data>
+  <data name="AddNavigationPage" xml:space="preserve">
+    <value>添加导航页</value>
+  </data>
+  <data name="AddNavigationPageTooltip" xml:space="preserve">
+    <value>添加导航页.</value>
+  </data>
+  <data name="AddTemplatePage" xml:space="preserve">
+    <value>添加模板页</value>
+  </data>
+  <data name="AddTemplatePageTooltip" xml:space="preserve">
+    <value>添加模板页.</value>
+  </data>
+  <data name="AdvancedObject" xml:space="preserve">
+    <value>高级控件</value>
+  </data>
+  <data name="AIAgent" xml:space="preserve">
+    <value>AI智能体</value>
+  </data>
+  <data name="AlignBottom" xml:space="preserve">
+    <value>底端对齐</value>
+  </data>
+  <data name="AlignBottomTooltip" xml:space="preserve">
+    <value>底端对齐.</value>
+  </data>
+  <data name="AlignCenter" xml:space="preserve">
+    <value>中间对齐</value>
+  </data>
+  <data name="AlignCenterTooltip" xml:space="preserve">
+    <value>水平居中对齐.</value>
+  </data>
+  <data name="AlignLeft" xml:space="preserve">
+    <value>左对齐</value>
+  </data>
+  <data name="AlignLeftTooltip" xml:space="preserve">
+    <value>左对齐.</value>
+  </data>
+  <data name="AlignMiddle" xml:space="preserve">
+    <value>居中对齐</value>
+  </data>
+  <data name="AlignMiddleTooltip" xml:space="preserve">
+    <value>垂直居中对齐.</value>
+  </data>
+  <data name="AlignRight" xml:space="preserve">
+    <value>右对齐</value>
+  </data>
+  <data name="AlignRightTooltip" xml:space="preserve">
+    <value>右对齐.</value>
+  </data>
+  <data name="AlignTop" xml:space="preserve">
+    <value>顶端对齐</value>
+  </data>
+  <data name="AlignTopTooltip" xml:space="preserve">
+    <value>顶端对齐.</value>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>HMI 设计器</value>
+  </data>
+  <data name="Arrange" xml:space="preserve">
+    <value>布局</value>
+  </data>
+  <data name="ControlsGroup" xml:space="preserve">
+    <value>组合</value>
+  </data>
+  <data name="ControlsUngroup" xml:space="preserve">
+    <value>撤消组合</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>新建:</value>
+  </data>
+  <data name="DistributeHorizontally" xml:space="preserve">
+    <value>水平间距相等</value>
+  </data>
+  <data name="DistributeHorizontallyTooltip" xml:space="preserve">
+    <value>使水平间距相等.</value>
+  </data>
+  <data name="DistributeVertically" xml:space="preserve">
+    <value>垂直间距相等</value>
+  </data>
+  <data name="DistributeVerticallyTooltip" xml:space="preserve">
+    <value>使垂直间距相等.</value>
+  </data>
+  <data name="ExplorerTitle" xml:space="preserve">
+    <value>项目方案</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="LanguageSelect" xml:space="preserve">
+    <value>语言选择</value>
+  </data>
+  <data name="LanguageSelectTooltip" xml:space="preserve">
+    <value>选择一种不同的语言</value>
+  </data>
+  <data name="LogTitle" xml:space="preserve">
+    <value>输出</value>
+  </data>
+  <data name="MachineLearning" xml:space="preserve">
+    <value>机器学习</value>
+  </data>
+  <data name="MessageBoxTitle" xml:space="preserve">
+    <value>HMI 设计器</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>页</value>
+  </data>
+  <data name="PageContent" xml:space="preserve">
+    <value>内容页</value>
+  </data>
+  <data name="PageContentNew" xml:space="preserve">
+    <value>新建一个子页面</value>
+  </data>
+  <data name="PageNew" xml:space="preserve">
+    <value>在当前项目中新建一个模板页</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>项目</value>
+  </data>
+  <data name="ProjectNew" xml:space="preserve">
+    <value>新建一个项目</value>
+  </data>
+  <data name="ProjectsRecent" xml:space="preserve">
+    <value>最近的项目</value>
+  </data>
+  <data name="ProjectTitle" xml:space="preserve">
+    <value>工程设置</value>
+  </data>
+  <data name="PropertyInspectorTitle" xml:space="preserve">
+    <value>属性</value>
+  </data>
+  <data name="RemovePage" xml:space="preserve">
+    <value>移除页</value>
+  </data>
+  <data name="RemovePageTooltip" xml:space="preserve">
+    <value>移除当前选中页.</value>
+  </data>
+  <data name="Run" xml:space="preserve">
+    <value>运行</value>
+  </data>
+  <data name="RunTooltip" xml:space="preserve">
+    <value>运行项目.</value>
+  </data>
+  <data name="SameHeight" xml:space="preserve">
+    <value>设定成相同高度</value>
+  </data>
+  <data name="SameWidth" xml:space="preserve">
+    <value>设定成相同宽度</value>
+  </data>
+  <data name="Shapes" xml:space="preserve">
+    <value>图形</value>
+  </data>
+  <data name="ShowHideAcionEffect" xml:space="preserve">
+    <value>显示或隐藏动作效果编辑视图</value>
+  </data>
+  <data name="ShowHideExplorer" xml:space="preserve">
+    <value>显示或隐藏文档大纲.</value>
+  </data>
+  <data name="ShowHideGridLines" xml:space="preserve">
+    <value>显示或隐藏Grid辅助线</value>
+  </data>
+  <data name="ShowHideGuideLines" xml:space="preserve">
+    <value>显示或隐藏标尺辅助线</value>
+  </data>
+  <data name="ShowHideLog" xml:space="preserve">
+    <value>显示或隐藏输出视图.</value>
+  </data>
+  <data name="ShowHideProject" xml:space="preserve">
+    <value>显示或隐藏工程目录视图</value>
+  </data>
+  <data name="ShowHidePropertyInspector" xml:space="preserve">
+    <value>显示或隐藏属性编辑视图.</value>
+  </data>
+  <data name="ShowHideToolbox" xml:space="preserve">
+    <value>显示或隐藏组件库视图.</value>
+  </data>
+  <data name="Simulation" xml:space="preserve">
+    <value>模拟仿真</value>
+  </data>
+  <data name="SnapAndGroup" xml:space="preserve">
+    <value>捕捉和组</value>
+  </data>
+  <data name="SnapToGridLines" xml:space="preserve">
+    <value>启用或禁用捕捉到辅助网格</value>
+  </data>
+  <data name="SnapToGuideLines" xml:space="preserve">
+    <value>启用或禁用捕捉到水平和垂直参考线</value>
+  </data>
+  <data name="TitleAndProjectFormat" xml:space="preserve">
+    <value>HMI 设计器 - {0}</value>
+  </data>
+  <data name="ToggleGridLines" xml:space="preserve">
+    <value>切换网格线</value>
+  </data>
+  <data name="ToggleGuideLines" xml:space="preserve">
+    <value>切换标尺参考线</value>
+  </data>
+  <data name="ToggleSnapToGridLines" xml:space="preserve">
+    <value>切换网格捕捉</value>
+  </data>
+  <data name="ToggleSnapToGuideLines" xml:space="preserve">
+    <value>切换参考线捕捉</value>
+  </data>
+  <data name="ToolboxTitle" xml:space="preserve">
+    <value>控件库</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>面板</value>
+  </data>
+  <data name="ToolSetting" xml:space="preserve">
+    <value>工具和设置</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>视图</value>
+  </data>
+</root>

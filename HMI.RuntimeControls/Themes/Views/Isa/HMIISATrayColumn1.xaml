@@ -1,0 +1,27 @@
+<ResourceDictionary xmlns:local="clr-namespace:HMI.RuntimeControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISATrayColumn1}" TargetType="{x:Type local:HMIISATrayColumn1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISATrayColumn1}">
+                    <Grid Name="LayoutRoot" Margin="0,0,0,0">
+                        <Viewbox>
+                            <Grid Name="Layer_1" Canvas.Left="0" Canvas.Top="0">
+                                <Path Name="Path" Stretch="Fill" StrokeLineJoin="Round" Data="M349.757,120.811C349.757,120.811 349.757,110 365.973,110 382.189,110 382.189,120.811 382.189,120.811L382.189,196.486C382.189,196.486 382.189,210 365.973,210 349.757,210 349.757,196.486 349.757,196.486L349.757,120.811z" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" Margin="0,0,-0.432,-1" UseLayoutRounding="False" StrokeThickness="{TemplateBinding LineThickness}" />
+                                <Path Name="Path_0" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" Data="F1M363.09,125.716L369.757,125.716 369.757,126.716 363.09,126.716 363.09,125.716z M376.423,125.716L382.189,125.716 382.189,126.716 376.423,126.716 376.423,125.716z M349.757,125.716L356.423,125.716 356.423,126.716 349.757,126.716 349.757,125.716z" Margin="0,15,0,0" UseLayoutRounding="False" VerticalAlignment="Top" StrokeThickness="{TemplateBinding LineThickness}" />
+                                <Path Name="Path_1" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" Data="F1M363.09,136.077L369.757,136.077 369.757,137.077 363.09,137.077 363.09,136.077z M376.423,136.077L382.189,136.077 382.189,137.077 376.423,137.077 376.423,136.077z M349.757,136.077L356.423,136.077 356.423,137.077 349.757,137.077 349.757,136.077z" Margin="0,25,-0.432,0" UseLayoutRounding="False" VerticalAlignment="Top" StrokeThickness="{TemplateBinding LineThickness}" />
+                                <Path Name="Path_2" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" Data="F1M363.18,146.437L369.847,146.437 369.847,147.437 363.18,147.437 363.18,146.437z M376.513,146.437L382.279,146.437 382.279,147.437 376.513,147.437 376.513,146.437z M349.847,146.437L356.513,146.437 356.513,147.437 349.847,147.437 349.847,146.437z" Margin="0,35,-0.432,0" UseLayoutRounding="False" VerticalAlignment="Top" StrokeThickness="{TemplateBinding LineThickness}" />
+                                <Path Name="Path_3" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" Data="F1M363.09,156.797L369.757,156.797 369.757,157.797 363.09,157.797 363.09,156.797z M376.423,156.797L382.189,156.797 382.189,157.797 376.423,157.797 376.423,156.797z M349.757,156.797L356.423,156.797 356.423,157.797 349.757,157.797 349.757,156.797z" Margin="0,45,0,0" UseLayoutRounding="False" VerticalAlignment="Top" StrokeThickness="{TemplateBinding LineThickness}" />
+                                <Path Name="Path_4" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" Data="F1M363.333,167.158L370,167.158 370,168.158 363.333,168.158 363.333,167.158z M376.667,167.158L382.432,167.158 382.432,168.158 376.667,168.158 376.667,167.158z M350,167.158L356.667,167.158 356.667,168.158 350,168.158 350,167.158z" Margin="0,0,0,43" UseLayoutRounding="False" VerticalAlignment="Bottom" StrokeThickness="{TemplateBinding LineThickness}" />
+                                <Path Name="Path_5" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" Data="F1M363.09,177.518L369.757,177.518 369.757,178.518 363.09,178.518 363.09,177.518z M376.423,177.518L382.189,177.518 382.189,178.518 376.423,178.518 376.423,177.518z M349.757,177.518L356.423,177.518 356.423,178.518 349.757,178.518 349.757,177.518z" Margin="0,0,0,23" UseLayoutRounding="False" VerticalAlignment="Bottom" StrokeThickness="{TemplateBinding LineThickness}" />
+                                <Path Name="Path_6" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" Data="F1M363.09,187.878L369.757,187.878 369.757,188.878 363.09,188.878 363.09,187.878z M376.423,187.878L382.189,187.878 382.189,188.878 376.423,188.878 376.423,187.878z M349.757,187.878L356.423,187.878 356.423,188.878 349.757,188.878 349.757,187.878z" Margin="0,0,0,33" UseLayoutRounding="False" VerticalAlignment="Bottom" StrokeThickness="{TemplateBinding LineThickness}" />
+                            </Grid>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

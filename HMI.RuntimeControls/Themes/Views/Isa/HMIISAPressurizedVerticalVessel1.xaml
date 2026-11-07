@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns:local="clr-namespace:HMI.RuntimeControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISAPressurizedVerticalVessel1}" TargetType="{x:Type local:HMIISAPressurizedVerticalVessel1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISAPressurizedVerticalVessel1}">
+                    <Grid Name="LayoutRoot">
+                        <Viewbox>
+                            <Path Data="M295.58115,354.01053C295.58115,354.01053 294.53867,333.01074 344.53882,333.01074 394.53894,333.01074 394.58105,353.01053 394.58105,353.01053L394.58102,478.00934C394.58102,478.00934 394.53903,498.00912 344.53879,498.00912 294.53885,498.00912 296.74847,478.00955 296.74823,478.00934 296.55548,477.84613 295.5867,354.26111 295.58124,354.01053" Stretch="Fill" Fill="{TemplateBinding Control.Background}" Stroke="{TemplateBinding Control.Foreground}" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeDashCap="Round" StrokeLineJoin="Round" UseLayoutRounding="False" Margin="0.082,4,1,0" StrokeThickness="{TemplateBinding LineThickness}" />
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

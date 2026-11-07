@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:Views="clr-namespace:HMI.Common.Browsers.Views"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                    xmlns:b="clr-namespace:System;assembly=mscorlib">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/Common.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <b:Boolean x:Key="BoolTrue">true</b:Boolean>
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <Thickness x:Key="DialogButtonsMargin">5</Thickness>
+    <Style x:Key="{x:Type Views:OKCancelRefreshPanelView}" TargetType="{x:Type Views:OKCancelRefreshPanelView}">
+        <Setter Property="FrameworkElement.Margin" Value="{StaticResource DialogButtonsMargin}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Views:OKCancelRefreshPanelView}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Style="{StaticResource DialogButtonPanelStyle}">
+                            <rad:RadButton CommandParameter="{StaticResource BoolTrue}" Style="{StaticResource DialogButtonStyle}" Command="{Binding RefreshCommand}" Content="{localize:Resx ResxName=HMI.Common.Browsers.Resources.BrowserTexts, Key=Refresh}" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" Style="{StaticResource DialogButtonPanelStyle}">
+                            <rad:RadButton Name="uxOKButtonElement" IsDefault="True" Style="{StaticResource DialogButtonStyle}" Command="{Binding OKCommand}" Content="{localize:Resx ResxName=HMI.Common.Browsers.Resources.BrowserTexts, Key=OK}" />
+                            <rad:RadButton Name="uxCancelButtonElement" IsCancel="True" Style="{StaticResource DialogButtonStyle}" Command="{Binding CancelCommand}" Content="{localize:Resx ResxName=HMI.Common.Browsers.Resources.BrowserTexts, Key=Cancel}" />
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{x:Type Views:OKCancelPanelView}" TargetType="{x:Type Views:OKCancelPanelView}">
+        <Setter Property="FrameworkElement.Margin" Value="{StaticResource DialogButtonsMargin}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Views:OKCancelPanelView}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" Style="{StaticResource DialogButtonPanelStyle}">
+                            <rad:RadButton Name="uxOKButtonElement" IsDefault="True" Style="{StaticResource DialogButtonStyle}" Command="{Binding OKCommand}" Content="{localize:Resx ResxName=HMI.Common.Browsers.Resources.BrowserTexts, Key=OK}" />
+                            <rad:RadButton Name="uxCancelButtonElement" IsCancel="True" Style="{StaticResource DialogButtonStyle}" Command="{Binding CancelCommand}" Content="{localize:Resx ResxName=HMI.Common.Browsers.Resources.BrowserTexts, Key=Cancel}" />
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

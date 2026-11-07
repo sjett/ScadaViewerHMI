@@ -1,0 +1,51 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:Views="clr-namespace:HMI.Modules.Design.Views">
+    <gh:CornerRadiusToStringConverter x:Key="cornerRadiusToStringConverter" />
+    <gh:DoubleToStringConverter x:Key="doubleToStringConverter" />
+    <Style x:Key="CornerRadiusEditorViewTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Center" />
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
+        <Setter Property="FrameworkElement.MinWidth" Value="40" />
+        <Setter Property="FrameworkElement.Width" Value="Auto" />
+        <Setter Property="FrameworkElement.Margin" Value="1" />
+    </Style>
+    <Style x:Key="{x:Type Views:CornerRadiusEditorView}" TargetType="{x:Type Views:CornerRadiusEditorView}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Views:CornerRadiusEditorView}">
+                    <Grid>
+                        <rad:RadDropDownButton HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="1">
+                            <rad:RadDropDownButton.Content>
+                                <TextBox Text="{Binding Path=CornerRadius, Mode=TwoWay, Converter={StaticResource cornerRadiusToStringConverter}}" />
+                            </rad:RadDropDownButton.Content>
+                            <rad:RadDropDownButton.DropDownContent>
+                                <Grid Background="#FFD3D3D3">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" MinHeight="125" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" MinWidth="200" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Row="1" Grid.Column="1" Background="#FFFFFFFF" BorderBrush="#FF000000" BorderThickness="1" CornerRadius="{Binding CornerRadius}" />
+                                    <TextBox Grid.Row="0" Grid.Column="0" Style="{StaticResource CornerRadiusEditorViewTextBoxStyle}" Text="{Binding TopLeft, Converter={StaticResource doubleToStringConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Row="0" Grid.Column="2" Style="{StaticResource CornerRadiusEditorViewTextBoxStyle}" Text="{Binding TopRight, Converter={StaticResource doubleToStringConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Row="2" Grid.Column="2" Style="{StaticResource CornerRadiusEditorViewTextBoxStyle}" Text="{Binding BottomRight, Converter={StaticResource doubleToStringConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBox Grid.Row="2" Grid.Column="0" Style="{StaticResource CornerRadiusEditorViewTextBoxStyle}" Text="{Binding BottomLeft, Converter={StaticResource doubleToStringConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                </Grid>
+                            </rad:RadDropDownButton.DropDownContent>
+                        </rad:RadDropDownButton>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

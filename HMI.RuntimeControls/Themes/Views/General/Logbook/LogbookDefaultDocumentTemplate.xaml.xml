@@ -1,0 +1,126 @@
+<t:RadDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:s="clr-namespace:Telerik.Windows.Documents.Model.Styles;assembly=Telerik.Windows.Documents"
+               xmlns:t="clr-namespace:Telerik.Windows.Documents.Model;assembly=Telerik.Windows.Documents"
+               LayoutMode="Paged"
+               LineSpacing="1.15"
+               LineSpacingType="Auto"
+               ParagraphDefaultSpacingAfter="0"
+               ParagraphDefaultSpacingBefore="0"
+               SectionDefaultPageMargin="6,6,6,6"
+               SectionDefaultPageSize="816,1056"
+               StyleName="defaultDocumentStyle"
+               version="1.2">
+    <t:RadDocument.ProtectionSettings>
+        <t:DocumentProtectionSettings EnableDocumentProtection="False"
+                                      Enforce="False"
+                                      HashingAlgorithm="None"
+                                      HashingSpinCount="0"
+                                      ProtectionMode="ReadOnly" />
+    </t:RadDocument.ProtectionSettings>
+    <t:RadDocument.Styles>
+        <s:StyleDefinition Name="defaultDocumentStyle"
+                           DisplayName="Document Default Style"
+                           IsCustom="False"
+                           IsDefault="False"
+                           IsPrimary="True"
+                           Type="Default">
+            <s:StyleDefinition.ParagraphStyle>
+                <s:ParagraphProperties LineSpacing="1.15" SpacingAfter="0" />
+            </s:StyleDefinition.ParagraphStyle>
+            <s:StyleDefinition.SpanStyle>
+                <s:SpanProperties FontFamily="Calibri"
+                                  FontSize="12"
+                                  FontStyle="Normal"
+                                  FontWeight="Normal" />
+            </s:StyleDefinition.SpanStyle>
+        </s:StyleDefinition>
+        <s:StyleDefinition Name="TableNormal"
+                           DisplayName="TableNormal"
+                           IsCustom="False"
+                           IsDefault="True"
+                           IsPrimary="True"
+                           Type="Table" />
+    </t:RadDocument.Styles>
+    <t:Section PageMargin="96,96,96,96" PageSize="793,1123">
+        <t:Section.Footers>
+            <t:Footers>
+                <t:Footers.Default>
+                    <t:Footer IsLinkedToPrevious="False">
+                        <t:Footer.Body>
+                            <t:RadDocument LayoutMode="Flow"
+                                           LineSpacing="1.15"
+                                           LineSpacingType="Auto"
+                                           ParagraphDefaultSpacingAfter="0"
+                                           ParagraphDefaultSpacingBefore="0"
+                                           SectionDefaultPageMargin="95,95,95,95"
+                                           SectionDefaultPageOrientation="Portrait"
+                                           SectionDefaultPageSize="816,1056"
+                                           StyleName="defaultDocumentStyle">
+                                <t:RadDocument.ProtectionSettings>
+                                    <t:DocumentProtectionSettings EnableDocumentProtection="False"
+                                                                  Enforce="False"
+                                                                  HashingAlgorithm="None"
+                                                                  HashingSpinCount="0"
+                                                                  ProtectionMode="ReadOnly" />
+                                </t:RadDocument.ProtectionSettings>
+                                <t:Section FirstPageNumber="1"
+                                           PageMargin="95,95,95,95"
+                                           PageSize="816,1056">
+                                    <t:Paragraph>
+                                        <t:Paragraph.TabStops>
+                                            <t:TabStop Position="600" TabStopType="Right" />
+                                        </t:Paragraph.TabStops>
+                                        <t:FieldRangeStart AnnotationID="8257717">
+                                            <t:PageField DisplayMode="Result" />
+                                        </t:FieldRangeStart>
+                                        <t:Span Text="1" />
+                                        <t:FieldRangeEnd AnnotationID="8257717" />
+                                        <t:Span Text="&#x9;" />
+                                        <t:FieldRangeStart AnnotationID="7210594">
+                                            <t:DateField DateTimeFormatting="d/M/yyyy h:mm:ss" DisplayMode="Result" />
+                                        </t:FieldRangeStart>
+                                        <t:Span Text="3/5/2012 1:57:35 PM" />
+                                        <t:FieldRangeEnd AnnotationID="7210594" />
+                                    </t:Paragraph>
+                                </t:Section>
+                            </t:RadDocument>
+                        </t:Footer.Body>
+                    </t:Footer>
+                </t:Footers.Default>
+            </t:Footers>
+        </t:Section.Footers>
+        <t:Paragraph>
+            <t:Paragraph.TabStops>
+                <t:TabStop Position="600" TabStopType="Right" />
+            </t:Paragraph.TabStops>
+            <t:Span Text="[TOPIC]" FontFamily="Times New Roman" FontSize="20"/>
+            <t:Span Text="&#x9;"/>
+            <t:Span Text="[TIMERANGE]" FontStyle="Italic"/>
+        </t:Paragraph>
+        <t:Paragraph />
+        <t:Paragraph />
+        <t:Paragraph >
+            <t:Span Text="[#MESSAGE]" />
+        </t:Paragraph>
+        <t:Paragraph>
+            <t:Span FontSize="18" FontFamily="Arial" Text="[NUM] / [COUNT]  " />
+            <t:Span Text="   " />
+            <t:Span Text="[SUBJECT]" FontSize="18" FontFamily="Arial"/>
+        </t:Paragraph>
+        <t:Paragraph FontSize="13.34" TextAlignment="Justify">
+            <t:Span Text="[BODY]" />
+        </t:Paragraph>
+        <t:Paragraph FontSize="13.34">
+            <t:Paragraph.TabStops>
+                <t:TabStop Position="600" TabStopType="Right" />
+            </t:Paragraph.TabStops>
+            <t:Span Text="[SENDER]" FontStyle="Italic"/>
+            <t:Span Text="&#x9;" />
+            <t:Span Text="[TIMESTAMP]" FontStyle="Italic"/>
+        </t:Paragraph>
+        <t:Paragraph />
+        <t:Paragraph>
+            <t:Span Text="[/MESSAGE]" />
+        </t:Paragraph>
+    </t:Section>
+</t:RadDocument>

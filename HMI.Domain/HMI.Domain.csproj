@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMI.Common.Presentation\HMI.Common.Presentation.csproj" />
+    <ProjectReference Include="..\HMI.Common\HMI.Common.csproj" />
+  </ItemGroup>
+
+</Project>

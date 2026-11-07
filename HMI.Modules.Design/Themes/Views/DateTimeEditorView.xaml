@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:Views="clr-namespace:HMI.Modules.Design.Views">
+    <Style x:Key="{x:Type Views:DateTimeEditorView}" TargetType="{x:Type Views:DateTimeEditorView}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Views:DateTimeEditorView}">
+                    <rad:RadDatePicker Name="uxEditor" DateSelectionMode="Day" InputMode="{TemplateBinding Views:DateTimeEditorView.DatePickerMode}" Validation.ErrorTemplate="{TemplateBinding Validation.ErrorTemplate}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

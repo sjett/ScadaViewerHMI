@@ -1,0 +1,124 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Gauges">
+    <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter" />
+    <gh:AverageValueStringConverter x:Key="AverageValueConverter" />
+    <Style x:Key="{x:Type local:HMIBargraph1}" TargetType="{x:Type local:HMIBargraph1}">
+        <Setter Property="local:HMIBargraph1.DesignerTemplateKey" Value="HMIBargraph1Designer" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIBargraph1}">
+                    <Image Source="Images/HMIBargraph1.png" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HMIBargraph1Designer" TargetType="{x:Type local:HMIBargraph1}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIBargraph1}">
+                    <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsHitTestVisible="False">
+                        <Grid Name="LayoutRoot" Height="Auto" Background="{x:Null}">
+                            <Path Canvas.Left="341.007" Canvas.Top="307.728" Width="56" Height="245" HorizontalAlignment="Left" VerticalAlignment="Stretch" Data="M0,25C0,11.192882 11.192882,0 25,0 38.807117,0 50,11.192882 50,25L50,175C50,188.80711 38.807117,200 25,200 11.192882,200 0,188.80711 0,175z" Stretch="Fill" StrokeThickness="1">
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.935999989509583,0.501999974250793" EndPoint="0.0179999992251396,0.497999995946884">
+                                        <GradientStop Color="#FF474646" />
+                                        <GradientStop Offset="1" Color="#FF474646" />
+                                        <GradientStop Offset="0.48" Color="#FFBCB8B8" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Canvas.Left="341.007" Canvas.Top="307.728" Width="36" Height="225" Margin="10,10,0,10" HorizontalAlignment="Left" Data="M0,14C0,6.2680135 6.2680135,0 14,0 21.731987,0 28,6.2680135 28,14L28,166C28,173.73198 21.731987,180 14,180 6.2680135,180 0,173.73198 0,166z" RenderTransformOrigin="0.5,0.5" Stretch="Fill" StrokeThickness="2" Stroke="{x:Null}">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        <SkewTransform />
+                                        <RotateTransform />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0.042" EndPoint="0.5,0.965">
+                                        <GradientStop Offset="1" Color="#FFFFFFFF" />
+                                        <GradientStop Offset="0" Color="#FF000000" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Name="Bar" Canvas.Left="341.007" Canvas.Top="307.728" Width="32" Height="221" Margin="12,12,0,12" HorizontalAlignment="Left" Data="M0,14C0,6.2680135 6.2680135,0 14,0 21.731987,0 28,6.2680135 28,14L28,186C28,193.73198 21.731987,200 14,200 6.2680135,200 0,193.73198 0,186z" RenderTransformOrigin="0.5,0.5" Stretch="Fill" StrokeThickness="2" Stroke="{x:Null}">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        <SkewTransform />
+                                        <RotateTransform />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,1.0" EndPoint="0.5,-0.010">
+                                        <GradientStop Offset="0.5" Color="#FF93FF00" />
+                                        <GradientStop Offset="0.498" Color="#FF005E25" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Canvas.Left="341.007" Canvas.Top="307.728" Width="28" Height="216" Margin="14,15,0,14" HorizontalAlignment="Left" Data="M13.940496,1.06365E-11C19.981159,-9.3211947E-06,24.878004,6.1264014,24.877996,13.683614L24.877996,159.31639C24.878004,166.87329,19.981287,173,13.940496,173L12.43904,172.81064 10.9375,173C4.8966932,173,-7.6292895E-06,166.87329,0,159.31639L0,13.683617C-7.62934E-06,6.1263967,4.896832,-4.7167264E-06,10.9375,2.5779116E-06L12.438988,0.18936753z" RenderTransformOrigin="0.5,0.5" Stretch="Fill" StrokeThickness="2">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        <SkewTransform />
+                                        <RotateTransform />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1.143,0.5">
+                                        <GradientStop Color="#00E4FB5C" />
+                                        <GradientStop Offset="1" Color="#FFFFFFFF" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path Name="ScalePathElement" Width="20" Height="245" Margin="60,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Stretch" Data="M0.5,219.5L23.5,219.5 23.5,222.5 0.5,222.5z M0.5,110.5L23.5,110.5 23.5,113.5 0.5,113.5z M0.5,0.5L23.5,0.5 23.5,3.5000014 0.5,3.5000014z" RenderTransformOrigin="0.5,0.5" Stretch="Fill" StrokeThickness="0" Stroke="{x:Null}" Visibility="{Binding Path=ShowScale, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="0.9" />
+                                        <SkewTransform />
+                                        <RotateTransform />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                                <Path.Fill>
+                                    <LinearGradientBrush StartPoint="0.935999989509583,0.501999974250793" EndPoint="0.0179999992251396,0.497999995946884">
+                                        <GradientStop Color="#FF474646" />
+                                        <GradientStop Offset="1" Color="#FF474646" />
+                                        <GradientStop Offset="0.48" Color="#FFBCB8B8" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Grid Name="ScaleGridElement" Width="Auto" Height="245" Margin="90,0,0,0" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" Visibility="{Binding Path=ShowScale, Converter={StaticResource BoolVisibilityConverter}}">
+                                <Grid.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleY="0.96" />
+                                        <SkewTransform />
+                                        <RotateTransform />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </Grid.RenderTransform>
+                                <TextBlock Name="Scale100Element" Width="Auto" Height="Auto" VerticalAlignment="Top" Text="{Binding Path=RangeMax}" />
+                                <TextBlock Name="Scale50Element" Width="Auto" Height="Auto" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                  <TextBlock.Text>
+                    <MultiBinding Converter="{StaticResource AverageValueConverter}">
+                      <Binding Path="RangeMin" />
+                      <Binding Path="RangeMax" />
+                    </MultiBinding>
+                  </TextBlock.Text>
+                                </TextBlock>
+                                <TextBlock Name="Scale0Element" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Bottom" Text="{Binding Path=RangeMin}" />
+                            </Grid>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=Opacity}" />
+    </Style>
+</ResourceDictionary>

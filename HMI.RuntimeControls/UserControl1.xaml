@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="HMI.RuntimeControls.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HMI.RuntimeControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="LayoutRoot">
+        <Path Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Stretch="Fill" Stroke="{x:Null}" Data="M0,5 C0,2.2385762 2.2385762,0 5,0 L36,0 C38.761425,0 41,2.2385762 41,5 L41,36 C41,38.761425 38.761425,41 36,41 L5,41 C2.2385762,41 0,38.761425 0,36 z">
+            <Path.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAEAEAE"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="1"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+        </Path>
+        <Path Height="Auto" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Stroke="{x:Null}" Data="M87.999901,0 L37.374718,11.036179 L47.811863,21.433096 C39.070297,30.141764 30.45002,39.147499 18.71114,50.825157 C14.798182,54.717705 10.538714,58.907112 5.812747,63.481361 C-13.090784,81.77803 17.72617,114.18162 46.46159,114.99999 L47.936768,106.51369 C30.593044,107.42799 17.530994,87.366623 28.846455,76.181534 C38.145607,66.989594 54.396488,50.535919 65.71138,39.263626 L76.925598,50.434624 z">
+            <Path.Fill>
+                <RadialGradientBrush GradientOrigin="0.43,0.598">
+                    <RadialGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.318"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform X="0.204" Y="-0.004"/>
+                        </TransformGroup>
+                    </RadialGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF000000" Offset="1"/>
+                    <GradientStop Color="#FF7F7F7F" Offset="0"/>
+                </RadialGradientBrush>
+            </Path.Fill>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.66" ScaleY="0.86"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Stretch="Fill" Stroke="{x:Null}" Data="M0,5 C0,2.2385762 2.2385762,0 5,0 L36,0 C38.761425,0 41,2.2385762 41,5 L41,36 C41,38.761425 38.761425,41 36,41 L5,41 C2.2385762,41 0,38.761425 0,36 z" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.96" ScaleY="0.96"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Fill>
+                <LinearGradientBrush EndPoint="0.5,0.293" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFFFFF"/>
+                    <GradientStop Color="#00FFFFFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+        </Path>
+    </Grid>
+</UserControl>

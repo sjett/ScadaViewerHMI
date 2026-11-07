@@ -1,0 +1,32 @@
+﻿<Window x:Class="HMI.Editor.Common.ProgressDialog" 
+        FontFamily="NSimSun" TextOptions.TextFormattingMode="Display"
+        Title="Processing..." Width="310" Height="124" WindowStartupLocation="CenterOwner" 
+        AllowsTransparency="True" Opacity="1" WindowStyle="None" ShowInTaskbar="False" Background="{x:Null}" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:Common="clr-namespace:HMI.Editor.Common">
+    <Window.Resources>
+        <Style x:Key="{x:Type Common:ProgressDialog}" TargetType="{x:Type Common:ProgressDialog}">
+            <Setter Property="Common:ProgressDialog.WindowColor1" Value="White" />
+            <Setter Property="Common:ProgressDialog.WindowColor2" Value="Silver" />
+            <Setter Property="Common:ProgressDialog.WindowColor3" Value="White" />
+            <Setter Property="Common:ProgressDialog.AnimationColor1" Value="#00FFFFFF" />
+            <Setter Property="Common:ProgressDialog.AnimationColor2" Value="Red" />
+            <Setter Property="Control.Foreground" Value="#FF000000" />
+            <Setter Property="Common:ProgressDialog.BorderBrush" Value="#FF808080" />
+        </Style>
+    </Window.Resources>
+    <Border Name="ProgressBorder" CornerRadius="12,12,12,12" BorderBrush="#FF020202" BorderThickness="3,3,3,3" Height="Auto">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.874,1.197" StartPoint="0.126,-0.197">
+                <GradientStop x:Name="WindowGradient1" Color="#FF030404" Offset="0" />
+                <GradientStop x:Name="WindowGradient2" Color="#FF809090" Offset="0.304" />
+                <GradientStop x:Name="WindowGradient3" Color="#FF000000" Offset="1" />
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Common:ProgressAnimationControl x:Name="uxAnimationControl" Color1="Red" Color2="White" Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="45" Height="45" />
+            <TextBlock Name="uxMessage" Margin="82,0,10,0" Text="Loading..." TextBlock.FontSize="14" TextWrapping="Wrap" VerticalAlignment="Center" TextBlock.Foreground="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Common:ProgressDialog}}, Path=Foreground}" />
+        </Grid>
+    </Border>
+</Window>

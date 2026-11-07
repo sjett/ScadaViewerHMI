@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\connector.png" />
+    <None Remove="Resources\edit-alignobjectsbottom.png" />
+    <None Remove="Resources\edit-alignobjectscenteredhorizontal.png" />
+    <None Remove="Resources\edit-alignobjectscenteredvertical.png" />
+    <None Remove="Resources\edit-alignobjectsleft.png" />
+    <None Remove="Resources\edit-alignobjectsright.png" />
+    <None Remove="Resources\edit-alignobjectstop.png" />
+    <None Remove="Resources\edit-bringforward.png" />
+    <None Remove="Resources\edit-bringtofront.png" />
+    <None Remove="Resources\edit-delete.png" />
+    <None Remove="Resources\edit-distributeobjectshorizontal.png" />
+    <None Remove="Resources\edit-distributeobjectsvertical.png" />
+    <None Remove="Resources\edit-duplicate.png" />
+    <None Remove="Resources\edit-group.png" />
+    <None Remove="Resources\edit-paste.png" />
+    <None Remove="Resources\edit-sendbackward.png" />
+    <None Remove="Resources\edit-sendtoback.png" />
+    <None Remove="Resources\edit-ungroup.png" />
+    <None Remove="Resources\error.png" />
+    <None Remove="Resources\group.png" />
+    <None Remove="Resources\language.png" />
+    <None Remove="Resources\log.png" />
+    <None Remove="Resources\server.png" />
+    <None Remove="Resources\servers.png" />
+    <None Remove="Resources\signal.png" />
+    <None Remove="Resources\vchannel.png" />
+    <None Remove="Resources\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\connector.png" />
+    <Resource Include="Resources\edit-alignobjectsbottom.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\edit-alignobjectscenteredhorizontal.png" />
+    <Resource Include="Resources\edit-alignobjectscenteredvertical.png" />
+    <Resource Include="Resources\edit-alignobjectsleft.png" />
+    <Resource Include="Resources\edit-alignobjectsright.png" />
+    <Resource Include="Resources\edit-alignobjectstop.png" />
+    <Resource Include="Resources\edit-bringforward.png" />
+    <Resource Include="Resources\edit-bringtofront.png" />
+    <Resource Include="Resources\edit-delete.png" />
+    <Resource Include="Resources\edit-distributeobjectshorizontal.png" />
+    <Resource Include="Resources\edit-distributeobjectsvertical.png" />
+    <Resource Include="Resources\edit-duplicate.png" />
+    <Resource Include="Resources\edit-group.png" />
+    <Resource Include="Resources\edit-paste.png" />
+    <Resource Include="Resources\edit-sendbackward.png" />
+    <Resource Include="Resources\edit-sendtoback.png" />
+    <Resource Include="Resources\edit-ungroup.png" />
+    <Resource Include="Resources\error.png" />
+    <Resource Include="Resources\group.png" />
+    <Resource Include="Resources\language.png" />
+    <Resource Include="Resources\log.png" />
+    <Resource Include="Resources\server.png" />
+    <Resource Include="Resources\servers.png" />
+    <Resource Include="Resources\signal.png" />
+    <Resource Include="Resources\vchannel.png" />
+    <Resource Include="Resources\warning.png" />
+  </ItemGroup>
+
+</Project>

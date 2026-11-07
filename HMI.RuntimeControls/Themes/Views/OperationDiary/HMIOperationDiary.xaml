@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI.RuntimeControls.OperationDiary">
+    <Style TargetType="{x:Type local:HMIOperationDiary}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIOperationDiary}">
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Top" Margin="4">
+                            <Button x:Name="PART_RefreshButton" Content="Refresh" Padding="8,3" DockPanel.Dock="Right" />
+                            <DatePicker x:Name="PART_EndDatePicker" SelectedDate="{Binding EndDate, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="4,0" />
+                            <TextBlock Text="To" VerticalAlignment="Center" />
+                            <DatePicker x:Name="PART_StartDatePicker" SelectedDate="{Binding StartDate, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Margin="4,0" />
+                            <TextBlock Text="From" VerticalAlignment="Center" />
+                        </DockPanel>
+                        <TextBlock DockPanel.Dock="Bottom" Margin="4" Text="{Binding StatusMessage, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <DataGrid x:Name="PART_EventsGrid" ItemsSource="{Binding Events, RelativeSource={RelativeSource TemplatedParent}}"
+                                  AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False"
+                                  CanUserDeleteRows="False" SelectionMode="Single">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Time" Binding="{Binding Timestamp, StringFormat={}{0:yyyy-MM-dd HH:mm:ss.fff}}" Width="Auto" />
+                                <DataGridTextColumn Header="Signal" Binding="{Binding SignalName}" Width="*" />
+                                <DataGridTextColumn Header="Event" Binding="{Binding Text}" Width="2*" />
+                                <DataGridTextColumn Header="Old value" Binding="{Binding PreviousValue}" Width="Auto" />
+                                <DataGridTextColumn Header="New value" Binding="{Binding Value}" Width="Auto" />
+                                <DataGridTextColumn Header="Severity" Binding="{Binding Severity}" Width="Auto" />
+                                <DataGridCheckBoxColumn Header="Ack" Binding="{Binding Acknowledged}" Width="Auto" />
+                            </DataGrid.Columns>
+                            <DataGrid.GroupStyle>
+                                <GroupStyle>
+                                    <GroupStyle.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock FontWeight="SemiBold" Text="{Binding Name, StringFormat={}{0:yyyy-MM-dd}}" />
+                                        </DataTemplate>
+                                    </GroupStyle.HeaderTemplate>
+                                </GroupStyle>
+                            </DataGrid.GroupStyle>
+                        </DataGrid>
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,41 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:Browsers="clr-namespace:HMI.Modules.Design.Views.Browsers"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                    xmlns:ap="clr-namespace:HMI.Modules.Design.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/Common.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type Browsers:AudioSourceView}" TargetType="{x:Type Browsers:AudioSourceView}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Browsers:AudioSourceView}">
+                    <rad:RadBusyIndicator Name="uxBusyIndicator">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <rad:RadGridView Name="uxAudios" AutoGenerateColumns="False" CanUserFreezeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" ShowGroupPanel="False" Style="{StaticResource BrowserGridStyle}" ItemsSource="{Binding Values}" SelectedItem="{Binding SelectedItem}">
+                                <rad:RadGridView.Columns>
+                                    <rad:GridViewDataColumn Width="*" CellStyleSelector="{StaticResource NullItemStyleSelector}" Style="{StaticResource BrowserGridColumnStyle}" DataMemberBinding="{Binding Name}" Header="{localize:Resx ResxName=HMI.Modules.Design.Resources.EditorsTexts, Key=FileName}" />
+                                </rad:RadGridView.Columns>
+                            </rad:RadGridView>
+                            <rad:RadButton Name="uxBrowse" Grid.Row="1" Style="{StaticResource BrowseButtonStyle}" Command="{Binding BrowseCommand}" Content="{localize:Resx ResxName=HMI.Modules.Design.Resources.EditorsTexts, Key=BrowseAudio}" />
+                            <GridSplitter Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                            <Border Grid.RowSpan="2" Grid.Column="2" BorderBrush="#FFF5F5F5" BorderThickness="1">
+                                <ap:AudioPlayer x:Name="uxPreview" MediaUri="{Binding SelectedItem.AudioSource}" />
+                            </Border>
+                        </Grid>
+                    </rad:RadBusyIndicator>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,186 @@
+﻿<local:VirtualKeyBase xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HMI.Runtime.Shared.VirtualKeyboard"
+        xmlns:ei="http://schemas.microsoft.com/xaml/behaviors" mc:Ignorable="d"
+        x:Class="HMI.Runtime.Shared.VirtualKeyboard.VirtualEnterKey" d:DesignWidth="78" 
+        Width="65" Height="74" Background="Transparent">
+    <local:VirtualKeyBase.Resources>
+        <Style x:Key="EnterKeyButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF1F3B53" />
+            <Setter Property="Foreground" Value="#FF000000" />
+            <Setter Property="Padding" Value="3" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#BBBBBB" Offset="0" />
+                        <GradientStop Color="#A6A6A7" Offset="0.375" />
+                        <GradientStop Color="#9D9D9D" Offset="0.375" />
+                        <GradientStop Color="#888888" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5" Margin="-11,0,0,0">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                </TransformGroup>
+                                <!--<CompositeTransform />-->
+                            </Grid.RenderTransform>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates"
+                                        ei:ExtendedVisualStateManager.UseFluidLayout="True">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0:0:0.2">
+                                            <VisualTransition.GeneratedEasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </VisualTransition.GeneratedEasingFunction>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#FFD8D8D8"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0" To="#FFEEEEEE"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0" To="#FFF5F9FB"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0" To="White"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <DoubleAnimation Duration="0" To="0.61"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Offset)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <DoubleAnimation Duration="0" To="0.352"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Offset)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1.1"
+                                    			Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                    			Storyboard.TargetName="grid"
+                                    			d:IsOptimized="True" />
+                                            <DoubleAnimation Duration="0" To="1.1"
+                                    			Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                    			Storyboard.TargetName="grid"
+                                    			d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0" To="#FFD5D6D7"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0" To="#FFE1E1E1"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0" To="#FFE9EAEB"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0" To="#FFEDEEEF"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0" To="#FFCCCCCC"
+                                    			Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)"
+                                    			Storyboard.TargetName="pathPressed"
+                                    			d:IsOptimized="True" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="#FFEAEDEF"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0" To="#FFF3F5F6"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                            <ColorAnimation Duration="0" To="#FFFCFDFD"
+                                    			Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)"
+                                    			Storyboard.TargetName="pathAnimation"
+                                    			d:IsOptimized="True" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="0:0:0.2">
+                                            <VisualTransition.GeneratedEasingFunction>
+                                                <CubicEase EasingMode="EaseOut" />
+                                            </VisualTransition.GeneratedEasingFunction>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Focused" />
+                                    <VisualState x:Name="Unfocused" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <VisualStateManager.CustomVisualStateManager>
+                                <ei:ExtendedVisualStateManager />
+                            </VisualStateManager.CustomVisualStateManager>
+                            <Path x:Name="pathBack"
+                                    Data="M4.0261307,-0.11498042 L60.868328,-0.046403416 C60.868328,-0.046403416 64.043411,-0.32105476 64.04335,3.545191 C64.043289,7.4201913 63.936977,70.348846 63.936977,70.348846 C63.936977,70.348846 64.13913,73.084854 61.376072,73.053162 C56.3764,72.995811 22.996483,73.05854 22.996483,73.05854 C22.996483,73.05854 21.329645,73.090103 21.282022,71.283714 C21.147148,66.167801 21.329386,35.742641 21.329386,35.742641 C21.329386,35.742641 21.631001,33.476776 19.456196,33.508465 C16.456514,33.552174 3.5499642,33.508465 3.5499642,33.508465 C3.5499642,33.508465 -0.037669197,33.603539 -0.037669197,30.260199 C-0.037669193,25.260201 -0.1324624,3.5450313 -0.1324624,3.5450313 C-0.1324624,3.5450313 -0.26036671,-0.25790951 4.0261307,-0.11498042 z"
+                                    Margin="-0.125,-0.113,0,-39.047" Stretch="Fill"
+                                    UseLayoutRounding="False" Stroke="{TemplateBinding BorderBrush}"
+                                    Fill="White" />
+                            <Path x:Name="pathAnimation"
+                                    Data="M3.878969,0.75738394 L60.549377,0.86693305 C60.549377,0.86693305 63.056381,0.44442859 63.072289,3.8870575 C63.090191,7.7620163 62.962254,69.719513 62.962254,69.719513 C62.962254,69.719513 63.239395,72.114273 60.951862,72.051674 C55.953732,71.914902 23.73012,72.035751 23.73012,72.035751 C23.73012,72.035751 21.896973,72.442886 21.865637,70.673988 C21.77499,65.557098 21.928308,35.669037 21.928308,35.669037 C21.928308,35.669037 22.257954,33.061291 19.719133,33.008842 C17.481686,32.96262 3.8788717,32.993195 3.8788717,32.993195 C3.8788717,32.993195 0.80536759,33.010635 0.83929616,30.270407 C0.9011997,25.270792 0.72436839,3.8870397 0.72436839,3.8870397 C0.72436839,3.8870397 0.65125144,0.63270843 3.878969,0.75738394 z"
+                                    Margin="0.854,0.871,1.084,-38.087" Stretch="Fill"
+                                    UseLayoutRounding="False">
+                                <Path.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFFDFDFD" Offset="0" />
+                                        <GradientStop Color="#CDD4D9" Offset="1" />
+                                        <GradientStop Color="#FFF9FAFA" Offset="0.333" />
+                                        <GradientStop Color="#FFE7EAEC" Offset="0.625" />
+                                    </LinearGradientBrush>
+                                </Path.Fill>
+                            </Path>
+                            <Path x:Name="pathPressed"
+                                    Data="M3.4211633,0.69450623 L60.826836,0.69439989 C60.826836,0.69439989 63.199604,0.4238044 63.215473,3.4237597 C63.23597,7.2987065 63.040474,70.33728 63.040474,70.33728 C63.040474,70.33728 63.257759,72.256599 60.970226,72.194 C55.972095,72.057228 23.802965,72.27327 23.802965,72.27327 C23.802965,72.27327 22.104374,72.53833 22.083143,70.845367 C22.018967,65.728081 22.168072,35.251564 22.168072,35.251564 C22.168072,35.251564 22.180241,32.574184 19.64142,32.521736 C17.403973,32.475513 3.8445387,32.5429 3.8445387,32.5429 C3.8445387,32.5429 0.71092576,32.828396 0.74485427,30.088171 C0.80675787,25.088556 0.72436839,3.8870397 0.72436839,3.8870397 C0.72436839,3.8870397 0.29902187,0.67385268 3.4211633,0.69450623 z"
+                                    Margin="0.836,0.807,1.084,-38.296" Stretch="Fill"
+                                    UseLayoutRounding="False" Stroke="White" />
+                            <ContentPresenter x:Name="contentPresenter"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    Content="{TemplateBinding Content}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    Margin="{TemplateBinding Padding}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Width="50" />
+                            <Path x:Name="ArrowPath" Data="M15.5,10 L15.5,17.587671 L57.270416,17.658007 L57.124889,37.984646 L56.604523,37.984646 L56.701717,17.627966 L15.5,17.627966 L15.5,25 L8.786212,17.125 z" Margin="28.804,0,6.712,0.082" Stretch="Fill" Stroke="Black" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Height="10.106" VerticalAlignment="Bottom" StrokeThickness="2" Fill="Black">
+                                <Path.RenderTransform>
+                                    <!--<CompositeTransform ScaleY="-1" TranslateY="6.9849996566772461"/>-->
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleY="-1" />
+                                        <TranslateTransform Y="6.9849996566772461" />
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </local:VirtualKeyBase.Resources>
+    <Canvas Height="74" x:Name="LayoutRoot" Width="65" Background="Transparent">
+        <Button x:Name="uxKeyButton" Content="Enter" Height="35" Width="60"
+                Style="{StaticResource EnterKeyButtonStyle}" HorizontalAlignment="Left" Canvas.Left="5"
+                IsTabStop="False" IsHitTestVisible="False" Foreground="{x:Null}" />
+    </Canvas>
+</local:VirtualKeyBase>

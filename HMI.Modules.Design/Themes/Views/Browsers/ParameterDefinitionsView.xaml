@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                   xmlns:Browsers="clr-namespace:HMI.Modules.Design.Views.Browsers" >
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/Common.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type Browsers:ParameterDefinitionsView}" TargetType="{x:Type Browsers:ParameterDefinitionsView}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Browsers:ParameterDefinitionsView}">
+                    <rad:RadGridView Name="uxParameterDefinitions" Grid.Column="2" CanUserFreezeColumns="False" FrozenColumnCount="5" RowIndicatorVisibility="Collapsed" Style="{StaticResource BrowserGridStyle}" ItemsSource="{Binding Values}" SelectedItem="{Binding SelectedItem}">
+                        <rad:RadGridView.Columns>
+                            <rad:GridViewDataColumn Style="{StaticResource BrowserGridColumnStyle}" DataMemberBinding="{Binding Name}" Header="{localize:Resx ResxName=HMI.Modules.Design.Resources.BrowserTexts, Key=ParameterNameColumnHeader}" />
+                            <rad:GridViewDataColumn Style="{StaticResource BrowserGridColumnStyle}" DataMemberBinding="{Binding DefaultValue}" Header="{localize:Resx ResxName=HMI.Modules.Design.Resources.BrowserTexts, Key=DefaultValueColumnHeader}" />
+                        </rad:RadGridView.Columns>
+                    </rad:RadGridView>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,69 @@
+﻿<ResourceDictionary xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Navigation" 
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                       >
+    
+    <gh:StringNullOrEmptyFallbackConverter x:Key="StringNullOrEmptyFallbackConverter" />
+    
+    <Style x:Key="{x:Type local:HMINavigationToggle1}" TargetType="{x:Type local:HMINavigationToggle1}">
+        <Setter Property="UIElement.Opacity" Value="{Binding Opacity}" />
+        <Setter Property="Control.Foreground" Value="{Binding Foreground}" />
+        <Setter Property="Control.Background" Value="#FF1F3B53" />
+        <Setter Property="Control.BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Offset="0" Color="#FFA3AEB9" />
+                    <GradientStop Offset="0.375" Color="#FF8399A9" />
+                    <GradientStop Offset="0.375" Color="#FF718597" />
+                    <GradientStop Offset="1" Color="#FF617584" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.BorderThickness" Value="{Binding BorderThickness, FallbackValue=1}" />
+        <Setter Property="Control.FontFamily" Value="{Binding Path=FontFamily}" />
+        <Setter Property="Control.FontSize" Value="{Binding Path=FontSize}" />
+        <Setter Property="Control.FontStretch" Value="{Binding Path=FontStretch}" />
+        <Setter Property="Control.FontStyle" Value="{Binding Path=FontStyle}" />
+        <Setter Property="Control.FontWeight" Value="{Binding Path=FontWeight}" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMINavigationToggle1}">
+                    <Grid Name="LayoutRoot">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)" To="1" />
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Offset)" To="0.625" />
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Offset)" To="0.375" />
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="BackgroundGradient" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Offset)" To="0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border Name="Background" Background="#FFFFFFFF" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" CornerRadius="3">
+                            <Grid Margin="1" Background="{TemplateBinding Control.Background}">
+                                <Border Name="BackgroundAnimation" Background="#FF448DCA" Opacity="0" />
+                                <Rectangle Name="BackgroundGradient">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint=".7,0" EndPoint=".7,1">
+                                            <GradientStop Offset="0" Color="#FFFFFFFF" />
+                                            <GradientStop Offset="0.375" Color="#F9FFFFFF" />
+                                            <GradientStop Offset="0.625" Color="#E5FFFFFF" />
+                                            <GradientStop Offset="1" Color="#C6FFFFFF" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Grid>
+                        </Border>
+                        <ContentPresenter Name="contentPresenter" Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{Binding SymbolicText, Converter={StaticResource StringNullOrEmptyFallbackConverter}, ConverterParameter=HMINavigationToggle1}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

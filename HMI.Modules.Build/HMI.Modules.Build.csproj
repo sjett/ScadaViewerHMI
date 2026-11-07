@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\WebServer\**" />
+    <EmbeddedResource Remove="Services\WebServer\**" />
+    <None Remove="Services\WebServer\**" />
+    <Page Remove="Services\WebServer\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BuildTemplates\**\*.cs" />
+    <Page Remove="BuildTemplates\**\*.xaml" />
+    <None Remove="BuildTemplates\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="BuildTemplates\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>BuildTemplates\%(RecursiveDir)%(Filename)%(Extension)</TargetPath>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\HMI.RuntimeControls\bin\$(Configuration)\net10.0-windows\HMI.RuntimeControls.dll;..\HMI.RuntimeControls\bin\$(Configuration)\net10.0-windows\HMI.Runtime.Core.dll;..\HMI.RuntimeControls\bin\$(Configuration)\net10.0-windows\HMI.Runtime.Shared.dll;..\HMI.RuntimeControls\bin\$(Configuration)\net10.0-windows\HMI.MathExpressions.dll;..\HMI.RuntimeControls\bin\$(Configuration)\net10.0-windows\HMI.Runtime.Communication.dll;..\HMI.RuntimeControls\bin\$(Configuration)\net10.0-windows\ScadaCommon.dll;..\HMI.RuntimeControls\bin\$(Configuration)\net10.0-windows\ScadaCommon.Log.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMI.Infrastructure.Converters\HMI.Infrastructure.Converters.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Interfaces\HMI.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Presentation\HMI.Infrastructure.Presentation.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure\HMI.Infrastructure.csproj" />
+    <ProjectReference Include="..\HMI.Modules.Application\HMI.Modules.Application.csproj" />
+    <ProjectReference Include="..\HMI.RuntimeControls\HMI.RuntimeControls.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\BuildErrorTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuildErrorTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\BuildTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuildTexts.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\BuildErrorTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuildErrorTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\BuildTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuildTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

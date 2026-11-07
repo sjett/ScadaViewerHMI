@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:ptec="clr-namespace:HMI.Modules.PropertyEditor.Converters" 
+                    xmlns:Views="clr-namespace:HMI.Modules.PropertyEditor.Views"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                    xmlns:mcabac="clr-namespace:HMI.Infrastructure.Presentation.Behaviors;assembly=HMI.Infrastructure.Presentation">
+    <Style x:Key="PropertyCellStyle" TargetType="{x:Type rad:GridViewCell}">
+        <Setter Property="FrameworkElement.Margin" Value="1,0,1,1" />
+        <Setter Property="Control.Padding" Value="0" />
+        <Setter Property="FrameworkElement.Height" Value="22" />
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Stretch" />
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Stretch" />
+        <Setter Property="UIElement.Focusable" Value="False" />
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="UIElement.IsEnabled" Value="{Binding IsEnabled}" />
+        <Setter Property="Control.IsTabStop" Value="False" />
+        <Setter Property="Views:VisualStatesOverride.ClearVisualStates" Value="True" />
+    </Style>
+    <ptec:PropertyToEditorConverter x:Key="PropertyToEditorConverter" />
+    <gh:ValidationErrorsToTextConverter x:Key="ValidationErrorsToTextConverter" />
+    <ControlTemplate x:Key="ValidationControlTemplate">
+        <DockPanel>
+            <Grid Width="19" Height="16" VerticalAlignment="Center" DockPanel.Dock="Left">
+                <Image Width="16" Height="16" Margin="0 0 3 0" Source="/HMI.Common.Resources;component/Resources/Error.png" ToolTip="{Binding ElementName=uxAdornedControl, Path=AdornedElement.(Validation.Errors), Converter={StaticResource ValidationErrorsToTextConverter}}" />
+            </Grid>
+            <Border BorderBrush="#FFFF0000" BorderThickness="1" CornerRadius="1" ToolTip="{Binding ElementName=uxAdornedControl, Path=AdornedElement.(Validation.Errors), Converter={StaticResource ValidationErrorsToTextConverter}}">
+                <AdornedElementPlaceholder Name="uxAdornedControl" />
+            </Border>
+        </DockPanel>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="PropertyEditorCellTemplate">
+        <ContentControl Views:PropertyEditor.ValidationErrorTemplate="{StaticResource ValidationControlTemplate}" 
+                        mcabac:MultiChildAdornerBehavior.IsAdornerVisible="{Binding IsUndefined, FallbackValue=false, TargetNullValue=false}" 
+                        Content="{Binding Converter={StaticResource PropertyToEditorConverter}}" >
+            <mcabac:MultiChildAdornerBehavior.AdornerChildren>
+                <x:ArrayExtension Type="{x:Type FrameworkElement}" >
+                    <Image Width="16" Height="16" Margin="0 0 3 0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                           mcabac:MultiChildAdornerBehavior.HorizontalPlacement="Outside" 
+                           Source="/HMI.Common.Resources;component/Resources/Warning.png" 
+                           ToolTip="{localize:Resx ResxName=HMI.Modules.PropertyEditor.Resources.ErrorTexts, Key=UndefinedValue}" />
+                    
+                    <Border mcabac:MultiChildAdornerBehavior.HorizontalPlacement="Across" 
+                            mcabac:MultiChildAdornerBehavior.VerticalPlacement="Across" 
+                            BorderBrush="#FFFFA500" BorderThickness="1" CornerRadius="1" 
+                            ToolTip="{localize:Resx ResxName=HMI.Modules.PropertyEditor.Resources.ErrorTexts, Key=UndefinedValue}" />
+                </x:ArrayExtension>
+            </mcabac:MultiChildAdornerBehavior.AdornerChildren>
+        </ContentControl>
+    </DataTemplate>
+
+</ResourceDictionary>

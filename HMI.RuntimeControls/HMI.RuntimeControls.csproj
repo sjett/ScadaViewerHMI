@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Themes\Views\General\Logbook\**" />
+    <EmbeddedResource Remove="Themes\Views\General\Logbook\**" />
+    <None Remove="Themes\Views\General\Logbook\**" />
+    <Page Remove="Themes\Views\General\Logbook\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="UserControl1.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Themes\Views\Dialogs\Images\error.png" />
+    <None Remove="Themes\Views\Dialogs\Images\info.png" />
+    <None Remove="Themes\Views\Dialogs\Images\question.png" />
+    <None Remove="Themes\Views\Dialogs\Images\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Themes\Views\Gauges\HMIGauge3.xaml" />
+    <Page Remove="Themes\Views\Gauges\HMIGauge4.xaml" />
+    <Page Remove="Themes\Views\Gauges\HMIGauge5.xaml" />
+    <Page Remove="Themes\Views\Gauges\HMIGauge6.xaml" />
+    <Page Remove="Themes\Views\Gauges\HMIGauge7.xaml" />
+    <Page Remove="Themes\Views\Gauges\HMIGauge8.xaml" />
+    <Page Remove="Themes\Views\Gauges\HMILinearGauge1.xaml" />
+    <Page Remove="UserControl1.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMI.Runtime.Core\HMI.Runtime.Core.csproj" />
+    <ProjectReference Include="..\HMI.Runtime.Shared\HMI.Runtime.Shared.csproj" />
+    <PackageReference Include="Telerik.UI.for.WPF.80.Xaml" Version="2025.2.521" />
+    <PackageReference Include="Telerik.Reporting" Version="19.1.25.521" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Themes\Views\Dialogs\Images\error.png" />
+    <Resource Include="Themes\Views\Dialogs\Images\info.png" />
+    <Resource Include="Themes\Views\Dialogs\Images\question.png" />
+    <Resource Include="Themes\Views\Dialogs\Images\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+  </ItemGroup>
+
+</Project>

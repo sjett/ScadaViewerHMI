@@ -1,0 +1,35 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:HMI.RuntimeControls.Navigation"
+    >
+
+  <Style TargetType="local:HMINavigationTarget">
+    <Setter Property="Foreground" Value="#FF000000"/>
+    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+    <Setter Property="VerticalContentAlignment" Value="Top"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="local:HMINavigationTarget">
+            <ScrollViewer x:Name="uxScrollViewer"
+                          Background="{TemplateBinding Background}"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          Margin="{TemplateBinding Padding}"
+                          Padding="0"
+                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                          HorizontalScrollBarVisibility="{TemplateBinding HorizontalScrollBarVisibility}"
+                          VerticalScrollBarVisibility="{TemplateBinding VerticalScrollBarVisibility}">
+                <Viewbox Stretch="{TemplateBinding StretchContent}">
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      Cursor="{TemplateBinding Cursor}" />
+                </Viewbox>
+            </ScrollViewer>
+        </ControlTemplate>
+      </Setter.Value>    
+    </Setter>
+  </Style>
+
+</ResourceDictionary>

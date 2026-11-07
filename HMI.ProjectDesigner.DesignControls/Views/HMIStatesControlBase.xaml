@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls">
+    <gh:TernarySelector x:Key="TernarySelector" />
+    <Style x:Key="HMIStatesControlBaseStyle" TargetType="{x:Type local:HMIStatesControlBase}">
+        <Setter Property="Control.Background">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource TernarySelector}">
+                    <Binding Path="UseLocalColors" />
+                    <Binding Path="Project.StateDefaultBackground" FallbackValue="White" />
+                    <Binding Path="Background" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=Opacity}" />
+        <Setter Property="Control.Foreground">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource TernarySelector}">
+                    <Binding Path="UseLocalColors" />
+                    <Binding Path="Project.StateDefaultForeground" FallbackValue="Black" />
+                    <Binding Path="Foreground" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,20 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI.RuntimeControls.Isa">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISACooledOrHeatedPipe1}" TargetType="{x:Type local:HMIISACooledOrHeatedPipe1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISACooledOrHeatedPipe1}">
+                    <Grid Name="LayoutRoot" Margin="0,0,0,0">
+                        <Viewbox>
+                            <Path Stretch="Fill" StrokeLineJoin="Round" Stroke="{TemplateBinding Control.Foreground}" Data="M0,50L100,50 M20,57.0625L30,57.0625 M35.625,57.0625L37.125,57.0625 M40,57.0625L53,57.0625 M56.5,57.0625L57.75,57.0625 M61.5,57.0625L74.375,57.0625 M77.625,57.0625L80,57.0625 M82.375,57.0625L84.125,57.0625" StrokeThickness="{TemplateBinding LineThickness}" />
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

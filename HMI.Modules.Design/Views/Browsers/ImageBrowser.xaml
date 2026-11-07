@@ -1,0 +1,20 @@
+﻿<sbw:SelectorBrowserWindow x:Class="HMI.Modules.Design.Views.Browsers.ImageBrowser" 
+                           Width="700" Height="500" ResizeMode="NoResize" 
+                           FontFamily="NSimSun"  TextOptions.TextFormattingMode="Display"
+                           Header="{localize:Resx ResxName=HMI.Modules.Design.Resources.BrowserTexts, Key=ImageBrowserTitle}"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                           xmlns:sbw="clr-namespace:HMI.Common.Browsers.Views;assembly=HMI.Common.Browsers" 
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                           xmlns:isv="clr-namespace:HMI.Modules.Design.Views.Browsers">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <isv:ImageSourceView Grid.Row="0" DataContext="{Binding ActivePage}" />
+        <sbw:GenericBrowserStatusBarView Grid.Row="1" />
+        <sbw:OKCancelPanelView Grid.Row="2" />
+    </Grid>
+</sbw:SelectorBrowserWindow>

@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:ViewModels="clr-namespace:HMI.Common.Browsers.ViewModels"
+                    xmlns:stbtv="clr-namespace:HMI.Common.Browsers.Views">
+    <DataTemplate x:Key="{DataTemplateKey {x:Type ViewModels:ServerSymbolicTextBrowserViewModel}}" 
+                  DataType="{x:Type ViewModels:ServerSymbolicTextBrowserViewModel}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <stbtv:SymbolicTextBrowserToolbarView />
+            <stbtv:SymbolicTextsView Grid.Row="1" />
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

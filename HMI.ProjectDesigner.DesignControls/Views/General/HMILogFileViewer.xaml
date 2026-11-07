@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.General">
+    <gh:StringNullOrEmptyFallbackConverter x:Key="StringNullOrEmptyFallbackConverter" />
+    <gh:TernarySelector x:Key="TernarySelector" />
+    <Style x:Key="{x:Type local:HMILogFileViewer}" TargetType="{x:Type local:HMILogFileViewer}">
+        <Setter Property="Control.Background">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource TernarySelector}">
+                    <Binding Path="UseLocalColors" />
+                    <Binding Path="Project.StateDefaultBackground" FallbackValue="White" />
+                    <Binding Path="Background" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Foreground">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource TernarySelector}">
+                    <Binding Path="UseLocalColors" />
+                    <Binding Path="Project.StateDefaultForeground" FallbackValue="White" />
+                    <Binding Path="Foreground" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=Opacity}" />
+        <Setter Property="Control.Padding" Value="3" />
+        <Setter Property="Control.BorderThickness" Value="{Binding Path=BorderThickness}" />
+        <Setter Property="Control.BorderBrush" Value="{Binding Path=BorderBrush}" />
+        <Setter Property="Control.FontFamily" Value="{Binding Path=FontFamily}" />
+        <Setter Property="Control.FontSize" Value="{Binding Path=FontSize}" />
+        <Setter Property="Control.FontStretch" Value="{Binding Path=FontStretch}" />
+        <Setter Property="Control.FontStyle" Value="{Binding Path=FontStyle}" />
+        <Setter Property="Control.FontWeight" Value="{Binding Path=FontWeight}" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMILogFileViewer}">
+                    <Grid Name="LayoutRoot">
+                        <Border Name="Background" Background="#FFFFFFFF" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" CornerRadius="3">
+                            <Grid Margin="1" Background="{TemplateBinding Control.Background}">
+                                <Border Name="BackgroundAnimation" Opacity="0" Background="#FF448DCA" />
+                                <Rectangle Name="BackgroundGradient">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                            <GradientStop Color="#FFFFFFFF" Offset="0" />
+                                            <GradientStop Color="#F9FFFFFF" Offset="0.375" />
+                                            <GradientStop Color="#E5FFFFFF" Offset="0.625" />
+                                            <GradientStop Color="#C6FFFFFF" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Grid>
+                        </Border>
+                        <ContentPresenter Name="contentPresenter" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{Binding SymbolicText, Converter={StaticResource StringNullOrEmptyFallbackConverter}, ConverterParameter=HMILogFileViewer}" />
+                        <Rectangle Name="DisabledVisualElement" IsHitTestVisible="False" Opacity="0" Fill="#FFFFFFFF" RadiusX="3" RadiusY="3" />
+                        <Rectangle Name="FocusVisualElement" Margin="1" IsHitTestVisible="False" Opacity="0" Stroke="#FF6DBDD1" StrokeThickness="1" RadiusX="2" RadiusY="2" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

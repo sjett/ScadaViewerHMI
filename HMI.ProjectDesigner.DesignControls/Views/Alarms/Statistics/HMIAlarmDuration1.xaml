@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:rc="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Alarms">
+    <Style x:Key="{x:Type local:HMIAlarmDuration1}" TargetType="{x:Type local:HMIAlarmDuration1}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIAlarmDuration1}">
+                    <Grid Name="uxLayoutRoot" IsHitTestVisible="False">
+                        <Grid.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="RadChartStyles.xaml" />
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </Grid.Resources>
+                        <rc:RadChart Name="RadChartElement" />
+                        <Button Name="SelectTimespanButtonElement" IsTabStop="False" Margin="0,0,5,5" Width="32" Height="32" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                            <Button.Content>
+                                <Image Source="../Images/TimeRange.png" Stretch="Uniform" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=Opacity}" />
+    </Style>
+</ResourceDictionary>

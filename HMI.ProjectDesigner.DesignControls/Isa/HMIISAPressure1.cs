@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: GPL-3.0-only
+using System;
+
+using System.Windows;
+namespace HMI.ProjectDesigner.DesignControls.Isa
+{
+	
+	public class HMIISAPressure1 : HMIISABase
+	{
+		static HMIISAPressure1()
+		{
+			System.Windows.FrameworkElement.DefaultStyleKeyProperty.OverrideMetadata(typeof(HMIISAPressure1), new System.Windows.FrameworkPropertyMetadata(typeof(HMIISAPressure1)));
+		}
+	}
+}

@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:local="clr-namespace:HMI.RuntimeControls.InputOutput">
+
+    <Style TargetType="local:HMINumericDisplay2">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:HMINumericDisplay2">
+                    <Grid x:Name="LayoutRoot">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" MinWidth="15" />
+                        </Grid.ColumnDefinitions>
+                         <!-- 7 段码 文字-->
+                        <telerik:NumericScale x:Name="NumericScaleElement"
+                                                        Background="{TemplateBinding Background}"
+                                                        BorderThickness="0">
+                            <telerik:NumericScale.Indicators>
+                                <telerik:NumericIndicator x:Name="NumericIndicatorElement"
+                                                                    BorderThickness="0"
+                                                                    telerik:ScaleObject.RelativeX="0"
+                                                                    telerik:ScaleObject.RelativeY="0"
+                                                                    telerik:ScaleObject.RelativeHeight="1" 
+                                                                    telerik:ScaleObject.RelativeWidth="1" >
+                                    <telerik:NumericIndicator.Positions>
+                                        <telerik:HexagonalNumberPosition />
+                                        <telerik:HexagonalNumberPosition />
+                                        <telerik:HexagonalNumberPosition />
+                                    </telerik:NumericIndicator.Positions>
+                                </telerik:NumericIndicator>
+                            </telerik:NumericScale.Indicators>
+                        </telerik:NumericScale>
+                        
+                        <TextBlock x:Name="UnitElement"
+                                   Grid.Column="1"
+                                   Margin="3,0,0,0"
+                                   VerticalAlignment="Center"
+                                   TextWrapping="Wrap" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

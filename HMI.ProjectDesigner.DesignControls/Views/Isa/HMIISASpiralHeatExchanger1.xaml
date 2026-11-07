@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISASpiralHeatExchanger1}" TargetType="{x:Type local:HMIISASpiralHeatExchanger1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISASpiralHeatExchanger1}">
+                    <Grid Name="LayoutRoot" Margin="0,0,0,0">
+                        <Viewbox>
+                            <Grid>
+                                <Ellipse Name="Ellipse" Width="90" Height="90" Canvas.Left="5.36639" Canvas.Top="5.37231" Stretch="Fill" StrokeLineJoin="Round" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" StrokeThickness="{Binding LineThickness, FallbackValue=1}" />
+                                <Path Name="Path" Width="91.1694" Height="91.1085" Canvas.Left="4.45833" Canvas.Top="4.43804" Stretch="Fill" StrokeLineJoin="Round" Stroke="{TemplateBinding Control.Foreground}" Data="M50.3664,13.539C70.7089,13.539 87.1997,30.0298 87.1997,50.3723 87.1997,70.7148 70.7089,87.2057 50.3664,87.2057 30.0239,87.2057 13.533,70.7148 13.533,50.3723 13.533,30.0298 30.0239,13.539 50.3664,13.539z M50.3664,20.3723C66.9349,20.3723 80.3664,33.8038 80.3664,50.3723 80.3664,66.9409 66.9349,80.3723 50.3664,80.3723 33.7978,80.3723 20.3664,66.9409 20.3664,50.3723 20.3664,33.8038 33.7978,20.3723 50.3664,20.3723z M10,10L90,90 M90,10L10,90 M5.06196,14.938L15.062,4.93804 M85.0463,95.0465L95.0463,85.0465 M85.1277,5.15446L95.1277,15.1545 M4.95833,84.9583L14.9583,94.9583" StrokeThickness="{Binding LineThickness, FallbackValue=1}" />
+                            </Grid>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,78 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:Browsers="clr-namespace:HMI.Modules.Design.Views.Browsers">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/HMI.Modules.Design;component/Themes/Views/Browsers/Common.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <gh:InvertedBoolVisibilityConverter x:Key="InvertedBoolVisibilityConverter" />
+    <Style x:Key="{x:Type Browsers:XamlSourceView}" TargetType="{x:Type Browsers:XamlSourceView}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Browsers:XamlSourceView}">
+                    <rad:RadBusyIndicator Name="uxBusyIndicator">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <rad:RadGridView Name="uxXamls" AutoGenerateColumns="False" CanUserFreezeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="False" ShowGroupPanel="False" Style="{StaticResource BrowserGridStyle}" ItemsSource="{Binding Values}" SelectedItem="{Binding SelectedItem}">
+                                <rad:RadGridView.Columns>
+                                    <rad:GridViewDataColumn Width="*" CellStyleSelector="{StaticResource NullItemStyleSelector}" Style="{StaticResource BrowserGridColumnStyle}" DataMemberBinding="{Binding Name}" Header="{localize:Resx ResxName=HMI.Modules.Design.Resources.EditorsTexts, Key=FileName}" />
+                                </rad:RadGridView.Columns>
+                            </rad:RadGridView>
+                            <rad:RadButton Name="uxBrowse" Grid.Row="1" Style="{StaticResource BrowseButtonStyle}" Command="{Binding BrowseCommand}" Content="{localize:Resx ResxName=HMI.Modules.Design.Resources.EditorsTexts, Key=BrowseXaml}" />
+                            <GridSplitter Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                            <Grid Grid.RowSpan="2" Grid.Column="2" Visibility="{Binding SelectedItem.IsValidXamlSource, Converter={StaticResource InvertedBoolVisibilityConverter}}">
+                                <Border BorderBrush="#FF919191" BorderThickness="1" />
+                                <Grid Visibility="{Binding SelectedItem.IsXamlLoaded, Converter={StaticResource InvertedBoolVisibilityConverter}, FallbackValue=Visible}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Viewbox>
+                                        <Grid Width="85" Height="85">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="0.7*" />
+                                                <RowDefinition Height="0.3*" />
+                                            </Grid.RowDefinitions>
+                                            <Path Data="F1M13.58,11.728C13.58,11.728 22.139999,20.832001 22.139999,20.832001 22.139999,20.832001 25.223,15.491 25.223,15.491 25.223,15.491 32.988998,22.284 36.671001,25.459999 36.671001,25.459999 7.7589998,25.459999 7.7589998,25.459999 7.7589998,25.459999 7.7589998,22.493999 7.7589998,22.493999 7.7589998,22.493999 13.58,11.728 13.58,11.728z M32.192001,8.1680002C33.798,8.1680002 35.098999,9.4700003 35.098999,11.074 35.098999,12.68 33.798,13.98 32.192001,13.98 30.59,13.98 29.288,12.68 29.288,11.074 29.288,9.4700003 30.59,8.1680002 32.192001,8.1680002z M4.9349685,4.741189C4.9349685,4.741189 4.9369688,28.381815 4.9369688,28.381815 4.9369688,28.381815 41.192032,28.381815 41.192032,28.381815 41.192032,28.381815 41.06403,4.741189 41.06403,4.741189 41.06403,4.741189 4.9349685,4.741189 4.9349685,4.741189z M1.266,1.171C1.266,1.171 44.734001,1.171 44.734001,1.171 44.734001,1.171 44.734001,31.827999 44.734001,31.827999 44.734001,31.827999 1.266,31.827999 1.266,31.827999 1.266,31.827999 1.266,1.171 1.266,1.171z" Fill="#FFF1F1F1" Stretch="Fill" Stroke="#FF5E5E5E" StrokeThickness="1.5" UseLayoutRounding="False" />
+                                            <Path Margin="11.502,13,13.914,11.751" Data="M58.083984,34.748993L60.083984,34.748993 60.083984,36.748993 58.083984,36.748993z M0.5,34.748993L2.5,34.748993 2.5,36.748993 0.5,36.748993z M0.5,29.082001L2.5,29.082001 2.5,31.082001 0.5,31.082001z M28.666992,25.917999L30.666992,25.917999 30.666992,27.917999 28.666992,27.917999z M34.832977,14.583008L36.832977,14.583008 36.832977,16.583008 34.832977,16.583008z M48.665985,12.251007L50.665985,12.251007 50.665985,14.251007 48.665985,14.251007z M11.791992,7.1650085L13.791992,7.1650085 13.791992,9.1650085 11.791992,9.1650085z M54.541992,6.0830078L56.541992,6.0830078 56.541992,8.0830078 54.541992,8.0830078z M42.539978,6.0830078L44.539978,6.0830078 44.539978,8.0830078 42.539978,8.0830078z M48.665985,0.5L50.665985,0.5 50.665985,2.5 48.665985,2.5z" Fill="#FF979797" Stretch="Fill" Stroke="#FF505050" UseLayoutRounding="False" />
+                                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontFamily="Verdana" TextBlock.FontSize="10" TextBlock.Foreground="#FF444444" TextBlock.TextAlignment="Center" TextWrapping="Wrap" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.ErrorTexts, Key=NoXAML}" />
+                                        </Grid>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Visibility="{Binding SelectedItem.IsXamlLoaded, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Viewbox>
+                                        <Grid Width="85" Height="85">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="0.7*" />
+                                                <RowDefinition Height="0.3*" />
+                                            </Grid.RowDefinitions>
+                                            <Path Data="F1M4.9349685,4.741189C4.9349685,4.741189 4.9369688,28.381815 4.9369688,28.381815 4.9369688,28.381815 41.192032,28.381815 41.192032,28.381815 41.192032,28.381815 41.06403,4.741189 41.06403,4.741189 41.06403,4.741189 4.9349685,4.741189 4.9349685,4.741189z M1.266,1.171C1.266,1.171 44.734001,1.171 44.734001,1.171 44.734001,1.171 44.734001,31.827999 44.734001,31.827999 44.734001,31.827999 1.266,31.827999 1.266,31.827999 1.266,31.827999 1.266,1.171 1.266,1.171z" Fill="#FFF1F1F1" Stretch="Fill" Stroke="#FF6E0000" StrokeThickness="1.5" UseLayoutRounding="False" />
+                                            <Path Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" Data="F1M26.721,7.059C26.721,7.059 19.649,13.93 19.649,13.93 19.649,13.93 26.721,20.801 26.721,20.801 26.721,20.801 21.064,26.458 21.064,26.458 21.064,26.458 13.993,19.387 13.993,19.387 13.993,19.387 6.922,26.458 6.922,26.458 6.922,26.458 1.265,20.801 1.265,20.801 1.265,20.801 8.336,13.93 8.336,13.93 8.336,13.93 1.265,7.059 1.265,7.059 1.265,7.059 6.921,1.402 6.921,1.402 6.921,1.402 13.993,8.473 13.993,8.473 13.993,8.473 21.064,1.402 21.064,1.402 21.064,1.402 26.721,7.059 26.721,7.059z" Fill="#FF6E0000" UseLayoutRounding="False" />
+                                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontFamily="Verdana" TextBlock.Foreground="#FF6E0000" TextBlock.TextAlignment="Center" TextWrapping="Wrap" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.ErrorTexts, Key=InvalidXAML}" />
+                                        </Grid>
+                                    </Viewbox>
+                                </Grid>
+                            </Grid>
+                            <Border Grid.RowSpan="2" Grid.Column="2" BorderBrush="#FFF5F5F5" BorderThickness="1" Visibility="{Binding SelectedItem.IsValidXamlSource, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <ContentControl Content="{Binding SelectedItem.XamlSource}" />
+                            </Border>
+                        </Grid>
+                    </rad:RadBusyIndicator>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="HMI.Modules.PropertyEditor.Views.PropertyEditorView" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+             xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/PropertyEditorStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <CollectionViewSource x:Key="VisibleDescriptors" Source="{Binding PropertyDescriptors}" Filter="VisibleProperties_OnFilter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <!--ShowInsertRow="False"-->
+    <rad:RadGridView Name="uxPropertyTree" 
+                     AutoExpandGroups="False" 
+                     AutoGenerateColumns="False"
+                     CanUserDeleteRows="False"
+                     CanUserFreezeColumns="False" 
+                     CanUserInsertRows="False" 
+                     CanUserReorderColumns="False" 
+                     CanUserResizeColumns="True" 
+                     CanUserSelect="False" 
+                     CanUserSortColumns="False" 
+                     Focusable="False" 
+                     KeyboardNavigation.ControlTabNavigation="Cycle" 
+                     KeyboardNavigation.DirectionalNavigation="Cycle" 
+                     KeyboardNavigation.TabNavigation="Cycle" 
+                     RowIndicatorVisibility="Collapsed" 
+                     ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                     ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                     SelectionMode="Single" 
+                     SelectionUnit="FullRow" 
+                     ShowColumnFooters="False" 
+                     ShowColumnHeaders="True" 
+                     ShowGroupPanel="False" 
+                     
+                     rad:AnimationManager.IsAnimationEnabled="False" 
+                     ItemsSource="{Binding Source={StaticResource VisibleDescriptors}}" 
+                     BeginningEdit="uxPropertyTree_BeginningEdit">
+        <rad:RadGridView.GroupDescriptors>
+            <rad:GroupDescriptor Member="Category" SortDirection="Ascending" />
+        </rad:RadGridView.GroupDescriptors>
+        <rad:RadGridView.Columns>
+            <rad:GridViewDataColumn 
+                Width="*" 
+                CellStyle="{StaticResource PropertyCellStyle}" 
+                UniqueName="DisplayName" 
+                DataMemberBinding="{Binding DisplayName}" 
+                Header="{localize:Resx ResxName=HMI.Modules.PropertyEditor.Resources.PropertyEditorTexts, Key=Name}" />
+            <rad:GridViewColumn 
+                Width="*" 
+                CellStyle="{StaticResource PropertyCellStyle}" 
+                CellTemplate="{StaticResource PropertyEditorCellTemplate}" 
+                UniqueName="Value" 
+                Header="{localize:Resx ResxName=HMI.Modules.PropertyEditor.Resources.PropertyEditorTexts, Key=Value}" />
+        </rad:RadGridView.Columns>
+    </rad:RadGridView>
+</UserControl>

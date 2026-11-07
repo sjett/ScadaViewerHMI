@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                    xmlns:infra="clr-namespace:HMI.Infrastructure;assembly=HMI.Infrastructure">
+    <ContextMenu x:Key="ExplorerContextMenu">
+        <MenuItem Command="{x:Static infra:EditorCommands.Rename}" InputGestureText="F2" Header="{localize:Resx ResxName=HMI.Modules.Explorer.Resources.ExplorerTexts, Key=Rename}">
+            <MenuItem.Icon>
+                <Image Source="/HMI.Modules.Explorer;component/Resources/MenuIcons16x16/Rename.png" Width="16" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <Separator />
+        <MenuItem Command="{x:Static infra:EditorCommands.AddTemplatePage}" Header="{localize:Resx ResxName=HMI.Modules.Explorer.Resources.ExplorerTexts, Key=AddTemplatePage}">
+            <MenuItem.Icon>
+                <Image Source="/HMI.Modules.Explorer;component/Resources/Images/GenericDocument.png" Width="16" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static infra:EditorCommands.AddNavigationPage}" Header="{localize:Resx ResxName=HMI.Modules.Explorer.Resources.ExplorerTexts, Key=AddNavigationPage}">
+            <MenuItem.Icon>
+                <Image Source="/HMI.Modules.Explorer;component/Resources/Images/GenericDocument.png" Width="16" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static infra:EditorCommands.RemovePage}" Header="{localize:Resx ResxName=HMI.Modules.Explorer.Resources.ExplorerTexts, Key=RemovePage}">
+            <MenuItem.Icon>
+                <Image Source="/HMI.Modules.Explorer;component/Resources/MenuIcons16x16/Delete.png" Width="16" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <Separator />
+        <MenuItem Command="{x:Static ApplicationCommands.Cut}" Header="{localize:Resx ResxName=HMI.Modules.Explorer.Resources.ExplorerTexts, Key=Cut}">
+            <MenuItem.Icon>
+                <Image Source="/HMI.Modules.Explorer;component/Resources/MenuIcons16x16/Cut.png" Width="16" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Copy}" Header="{localize:Resx ResxName=HMI.Modules.Explorer.Resources.ExplorerTexts, Key=Copy}">
+            <MenuItem.Icon>
+                <Image Source="/HMI.Modules.Explorer;component/Resources/MenuIcons16x16/Copy.png" Width="16" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Paste}" Header="{localize:Resx ResxName=HMI.Modules.Explorer.Resources.ExplorerTexts, Key=Paste}">
+            <MenuItem.Icon>
+                <Image Source="/HMI.Modules.Explorer;component/Resources/MenuIcons16x16/Paste.png" Width="16" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Delete}" Header="{localize:Resx ResxName=HMI.Modules.Explorer.Resources.ExplorerTexts, Key=Delete}">
+            <MenuItem.Icon>
+                <Image Source="/HMI.Modules.Explorer;component/Resources/MenuIcons16x16/Delete.png" Width="16" />
+            </MenuItem.Icon>
+        </MenuItem>
+    </ContextMenu>
+</ResourceDictionary>

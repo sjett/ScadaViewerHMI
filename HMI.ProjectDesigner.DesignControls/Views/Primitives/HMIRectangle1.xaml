@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Primitives" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../HMIStatesControlBase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIRectangle1}" TargetType="{x:Type local:HMIRectangle1}">
+        <Setter Property="local:HMIRectangle1.DesignerTemplateKey" Value="HMIRectangle1Designer" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIRectangle1}">
+                    <Image Source="Images/Rectangle.png" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HMIRectangle1Designer" BasedOn="{StaticResource HMIStatesControlBaseStyle}" TargetType="{x:Type local:HMIRectangle1}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIRectangle1}">
+                    <Grid Name="LayoutRoot" IsHitTestVisible="False">
+                        <Rectangle Name="RectangleElement" Fill="{TemplateBinding Control.Background}" Stroke="{TemplateBinding Control.Foreground}" RadiusX="{Binding RadiusX}" RadiusY="{Binding RadiusY}" StrokeThickness="{Binding LineThickness}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

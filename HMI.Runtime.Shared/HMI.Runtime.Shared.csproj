@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Dialogs\MessageBoxControl\error_48x48_72.png" />
+    <None Remove="Dialogs\MessageBoxControl\help_48x48_72.png" />
+    <None Remove="Dialogs\MessageBoxControl\highpriority_48x48_72.png" />
+    <None Remove="Dialogs\MessageBoxControl\info_48x48_72.png" />
+    <None Remove="Dialogs\MessageBoxControl\invalid_48x48_72.png" />
+    <None Remove="Dialogs\MessageBoxControl\pendingrequest_48x48_72.png" />
+    <None Remove="Dialogs\MessageBoxControl\questionmarkblue_48x48_72.png" />
+    <None Remove="Dialogs\MessageBoxControl\questionmarkred_48x48_72.png" />
+    <None Remove="Dialogs\MessageBoxControl\valid_48x48_72.png" />
+    <None Remove="Dialogs\MessageBoxControl\warning_48x48_72.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.142" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="Telerik.UI.for.Wpf.80.Xaml" Version="2025.2.521" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMI.Runtime.Core\HMI.Runtime.Core.csproj" />
+    <ProjectReference Include="..\HMI.Runtime.Math\HMI.MathExpressions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Dialogs\MessageBoxControl\error_48x48_72.png" />
+    <Resource Include="Dialogs\MessageBoxControl\help_48x48_72.png" />
+    <Resource Include="Dialogs\MessageBoxControl\highpriority_48x48_72.png" />
+    <Resource Include="Dialogs\MessageBoxControl\info_48x48_72.png" />
+    <Resource Include="Dialogs\MessageBoxControl\invalid_48x48_72.png" />
+    <Resource Include="Dialogs\MessageBoxControl\pendingrequest_48x48_72.png" />
+    <Resource Include="Dialogs\MessageBoxControl\questionmarkblue_48x48_72.png" />
+    <Resource Include="Dialogs\MessageBoxControl\questionmarkred_48x48_72.png" />
+    <Resource Include="Dialogs\MessageBoxControl\valid_48x48_72.png" />
+    <Resource Include="Dialogs\MessageBoxControl\warning_48x48_72.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\SharedTranslation.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SharedTranslation.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\SharedTranslation.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedTranslation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

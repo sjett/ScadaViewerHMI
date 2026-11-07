@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.General">
+    <gh:TernarySelector x:Key="TernarySelector" />
+    <Style x:Key="{x:Type local:HMIUserInformation1}" TargetType="{x:Type local:HMIUserInformation1}">
+        <Setter Property="Control.Background">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource TernarySelector}">
+                    <Binding Path="UseLocalColors" />
+                    <Binding Path="Project.StateDefaultBackground" FallbackValue="White" />
+                    <Binding Path="Background" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Foreground">
+            <Setter.Value>
+                <MultiBinding Converter="{StaticResource TernarySelector}">
+                    <Binding Path="UseLocalColors" />
+                    <Binding Path="Project.StateDefaultForeground" FallbackValue="Black" />
+                    <Binding Path="Foreground" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=Opacity}" />
+        <Setter Property="Control.BorderBrush" Value="{Binding BorderBrush}" />
+        <Setter Property="Control.BorderThickness" Value="{Binding BorderThickness}" />
+        <Setter Property="Control.FontFamily" Value="{Binding FontFamily}" />
+        <Setter Property="Control.FontSize" Value="{Binding FontSize}" />
+        <Setter Property="Control.FontStretch" Value="{Binding FontStretch}" />
+        <Setter Property="Control.FontStyle" Value="{Binding FontStyle}" />
+        <Setter Property="Control.FontWeight" Value="{Binding FontWeight}" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment}" />
+        <Setter Property="Control.VerticalContentAlignment" Value="{Binding VerticalContentAlignment}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIUserInformation1}">
+                    <Border Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" Opacity="{TemplateBinding UIElement.Opacity}">
+                        <TextBlock Name="uxUserInformation" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" TextBlock.FontFamily="{TemplateBinding Control.FontFamily}" TextBlock.FontSize="{TemplateBinding Control.FontSize}" TextBlock.FontStretch="{TemplateBinding Control.FontStretch}" TextBlock.FontStyle="{TemplateBinding Control.FontStyle}" TextBlock.FontWeight="{TemplateBinding Control.FontWeight}" TextBlock.Foreground="{TemplateBinding Control.Foreground}" Text="{Binding UserInformation}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,17 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:Browsers="clr-namespace:HMI.Modules.Design.ViewModels.Browsers"
+                    xmlns:pdv="clr-namespace:HMI.Modules.Design.Views.Browsers">
+    <DataTemplate x:Key="{DataTemplateKey {x:Type Browsers:TemplateSignalBrowserPageViewModel}}" DataType="{x:Type Browsers:TemplateSignalBrowserPageViewModel}">
+        <pdv:ParameterDefinitionsView />
+    </DataTemplate>
+    <DataTemplate x:Key="{DataTemplateKey {x:Type Browsers:TemplateSymbolicTextBrowserPageViewModel}}" DataType="{x:Type Browsers:TemplateSymbolicTextBrowserPageViewModel}">
+        <pdv:ParameterDefinitionsView />
+    </DataTemplate>
+    <DataTemplate x:Key="{DataTemplateKey {x:Type Browsers:TemplateAlarmGroupBrowserPageViewModel}}" DataType="{x:Type Browsers:TemplateAlarmGroupBrowserPageViewModel}">
+        <pdv:ParameterDefinitionsView />
+    </DataTemplate>
+    <DataTemplate x:Key="{DataTemplateKey {x:Type Browsers:TemplateAlarmTypeBrowserPageViewModel}}" DataType="{x:Type Browsers:TemplateAlarmTypeBrowserPageViewModel}">
+        <pdv:ParameterDefinitionsView />
+    </DataTemplate>
+</ResourceDictionary>

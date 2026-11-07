@@ -1,0 +1,18 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/HMI.Runtime.Shared;component/Dialogs/DialogControl.xaml" />
+        <!--<ResourceDictionary Source="/HMI.Runtime.Shared;component/TimeIntervals/Timespan/TimespanControl.xaml" />
+        <ResourceDictionary Source="/HMI.Runtime.Shared;component/SignalBrowser/FilterControl.xaml" />
+        <ResourceDictionary Source="/HMI.Runtime.Shared;component/SignalBrowser/SignalBrowser.xaml" />-->
+        <ResourceDictionary Source="/HMI.Runtime.Shared;component/Dialogs/HMIWriteSecureDialog/HMIWriteSecureDialog.xaml" />
+        <ResourceDictionary Source="/HMI.Runtime.Shared;component/Dialogs/MessageBoxControl/MessageBoxControl.xaml" />
+        <ResourceDictionary Source="/HMI.Runtime.Shared;component/Dialogs/MessageBoxControl/MultiActionMessageBoxControl.xaml" />
+        <ResourceDictionary Source="/HMI.Runtime.Shared;component/VirtualKeyboard/HMIVirtualKeyboardSwitch.xaml" />
+        <!--<ResourceDictionary Source="/HMI.Runtime.Shared;component/Configuration/View/ConfigurationList/ConfigurationList.xaml" />
+        <ResourceDictionary Source="/HMI.Runtime.Shared;component/Printing/Views/PrintDialog.xaml" />
+        <ResourceDictionary Source="/HMI.Runtime.Shared;component/Printing/Views/HeaderFooterEditorDialog.xaml" />-->
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

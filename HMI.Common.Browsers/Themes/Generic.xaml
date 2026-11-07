@@ -1,0 +1,24 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/AlarmFilterTreeBrowserToolbarView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/AlarmGroupsView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/AlarmGroupTreeView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/AlarmTypesView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/AlarmTypeTreeView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/DialogButtons.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/GenericBrowserStatusBarView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/SymbolicTextBrowserToolbarView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/SymbolicTextsView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/SignalDefinitionsView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/ProjectAuthorizationsView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/ServerSignalDefinitionsView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/ServerSymbolicTextsView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/ServerAlarmGroupsView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/ServerAlarmGroupsTreeView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/ServerAlarmTypesView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/ServerAlarmTypesTreeView.xaml" />
+        <ResourceDictionary Source="/HMI.Common.Browsers;component/Themes/ServerProjectAuthorizationsView.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

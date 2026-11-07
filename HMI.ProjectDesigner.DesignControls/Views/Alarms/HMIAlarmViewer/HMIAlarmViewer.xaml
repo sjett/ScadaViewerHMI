@@ -1,0 +1,377 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation"
+                       xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                       xmlns:acdmtvc="clr-namespace:HMI.ProjectDesigner.DesignControls.Converters"
+                       xmlns:wfagt="clr-namespace:HMI.ProjectDesigner.DesignControls.Views.Alarms.HMIAlarmViewer">
+    
+    <BooleanToVisibilityConverter x:Key="booleanVisibilityConverter" />
+    <gh:InvertedBoolVisibilityConverter x:Key="invertedBooleanVisibilityConverter" />
+    <gh:BoolToScrollbarVisibilityConverter x:Key="BoolToScrollbarVisibilityConverter" />
+    <gh:BoolToColumnHeaderVisiblityConverter x:Key="BoolToColumnHeaderVisiblityConverter" />
+    
+    <acdmtvc:AlarmCountDisplayModeToVisibilityConverter x:Key="AlarmCountDisplayModeToVisibilityConverter" />
+    <acdmtvc:InvertedAlarmCountDisplayModeToVisibilityConverter x:Key="InvertedAlarmCountDisplayModeToVisibilityConverter" />
+    
+    <Style x:Key="wfAlarmViewerCellStyle" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Control.Background" Value="#00FFFFFF" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Control.Padding" Value="5" />
+        <Setter Property="FrameworkElement.Cursor" Value="Arrow" />
+        <Setter Property="Control.IsTabStop" Value="False" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Grid Name="Root" Background="{TemplateBinding Control.Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CurrentStates">
+                                <VisualState x:Name="Regular" />
+                                <VisualState x:Name="Current">
+                                    <Storyboard />
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="ValidationStates">
+                                <VisualState x:Name="Valid" />
+                                <VisualState x:Name="Invalid">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="InvalidVisualElement" Storyboard.TargetProperty="Opacity" To="1" />
+                                        <ColorAnimation Duration="0" Storyboard.TargetName="FocusVisual" Storyboard.TargetProperty="(Fill).Color" To="#FFFFFFFF" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle Name="FocusVisual" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#66FFFFFF" IsHitTestVisible="False" Opacity="0" Stroke="#FF6DBDD1" StrokeThickness="1" />
+                        <ContentPresenter Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{TemplateBinding ContentControl.Content}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Cursor="{TemplateBinding FrameworkElement.Cursor}" />
+                        <Rectangle Name="InvalidVisualElement" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsHitTestVisible="False" Opacity="0" Stroke="#FFDC000C" StrokeThickness="1" />
+                        <Rectangle Name="RightGridLine" Grid.Column="1" Width="1" VerticalAlignment="Stretch" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LinkButton" TargetType="{x:Type Button}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextDecorations" Value="Underline" />
+                        </Style>
+                    </ControlTemplate.Resources>
+                    <ContentPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Foreground" Value="#FF0000FF" />
+        <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+        <Style.Triggers>
+            <Trigger Property="UIElement.IsMouseOver" Value="True">
+                <Setter Property="Control.Foreground" Value="#FFFF0000" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="wfAlarmViewerRowStyle" TargetType="{x:Type DataGridRow}">
+        <Setter Property="Control.IsTabStop" Value="False" />
+    </Style>
+    <Style x:Key="wfAlarmViewerBaseHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Control.Foreground" Value="#FF444444" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.FontSize" Value="12" />
+        <Setter Property="Control.FontWeight" Value="Bold" />
+        <Setter Property="Control.IsTabStop" Value="False" />
+        <Setter Property="DataGridColumnHeader.SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Control.Padding" Value="4,4,5,4" />
+    </Style>
+    <Style x:Key="wfPriorityColorHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfDateOnHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfSystemTimeHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfDateOffHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfDateAcknowledgedHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfAcknowledgedWithCommentHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfTextHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfSignalNameHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfPriorityHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfGroupHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfTypeHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfOpcItemHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfNameHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfHttpLinkHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfOccurrenceCountHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfDurationHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfStatusHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfHelpCauseHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfHelpEffectHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfHelpRepairHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfGeneralCommentHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfOccurrenceCommentHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfAcknowledgeCommentHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfNavigationSourceHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfNavigationTargetHeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty1HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty2HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty3HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty4HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty5HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty6HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty7HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty8HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty9HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty10HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty11HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty12HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty13HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty14HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty15HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty16HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty17HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty18HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty19HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty20HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty21HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty22HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty23HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty24HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty25HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty26HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty27HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty28HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty29HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty30HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty31HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="wfExtendedProperty32HeaderStyle" BasedOn="{StaticResource wfAlarmViewerBaseHeaderStyle}" TargetType="{x:Type DataGridColumnHeader}" />
+    <Style x:Key="{x:Type wfagt:HMIAlarmViewer}" TargetType="{x:Type wfagt:HMIAlarmViewer}">
+        <Setter Property="UIElement.Opacity" Value="{Binding Opacity}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type wfagt:HMIAlarmViewer}">
+                    <Grid Name="uxLayoutRoot">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <wfagt:HMIAlarmGroupsTree x:Name="uxAlarmGroupsFilterTree" Grid.Row="0" Grid.Column="0" Visibility="{Binding ShowAlarmGroupsFilterTree, Converter={StaticResource booleanVisibilityConverter}}" />
+                            <GridSplitter Name="uxGridSplitter1" Grid.Row="0" Grid.Column="1" Width="6" Margin="1,0,1,0" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+                            <DataGrid Name="uxAlarmGrid" Grid.Row="0" Grid.Column="2" AutoGenerateColumns="False" CellStyle="{StaticResource wfAlarmViewerCellStyle}" GridLinesVisibility="Vertical" IsReadOnly="True" RowStyle="{StaticResource wfAlarmViewerRowStyle}" SelectionMode="Extended" VerticalGridLinesBrush="#FFF5F5F5" HeadersVisibility="{Binding ShowHeader, Converter={StaticResource BoolToColumnHeaderVisiblityConverter}}" HorizontalScrollBarVisibility="{Binding ShowScrollbars, Converter={StaticResource BoolToScrollbarVisibilityConverter}}" ItemsSource="{Binding Alarms}" VerticalScrollBarVisibility="{Binding ShowScrollbars, Converter={StaticResource BoolToScrollbarVisibilityConverter}}">
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn CanUserReorder="True" CanUserSort="False" Header="PriorityColor" HeaderStyle="{StaticResource wfPriorityColorHeaderStyle}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="Active" HeaderStyle="{StaticResource wfDateOnHeaderStyle}" SortMemberPath="DateOn" Binding="{Binding DateOnString}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="SystemTime" HeaderStyle="{StaticResource wfSystemTimeHeaderStyle}" SortMemberPath="SystemTime" Binding="{Binding SystemTimeString}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="Gone" HeaderStyle="{StaticResource wfDateOffHeaderStyle}" Binding="{Binding DateOffString}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="Acknowledged" HeaderStyle="{StaticResource wfDateAcknowledgedHeaderStyle}" Binding="{Binding DateAcknowledgedString}" />
+                                    <DataGridTemplateColumn CanUserReorder="True" CanUserSort="False" Header="AcknowledgedWithComment" HeaderStyle="{StaticResource wfAcknowledgedWithCommentHeaderStyle}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ToolTipService.ToolTip="{Binding AcknowledgeComment}" />
+                                                    <Path Width="15" Height="7" Margin="2" HorizontalAlignment="Center" Data="M0.5,2.8249958L11.625,2.8249958 8.7657204,5.1369963 M8.7657204,0.5L11.625,2.812 0.5,2.812" Stretch="Fill" Stroke="#FF000000" StrokeDashCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" StrokeMiterLimit="10" StrokeStartLineCap="Round" StrokeThickness="1" UseLayoutRounding="False" Visibility="{Binding IsAcknowledgedWithComment, Converter={StaticResource booleanVisibilityConverter}}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="Text" HeaderStyle="{StaticResource wfTextHeaderStyle}" Binding="{Binding Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="Group" HeaderStyle="{StaticResource wfGroupHeaderStyle}" Binding="{Binding Group}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="Type" HeaderStyle="{StaticResource wfTypeHeaderStyle}" Binding="{Binding Type}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="SignalName" HeaderStyle="{StaticResource wfSignalNameHeaderStyle}" Binding="{Binding AliasName}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="OpcItem" HeaderStyle="{StaticResource wfOpcItemHeaderStyle}" Binding="{Binding SignalName}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="Priority" HeaderStyle="{StaticResource wfPriorityHeaderStyle}" Binding="{Binding Priority}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="Name" HeaderStyle="{StaticResource wfNameHeaderStyle}" Binding="{Binding Name}" />
+                                    <DataGridTemplateColumn CanUserReorder="True" CanUserSort="True" Header="HttpLink" HeaderStyle="{StaticResource wfHttpLinkHeaderStyle}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource LinkButton}" Content="{Binding HttpLink}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="OccurrenceCount" HeaderStyle="{StaticResource wfOccurrenceCountHeaderStyle}" Binding="{Binding OccurrenceCount}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="Duration" HeaderStyle="{StaticResource wfDurationHeaderStyle}" Binding="{Binding Duration, StringFormat=d\.hh\:mm\:ss\.fff}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="StatusText" HeaderStyle="{StaticResource wfStatusHeaderStyle}" Binding="{Binding StatusText}" />
+                                    <DataGridTemplateColumn CanUserReorder="True" CanUserSort="True" Header="HelpCause" HeaderStyle="{StaticResource wfHelpCauseHeaderStyle}" SortMemberPath="HelpCause">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBlock Margin="4" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding HelpCause}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource booleanVisibilityConverter}}" />
+                                                    <TextBlock Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding StrippedHelpCause}" ToolTipService.ToolTip="{Binding HelpCause}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource invertedBooleanVisibilityConverter}}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn CanUserReorder="True" CanUserSort="True" Header="HelpEffect" HeaderStyle="{StaticResource wfHelpEffectHeaderStyle}" SortMemberPath="HelpEffect">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBlock Margin="4" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding HelpEffect}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource booleanVisibilityConverter}}" />
+                                                    <TextBlock Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding StrippedHelpEffect}" ToolTipService.ToolTip="{Binding HelpEffect}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource invertedBooleanVisibilityConverter}}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn CanUserReorder="True" CanUserSort="True" Header="HelpRepair" HeaderStyle="{StaticResource wfHelpRepairHeaderStyle}" SortMemberPath="HelpRepair">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBlock Margin="4" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding HelpRepair}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource booleanVisibilityConverter}}" />
+                                                    <TextBlock Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding StrippedHelpRepair}" ToolTipService.ToolTip="{Binding HelpRepair}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource invertedBooleanVisibilityConverter}}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn CanUserReorder="True" CanUserSort="True" Header="GeneralComment" HeaderStyle="{StaticResource wfGeneralCommentHeaderStyle}" SortMemberPath="GeneralComment">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBlock Margin="4" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding GeneralComment}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource booleanVisibilityConverter}}" />
+                                                    <TextBlock Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding StrippedGeneralComment}" ToolTipService.ToolTip="{Binding GeneralComment}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource invertedBooleanVisibilityConverter}}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn CanUserReorder="True" CanUserSort="True" Header="OccurrenceComment" HeaderStyle="{StaticResource wfOccurrenceCommentHeaderStyle}" SortMemberPath="OccurrenceComment">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBlock Margin="4" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding OccurrenceComment}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource booleanVisibilityConverter}}" />
+                                                    <TextBlock Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding StrippedOccurrenceComment}" ToolTipService.ToolTip="{Binding OccurrenceComment}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource invertedBooleanVisibilityConverter}}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn CanUserReorder="True" CanUserSort="True" Header="AcknowledgeComment" HeaderStyle="{StaticResource wfAcknowledgeCommentHeaderStyle}" SortMemberPath="AcknowledgeComment">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBlock Margin="4" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding AcknowledgeComment}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource booleanVisibilityConverter}}" />
+                                                    <TextBlock Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding StrippedAcknowledgeComment}" ToolTipService.ToolTip="{Binding AcknowledgeComment}" Visibility="{Binding ShowMultilineTextValues, Converter={StaticResource invertedBooleanVisibilityConverter}}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="NavigationSource" HeaderStyle="{StaticResource wfNavigationSourceHeaderStyle}" Binding="{Binding NavigationSource}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="NavigationTarget" HeaderStyle="{StaticResource wfNavigationTargetHeaderStyle}" Binding="{Binding NavigationTarget}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty1" HeaderStyle="{StaticResource wfExtendedProperty1HeaderStyle}" Binding="{Binding ExtendedProperty1Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty2" HeaderStyle="{StaticResource wfExtendedProperty2HeaderStyle}" Binding="{Binding ExtendedProperty2Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty3" HeaderStyle="{StaticResource wfExtendedProperty3HeaderStyle}" Binding="{Binding ExtendedProperty3Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty4" HeaderStyle="{StaticResource wfExtendedProperty4HeaderStyle}" Binding="{Binding ExtendedProperty4Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty5" HeaderStyle="{StaticResource wfExtendedProperty5HeaderStyle}" Binding="{Binding ExtendedProperty5Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty6" HeaderStyle="{StaticResource wfExtendedProperty6HeaderStyle}" Binding="{Binding ExtendedProperty6Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty7" HeaderStyle="{StaticResource wfExtendedProperty7HeaderStyle}" Binding="{Binding ExtendedProperty7Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty8" HeaderStyle="{StaticResource wfExtendedProperty8HeaderStyle}" Binding="{Binding ExtendedProperty8Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty9" HeaderStyle="{StaticResource wfExtendedProperty9HeaderStyle}" Binding="{Binding ExtendedProperty9Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty10" HeaderStyle="{StaticResource wfExtendedProperty10HeaderStyle}" Binding="{Binding ExtendedProperty10Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty11" HeaderStyle="{StaticResource wfExtendedProperty11HeaderStyle}" Binding="{Binding ExtendedProperty11Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty12" HeaderStyle="{StaticResource wfExtendedProperty12HeaderStyle}" Binding="{Binding ExtendedProperty12Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty13" HeaderStyle="{StaticResource wfExtendedProperty13HeaderStyle}" Binding="{Binding ExtendedProperty13Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty14" HeaderStyle="{StaticResource wfExtendedProperty14HeaderStyle}" Binding="{Binding ExtendedProperty14Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty15" HeaderStyle="{StaticResource wfExtendedProperty15HeaderStyle}" Binding="{Binding ExtendedProperty15Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty16" HeaderStyle="{StaticResource wfExtendedProperty16HeaderStyle}" Binding="{Binding ExtendedProperty16Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty17" HeaderStyle="{StaticResource wfExtendedProperty17HeaderStyle}" Binding="{Binding ExtendedProperty17Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty18" HeaderStyle="{StaticResource wfExtendedProperty18HeaderStyle}" Binding="{Binding ExtendedProperty18Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty19" HeaderStyle="{StaticResource wfExtendedProperty19HeaderStyle}" Binding="{Binding ExtendedProperty19Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty20" HeaderStyle="{StaticResource wfExtendedProperty20HeaderStyle}" Binding="{Binding ExtendedProperty20Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty21" HeaderStyle="{StaticResource wfExtendedProperty21HeaderStyle}" Binding="{Binding ExtendedProperty21Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty22" HeaderStyle="{StaticResource wfExtendedProperty22HeaderStyle}" Binding="{Binding ExtendedProperty22Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty23" HeaderStyle="{StaticResource wfExtendedProperty23HeaderStyle}" Binding="{Binding ExtendedProperty23Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty24" HeaderStyle="{StaticResource wfExtendedProperty24HeaderStyle}" Binding="{Binding ExtendedProperty24Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty25" HeaderStyle="{StaticResource wfExtendedProperty25HeaderStyle}" Binding="{Binding ExtendedProperty25Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty26" HeaderStyle="{StaticResource wfExtendedProperty26HeaderStyle}" Binding="{Binding ExtendedProperty26Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty27" HeaderStyle="{StaticResource wfExtendedProperty27HeaderStyle}" Binding="{Binding ExtendedProperty27Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty28" HeaderStyle="{StaticResource wfExtendedProperty28HeaderStyle}" Binding="{Binding ExtendedProperty28Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty29" HeaderStyle="{StaticResource wfExtendedProperty29HeaderStyle}" Binding="{Binding ExtendedProperty29Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty30" HeaderStyle="{StaticResource wfExtendedProperty30HeaderStyle}" Binding="{Binding ExtendedProperty30Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty31" HeaderStyle="{StaticResource wfExtendedProperty31HeaderStyle}" Binding="{Binding ExtendedProperty31Text}" />
+                                    <DataGridTextColumn CanUserReorder="True" CanUserSort="True" Header="ExtendedProperty32" HeaderStyle="{StaticResource wfExtendedProperty32HeaderStyle}" Binding="{Binding ExtendedProperty32Text}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <GridSplitter Name="uxGridSplitter2" Grid.Row="0" Grid.Column="3" Width="6" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+                            <wfagt:HMIAlarmTypesTree x:Name="uxAlarmTypesFilterTree" Grid.Row="0" Grid.Column="4" Margin="1,0,1,0" Visibility="{Binding ShowAlarmTypesFilterTree, Converter={StaticResource booleanVisibilityConverter}}" />
+                        </Grid>
+                        <MediaElement Name="uxHornMediaElement" Grid.Row="0" Grid.Column="0" Volume="{Binding SoundVolume}" />
+                        <Grid Name="uxStatusBar" Grid.Row="1" Grid.ColumnSpan="5" Visibility="{Binding ShowStatusBar, Converter={StaticResource booleanVisibilityConverter}}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" Orientation="Horizontal" Visibility="{Binding ShowTotalAlarmCount, Converter={StaticResource booleanVisibilityConverter}}">
+                                <TextBlock Margin="4,0,2,0" VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMIAlarmViewerTexts, Key=ActiveOrUnacknowledged}" />
+                                <TextBlock Margin="0,0,2,0" VerticalAlignment="Center" Text="{Binding FilteredActiveOrUnacknowledgedCount}" Visibility="{Binding AlarmCountDisplayMode, Converter={StaticResource InvertedAlarmCountDisplayModeToVisibilityConverter}, ConverterParameter=Project}" />
+                                <TextBlock Text="/" Visibility="{Binding AlarmCountDisplayMode, Converter={StaticResource AlarmCountDisplayModeToVisibilityConverter}, ConverterParameter=FilterAndProject}" />
+                                <TextBlock Margin="0,0,2,0" VerticalAlignment="Center" Text="{Binding ActiveOrUnacknowledgedCount}" Visibility="{Binding AlarmCountDisplayMode, Converter={StaticResource InvertedAlarmCountDisplayModeToVisibilityConverter}, ConverterParameter=Filter}" />
+                            </StackPanel>
+                            <Rectangle Grid.Column="1" Width="1" Height="15" Margin="4,2,4,2" VerticalAlignment="Center" Stroke="#FFA9A9A9" StrokeThickness="0.5" Visibility="{Binding ShowTotalAlarmCount, Converter={StaticResource booleanVisibilityConverter}}" />
+                            <StackPanel Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Stretch" Orientation="Horizontal" Visibility="{Binding ShowActiveAlarmCount, Converter={StaticResource booleanVisibilityConverter}}">
+                                <TextBlock Margin="0,0,2,0" VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMIAlarmViewerTexts, Key=ActiveLabel}" />
+                                <TextBlock Margin="0,0,2,0" VerticalAlignment="Center" Text="{Binding FilteredActiveCount}" Visibility="{Binding AlarmCountDisplayMode, Converter={StaticResource InvertedAlarmCountDisplayModeToVisibilityConverter}, ConverterParameter=Project}" />
+                                <TextBlock Text="/" Visibility="{Binding AlarmCountDisplayMode, Converter={StaticResource AlarmCountDisplayModeToVisibilityConverter}, ConverterParameter=FilterAndProject}" />
+                                <TextBlock Margin="0,0,2,0" VerticalAlignment="Center" Text="{Binding ActiveCount}" Visibility="{Binding AlarmCountDisplayMode, Converter={StaticResource InvertedAlarmCountDisplayModeToVisibilityConverter}, ConverterParameter=Filter}" />
+                            </StackPanel>
+                            <Rectangle Grid.Column="3" Width="1" Height="15" Margin="4,2,4,2" VerticalAlignment="Center" Stroke="#FFA9A9A9" StrokeThickness="0.5" Visibility="{Binding ShowActiveAlarmCount, Converter={StaticResource booleanVisibilityConverter}}" />
+                            <StackPanel Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Stretch" Orientation="Horizontal" Visibility="{Binding ShowUnacknowledgedAlarmCount, Converter={StaticResource booleanVisibilityConverter}}">
+                                <TextBlock Margin="0,0,2,0" VerticalAlignment="Center" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMIAlarmViewerTexts, Key=Unacknowledged}" />
+                                <TextBlock Margin="0,0,2,0" VerticalAlignment="Center" Text="{Binding FilteredUnacknowledgedCount}" Visibility="{Binding AlarmCountDisplayMode, Converter={StaticResource InvertedAlarmCountDisplayModeToVisibilityConverter}, ConverterParameter=Project}" />
+                                <TextBlock Text="/" Visibility="{Binding AlarmCountDisplayMode, Converter={StaticResource AlarmCountDisplayModeToVisibilityConverter}, ConverterParameter=FilterAndProject}" />
+                                <TextBlock Margin="0,0,2,0" VerticalAlignment="Center" Text="{Binding UnacknowledgedCount}" Visibility="{Binding AlarmCountDisplayMode, Converter={StaticResource InvertedAlarmCountDisplayModeToVisibilityConverter}, ConverterParameter=Filter}" />
+                            </StackPanel>
+                            <Rectangle Grid.Column="5" Width="1" Height="15" Margin="4,2,4,2" VerticalAlignment="Center" Stroke="#FFA9A9A9" StrokeThickness="0.5" Visibility="{Binding ShowUnacknowledgedAlarmCount, Converter={StaticResource booleanVisibilityConverter}}" />
+                            <StackPanel Grid.Column="6" Margin="0,0,2,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+                                <Image Width="18" Height="18" Margin="0,0,3,0" VerticalAlignment="Top" Source="Images/Attention.png" ToolTipService.ToolTip="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMIAlarmViewerTexts, Key=RefreshError}" Visibility="{Binding LastRefreshCommandFailed, Converter={StaticResource booleanVisibilityConverter}}" />
+                                <TextBlock VerticalAlignment="Center" Text="{Binding StatusMessage}" />
+                                <Button Name="uxCancel" Margin="3,0,3,0" VerticalAlignment="Center" Style="{StaticResource LinkButton}" Content="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMIAlarmViewerTexts, Key=Cancel}" Visibility="{Binding IsRefreshingOfflineAlarms, Converter={StaticResource booleanVisibilityConverter}}" />
+                            </StackPanel>
+                            <Rectangle Grid.Column="7" Width="1" Height="15" Margin="4,2,4,2" HorizontalAlignment="Right" VerticalAlignment="Center" Stroke="#FFA9A9A9" StrokeThickness="0.5" Visibility="{Binding ThereAreHiddenAlarms, Converter={StaticResource booleanVisibilityConverter}}" />
+                            <Image Grid.Column="8" Width="15" Height="15" VerticalAlignment="Center" Source="Images/More.png" ToolTipService.ToolTip="{Binding TranslationsManager.MoreAlarmsThanDisplayed}" Visibility="{Binding IsOnlineMaximumCountExceeded, Converter={StaticResource booleanVisibilityConverter}}" />
+                            <Rectangle Grid.Column="9" Width="1" Height="15" Margin="4,2,4,2" HorizontalAlignment="Right" VerticalAlignment="Center" Stroke="#FFA9A9A9" StrokeThickness="0.5" Visibility="{Binding ThereAreHiddenAlarms, Converter={StaticResource booleanVisibilityConverter}}" />
+                            <Button Name="uxHiddenAlarms" Grid.Column="10" HorizontalAlignment="Right" VerticalAlignment="Center" Cursor="Hand" Visibility="{Binding ThereAreHiddenAlarms, Converter={StaticResource booleanVisibilityConverter}}">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="#FFFF0000" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMIAlarmViewerTexts, Key=HiddenAlarms}" />
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Rectangle Grid.Column="11" Width="1" Height="15" Margin="4,2,4,2" HorizontalAlignment="Right" VerticalAlignment="Center" Stroke="#FFA9A9A9" StrokeThickness="0.5" />
+                            <Button Name="uxFilter" Grid.Column="12" Margin="0,0,4,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Grid>
+                                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" TextBlock.Foreground="#FFFF0000" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMIAlarmViewerTexts, Key=Filtered}" Visibility="{Binding IsFiltered, Converter={StaticResource booleanVisibilityConverter}}" />
+                                            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" Text="{localize:Resx ResxName=HMI.ProjectDesigner.DesignControls.Resources.HMIAlarmViewerTexts, Key=NotFiltered}" Visibility="{Binding IsFiltered, Converter={StaticResource invertedBooleanVisibilityConverter}}" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

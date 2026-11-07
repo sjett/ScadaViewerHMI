@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlarmGroupBrowserTitle" xml:space="preserve">
+    <value>选择告警分组</value>
+  </data>
+  <data name="AlarmGroupNameColumnHeader" xml:space="preserve">
+    <value>告警分组名称</value>
+  </data>
+  <data name="AlarmTypeBrowserTitle" xml:space="preserve">
+    <value>选择告警类型</value>
+  </data>
+  <data name="AlarmTypeNameColumnHeader" xml:space="preserve">
+    <value>告警类型名称</value>
+  </data>
+  <data name="AliasNameColumnHeader" xml:space="preserve">
+    <value>别名</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ConnectorColumnHeader" xml:space="preserve">
+    <value>Connector</value>
+  </data>
+  <data name="DescriptionColumnHeader" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="FactorX1ColumnHeader" xml:space="preserve">
+    <value>FactorX1</value>
+  </data>
+  <data name="FactorX2ColumnHeader" xml:space="preserve">
+    <value>FactorX2</value>
+  </data>
+  <data name="FactorY1ColumnHeader" xml:space="preserve">
+    <value>FactorY1</value>
+  </data>
+  <data name="FactorY2ColumnHeader" xml:space="preserve">
+    <value>FactorY2</value>
+  </data>
+  <data name="FilterSignals" xml:space="preserve">
+    <value>信号过滤:</value>
+  </data>
+  <data name="GroupColumnHeader" xml:space="preserve">
+    <value>分组</value>
+  </data>
+  <data name="IsOpcEnabledColumnHeader" xml:space="preserve">
+    <value>OPC启用状态</value>
+  </data>
+  <data name="LogTag" xml:space="preserve">
+    <value>信号日志标记</value>
+  </data>
+  <data name="LogTagColumnHeader" xml:space="preserve">
+    <value>日志标记</value>
+  </data>
+  <data name="MaximumColumnHeader" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="MinimumColumnHeader" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="NoItemSelected" xml:space="preserve">
+    <value>&lt;未选择任何项&gt;</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="OPCItemNameColumnHeader" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="ProjectAuthorizationBrowserTitle" xml:space="preserve">
+    <value>选择授权组</value>
+  </data>
+  <data name="ProjectAuthorizationDescriptionColumnHeader" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="ProjectAuthorizationNameColumnHeader" xml:space="preserve">
+    <value>授权组名称</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>全选</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>选中项:</value>
+  </data>
+  <data name="ServerAlarmGroups" xml:space="preserve">
+    <value>服务器告警组</value>
+  </data>
+  <data name="ServerAlarmTypes" xml:space="preserve">
+    <value>服务器告警类型</value>
+  </data>
+  <data name="ServerColumnHeader" xml:space="preserve">
+    <value>服务器</value>
+  </data>
+  <data name="ServerProjectAuthorizations" xml:space="preserve">
+    <value>服务器项目授权</value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>服务器</value>
+  </data>
+  <data name="ServerSignalDefinitions" xml:space="preserve">
+    <value>服务器信号定义</value>
+  </data>
+  <data name="ServerSymbolicTexts" xml:space="preserve">
+    <value>服务器符号文本</value>
+  </data>
+  <data name="ShowInactiveLogs" xml:space="preserve">
+    <value>显示非活动日志</value>
+  </data>
+  <data name="ShowInactiveSignals" xml:space="preserve">
+    <value>显示非活动信号</value>
+  </data>
+  <data name="ShowOnlySignalsWithLogs" xml:space="preserve">
+    <value>显示日志</value>
+  </data>
+  <data name="Signal" xml:space="preserve">
+    <value>信号</value>
+  </data>
+  <data name="SignalBrowserTitle" xml:space="preserve">
+    <value>选择信号</value>
+  </data>
+  <data name="SuppressInternallyUsedTexts" xml:space="preserve">
+    <value>不显示内部使用的文本</value>
+  </data>
+  <data name="SymbolicTextBrowserTitle" xml:space="preserve">
+    <value>选择符号文本</value>
+  </data>
+  <data name="SymbolicTextNameColumnHeader" xml:space="preserve">
+    <value>文本名称</value>
+  </data>
+  <data name="UnitColumnHeader" xml:space="preserve">
+    <value>单位</value>
+  </data>
+  <data name="UnselectAll" xml:space="preserve">
+    <value>取消全选</value>
+  </data>
+  <data name="VChannel" xml:space="preserve">
+    <value>VChannel</value>
+  </data>
+  <data name="VisibleLanguages" xml:space="preserve">
+    <value>显示语言</value>
+  </data>
+  <data name="WriteGroupColumnHeader" xml:space="preserve">
+    <value>写入组</value>
+  </data>
+</root>

@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: GPL-3.0-only
+using System;
+using System.Diagnostics.CodeAnalysis;
+using HMI.Common.Browsers.Views;
+using HMI.Modules.Design.ViewModels.Browsers;
+using HMI.Modules.Design.Views.Browsers;
+namespace HMI.Modules.Design.Views
+{
+	[ExcludeFromCodeCoverage]
+	public class VerticalCollectionEditorView : CollectionEditorView
+	{
+		protected override BrowserWindow CreateCollectionBrowser(ICollectionBrowserViewModel viewModel)
+		{
+			return new VerticalCollectionBrowser(viewModel);
+		}
+		protected override ICollectionBrowserViewModel CreateCollectionBrowserViewModel()
+		{
+			return base.ServiceLocator.Resolve<IVerticalCollectionBrowserViewModel>();
+		}
+	}
+}

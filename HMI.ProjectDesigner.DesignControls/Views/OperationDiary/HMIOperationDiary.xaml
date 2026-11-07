@@ -1,0 +1,574 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.OperationDiary">
+    <Style x:Key="wfCellStyle" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Control.Background" Value="#00FFFFFF" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="FrameworkElement.Cursor" Value="Arrow" />
+        <Setter Property="Control.IsTabStop" Value="False" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Grid Name="Root" Background="#00FFFFFF">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Rectangle Name="FocusVisual" Stroke="#FF6DBDD1" StrokeThickness="1" Fill="#66FFFFFF" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsHitTestVisible="False" Opacity="0" />
+                        <ContentPresenter Content="{TemplateBinding ContentControl.Content}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" Cursor="{TemplateBinding FrameworkElement.Cursor}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Margin="{TemplateBinding Control.Padding}" />
+                        <Rectangle Name="RightGridLine" Grid.Column="1" VerticalAlignment="Stretch" Width="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="wfOperationDiaryRowStyle" TargetType="{x:Type DataGridRow}">
+        <Setter Property="Control.IsTabStop" Value="False" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridRow}">
+                    <Grid />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HMIOperationDiaryColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Control.Foreground" Value="#FF000000" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.IsTabStop" Value="False" />
+        <Setter Property="DataGridColumnHeader.SeparatorBrush" Value="#FFC9CACA" />
+        <Setter Property="Control.Padding" Value="4" />
+        <Setter Property="DataGridColumnHeader.SeparatorBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF267D8E" />
+                    <GradientStop Color="#FF1A525D" Offset="0.996" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Padding" Value="4,4,5,4" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                    <Grid Name="Root">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Rectangle Name="BackgroundRectangle" Stretch="Fill" Fill="#FF1F3B53" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+                        <Rectangle Name="BackgroundGradient" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF267D8E" />
+                                    <GradientStop Color="#FF1A525D" Offset="0.996" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <ContentPresenter Grid.RowSpan="2" Cursor="{TemplateBinding FrameworkElement.Cursor}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Margin="{TemplateBinding Control.Padding}" />
+                        <Rectangle Name="VerticalSeparator" Grid.RowSpan="2" Grid.Column="2" Width="1" VerticalAlignment="Stretch" Fill="{TemplateBinding DataGridColumnHeader.SeparatorBrush}" Visibility="{TemplateBinding DataGridColumnHeader.SeparatorVisibility}" />
+                        <Path Name="SortIcon" Grid.RowSpan="2" RenderTransformOrigin=".5,.5" HorizontalAlignment="Left" VerticalAlignment="Center" Opacity="0" Grid.Column="1" Stretch="Uniform" Width="8" Data="F1M-5.215,6.099L5.215,6.099 0,0 -5.215,6.099z" Fill="#FF444444">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform x:Name="SortIconTransform" ScaleX=".9" ScaleY=".9" />
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="wfOperationDiaryHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Control.Foreground" Value="#FFFFFFFF" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.FontSize" Value="10.5" />
+        <Setter Property="Control.FontWeight" Value="Normal" />
+        <Setter Property="Control.IsTabStop" Value="False" />
+        <Setter Property="DataGridColumnHeader.SeparatorBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF267D8E" />
+                    <GradientStop Color="#FF1A525D" Offset="0.996" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Padding" Value="4,4,5,4" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                    <Grid Name="Root">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Rectangle Name="BackgroundRectangle" Stretch="Fill" Fill="#FF1F3B53" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+                        <Rectangle Name="BackgroundGradient" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="2">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF267D8E" />
+                                    <GradientStop Color="#FF1A525D" Offset="0.996" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Rectangle Name="VerticalSeparator" Grid.RowSpan="2" Grid.Column="2" Width="1" VerticalAlignment="Stretch" Fill="{TemplateBinding DataGridColumnHeader.SeparatorBrush}" Visibility="{TemplateBinding DataGridColumnHeader.SeparatorVisibility}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HMIOperationDiaryGridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="DataGrid.RowBackground" Value="#AAEAEFF4" />
+        <Setter Property="DataGrid.AlternatingRowBackground" Value="#00FFFFFF" />
+        <Setter Property="Control.Background" Value="#FFFFFFFF" />
+        <Setter Property="DataGrid.HeadersVisibility" Value="Column" />
+        <Setter Property="DataGrid.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="DataGrid.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="DataGrid.SelectionMode" Value="Extended" />
+        <Setter Property="DataGrid.CanUserReorderColumns" Value="True" />
+        <Setter Property="DataGrid.CanUserResizeColumns" Value="True" />
+        <Setter Property="DataGrid.CanUserSortColumns" Value="True" />
+        <Setter Property="DataGrid.AutoGenerateColumns" Value="True" />
+        <Setter Property="DataGrid.RowDetailsVisibilityMode" Value="VisibleWhenSelected" />
+        <Setter Property="Control.BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0" />
+                    <GradientStop Color="#FF8399A9" Offset="0.375" />
+                    <GradientStop Color="#FF718597" Offset="0.375" />
+                    <GradientStop Color="#FF617584" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="DataGrid.DragIndicatorStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Control.Foreground" Value="#7FFFFFFF" />
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ContentControl}">
+                                <Grid>
+                                    <Rectangle Name="BackgroundRectangle" Grid.ColumnSpan="2" Fill="#66808080" Stretch="Fill" />
+                                    <Rectangle Name="BackgroundGradient" Grid.ColumnSpan="2" Opacity="0" Stretch="Fill">
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                <GradientStop Color="#FFFFFFFF" Offset="0.015" />
+                                                <GradientStop Color="#F9FFFFFF" Offset="0.375" />
+                                                <GradientStop Color="#E5FFFFFF" Offset="0.6" />
+                                                <GradientStop Color="#C6FFFFFF" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <Grid HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" Margin="{TemplateBinding Control.Padding}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <ContentPresenter Margin="4,4,5,4" VerticalAlignment="Center" />
+                                        <Path Name="SortIcon" Grid.Column="1" Data="F1M-5.215,6.099L5.215,6.099 0,0 -5.215,6.099z" Fill="#7FFFFFFF" HorizontalAlignment="Left" Margin="4,0,0,0" Opacity="0" RenderTransformOrigin=".5,.5" Stretch="Uniform" VerticalAlignment="Center" Width="8">
+                                            <Path.RenderTransform>
+                                                <ScaleTransform ScaleY=".9" ScaleX=".9" />
+                                            </Path.RenderTransform>
+                                        </Path>
+                                    </Grid>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="DataGrid.DropLocationIndicatorStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ContentControl}">
+                    <Setter Property="Control.Background" Value="#FF3F4346" />
+                    <Setter Property="FrameworkElement.Width" Value="2" />
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ContentControl}">
+                                <Rectangle Fill="{TemplateBinding Control.Background}" Height="{TemplateBinding FrameworkElement.Height}" Width="{TemplateBinding FrameworkElement.Width}" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="DataGrid.GridLinesVisibility" Value="Vertical" />
+        <Setter Property="DataGrid.HorizontalGridLinesBrush" Value="#FFC9CACA" />
+        <Setter Property="Control.IsTabStop" Value="True" />
+        <Setter Property="DataGrid.VerticalGridLinesBrush" Value="#FFC9CACA" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGrid}">
+                    <Grid>
+                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" CornerRadius="2">
+                            <Grid Name="Root" Background="{TemplateBinding Control.Background}">
+                                <Grid.Resources>
+                                    <ControlTemplate x:Key="TopLeftHeaderTemplate" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Grid Name="Root">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Border BorderBrush="#FFC9CACA" BorderThickness="0,0,1,0" Background="#FF1F3B53" Grid.RowSpan="2">
+                                                <Rectangle Stretch="Fill" StrokeThickness="1">
+                                                    <Rectangle.Fill>
+                                                        <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                            <GradientStop Color="#FCFFFFFF" Offset="0.015" />
+                                                            <GradientStop Color="#F7FFFFFF" Offset="0.375" />
+                                                            <GradientStop Color="#E5FFFFFF" Offset="0.6" />
+                                                            <GradientStop Color="#D1FFFFFF" Offset="1" />
+                                                        </LinearGradientBrush>
+                                                    </Rectangle.Fill>
+                                                </Rectangle>
+                                            </Border>
+                                            <Rectangle Fill="#FFDBDCDC" Height="1" Grid.RowSpan="2" StrokeThickness="1" VerticalAlignment="Bottom" Width="Auto" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                    <ControlTemplate x:Key="TopRightHeaderTemplate" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Grid Name="RootElement">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition />
+                                                <RowDefinition />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Border BorderBrush="#FFC9CACA" BorderThickness="1,0,0,0" Background="#FF1F3B53" Grid.RowSpan="2">
+                                                <Rectangle Stretch="Fill">
+                                                    <Rectangle.Fill>
+                                                        <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                            <GradientStop Color="#FCFFFFFF" Offset="0.015" />
+                                                            <GradientStop Color="#F7FFFFFF" Offset="0.375" />
+                                                            <GradientStop Color="#E5FFFFFF" Offset="0.6" />
+                                                            <GradientStop Color="#D1FFFFFF" Offset="1" />
+                                                        </LinearGradientBrush>
+                                                    </Rectangle.Fill>
+                                                </Rectangle>
+                                            </Border>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Grid.Resources>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <DataGridColumnHeader Name="TopLeftCornerHeader" Template="{StaticResource TopLeftHeaderTemplate}" Width="22" />
+                                <DataGridColumnHeadersPresenter Name="ColumnHeadersPresenter" Grid.Column="1" />
+                                <DataGridColumnHeader Name="TopRightCornerHeader" Grid.Column="2" Template="{StaticResource TopRightHeaderTemplate}" />
+                                <Rectangle Name="ColumnHeadersAndRowsSeparator" Grid.ColumnSpan="3" Fill="#FFC9CACA" Height="1" StrokeThickness="1" VerticalAlignment="Bottom" Width="Auto" />
+                                <DataGridRowsPresenter Name="RowsPresenter" Grid.ColumnSpan="2" Grid.Row="1" />
+                                <Rectangle Name="BottomRightCorner" Grid.Column="2" Fill="#FFE9EEF4" Grid.Row="2" />
+                                <Rectangle Name="BottomLeftCorner" Grid.ColumnSpan="2" Fill="#FFE9EEF4" Grid.Row="2" />
+                                <ScrollBar Name="VerticalScrollbar" Grid.Column="2" Margin="0,-1,-1,-1" Orientation="Vertical" Grid.Row="1" Width="18" />
+                                <Grid Grid.Column="1" Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Name="FrozenColumnScrollBarSpacer" />
+                                    <ScrollBar Name="HorizontalScrollbar" Grid.Column="1" Height="18" Margin="-1,0,-1,-1" Orientation="Horizontal" />
+                                </Grid>
+                            </Grid>
+                        </Border>
+                        <Border Name="DisabledVisualElement" Background="#8CFFFFFF" CornerRadius="2" HorizontalAlignment="Stretch" Height="Auto" IsHitTestVisible="False" Opacity="0" VerticalAlignment="Stretch" Width="Auto" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="ButtonTemplateRight" TargetType="{x:Type Button}">
+        <Grid Margin="5,5,5,5">
+            <Rectangle Name="BackgroundGradient" Fill="#FF448DCA" RadiusX="2" RadiusY="2">
+                <Rectangle.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0" />
+                        <GradientStop Color="#FF8399A9" Offset="0.375" />
+                        <GradientStop Color="#FF718597" Offset="0.381" />
+                        <GradientStop Color="#FF617584" Offset="1" />
+                    </LinearGradientBrush>
+                </Rectangle.Stroke>
+            </Rectangle>
+            <Rectangle Name="uxRectangle" Margin="0,0,0,0" RadiusX="2" RadiusY="2">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                        <GradientStop Color="#F9FFFFFF" Offset="0.008" />
+                        <GradientStop Color="#E5FFFFFF" Offset="0.625" />
+                        <GradientStop Color="#C6FFFFFF" Offset="1" />
+                        <GradientStop Color="#E9FFFFFF" Offset="0.331" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0" />
+                        <GradientStop Color="#FF8399A9" Offset="0.375" />
+                        <GradientStop Color="#FF718597" Offset="0.381" />
+                        <GradientStop Color="#FF617584" Offset="1" />
+                    </LinearGradientBrush>
+                </Rectangle.Stroke>
+            </Rectangle>
+            <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                <TextBlock Name="uxText" Height="15" Text="{TemplateBinding ContentControl.Content}" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="20,10,0,10" TextBlock.Foreground="#FF000000" />
+            </StackPanel>
+            <Rectangle Name="FocusVisualElement" IsHitTestVisible="False" Opacity="0" RadiusY="2" RadiusX="2" Stroke="#FF6DBDD1" StrokeThickness="1" />
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ToggleButtonTemplate" TargetType="{x:Type CheckBox}">
+        <Grid Margin="5,0,5,5">
+            <Rectangle Name="BackgroundGradient" Margin="0,0,0,0" RadiusX="2" RadiusY="2" Fill="#FF448DCA">
+                <Rectangle.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0" />
+                        <GradientStop Color="#FF8399A9" Offset="0.375" />
+                        <GradientStop Color="#FF718597" Offset="0.375" />
+                        <GradientStop Color="#FF617584" Offset="1" />
+                    </LinearGradientBrush>
+                </Rectangle.Stroke>
+            </Rectangle>
+            <Rectangle Name="uxRectangle" RadiusX="1.484" RadiusY="1.484" Stroke="#00000000" StrokeThickness="2">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                        <GradientStop Color="#FFFFFFFF" Offset="0" />
+                        <GradientStop Color="#F9FFFFFF" Offset="0.375" />
+                        <GradientStop Color="#E5FFFFFF" Offset="0.625" />
+                        <GradientStop Color="#C6FFFFFF" Offset="1" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
+                <Ellipse Name="ellipse" Height="10" Width="10" Margin="5,0,0,0" StrokeThickness="1">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFA7BBCC" Offset="0.996" />
+                            <GradientStop Color="#FFE0E0E0" Offset="0.152" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                    <Ellipse.Stroke>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0" />
+                            <GradientStop Color="#FF8399A9" Offset="0.375" />
+                            <GradientStop Color="#FF718597" Offset="0.375" />
+                            <GradientStop Color="#FF617584" Offset="1" />
+                        </LinearGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+                <TextBlock Name="uxText" Height="15" Width="150" Text="{TemplateBinding ContentControl.Content}" TextWrapping="Wrap" VerticalAlignment="Stretch" Margin="5,10,0,10" TextBlock.Foreground="#FF000000" />
+            </StackPanel>
+            <Rectangle Name="MouseOverVisualElement" IsHitTestVisible="False" Opacity="0" RadiusY="2.016" RadiusX="2.016" Stroke="#FF6DBDD1" StrokeThickness="1" Fill="#FF000000" />
+            <Rectangle Name="FocusVisualElement" IsHitTestVisible="False" Opacity="0" RadiusY="2.016" RadiusX="2.016" Stroke="#FF6DBDD1" StrokeThickness="1" Fill="#FF000000" />
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="{x:Type local:HMIOperationDiary}" TargetType="{x:Type local:HMIOperationDiary}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIOperationDiary}">
+                    <Grid Name="uxLayoutRoot" IsHitTestVisible="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFFEFEFE" Offset="0" />
+                                <GradientStop Color="#FFD5E6F3" Offset="1" />
+                                <GradientStop Color="#FFE5EFF7" Offset="0.643" />
+                                <GradientStop Color="#FFEBECED" Offset="0.348" />
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="180" />
+                        </Grid.ColumnDefinitions>
+                        <DataGrid Name="uxEvents" Grid.Row="0" Grid.RowSpan="2" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" CellStyle="{StaticResource wfCellStyle}" RowStyle="{StaticResource wfOperationDiaryRowStyle}" ColumnHeaderStyle="{StaticResource wfOperationDiaryHeaderStyle}" Style="{StaticResource HMIOperationDiaryGridStyle}">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Symbol" IsReadOnly="True" CanUserReorder="True" CanUserResize="False" Visibility="Collapsed" CanUserSort="False">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Width="16" Height="16" Source="{Binding Path=ImageSource}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="EventType" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=EventType}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Event" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="Time" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" SortMemberPath="Time" Visibility="Collapsed" Binding="{Binding Path=Time}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Time" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="EventText" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=EventText}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Text" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="UserName" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=UserName}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="User Name" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="ClientMachine" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=ClientMachine}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Client Machine" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="ServerName" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=ServerName}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Server Name" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="SignalName" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=SignalName}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Signal Name" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="SignalDescription" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=SignalDescription}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Signal Description" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="SignalUnit" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=SignalUnit}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Signal Unit" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="OpcItemName" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=OpcItemName}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Opc Item Name" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="Connector" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=Connector}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Connector" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="SignalGroup" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=SignalGroup}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Signal Group" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="AlarmText" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=AlarmText}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Alarm Text" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="AlarmGroup" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=AlarmGroup}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Group" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="AlarmType" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=AlarmType}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Type" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="AlarmAcknowledgedText" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=AlarmAcknowledgedText}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Acknowledged Text" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="AlarmPriority" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=AlarmPriority}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Alarm Priority" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="SignalNewValue" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=SignalNewValue}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="New Signal Value" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="SignalOldValue" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=SignalOldValue}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Old Signal Value" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="ResultCode" HeaderStyle="{StaticResource HMIOperationDiaryColumnHeaderStyle}" IsReadOnly="True" CanUserReorder="True" CanUserSort="True" Visibility="Collapsed" Binding="{Binding Path=ResultCode}">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="Result Code" />
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" Grid.Column="1">
+                            <CheckBox Name="uxAutoRefresh" Template="{StaticResource ToggleButtonTemplate}" Content="AutoRefresh" IsChecked="{Binding EventsProvider.IsAutoRefreshEnabled, Mode=TwoWay}" />
+                            <CheckBox Name="uxEditContentFilter" Template="{StaticResource ToggleButtonTemplate}" Content="Filter" IsChecked="{Binding VisualFilter.AlarmFilter.IsEnabled}" />
+                            <CheckBox Name="uxEditTimeFilter" Template="{StaticResource ToggleButtonTemplate}" Content="TimeInterval" IsChecked="{Binding VisualFilter.TimeFilter.IsEnabled}" />
+                            <Button Name="uxPrint" Width="180" Template="{StaticResource ButtonTemplateRight}" Content="Print" />
+                            <Button Name="uxExport" Width="180" Template="{StaticResource ButtonTemplateRight}" Content="Export" />
+                            <Button Name="uxImport" Width="180" Template="{StaticResource ButtonTemplateRight}" Content="Import" />
+                            <Button Name="uxBack" Width="180" Visibility="Collapsed" Template="{StaticResource ButtonTemplateRight}" Content="Back" />
+                            <Button Name="uxLoad" Width="180" Template="{StaticResource ButtonTemplateRight}" Content="Load" />
+                            <Button Name="uxSave" Width="180" Template="{StaticResource ButtonTemplateRight}" Content="Save" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
+                            <TextBlock HorizontalAlignment="Center" Text="Status:" />
+                            <TextBlock HorizontalAlignment="Center" Text="Idle" />
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

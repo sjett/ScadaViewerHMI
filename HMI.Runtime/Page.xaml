@@ -1,0 +1,99 @@
+<UserControl
+x:Class="HMI.Runtim.Page"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:HMIButtons="clr-namespace:HMI.RuntimeControls.Buttons;assembly=HMI.RuntimeControls"
+xmlns:HMIShared="clr-namespace:HMI.Runtime.Shared;assembly=HMI.Runtime.Shared"
+>
+    <Canvas x:Name="LayoutRoot" HorizontalAlignment="Left" VerticalAlignment="Top" Height="600" Width="800" Background="#FFFFFFFF" >
+        <Grid
+                    Canvas.Left="165" Canvas.Top="147" Canvas.ZIndex="0"
+                    Width="50" Height="50"
+                >
+            <Canvas
+                                RenderTransformOrigin="0.5,0.5"
+                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Width="50" Height="50"
+                            >
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="0" />
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <ContentControl  Canvas.Left="0" Canvas.Top="0" Height="50" Width="50" Name="StaticSymbol" Opacity="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                    <ContentControl.Content>
+
+                        <Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Opacity="{Binding Path=Opacity}">
+                            <Path
+      Data="F1 M 197.608,139.851L 178.385,120.628L 164.528,120.628L 178.521,134.62L 157.87,134.62L 157.87,145.08L 178.521,145.08L 164.528,159.074L 178.385,159.074L 197.608,139.851 Z "
+      Fill="#FF333333"
+      Stretch="Uniform"/>
+                        </Grid>
+                    </ContentControl.Content>
+                </ContentControl>
+            </Canvas>
+        </Grid>
+
+        <Grid
+                    Canvas.Left="169" Canvas.Top="274" Canvas.ZIndex="1"
+                    Width="50" Height="50"
+                >
+            <Canvas
+                                RenderTransformOrigin="0.5,0.5"
+                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Width="50" Height="50"
+                            >
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="0" />
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <ContentControl  Canvas.Left="0" Canvas.Top="0" Height="50" Width="50" Name="StaticSymbol_1" Opacity="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                    <ContentControl.Content>
+
+                        <Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Opacity="{Binding Path=Opacity}">
+                            <Path
+      Data="F1 M 197.608,139.851L 178.385,120.628L 164.528,120.628L 178.521,134.62L 157.87,134.62L 157.87,145.08L 178.521,145.08L 164.528,159.074L 178.385,159.074L 197.608,139.851 Z "
+      Fill="#FF048B00"
+      Stretch="Uniform"/>
+                        </Grid>
+                    </ContentControl.Content>
+                </ContentControl>
+            </Canvas>
+        </Grid>
+
+        <Grid
+                    Canvas.Left="265" Canvas.Top="110" Canvas.ZIndex="2"
+                    Width="100" Height="25"
+                >
+            <Canvas
+                                RenderTransformOrigin="0.5,0.5"
+                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Width="100" Height="25"
+                            >
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="0" />
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+                <HMIButtons:HMIStatesButton1  Canvas.Left="0" Canvas.Top="0" Height="25" Width="100" Name="HMIStatesButton1" Opacity="1" ShowPopup="False" PopupModality="Modal" Background="#FFD3D3D3" Foreground="#FF000000" SecurityDenyAccessBehaviour="Disable" BorderBrush="#FFAAAAAA" BorderThickness="1,1,1,2" CornerRadius="2,2,2,2" Padding="3,3,3,3" IconMargin="0,0,0,0" IconMaxSize="24" IconOpacity="100" IconPlacement="Center" IconStretch="Uniform" SignalName="Simulator - Relay State" SymbolicText="SN_Ctrl_01" WriteSecure="False" FontFamily="Arial" FontSize="10" FontStretch="Normal" FontStyle="Normal" FontWeight="Normal" Value="1">
+                    <HMIButtons:HMIStatesButton1.PopupParameters>
+                    </HMIButtons:HMIStatesButton1.PopupParameters>
+                    <HMIButtons:HMIStatesButton1.States>
+                        <HMIShared:HMIStateCondition Background="#FFFFFFFF" AlternateBackground="#FFFFFFFF" Condition="($Input1 &lt;= 0)" ConditionType="Equation" Foreground="#FFA9A9A9" AlternateForeground="#FF000000" IsBlinking="False" BlinkingFrequency="0.5" StateName="close" IsVisible="True" IsEnabled="True">
+                            <HMIShared:HMIStateCondition.ConditionParameters>
+                                <HMIShared:HMIStateConditionParameter ParameterName="$Input1" SignalName="Simulator - Sine"></HMIShared:HMIStateConditionParameter>
+                            </HMIShared:HMIStateCondition.ConditionParameters>
+                        </HMIShared:HMIStateCondition>
+                        <HMIShared:HMIStateCondition Background="#FFFFFFFF" AlternateBackground="#FFFFFFFF" Condition="($Input1 &gt; 0)" ConditionType="Equation" Foreground="#FF006400" AlternateForeground="#FF000000" IsBlinking="False" BlinkingFrequency="0.5" StateName="open" IsVisible="True" IsEnabled="True">
+                            <HMIShared:HMIStateCondition.ConditionParameters>
+                                <HMIShared:HMIStateConditionParameter ParameterName="$Input1" SignalName="Simulator - Sine"></HMIShared:HMIStateConditionParameter>
+                            </HMIShared:HMIStateCondition.ConditionParameters>
+                        </HMIShared:HMIStateCondition>
+                    </HMIButtons:HMIStatesButton1.States>
+
+                </HMIButtons:HMIStatesButton1>
+            </Canvas>
+        </Grid>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,546 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\Images\app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SplashWindow.xaml.cs" />
+    <Compile Remove="Surface\DCSafeHandle.cs" />
+    <Compile Remove="Surface\DeviceHelper.cs" />
+    <Compile Remove="Surface\UnsafeNativeMethods.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\alignobjectsbottom.png" />
+    <None Remove="Resources\Images\alignobjectscenteredhorizontal.png" />
+    <None Remove="Resources\Images\alignobjectscenteredvertical.png" />
+    <None Remove="Resources\Images\alignobjectsleft.png" />
+    <None Remove="Resources\Images\alignobjectsright.png" />
+    <None Remove="Resources\Images\alignobjectstop.png" />
+    <None Remove="Resources\Images\alpha.png" />
+    <None Remove="Resources\Images\app.png" />
+    <None Remove="Resources\Images\arrow.png" />
+    <None Remove="Resources\Images\arrow32.png" />
+    <None Remove="Resources\Images\arrow48.png" />
+    <None Remove="Resources\Images\arrowsleftrighticon.svg" />
+    <None Remove="Resources\Images\bringforward.png" />
+    <None Remove="Resources\Images\bringtofront.png" />
+    <None Remove="Resources\Images\brushicon.svg" />
+    <None Remove="Resources\Images\component.png" />
+    <None Remove="Resources\Images\connector.png" />
+    <None Remove="Resources\Images\copy.png" />
+    <None Remove="Resources\Images\copy16.png" />
+    <None Remove="Resources\Images\cut.png" />
+    <None Remove="Resources\Images\delete.png" />
+    <None Remove="Resources\Images\delete16.png" />
+    <None Remove="Resources\Images\Designer\show_grid-disabled.png" />
+    <None Remove="Resources\Images\Designer\show_grid-hover.png" />
+    <None Remove="Resources\Images\Designer\show_grid-press.png" />
+    <None Remove="Resources\Images\Designer\show_grid.png" />
+    <None Remove="Resources\Images\Designer\show_rulers-disabled.png" />
+    <None Remove="Resources\Images\Designer\show_rulers-hover.png" />
+    <None Remove="Resources\Images\Designer\show_rulers-press.png" />
+    <None Remove="Resources\Images\Designer\show_rulers.png" />
+    <None Remove="Resources\Images\Designer\snap_to_grid-disabled.png" />
+    <None Remove="Resources\Images\Designer\snap_to_grid-hover.png" />
+    <None Remove="Resources\Images\Designer\snap_to_grid-press.png" />
+    <None Remove="Resources\Images\Designer\snap_to_grid.png" />
+    <None Remove="Resources\Images\Designer\snap_to_rulers-disabled.png" />
+    <None Remove="Resources\Images\Designer\snap_to_rulers-hover.png" />
+    <None Remove="Resources\Images\Designer\snap_to_rulers-press.png" />
+    <None Remove="Resources\Images\Designer\snap_to_rulers.png" />
+    <None Remove="Resources\Images\Designer\zoom_fit_best.png" />
+    <None Remove="Resources\Images\distributeobjectshorizontal.png" />
+    <None Remove="Resources\Images\distributeobjectsvertical.png" />
+    <None Remove="Resources\Images\document.png" />
+    <None Remove="Resources\Images\document_blank16.png" />
+    <None Remove="Resources\Images\document_fragment16.png" />
+    <None Remove="Resources\Images\duplicate16.png" />
+    <None Remove="Resources\Images\edittoolsicon.svg" />
+    <None Remove="Resources\Images\ellipse.png" />
+    <None Remove="Resources\Images\error.png" />
+    <None Remove="Resources\Images\exit.png" />
+    <None Remove="Resources\Images\explore.png" />
+    <None Remove="Resources\Images\folderclosed.png" />
+    <None Remove="Resources\Images\genericdocument.png" />
+    <None Remove="Resources\Images\genericdocument1.png" />
+    <None Remove="Resources\Images\genericdocument132.png" />
+    <None Remove="Resources\Images\genericdocument2.png" />
+    <None Remove="Resources\Images\genericdocument232.png" />
+    <None Remove="Resources\Images\group.png" />
+    <None Remove="Resources\Images\group1.png" />
+    <None Remove="Resources\Images\info.png" />
+    <None Remove="Resources\Images\layer-resize-replicate-vertical.png" />
+    <None Remove="Resources\Images\layer-resize-replicate.png" />
+    <None Remove="Resources\Images\line.png" />
+    <None Remove="Resources\Images\link16.png" />
+    <None Remove="Resources\Images\minwidthicon.svg" />
+    <None Remove="Resources\Images\navigationnode16.png" />
+    <None Remove="Resources\Images\new16.png" />
+    <None Remove="Resources\Images\open32.png" />
+    <None Remove="Resources\Images\openfolder.png" />
+    <None Remove="Resources\Images\orbicon.png" />
+    <None Remove="Resources\Images\paste.png" />
+    <None Remove="Resources\Images\paste16.png" />
+    <None Remove="Resources\Images\pastebig.png" />
+    <None Remove="Resources\Images\pencil16.png" />
+    <None Remove="Resources\Images\polygon.png" />
+    <None Remove="Resources\Images\print.png" />
+    <None Remove="Resources\Images\properties.png" />
+    <None Remove="Resources\Images\rectangle.png" />
+    <None Remove="Resources\Images\redo.png" />
+    <None Remove="Resources\Images\rotateleft.png" />
+    <None Remove="Resources\Images\rotateright.png" />
+    <None Remove="Resources\Images\save.png" />
+    <None Remove="Resources\Images\saveas.png" />
+    <None Remove="Resources\Images\saveashs.png" />
+    <None Remove="Resources\Images\savehs.png" />
+    <None Remove="Resources\Images\scadaviewer-arch.png" />
+    <None Remove="Resources\Images\sendbackward.png" />
+    <None Remove="Resources\Images\sendtoback.png" />
+    <None Remove="Resources\Images\server.png" />
+    <None Remove="Resources\Images\signal.png" />
+    <None Remove="Resources\Images\start.png" />
+    <None Remove="Resources\Images\start32.png" />
+    <None Remove="Resources\Images\start48.png" />
+    <None Remove="Resources\Images\stock_draw-text-frame.png" />
+    <None Remove="Resources\Images\task.png" />
+    <None Remove="Resources\Images\tools.png" />
+    <None Remove="Resources\Images\trapeze.png" />
+    <None Remove="Resources\Images\triangle.png" />
+    <None Remove="Resources\Images\undo.png" />
+    <None Remove="Resources\Images\ungroup.png" />
+    <None Remove="Resources\Images\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="SplashWindow.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Images\app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reactive" Version="6.1.0" />
+    <PackageReference Include="Telerik.UI.for.Wpf.80.Xaml" Version="2025.2.521" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HMI.Common.Browsers\HMI.Common.Browsers.csproj" />
+    <ProjectReference Include="..\HMI.Common.Presentation\HMI.Common.Presentation.csproj" />
+    <ProjectReference Include="..\HMI.Common.Resources\HMI.Common.Resources.csproj" />
+    <ProjectReference Include="..\HMI.Common\HMI.Common.csproj" />
+    <ProjectReference Include="..\HMI.Domain\HMI.Domain.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Converters\HMI.Infrastructure.Converters.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Interfaces\HMI.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure.Presentation\HMI.Infrastructure.Presentation.csproj" />
+    <ProjectReference Include="..\HMI.Infrastructure\HMI.Infrastructure.csproj" />
+    <ProjectReference Include="..\HMI.Modules.Application\HMI.Modules.Application.csproj" />
+    <ProjectReference Include="..\HMI.Modules.Artboard\HMI.Modules.Artboard.csproj" />
+    <ProjectReference Include="..\HMI.Modules.Build\HMI.Modules.Build.csproj" />
+    <ProjectReference Include="..\HMI.Modules.ControlTree\HMI.Modules.ControlTree.csproj" />
+    <ProjectReference Include="..\HMI.Modules.Design\HMI.Modules.Design.csproj" />
+    <ProjectReference Include="..\HMI.Modules.Explorer\HMI.Modules.Explorer.csproj" />
+    <ProjectReference Include="..\HMI.Modules.PropertyEditor\HMI.Modules.PropertyEditor.csproj" />
+    <ProjectReference Include="..\HMI.Modules.Solution\HMI.Modules.Solution.csproj" />
+    <ProjectReference Include="..\HMI.ProjectDesigner.DesignControls\HMI.ProjectDesigner.DesignControls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\alignobjectsbottom.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\alignobjectscenteredhorizontal.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\alignobjectscenteredvertical.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\alignobjectsleft.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\alignobjectsright.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\alignobjectstop.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\alpha.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\app.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\arrow.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\arrow32.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\arrow48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\arrowsleftrighticon.svg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\bringforward.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\bringtofront.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\brushicon.svg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\component.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\connector.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\copy.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\copy16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\cut.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\delete.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\delete16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\show_grid-disabled.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\show_grid-hover.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\show_grid-press.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\show_grid.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\show_rulers-disabled.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\show_rulers-hover.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\show_rulers-press.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\show_rulers.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\snap_to_grid-disabled.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\snap_to_grid-hover.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\snap_to_grid-press.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\snap_to_grid.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\snap_to_rulers-disabled.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\snap_to_rulers-hover.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\snap_to_rulers-press.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\snap_to_rulers.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\Designer\zoom_fit_best.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\distributeobjectshorizontal.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\distributeobjectsvertical.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\document.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\document_blank16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\document_fragment16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\duplicate16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\edittoolsicon.svg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ellipse.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\error.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\exit.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\explore.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\folderclosed.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\genericdocument.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\genericdocument1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\genericdocument132.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\genericdocument2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\genericdocument232.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\group.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\group1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\info.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\layer-resize-replicate-vertical.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\layer-resize-replicate.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\line.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\link16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\minwidthicon.svg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\navigationnode16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\new16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\open32.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\openfolder.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\paste.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\paste16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\pastebig.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\pencil16.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\polygon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\print.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\properties.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\rectangle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\redo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\rotateleft.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\rotateright.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\save.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\saveas.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\saveashs.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\savehs.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\sendbackward.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\sendtoback.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\server.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\signal.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\start.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\start32.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\start48.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\stock_draw-text-frame.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\task.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\tools.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\trapeze.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\triangle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\undo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\ungroup.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\warning.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Resources\Images\scadaviewer-arch.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </SplashScreen>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\ApplicationActionTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ApplicationActionTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\DesignerDocumentTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DesignerDocumentTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\EditingTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EditingTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\ErrorNotificationTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorNotificationTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\ErrorTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\LogTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LogTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\RibbonBarTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RibbonBarTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\ServicesTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ServicesTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\WindowTexts.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WindowTexts.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\ApplicationActionTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApplicationActionTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\DesignerDocumentTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DesignerDocumentTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\EditingTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EditingTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ErrorNotificationTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorNotificationTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ErrorTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\LogTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\RibbonBarTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RibbonBarTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ServicesTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ServicesTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\WindowTexts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WindowTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns:local="clr-namespace:HMI.RuntimeControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISAHeatExchanger2}" TargetType="{x:Type local:HMIISAHeatExchanger2}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISAHeatExchanger2}">
+                    <Grid Name="LayoutRoot" Margin="0,0,0,0">
+                        <Viewbox>
+                            <Grid Height="100">
+                                <Ellipse Name="Ellipse" Canvas.Left="293.711" Canvas.Top="199.5" Stretch="Fill" StrokeLineJoin="Round" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" Margin="11,0" StrokeThickness="{TemplateBinding LineThickness}" />
+                                <Path Name="Path" Canvas.Left="284.156" Canvas.Top="223.104" Stretch="Fill" StrokeMiterLimit="2.75" Stroke="{TemplateBinding Control.Foreground}" Data="M0.89582992,17L0.9163298,37 M1,27L26.29133,27 40.512009,1 81.89183,53 96.416344,27 120.83301,27 M120.8326,17L120.8326,37" Margin="0.062,23,0,23" UseLayoutRounding="False" StrokeThickness="{TemplateBinding LineThickness}" />
+                            </Grid>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

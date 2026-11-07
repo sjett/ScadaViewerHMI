@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns:local="clr-namespace:HMI.RuntimeControls.Isa" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISAHeatExchanger3}" TargetType="{x:Type local:HMIISAHeatExchanger3}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISAHeatExchanger3}">
+                    <Grid Name="LayoutRoot" Margin="0,0,0,0">
+                        <Viewbox>
+                            <Canvas Name="Layer_1" Width="95" Height="100" Canvas.Left="0" Canvas.Top="0">
+                                <Rectangle Name="Rectangle" Width="79.941" Height="101" Canvas.Left="15.2882" Canvas.Top="-0.5" Stretch="Fill" StrokeLineJoin="Round" Stroke="{TemplateBinding Control.Foreground}" Fill="{TemplateBinding Control.Background}" StrokeThickness="{TemplateBinding LineThickness}" />
+                                <Path Name="Path" Width="79.941" Height="72.4286" Canvas.Left="-0.5" Canvas.Top="13.7857" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" Data="F1M2.22524E-06,14.2857L78.941,14.2857 31.5764,49.4643 78.941,85.7143 2.17667E-07,85.7143" StrokeDashCap="Round" StrokeEndLineCap="Round" StrokeStartLineCap="Round" StrokeThickness="{TemplateBinding LineThickness}" />
+                            </Canvas>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

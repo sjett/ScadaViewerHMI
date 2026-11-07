@@ -1,0 +1,264 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cb="clr-namespace:HMI.Infrastructure.Presentation.Views;assembly=HMI.Infrastructure.Presentation" 
+                    xmlns:rad="http://schemas.telerik.com/2008/xaml/presentation">
+    <cb:ControlBuilder x:Key="ControlBuilder" />
+    <ControlTemplate x:Key="ExplorerTreeViewItemTemplate" TargetType="{x:Type rad:RadTreeViewItem}">
+        <Grid Name="RootElement">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Name="HeaderRow" MinHeight="{TemplateBinding FrameworkElement.MinHeight}" Background="#00FFFFFF" SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="2" Grid.ColumnSpan="6" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" CornerRadius="2" />
+                <Border Name="MouseOverVisual" Grid.Column="2" Grid.ColumnSpan="6" BorderBrush="#FFFFC92B" BorderThickness="1" CornerRadius="1" Opacity="0">
+                    <Border BorderBrush="#FFFFFFFF" BorderThickness="1" CornerRadius="0">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Offset="1" Color="#FFFFFBA3" />
+                                <GradientStop Offset="0" Color="#FFFFFBDA" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+                <Border Name="SelectionUnfocusedVisual" Grid.Column="2" Grid.ColumnSpan="6" BorderBrush="#FFDBDBDB" BorderThickness="1" CornerRadius="1" Visibility="Collapsed">
+                    <Border BorderBrush="#00FFFFFF" BorderThickness="1" CornerRadius="0">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0,1">
+                                <GradientStop Offset="0" Color="#FFF8F6F9" />
+                                <GradientStop Offset="1" Color="#FFF0F0F0" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+                <Border Name="SelectionVisual" Grid.Column="2" Grid.ColumnSpan="6" BorderBrush="#FFFFC92B" BorderThickness="1" CornerRadius="1" Visibility="Collapsed">
+                    <Border BorderBrush="#FFFFFFFF" BorderThickness="1" CornerRadius="0">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Offset="1" Color="#FFFCE79F" />
+                                <GradientStop Color="#FFFDD3A8" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+                <StackPanel Name="IndentContainer" Orientation="Horizontal">
+                    <Rectangle Name="IndentFirstVerticalLine" Width="1" VerticalAlignment="Top" Stroke="#FFCCCCCC" Visibility="Collapsed" />
+                </StackPanel>
+                <Grid Name="ListRootContainer" Grid.Column="1" MinWidth="20" HorizontalAlignment="Center">
+                    <Rectangle Name="HorizontalLine" Height="1" HorizontalAlignment="Right" VerticalAlignment="Center" Stroke="#FFCCCCCC" />
+                    <Rectangle Name="VerticalLine" Width="1" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="#FFCCCCCC" />
+                    <ToggleButton Name="Expander" Background="{TemplateBinding Control.Background}" IsTabStop="False" />
+                    <Grid Name="LoadingVisual" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="0" CenterX="0.5" CenterY="0.5" />
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Path Width="10" Height="10" Data="M1,0A1,1,90,1,1,0,-1" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" StrokeStartLineCap="Round" StrokeThickness="1" />
+                        <Path Width="4" Height="4" Margin="5,-1.5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M0,-1.1L0.1,-1 0,-0.9" Fill="{TemplateBinding Control.Foreground}" Stretch="Fill" StrokeThickness="1" />
+                    </Grid>
+                </Grid>
+                <CheckBox Name="CheckBoxElement" Grid.Column="2" Margin="5,0,0,0" VerticalAlignment="Center" IsTabStop="False" Visibility="Collapsed">
+                    <rad:StyleManager.Theme>
+                        <rad:Office_BlackTheme />
+                    </rad:StyleManager.Theme>
+                </CheckBox>
+                <RadioButton Name="RadioButtonElement" Grid.Column="2" Margin="5,0,0,0" VerticalAlignment="Center" IsTabStop="False" Visibility="Collapsed">
+                    <rad:StyleManager.Theme>
+                        <rad:Office_BlackTheme />
+                    </rad:StyleManager.Theme>
+                </RadioButton>
+                <Image Name="Image" Grid.Column="3" MaxWidth="16" MaxHeight="16" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Wow" />
+                <Rectangle Name="FocusVisual" Grid.Column="2" Grid.ColumnSpan="6" IsHitTestVisible="False" RadiusX="3" RadiusY="3" Stroke="#FF000000" StrokeDashArray="1 2" StrokeThickness="1" Visibility="Collapsed" />
+                <Grid Grid.Column="4" Grid.ColumnSpan="2">
+                    <ContentPresenter Name="Header" Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{TemplateBinding HeaderedItemsControl.Header}" ContentTemplate="{TemplateBinding HeaderedItemsControl.HeaderTemplate}" />
+                    <ContentPresenter Name="EditHeaderElement" Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" ContentTemplate="{TemplateBinding rad:EditableHeaderedItemsControl.HeaderEditTemplate}" Visibility="Collapsed" />
+                </Grid>
+            </Grid>
+            <ItemsPresenter Name="ItemsHost" Grid.Row="1" Visibility="Collapsed" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="rad:EditableHeaderedItemsControl.IsInEditMode" Value="True">
+                <Setter TargetName="Header" Property="UIElement.Visibility" Value="Collapsed" />
+                <Setter TargetName="EditHeaderElement" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="rad:RadTreeViewItem.IsSelected" Value="True">
+                <Setter TargetName="SelectionVisual" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="UIElement.IsFocused" Value="True">
+                <Setter TargetName="FocusVisual" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="rad:RadTreeViewItem.IsSelected" Value="True" />
+                    <Condition Property="rad:RadTreeViewItem.IsSelectionActive" Value="False" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="SelectionVisual" Property="UIElement.Opacity" Value="0" />
+                <Setter TargetName="SelectionUnfocusedVisual" Property="UIElement.Visibility" Value="Visible" />
+            </MultiTrigger>
+            <Trigger Property="UIElement.IsEnabled" Value="False">
+                <Setter TargetName="Header" Property="UIElement.Opacity" Value="0.5" />
+            </Trigger>
+            <Trigger Property="rad:RadTreeViewItem.IsExpanded" Value="True">
+                <Setter TargetName="ItemsHost" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="rad:RadTreeViewItem.IsLoadingOnDemand" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:1" From="0" RepeatBehavior="Forever" Storyboard.TargetName="LoadingVisualAngleTransform" Storyboard.TargetProperty="Angle" To="359" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Setter TargetName="LoadingVisual" Property="UIElement.Visibility" Value="Visible" />
+                <Setter TargetName="Expander" Property="UIElement.Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="rad:RadTreeViewItem.IsDragOver" Value="True">
+                <Setter TargetName="MouseOverVisual" Property="UIElement.Opacity" Value="1" />
+            </Trigger>
+            <Trigger SourceName="HeaderRow" Property="UIElement.IsMouseOver" Value="True">
+                <Setter TargetName="MouseOverVisual" Property="UIElement.Opacity" Value="1" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ControlTreeViewItemTemplate" TargetType="{x:Type rad:RadTreeViewItem}">
+        <Grid Name="RootElement">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Name="HeaderRow" MinHeight="{TemplateBinding FrameworkElement.MinHeight}" Background="#00FFFFFF" SnapsToDevicePixels="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="2" Grid.ColumnSpan="6" Background="{TemplateBinding Control.Background}" BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="{TemplateBinding Control.BorderThickness}" CornerRadius="2" />
+                <Border Name="MouseOverVisual" Grid.Column="2" Grid.ColumnSpan="6" BorderBrush="#FFFFC92B" BorderThickness="1" CornerRadius="1" Opacity="0">
+                    <Border BorderBrush="#FFFFFFFF" BorderThickness="1" CornerRadius="0">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Offset="1" Color="#FFFFFBA3" />
+                                <GradientStop Offset="0" Color="#FFFFFBDA" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+                <Border Name="SelectionUnfocusedVisual" Grid.Column="2" Grid.ColumnSpan="6" BorderBrush="#FFDBDBDB" BorderThickness="1" CornerRadius="1" Visibility="Collapsed">
+                    <Border BorderBrush="#00FFFFFF" BorderThickness="1" CornerRadius="0">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0,1">
+                                <GradientStop Offset="0" Color="#FFF8F6F9" />
+                                <GradientStop Offset="1" Color="#FFF0F0F0" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+                <Border Name="SelectionVisual" Grid.Column="2" Grid.ColumnSpan="6" BorderBrush="#FFFFC92B" BorderThickness="1" CornerRadius="1" Visibility="Collapsed">
+                    <Border BorderBrush="#FFFFFFFF" BorderThickness="1" CornerRadius="0">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Offset="1" Color="#FFFCE79F" />
+                                <GradientStop Color="#FFFDD3A8" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                </Border>
+                <StackPanel Name="IndentContainer" Orientation="Horizontal">
+                    <Rectangle Name="IndentFirstVerticalLine" Width="1" VerticalAlignment="Top" Stroke="#FFCCCCCC" Visibility="Collapsed" />
+                </StackPanel>
+                <Grid Name="ListRootContainer" Grid.Column="1" MinWidth="20" HorizontalAlignment="Center">
+                    <Rectangle Name="HorizontalLine" Height="1" HorizontalAlignment="Right" VerticalAlignment="Center" Stroke="#FFCCCCCC" />
+                    <Rectangle Name="VerticalLine" Width="1" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="#FFCCCCCC" />
+                    <ToggleButton Name="Expander" Background="{TemplateBinding Control.Background}" IsTabStop="False" />
+                    <Grid Name="LoadingVisual" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="0" CenterX="0.5" CenterY="0.5" />
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Path Width="10" Height="10" Data="M1,0A1,1,90,1,1,0,-1" Stretch="Fill" Stroke="{TemplateBinding Control.Foreground}" StrokeStartLineCap="Round" StrokeThickness="1" />
+                        <Path Width="4" Height="4" Margin="5,-1.5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Data="M0,-1.1L0.1,-1 0,-0.9" Fill="{TemplateBinding Control.Foreground}" Stretch="Fill" StrokeThickness="1" />
+                    </Grid>
+                </Grid>
+                <CheckBox Name="CheckBoxElement" Grid.Column="2" Margin="5,0,0,0" VerticalAlignment="Center" IsTabStop="False" Visibility="Collapsed">
+                    <rad:StyleManager.Theme>
+                        <rad:Office_BlackTheme />
+                    </rad:StyleManager.Theme>
+                </CheckBox>
+                <RadioButton Name="RadioButtonElement" Grid.Column="2" Margin="5,0,0,0" VerticalAlignment="Center" IsTabStop="False" Visibility="Collapsed">
+                    <rad:StyleManager.Theme>
+                        <rad:Office_BlackTheme />
+                    </rad:StyleManager.Theme>
+                </RadioButton>
+                <Image Name="Image" Grid.Column="3" MaxWidth="16" MaxHeight="16" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" Tag="Wow" Visibility="Hidden" />
+                <Viewbox Grid.Column="3" Width="16" Height="16" MaxWidth="16" MaxHeight="16" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False" Stretch="Uniform">
+                    <ContentPresenter MinWidth="50" MinHeight="50" Content="{Binding Converter={StaticResource ControlBuilder}}" />
+                </Viewbox>
+                <Rectangle Name="FocusVisual" Grid.Column="2" Grid.ColumnSpan="6" IsHitTestVisible="False" RadiusX="3" RadiusY="3" Stroke="#FF000000" StrokeDashArray="1 2" StrokeThickness="1" Visibility="Collapsed" />
+                <Grid Grid.Column="4" Grid.ColumnSpan="2">
+                    <ContentPresenter Name="Header" Margin="{TemplateBinding Control.Padding}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Content="{TemplateBinding HeaderedItemsControl.Header}" ContentTemplate="{TemplateBinding HeaderedItemsControl.HeaderTemplate}" />
+                    <ContentPresenter Name="EditHeaderElement" Margin="{TemplateBinding Control.Padding}" 
+                                      HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" 
+                                      VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" 
+                                      ContentTemplate="{TemplateBinding rad:EditableHeaderedItemsControl.HeaderEditTemplate}" Visibility="Collapsed" />
+                </Grid>
+            </Grid>
+            <ItemsPresenter Name="ItemsHost" Grid.Row="1" Visibility="Collapsed" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="rad:EditableHeaderedItemsControl.IsInEditMode" Value="True">
+                <Setter TargetName="Header" Property="UIElement.Visibility" Value="Collapsed" />
+                <Setter TargetName="EditHeaderElement" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="rad:RadTreeViewItem.IsSelected" Value="True">
+                <Setter TargetName="SelectionVisual" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="UIElement.IsFocused" Value="True">
+                <Setter TargetName="FocusVisual" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="rad:RadTreeViewItem.IsSelected" Value="True" />
+                    <Condition Property="rad:RadTreeViewItem.IsSelectionActive" Value="False" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="SelectionVisual" Property="UIElement.Opacity" Value="0" />
+                <Setter TargetName="SelectionUnfocusedVisual" Property="UIElement.Visibility" Value="Visible" />
+            </MultiTrigger>
+            <Trigger Property="UIElement.IsEnabled" Value="False">
+                <Setter TargetName="Header" Property="UIElement.Opacity" Value="0.5" />
+            </Trigger>
+            <Trigger Property="rad:RadTreeViewItem.IsExpanded" Value="True">
+                <Setter TargetName="ItemsHost" Property="UIElement.Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="rad:RadTreeViewItem.IsLoadingOnDemand" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:1" From="0" RepeatBehavior="Forever" Storyboard.TargetName="LoadingVisualAngleTransform" Storyboard.TargetProperty="Angle" To="359" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Setter TargetName="LoadingVisual" Property="UIElement.Visibility" Value="Visible" />
+                <Setter TargetName="Expander" Property="UIElement.Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="rad:RadTreeViewItem.IsDragOver" Value="True">
+                <Setter TargetName="MouseOverVisual" Property="UIElement.Opacity" Value="1" />
+            </Trigger>
+            <Trigger SourceName="HeaderRow" Property="UIElement.IsMouseOver" Value="True">
+                <Setter TargetName="MouseOverVisual" Property="UIElement.Opacity" Value="1" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

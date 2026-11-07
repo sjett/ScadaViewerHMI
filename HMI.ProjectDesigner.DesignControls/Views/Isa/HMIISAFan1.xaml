@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:HMI.ProjectDesigner.DesignControls.Isa">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="HMIISABase.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{x:Type local:HMIISAFan1}" TargetType="{x:Type local:HMIISAFan1}" BasedOn="{StaticResource HMIISAStyle}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HMIISAFan1}">
+                    <Grid Name="LayoutRoot" Margin="0,0,0,0">
+                        <Viewbox>
+                            <Path Width="100" Height="100" Canvas.Left="267" Canvas.Top="157" Stretch="Fill" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Data="M390,160C456.274,160 510,213.726 510,280 510,346.274 456.274,400 390,400 323.726,400 270,346.274 270,280 270,213.726 323.726,160 390,160z M351.583,166.697L505.672,250 M505.922,310L342.318,390 M390.041,279.906C390.041,279.906 365.556,214.686 349.874,229.906 336.223,243.155 390.207,279.906 390.041,279.906z M390,280.004C390,280.004 456.335,301.281 454.134,279.539 452.217,260.612 389.897,280.134 390,280.004z M390.041,279.906C390.041,279.906 334.952,321.424 353.828,331.62 370.259,340.495 389.994,279.751 390.041,279.906z" Fill="{TemplateBinding Control.Background}" Stroke="{TemplateBinding Control.Foreground}" UseLayoutRounding="False" StrokeThickness="{Binding LineThickness, FallbackValue=1}" />
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

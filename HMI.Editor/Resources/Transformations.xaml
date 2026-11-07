@@ -1,0 +1,90 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:gh="clr-namespace:HMI.Infrastructure.Converters;assembly=HMI.Infrastructure.Converters"
+                    xmlns:cmd="clr-namespace:HMI.Infrastructure;assembly=HMI.Infrastructure"
+                    xmlns:sd="clr-namespace:HMI.Editor.Surface.Transformations"
+                    xmlns:Views="clr-namespace:HMI.Infrastructure.Presentation.Views;assembly=HMI.Infrastructure.Presentation"
+                    xmlns:localize="clr-namespace:HMI.Common.Presentation.Localization;assembly=HMI.Common.Presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Styles/SelectionDecorator.xaml" />
+        <ResourceDictionary Source="Styles/RotateDecorator.xaml" />
+        <ResourceDictionary Source="Styles/ResizeDecorator.xaml" />
+        <ResourceDictionary Source="Styles/DragDecorator.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <gh:DoubleToIntConverter x:Key="DoubleToIntConverter" />
+    <!--组件的右键菜单-->
+    <ContextMenu x:Key="ControlContextMenu">
+        <MenuItem Command="{x:Static ApplicationCommands.Cut}" CommandTarget="{Binding}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Cut}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Cut.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Copy}" CommandTarget="{Binding}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Copy}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Copy.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Paste}" CommandTarget="{Binding}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Paste}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Paste.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static ApplicationCommands.Delete}" CommandTarget="{Binding}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=Delete}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/Delete.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <Separator />
+        <MenuItem Command="{x:Static cmd:DesignerCanvasCommands.BringForward}" CommandTarget="{Binding}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=BringForward}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/BringForward.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static cmd:DesignerCanvasCommands.BringToFront}" CommandTarget="{Binding}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=BringToFront}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/BringToFront.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static cmd:DesignerCanvasCommands.SendBackward}" CommandTarget="{Binding}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=SendBackward}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/SendBackward.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Command="{x:Static cmd:DesignerCanvasCommands.SendToBack}" CommandTarget="{Binding}" Header="{localize:Resx ResxName=HMI.Editor.Resources.EditingTexts, Key=SendToBack}">
+            <MenuItem.Icon>
+                <Image Width="16" Source="Images/SendToBack.png" />
+            </MenuItem.Icon>
+        </MenuItem>
+    </ContextMenu>
+    <Style x:Key="{x:Type Views:ControlContainer}" TargetType="{x:Type Views:ControlContainer}">
+        <Setter Property="UIElement.SnapsToDevicePixels" Value="True" />
+        <Setter Property="FrameworkElement.Width" Value="{Binding Width, Converter={StaticResource DoubleToIntConverter}}" />
+        <Setter Property="FrameworkElement.Height" Value="{Binding Height, Converter={StaticResource DoubleToIntConverter}}" />
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Views:ControlContainer}">
+                    <Canvas Name="uxContainerCanvas" HorizontalAlignment="Center" VerticalAlignment="Center" ContextMenu="{StaticResource ControlContextMenu}" RenderTransformOrigin="0.5,0.5" Width="{Binding ControlWidth, Converter={StaticResource DoubleToIntConverter}}" Height="{Binding ControlHeight, Converter={StaticResource DoubleToIntConverter}}">
+                        <Canvas.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="{Binding Angle}" />
+                            </TransformGroup>
+                        </Canvas.RenderTransform>
+                        <!--组件容器-->
+                        <ContentControl Name="uxControlPresenter" Canvas.Left="0" Canvas.Top="0" Content="{TemplateBinding ContentControl.Content}" IsHitTestVisible="False" Width="{Binding ControlWidth, Converter={StaticResource DoubleToIntConverter}}" Height="{Binding ControlHeight, Converter={StaticResource DoubleToIntConverter}}" FocusVisualStyle="{x:Null}" />
+                        <!--选中虚线框-->
+                        <sd:SelectionDecorator x:Name="uxSelectionDecorator" Canvas.Left="0" Canvas.Top="0" Width="{Binding ControlWidth, Converter={StaticResource DoubleToIntConverter}}" Height="{Binding ControlHeight, Converter={StaticResource DoubleToIntConverter}}" FocusVisualStyle="{x:Null}" Visibility="{Binding ShowSelectionDecorator, Converter={StaticResource BooleanVisibilityConverter}}" />
+                        <!--选中预览样式-->
+                        <sd:SelectionDecorator x:Name="uxSelectionPreviewDecorator" Canvas.Left="0" Canvas.Top="0" Style="{StaticResource SelectionPreviewStyle}" Width="{Binding ControlWidth, Converter={StaticResource DoubleToIntConverter}}" Height="{Binding ControlHeight, Converter={StaticResource DoubleToIntConverter}}" FocusVisualStyle="{x:Null}" Visibility="{Binding ShowSelectionPreview, Converter={StaticResource BooleanVisibilityConverter}}" />
+                        <!--旋转-->
+                        <sd:RotateDecorator x:Name="uxRotateDecorator" Canvas.Left="0" Canvas.Top="0" Width="{Binding ControlWidth, Converter={StaticResource DoubleToIntConverter}}" Height="{Binding ControlHeight, Converter={StaticResource DoubleToIntConverter}}" ControlContainer="{Binding RelativeSource={RelativeSource TemplatedParent}}" FocusVisualStyle="{x:Null}" Visibility="{Binding ShowRotationDecorator, Converter={StaticResource BooleanVisibilityConverter}}" />
+                        <!--拖移-->
+                        <sd:DragDecorator x:Name="uxDragDecorator" Canvas.Left="0" Canvas.Top="0" Width="{Binding ControlWidth, Converter={StaticResource DoubleToIntConverter}}" Height="{Binding ControlHeight, Converter={StaticResource DoubleToIntConverter}}" ControlContainer="{Binding RelativeSource={RelativeSource TemplatedParent}}" FocusVisualStyle="{x:Null}" Visibility="{Binding ShowDragDecorator, Converter={StaticResource BooleanVisibilityConverter}}" />
+                        <!--调整尺寸-->
+                        <sd:ResizeDecorator x:Name="uxResizeDecorator" Canvas.Left="0" Canvas.Top="0" Width="{Binding ControlWidth, Converter={StaticResource DoubleToIntConverter}}" Height="{Binding ControlHeight, Converter={StaticResource DoubleToIntConverter}}" ControlContainer="{Binding RelativeSource={RelativeSource TemplatedParent}}" FocusVisualStyle="{x:Null}" Visibility="{Binding ShowResizeDecorator, Converter={StaticResource BooleanVisibilityConverter}}" />
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
