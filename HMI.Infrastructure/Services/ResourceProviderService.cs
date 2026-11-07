@@ -18,7 +18,7 @@ namespace HMI.Infrastructure.Services
         }
         public virtual string MapPath(string resourcePath)
         {
-            return Path.Combine(Directory.GetCurrentDirectory(), resourcePath);
+            return Path.Combine(AppContext.BaseDirectory, resourcePath);
         }
         public virtual Stream OpenFile(string resourcePath)
         {

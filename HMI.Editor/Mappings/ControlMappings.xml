@@ -1,0 +1,2615 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfControlCategoryMapping xmlns="http://schemas.datacontract.org/2004/07/HMI.Modules.ControlTree">
+
+  <ControlCategoryMapping>
+    <ControlName>Alarm Online-View</ControlName>
+    <CategoryName>Alarming</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Alarms.HMIAlarmOnline</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Alarm Viewer</ControlName>
+    <CategoryName>Alarming</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Views.Alarms.HMIAlarmViewer.HMIAlarmViewer</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Border</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Primitives.HMIBorder1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Alarm State Manager</ControlName>
+    <CategoryName>Alarming</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Alarms.HMIAlarmStateManager</ClassName>
+  </ControlCategoryMapping>
+
+
+  <ControlCategoryMapping>
+    <ControlName>Alarmduration Statistic</ControlName>
+    <CategoryName>KPI</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Alarms.HMIAlarmDuration1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Alarmfrequency Statistic</ControlName>
+    <CategoryName>KPI</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Alarms.HMIAlarmFrequency1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Machineavailability Statistic</ControlName>
+    <CategoryName>KPI</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Alarms.HMIMachineAvailability1</ClassName>
+  </ControlCategoryMapping>
+
+
+  <ControlCategoryMapping>
+    <ControlName>Button -Windows Style-</ControlName>
+    <CategoryName>Buttons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Buttons.HMIButton1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIComboBoxButton1</ControlName>
+    <CategoryName>Buttons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Buttons.HMIComboBoxButton1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMILinkButton1</ControlName>
+    <CategoryName>Navigation</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Buttons.HMILinkButton1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIStatesButton1</ControlName>
+    <CategoryName>Buttons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Buttons.HMIStatesButton1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIStatesToggleButton1</ControlName>
+    <CategoryName>Buttons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Buttons.HMIStatesToggleButton1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Toggle Button -Windows Style-</ControlName>
+    <CategoryName>Buttons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Buttons.HMIToggleButton1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIToggle Button -Round-</ControlName>
+    <CategoryName>Buttons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Buttons.HMIToggleButton2</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Toggle Button -Rocker-</ControlName>
+    <CategoryName>Buttons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Buttons.HMIToggleButton3</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Toggle Button -Round LED-</ControlName>
+    <CategoryName>Buttons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Buttons.HMIToggleButton4</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Linetrend</ControlName>
+    <CategoryName>Charts</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Charts.HMITrending2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Linetrend2</ControlName>
+    <CategoryName>Charts</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Charts.HMITrending3</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Bargraph -Round-</ControlName>
+    <CategoryName>Gauges</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Gauges.HMIBargraph1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Bargraph -Rectangle LED-</ControlName>
+    <CategoryName>Gauges</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Gauges.HMIBargraph2</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Bargraph -Rectangle-</ControlName>
+    <CategoryName>Gauges</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Gauges.HMIBargraph3</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Bargraph -3 Color-</ControlName>
+    <CategoryName>Gauges</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Gauges.HMIBargraph4</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Speedometer</ControlName>
+    <CategoryName>Gauges</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Gauges.HMIGauge1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Level Gauge</ControlName>
+    <CategoryName>Gauges</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Gauges.HMIGauge2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Image Area</ControlName>
+    <CategoryName>Images</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.Image</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Connector Statistics</ControlName>
+    <CategoryName>Statistics</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.HMIConnectorStatistics</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Date Time</ControlName>
+    <CategoryName>Date Time</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.HMIDateTime1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Language Selector</ControlName>
+    <CategoryName>Language</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.HMILanguageSelector1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Log File Viewer</ControlName>
+    <CategoryName>Log Viewer</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.HMILogFileViewer</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>User Login Dialog</ControlName>
+    <CategoryName>Security</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.HMIUserLogin1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Watchdog Indicator</ControlName>
+    <CategoryName>System Monitoring</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.HMIWatchdog1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIUserDisplay1</ControlName>
+    <CategoryName>Security</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.HMIUserDisplay1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIUserLogin2</ControlName>
+    <CategoryName>Security</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.HMIUserLogin2</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIUserInformation1</ControlName>
+    <CategoryName>Security</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.HMIUserInformation1</ClassName>
+  </ControlCategoryMapping>
+
+
+  <ControlCategoryMapping>
+    <ControlName>HMIMessengerPro</ControlName>
+    <CategoryName>Add-Ons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Html.HMIMessengerPro</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMISchedulerPro</ControlName>
+    <CategoryName>Add-Ons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Html.HMISchedulerPro</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIScenarioManagerPro</ControlName>
+    <CategoryName>Add-Ons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Html.HMIScenarioManagerPro</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Indicator -Round LED-</ControlName>
+    <CategoryName>Indicators</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Indicators.HMIIndicator1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Indicator -Round Triangle-</ControlName>
+    <CategoryName>Indicators</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Indicators.HMIIndicator2</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Indicator -Round Square-</ControlName>
+    <CategoryName>Indicators</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Indicators.HMIIndicator3</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Indicator -Dynamic-</ControlName>
+    <CategoryName>Indicators</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Indicators.HMIIndicatorDynamic</ClassName>
+  </ControlCategoryMapping>
+  <!--<ControlCategoryMapping>
+    <ControlName>Indicator -Dynamic Color-</ControlName>
+    <CategoryName>Indicators</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Indicators.HMIIndicatorDynamicColor</ClassName>
+  </ControlCategoryMapping>-->
+  <ControlCategoryMapping>
+    <ControlName>HMICompass1</ControlName>
+    <CategoryName>Indicators</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Indicators.HMICompass1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Numeric Display -Scalable-</ControlName>
+    <CategoryName>Output</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.InputOutput.HMIExtendedNumericDisplay1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Numeric Box -Simple Style-</ControlName>
+    <CategoryName>Input</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.InputOutput.HMINumericBox1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Numeric Box -User Confirmation-</ControlName>
+    <CategoryName>Input</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.InputOutput.HMINumericBox2</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Numeric Display -Simple Style-</ControlName>
+    <CategoryName>Output</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.InputOutput.HMINumericDisplay1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMINumericDisplay2</ControlName>
+    <CategoryName>Output</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.InputOutput.HMINumericDisplay2</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Text Box -Simple Style-</ControlName>
+    <CategoryName>Input</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.InputOutput.HMITextBox1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Text Box -User Confirmation-</ControlName>
+    <CategoryName>Input</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.InputOutput.HMITextBox2</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Text Display -Simple Style-</ControlName>
+    <CategoryName>Output</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.InputOutput.HMITextDisplay1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIStateDisplay1</ControlName>
+    <CategoryName>Output</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Views.InputOutput.HMIStateDisplay1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPressureIndicator1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPressureIndicator1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISARegulatorDiscPressure1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISARegulatorDiscPressure1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISARegulatorExtPressValve1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISARegulatorExtPressValve1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISARegulatorSelf1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISARegulatorSelf1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISARegulatorSelf2</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISARegulatorSelf2</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISARuptureDiscVacuum1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISARuptureDiscVacuum1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValve1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValve1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValve3Way1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValve3Way1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValve4Way1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValve4Way1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveAngle1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveAngle1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveBall1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveBall1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveBleedPurge1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveBleedPurge1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveBlowDown1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveBlowDown1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveBlowDownAngle1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveBlowDownAngle1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveButterfly1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveButterfly1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveCheck1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveCheck1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveCheckStop1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveCheckStop1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveControlHand1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveControlHand1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveCylinderActuated1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveCylinderActuated1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveDiaphragm1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveDiaphragm1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValveDiaphragmA1</ControlName>
+    <CategoryName>Valves</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValveDiaphragmA1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAVentilator1</ControlName>
+    <CategoryName>Pumps</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAVentilator1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAMotor1</ControlName>
+    <CategoryName>Motors</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAMotor1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPump1</ControlName>
+    <CategoryName>Pumps</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPump1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISACornerLine1</ControlName>
+    <CategoryName>ISA Lines</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISACornerLine1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISACrossLine1</ControlName>
+    <CategoryName>ISA Lines</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISACrossLine1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISALine1</ControlName>
+    <CategoryName>ISA Lines</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISALine1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISATLine1</ControlName>
+    <CategoryName>ISA Lines</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISATLine1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIISAULine1</ControlName>
+    <CategoryName>ISA Lines</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAULine1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISA2WayValve1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISA2WayValve1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISA2WayValve2</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISA2WayValve2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISA3WayValve2</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISA3WayValve2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAAirFilter1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAAirFilter1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAAxialFan1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAAxialFan1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISABackDraftDamper1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISABackDraftDamper1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISABag1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISABag1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISACooledOrHeatedPipe1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISACooledOrHeatedPipe1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISACooler1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISACooler1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISACooling1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISACooling1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISACooling2</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISACooling2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISACoolingTower1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISACoolingTower1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISACourvedGasVent1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISACourvedGasVent1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISACoveredGasVent1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISACoveredGasVent1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISADiaphragmValve1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISADiaphragmValve1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISADoublePipeHeatExchanger1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISADoublePipeHeatExchanger1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISADryer1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISADryer1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAFan1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAFan1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAFilter1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAFilter1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAFilter2</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAFilter2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAFlap1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAFlap1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAFlap2</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAFlap2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAFlap3</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAFlap3</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAFlap4</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAFlap4</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAFlexiblePipe1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAFlexiblePipe1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAFunnel1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAFunnel1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAFurnace1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAFurnace1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAGasBottle1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAGasBottle1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAHalfPipeMixingVessel1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAHalfPipeMixingVessel1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAHeatExchanger1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAHeatExchanger1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAHeatExchanger2</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAHeatExchanger2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAHeatExchanger3</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAHeatExchanger3</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAHeatExchanger4</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAHeatExchanger4</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAHeating2</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAHeating2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAHeatingCircuit1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAHeatingCircuit1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAJacketedMixingVessel1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAJacketedMixingVessel1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAJacketedPipe1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAJacketedPipe1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAManualValve1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAManualValve1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISANeedleValve1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISANeedleValve1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPackingColumn1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPackingColumn1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPipe1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPipe1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPlateHeatExchanger1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPlateHeatExchanger1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPressure1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPressure1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPressure2</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPressure2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPressureReducingValve1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPressureReducingValve1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPressurizedHorizontalVessel1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPressurizedHorizontalVessel1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPressurizedVerticalVessel1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPressurizedVerticalVessel1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAPump2</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAPump2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISARadialFan1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISARadialFan1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAShellAndTubeHeatExchanger1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAShellAndTubeHeatExchanger1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISASpiralHeatExchanger1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISASpiralHeatExchanger1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAStreamTrap1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAStreamTrap1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAThermallyInsulatedPipe1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAThermallyInsulatedPipe1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISATrayColumn1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISATrayColumn1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAUShapedTubesHeatExchanger1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAUShapedTubesHeatExchanger1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAValve2</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAValve2</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIISAViewingGlass1</ControlName>
+    <CategoryName>P &amp; ID</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Isa.HMIISAViewingGlass1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Text Label</ControlName>
+    <CategoryName>Labels</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Labels.HMILabel1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Signal Information Label</ControlName>
+    <CategoryName>Labels</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Labels.HMISignalInformationLabel1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Navigation Button</ControlName>
+    <CategoryName>Navigation</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Navigation.HMINavigation</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Navigation Toggle</ControlName>
+    <CategoryName>Navigation</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Navigation.HMINavigationToggle1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Navigation Frame</ControlName>
+    <CategoryName>Navigation</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Navigation.HMINavigationTarget</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Navigation Parameter Container</ControlName>
+    <CategoryName>Navigation</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Navigation.HMINavigationParameter</ClassName>
+  </ControlCategoryMapping>
+  
+  <ControlCategoryMapping>
+    <ControlName>OpenDialog</ControlName>
+    <CategoryName>Navigation</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.OpenDialog.HMIOpenDialog</ClassName>
+  </ControlCategoryMapping>
+
+
+  <ControlCategoryMapping>
+    <ControlName>Operation Diary</ControlName>
+    <CategoryName>Operation Diary</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.OperationDiary.HMIOperationDiary</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Pipe -Corner Style-</ControlName>
+    <CategoryName>Pipes</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Pipes.HMICornerPipe1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Pipe -Straight Style-</ControlName>
+    <CategoryName>Pipes</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Pipes.HMILinePipe1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Pipe -T Style-</ControlName>
+    <CategoryName>Pipes</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Pipes.HMITPipe1</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Line -Corner Style-</ControlName>
+    <CategoryName>Lines</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Pipes.HMICornerLine1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Line -Cross Style-</ControlName>
+    <CategoryName>Lines</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Pipes.HMICrossLine1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Line -Straight Style-</ControlName>
+    <CategoryName>Lines</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Pipes.HMILine1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Line -T Style-</ControlName>
+    <CategoryName>Lines</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Pipes.HMITLine1</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Line -U Style-</ControlName>
+    <CategoryName>Lines</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Pipes.HMIULine1</ClassName>
+  </ControlCategoryMapping>
+
+  <!--<ControlCategoryMapping>
+    <ControlName>HMITelerikReportViewer</ControlName>
+    <CategoryName>Reporting</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Reporting.HMITelerikReportViewer</ClassName>
+  </ControlCategoryMapping>-->
+
+  <ControlCategoryMapping>
+    <ControlName>HMISqlReportViewer</ControlName>
+    <CategoryName>Reporting</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName> HMI.ProjectDesigner.DesignControls.Views.Reporting.HMISqlReportViewer</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIUserManager</ControlName>
+    <CategoryName>User Management</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.UserManagement.HMIUserManager</ClassName>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>HMIDataTable</ControlName>
+    <CategoryName>Data Table</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Views.DataTable.HMIDataTable</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>HMIBACnet Scheduler</ControlName>
+    <CategoryName>BACnet</CategoryName>
+    <AssemblyName>DemoEditor.ControlLibrary.BACnet</AssemblyName>
+    <ClassName>DemoEditor.ControlLibrary.BACnet.Views.HMIBACnetSchedulerView</ClassName>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Slider</ControlName>
+    <CategoryName>Sliders</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.Sliders.HMISlider1</ClassName>
+  </ControlCategoryMapping>
+
+
+  <!--ARROWS-->
+  <ControlCategoryMapping>
+    <ControlName>Arrow 1</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow01_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 1 (green)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow01_R_Green.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 1 (red)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow01_R_Red.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 1 (blue)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow01_R_Blue.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 2</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow02_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 3</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow03_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 4</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow04_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 5</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow05_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 6 (right)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow06_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 6 (left)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow06_L_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 7</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow07_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 8</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow08_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 9</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow09_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 10</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow10_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 11</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow11_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 12 (right)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow12_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 12 (left)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow12_L_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 13</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow13_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 14 (left)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow14_L_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 14 (right)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow14_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 15</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow15_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 16</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow16_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 17</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow17_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 18</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow18_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 19</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow19_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 20</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow20_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 21 (right)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow21_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 21 (left)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow21_L_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 21 (top)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow21_T_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow 21 (bottom)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow21_B_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow Icon (green left)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\I_ArrowLeftGreen.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Arrow Icon (green right)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\I_ArrowRightGreen.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Glossy Arrow (green)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow_GlossyGreen1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Glossy Arrow (red)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow_GlossyRed1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Glossy Arrow (blue)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow_GlossyBlue1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flat Arrow (green)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow_Green2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flat Arrow(red)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow_Red2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flat Arrow (blue)</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow_Blue2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <!--END ARROWS-->
+
+  <!--DIALOG ICONS-->
+  <ControlCategoryMapping>
+    <ControlName>Arrow 1</ControlName>
+    <CategoryName>Arrows</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Arrows\Arrow01_R_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Settings</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\DI_Settings.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Warning</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\DI_Warning.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Critical Warning</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\DI_CriticalWarning.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Forbidden</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\DI_Forbidden.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>OK</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\DI_OK.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Error</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\DI_Error.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Info</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\DI_Info.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Help</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\DI_Help.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <!--END DIALOG ICONS-->
+
+  <!--ICONS-->
+  <ControlCategoryMapping>
+    <ControlName>Clock</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Clock.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>User(blue)</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_User.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Users (blue)</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Users_Blue1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Users (red)</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Users_Red1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Users (green)</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Users_Green1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Settings</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Settings.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank Level</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Tank.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wireless Symbol</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Wireless.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Power Black</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Power_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Power Grey</ControlName>
+    <CategoryName>Symbols and Icons</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Power_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <!--END ICONS-->
+
+
+  <ControlCategoryMapping>
+    <ControlName>Box Blue 1</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Box_Blue1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Box Grey 1</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Box_Grey1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Box Grey 3</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Box_Grey3.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Box Black 1</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Box_Black1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Box Black 2</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Box_Black2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Indicator Template</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\C_Background_Silver2010.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Meter Template</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\C_Meter1.xaml</XamlPath>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Black 1</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Black1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Blue 1</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Blue1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Blue 2</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Blue2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Blue 3 Glossy</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Blue3_Glossy.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Blue 4</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Blue4.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Blue 5</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Blue5.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Blue 6</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Blue6.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Blue 7</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Blue7.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Blue 8</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Blue8.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Brown 1</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Brown1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Green 2</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Green1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Green 2</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Green2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Green 3</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Green3.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Green 4</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Green4_Glossy.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Green 5</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Green5.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Green 6</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Green6.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Green 7</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Green7.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Green 8</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Green8.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Grey 1</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Grey1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Grey 2</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Grey2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Grey 3</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Grey3.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Orange 1</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Orange1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Yellow 1</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Yellow1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Yellow 2</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Yellow2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Yellow 3</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Yellow3.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Red 1</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Red1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Red 2</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Red2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Red 3</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_Red3.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Red 4</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_RedYellow.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Red 5</ControlName>
+    <CategoryName>Gradients</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\G_RedBlue.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Yellow/Black Stipes</ControlName>
+    <CategoryName>Patterns</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\P_YellowBlack_Stripes.xaml</XamlPath>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Zylinder</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\M_Zylinder.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Zylinder</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\M_Zylinder2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Bulb Glossy</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Bulb1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Scale Blue</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\M_Scale_blue.xaml</XamlPath>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Glossy Reflection Round</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\BG_RoundGlossy.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Glossy Reflection Round 2</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\BG_RoundGlossy2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Glossy Reflection Round 3</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\BG_RoundGlossy3.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Glossy Reflection Round 4</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\BG_RoundGlossy4.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Glossy Reflection Round 5</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\BG_RoundGlossy5.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>WEBfactory Logo</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\M_WF_Logo.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>WEBfactory Logo Red</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\M_WF_Logo_Red.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Sun 1</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Sun1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Sun 2</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Sun2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Cloud Blue</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Cloud_Blue.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Cloud Grey</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Cloud_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flash</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Flash.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Rain Drop</ControlName>
+    <CategoryName>Miscellaneous</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\I_Rain.xaml</XamlPath>
+  </ControlCategoryMapping>
+
+
+  <!-- PROCESS SYMBOLS-->
+  <ControlCategoryMapping>
+    <ControlName>Flow Meter 1</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Flow_Meter1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 1</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 2</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 3</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank3.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 4</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank4.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 5</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank5.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 6</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank6.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 7</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank7.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 8</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank8.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 8 (red)</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank8_Red.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 8 (yellow)</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank8_Yellow.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 9</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank9.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 9 (red)</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank9_Red.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 9 (yellow)</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank9_Yellow.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 10</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank10.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 11</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank11.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 12</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank12.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 13</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank13.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank 14</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank14.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Funnel 1</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Funnel1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Funnel 2</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Funnel2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Funnel 3</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Funnel3.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Funnel 4</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Funnel4.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Funnel 5</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Funnel5.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Funnel 6</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Funnel6.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank Elements 1</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank_Elements1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank Elements 2</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank_Elements2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Tank Elements 3</ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\Tank_Elements3.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Grid 1 </ControlName>
+    <CategoryName>Process Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\ProcessSymbols\M_Grid.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <!-- END PROCESS SYMBOLS-->
+
+  <!-- PIPE ELEMENTS-->
+  <ControlCategoryMapping>
+    <ControlName>Pipe 1</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Pipe1_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Pipe 1 (black)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Pipe1_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Pipe 1 (red)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Pipe1_Red.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Pipe 1 (yellow)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Pipe1_Yellow.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Pipe 1 (orange)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Pipe1_Orange.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Pipe 1 (brown)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Pipe1_Brown.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Pipe 1 (blue)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Pipe1_Blue.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (45 degree)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_45_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (90 degree)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_90_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (tee)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_T_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (intersection)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_X_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (split, right)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_YR_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (split, left)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_YL_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (black, 45 degree)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_45_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (black, 90 degree)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_90_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (black, tee)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_T_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (black, intersection)</ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_X_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (black, split, right) </ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_YR_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Flange 1 (black, split, left) </ControlName>
+    <CategoryName>Pipe Elements</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\PipeElements\Flange1_YL_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+
+  <!-- END PIPE ELEMENTS-->
+
+
+  <ControlCategoryMapping>
+    <ControlName>Conveyor Line</ControlName>
+    <CategoryName>Production Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Pr_Conv_1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Motor 1</ControlName>
+    <CategoryName>Production Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Pr_Motor_1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Motor 2 (transparent)</ControlName>
+    <CategoryName>Production Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Pr_Motor_2_transparent.xaml</XamlPath>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Floor 1</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Floor1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 1</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Left1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 1.2</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Left1_Solid.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 2</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Left2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 2.2</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Left2_Solid.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wandelement 3</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Right1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 3.2</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Right1_Solid.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 4</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Right2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 4.2</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Right2_Solid.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 5</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Door_Left1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 5.2</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Door_Left1_Solid.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 6</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Door_Right1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Wall 6.2</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Wall_Door_Right1_Solid.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Window 1</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Window1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Window 2</ControlName>
+    <CategoryName>Building Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\B_Window2.xaml</XamlPath>
+  </ControlCategoryMapping>
+
+  <ControlCategoryMapping>
+    <ControlName>Heating 1</ControlName>
+    <CategoryName>HVAC Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\HVAC_Heating1.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Heating 2</ControlName>
+    <CategoryName>HVAC Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\HVAC_Heating2.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Heating 3</ControlName>
+    <CategoryName>HVAC Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\HVAC_Heating3.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Boiler</ControlName>
+    <CategoryName>HVAC Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\HVAC_Boiler.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Fire</ControlName>
+    <CategoryName>HVAC Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Fire.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Cooler</ControlName>
+    <CategoryName>HVAC Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Cooler.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Ventilator</ControlName>
+    <CategoryName>HVAC Symbols</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Ventilator.xaml</XamlPath>
+  </ControlCategoryMapping>
+
+  <!-- END BIOGAS ELEMENTS -->
+  <ControlCategoryMapping>
+    <ControlName>Biogas Rotor Front</ControlName>
+    <CategoryName>Biogas Graphics</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Biogas\Biogas_Rotor_front.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Biogas Rotor Mix</ControlName>
+    <CategoryName>Biogas Graphics</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Biogas\Biogas_Rotor_Mix.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Biogas Rotor Mix Side</ControlName>
+    <CategoryName>Biogas Graphics</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Biogas\Biogas_Rotor_Mix_side.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Biogas Rotor Side</ControlName>
+    <CategoryName>Biogas Graphics</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Biogas\Biogas_Rotor_seite.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Fermenter</ControlName>
+    <CategoryName>Biogas Graphics</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Biogas\Fermenter.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Screw</ControlName>
+    <CategoryName>Biogas Graphics</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Biogas\Screw.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Container</ControlName>
+    <CategoryName>Biogas Graphics</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Biogas\uniKipp.xaml</XamlPath>
+  </ControlCategoryMapping>
+
+  <!-- END BIOGAS ELEMENTS-->
+
+  <!-- BACKGROUNDS-->
+  <ControlCategoryMapping>
+    <ControlName>Background 1</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_LightGreyHeader30_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 2</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_BlackHeader30_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 3</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_LightGreyPlainHeader30_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 4</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_BlackPlainHeader30_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 5</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_BluePlainHeader30_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 6</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_RedPlainHeader30_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 7</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_LightGreyHeader30_Grey_Footer30.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 8</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_BlackHeader30_Grey_Footer30.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 9</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_LightGreyHeader40_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 10</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_GreyHeader40_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 11</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_BlackHeader40_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 12</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_BlueHeader40_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 13</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_LightBlueHeader40_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 14</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_RedHeader40_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 15</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_DarkRedHeader40_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 16</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_OrangeHeader40_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 17</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_GreenHeader40_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 18</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_BlueHeader40_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 19</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_OrangeHeader40_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 20</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_GreenHeader40_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 21</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_DarkRedHeader40_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 22</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_LightGreyHeader40_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 23</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_RedStripes20_Grey.xaml</XamlPath>
+  </ControlCategoryMapping>
+  <ControlCategoryMapping>
+    <ControlName>Background 24</ControlName>
+    <CategoryName>Backgrounds</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.StaticSymbols.StaticSymbol</ClassName>
+    <XamlPath>Views\StaticSymbols\Backgrounds\BG_Box_YellowStripes20_Black.xaml</XamlPath>
+  </ControlCategoryMapping>
+
+  <!-- END BACKGROUNDS-->
+
+  <ControlCategoryMapping>
+    <ControlName>Logbook</ControlName>
+    <CategoryName>Logbook</CategoryName>
+    <AssemblyName>HMI.ProjectDesigner.DesignControls</AssemblyName>
+    <ClassName>HMI.ProjectDesigner.DesignControls.General.HMILogbook</ClassName>
+  </ControlCategoryMapping>
+
+
+  <!--<ControlCategoryMapping>
+    <ControlName>CustomDemoControl</ControlName>
+    <CategoryName>Demo</CategoryName>
+    <AssemblyName>CustomControlsDemo</AssemblyName>
+    <ClassName>CustomControlsHMI.Views.CustomDemoControl</ClassName>    
+  </ControlCategoryMapping>-->
+
+</ArrayOfControlCategoryMapping>

@@ -128,6 +128,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Mappings\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Reactive" Version="6.1.0" />
     <PackageReference Include="Telerik.UI.for.Wpf.80.Xaml" Version="2025.2.521" />
   </ItemGroup>
@@ -542,5 +553,13 @@
       <LastGenOutput>WindowTexts.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
+  <Target Name="ExtractStaticSymbolResourcesAfterBuild" AfterTargets="Build">
+    <Exec Command="powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command &quot;Expand-Archive -LiteralPath '$(MSBuildProjectDirectory)\Resources\StaticSymbols.zip' -DestinationPath '$(TargetDir)Views\StaticSymbols' -Force&quot;" />
+  </Target>
+
+  <Target Name="ExtractStaticSymbolResourcesAfterPublish" AfterTargets="Publish" Condition="'$(PublishDir)' != ''">
+    <Exec Command="powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command &quot;Expand-Archive -LiteralPath '$(MSBuildProjectDirectory)\Resources\StaticSymbols.zip' -DestinationPath '$(PublishDir)Views\StaticSymbols' -Force&quot;" />
+  </Target>
 
 </Project>

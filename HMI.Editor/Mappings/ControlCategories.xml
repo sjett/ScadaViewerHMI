@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ControlCategory xmlns="http://schemas.datacontract.org/2004/07/HMI.Modules.ControlTree">
+	<Children>
+		<ControlCategory>
+			<Name>Add-Ons</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Alarming</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>BACnet</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Buttons</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Charts</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Data Table</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Date Time</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Gauges</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Indicators</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Input/Output Controls</Name>
+			<Children>
+				<ControlCategory>
+					<Name>Input</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Output</Name>
+				</ControlCategory>
+			</Children>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>ISA Symbols</Name>
+			<Children>
+				<ControlCategory>
+					<Name>ISA Lines</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Motors</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Pumps</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>P &amp; ID</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Valves</Name>
+				</ControlCategory>
+			</Children>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>KPI</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Labels</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Language</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Log Viewer</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Logbook</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Navigation</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Pipes</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Operation Diary</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Reporting</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Security</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Sliders</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Static Symbols</Name>
+			<Children>
+				<ControlCategory>
+					<Name>Arrows</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Backgrounds</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Biogas Graphics</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Building Symbols</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Gradients</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>HVAC Symbols</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Images</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Miscellaneous</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Patterns</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Pipe Elements</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Process Symbols</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Production Symbols</Name>
+				</ControlCategory>
+				<ControlCategory>
+					<Name>Symbols and Icons</Name>
+				</ControlCategory>
+			</Children>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>Statistics</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>System Monitoring</Name>
+		</ControlCategory>
+		<ControlCategory>
+			<Name>User Management</Name>
+		</ControlCategory>
+		<!--<ControlCategory>
+			<Name>Demo</Name>
+		</ControlCategory>-->
+	</Children>
+</ControlCategory>
